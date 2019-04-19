@@ -9,18 +9,21 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/seok_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".First"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".anonymous"></activity>
+        <activity android:name=".JoinRoom" />
+        <activity android:name=".enter" />
+        <activity android:name=".First">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

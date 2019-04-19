@@ -824,6 +824,10 @@
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
+        "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable_seok_icon.png.flat",
+        "source": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\src\\main\\res\\drawable\\seok_icon.png"
+    },
+    {
         "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\drawable-xxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
@@ -1208,6 +1212,10 @@
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
+        "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable_seok_loading.png.flat",
+        "source": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\src\\main\\res\\drawable\\seok_loading.png"
+    },
+    {
         "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1422,6 +1430,10 @@
     {
         "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_enter.xml.flat",
+        "source": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\src\\main\\res\\layout\\activity_enter.xml"
     },
     {
         "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_toolbar.xml.flat",

@@ -1,8 +1,16 @@
 <resources>
-    <string name="app_name">NaverspeechClientOpenApi</string>
+    <string name="app_name">seokEE</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="str_start">Start</string>
     <string name="str_stop">Stop</string>
     <string name="loading">Loading...</string>
+    <string name="enter_room">방 들어가기</string>
+    <string name="make_room">방 만들기</string>
+    <string name="input_pincode">회의방의 입장코드를 입력하세요.</string>
+    <string name="pincode">입장 코드</string>
+    <string name="enter">입장</string>
+    <string name="input_nickname">닉네임을 입력하세요.</string>
+    <string name="nickname">닉네임</string>
+    <string name="input">확인</string>
 </resources>

@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.MotionEvent;
 
-public class First extends AppCompatActivity {
+public class First extends Activity {
 
     private Thread splashThread;
 
@@ -31,7 +31,7 @@ public class First extends AppCompatActivity {
                 // Run next activity
                 Intent intent = new Intent();
                 intent.setClass(First.this,
-                        MainActivity.class);
+                        enter.class);
                 startActivity(intent);
             }
         };
