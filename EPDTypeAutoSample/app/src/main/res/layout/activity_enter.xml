@@ -7,19 +7,19 @@
     tools:context=".enter">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/make_room"
         android:layout_width="140dp"
         android:layout_height="0dp"
         android:layout_marginTop="231dp"
         android:layout_marginBottom="37dp"
         android:text="@string/make_room"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/enter_room"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/enter_room"
         android:layout_width="140dp"
         android:layout_height="0dp"
         android:layout_marginBottom="333dp"
@@ -27,5 +27,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/make_room" />
 </android.support.constraint.ConstraintLayout>

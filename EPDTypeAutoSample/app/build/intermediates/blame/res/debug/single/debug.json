@@ -1284,6 +1284,10 @@
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\drawable-xxhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_join_room.xml.flat",
+        "source": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\src\\main\\res\\layout\\activity_join_room.xml"
+    },
+    {
         "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_button_bar_material.xml.flat",
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
@@ -1328,8 +1332,16 @@
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
+        "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_activity_join_room.xml.flat",
+        "source": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\src\\main\\res\\layout-v26\\activity_join_room.xml"
+    },
+    {
         "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_second.xml.flat",
+        "source": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\src\\main\\res\\layout\\activity_second.xml"
     },
     {
         "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_material.xml.flat",
@@ -1466,6 +1478,10 @@
     {
         "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_anonymous.xml.flat",
+        "source": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\src\\main\\res\\layout\\activity_anonymous.xml"
     },
     {
         "merged": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",

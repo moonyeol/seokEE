@@ -78,26 +78,14 @@ public class MainActivity extends Activity {
                 SpeechRecognitionResult speechRecognitionResult = (SpeechRecognitionResult) msg.obj;
                 List<String> results = speechRecognitionResult.getResults();
                 StringBuilder strBuf = new StringBuilder();
+                String txt = results.get(0);
                 // 전달 받은 모든 문자열을 차례대로 출력합니다.
                 for(String result : results) {
                     strBuf.append(result);
                     strBuf.append("\n");
                 }
-                Log.i("my","Send Message");
-
-                JSONObject send = new JSONObject();
-                try {
-                    send.put("talker", "1");
-                    send.put("func", 0);
-                    send.put("number", 1);
-                    send.put("time", new Date());
-                    send.put("message", results.get(0));
-                }catch(Exception e){
-                    e.printStackTrace();
-                }
-
-                commSock.sendMessage(send.toString());
-
+                Toast.makeText(this,txt, Toast.LENGTH_SHORT).show();
+                commSock.kick("",0,0,txt);
                 mResult = strBuf.toString();
                 txtResult.setText(mResult);
                 break;
@@ -197,23 +185,6 @@ public class MainActivity extends Activity {
                 }
             }
         });
-
-        int SDK_INT = android.os.Build.VERSION.SDK_INT;
-        if (SDK_INT > 8) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-                    .permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-
-            try {
-                commSock.setSocket();
-                Log.i("my", "Socket Connected.");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            Log.i("my","make Handler and Thread");
-        }
-
     }
 
     @Override
@@ -235,12 +206,6 @@ public class MainActivity extends Activity {
         super.onStop();
         // 음성인식 서버를 종료합니다.
         naverRecognizer.getSpeechRecognizer().release();
-
-        try {
-            commSock.socket.close();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
     }
     // SpeechRecognizer 쓰레드의 메시지를 처리하는 핸들러를 정의합니다.
     static class RecognitionHandler extends Handler {
@@ -256,6 +221,7 @@ public class MainActivity extends Activity {
             }
         }
     }
+
 }
 
 

@@ -13,4 +13,6 @@
     <string name="input_nickname">닉네임을 입력하세요.</string>
     <string name="nickname">닉네임</string>
     <string name="input">확인</string>
+    <string name="login">로그인</string>
+    <string name="anonymous">익명입장</string>
 </resources>

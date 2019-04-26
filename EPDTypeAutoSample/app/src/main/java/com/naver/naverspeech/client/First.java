@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.MotionEvent;
+import android.os.StrictMode;
+import android.util.Log;
+import android.widget.Toast;
 
 public class First extends Activity {
 
@@ -31,11 +34,28 @@ public class First extends Activity {
                 // Run next activity
                 Intent intent = new Intent();
                 intent.setClass(First.this,
-                        enter.class);
+                        second.class);
                 startActivity(intent);
             }
         };
         splashThread.start();
+
+        int SDK_INT = android.os.Build.VERSION.SDK_INT;
+        if (SDK_INT > 8) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+
+            try {
+                commSock.setSocket();
+                Log.i("my", "Socket Connected.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            Log.i("my","make Handler and Thread");
+        }
+
     }
 
 
@@ -49,5 +69,7 @@ public class First extends Activity {
         }
         return true;
     }
+
+
 
 }
