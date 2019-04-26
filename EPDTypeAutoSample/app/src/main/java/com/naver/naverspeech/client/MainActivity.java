@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.os.StrictMode;
 import android.support.annotation.WorkerThread;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -29,7 +30,17 @@ import com.naver.speech.clientapi.SpeechRecognitionListener;
 import com.naver.speech.clientapi.SpeechRecognitionResult;
 import com.naver.speech.clientapi.SpeechRecognizer;
 
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.lang.ref.WeakReference;
+import java.net.Socket;
+import java.util.Date;
 import java.util.List;
 
 // 1. Main Activity 클래스를 정의합니다.
@@ -72,6 +83,21 @@ public class MainActivity extends Activity {
                     strBuf.append(result);
                     strBuf.append("\n");
                 }
+                Log.i("my","Send Message");
+
+                JSONObject send = new JSONObject();
+                try {
+                    send.put("talker", "1");
+                    send.put("func", 0);
+                    send.put("number", 1);
+                    send.put("time", new Date());
+                    send.put("message", results.get(0));
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+
+                commSock.sendMessage(send.toString());
+
                 mResult = strBuf.toString();
                 txtResult.setText(mResult);
                 break;
@@ -171,6 +197,23 @@ public class MainActivity extends Activity {
                 }
             }
         });
+
+        int SDK_INT = android.os.Build.VERSION.SDK_INT;
+        if (SDK_INT > 8) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+
+            try {
+                commSock.setSocket();
+                Log.i("my", "Socket Connected.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            Log.i("my","make Handler and Thread");
+        }
+
     }
 
     @Override
@@ -192,6 +235,12 @@ public class MainActivity extends Activity {
         super.onStop();
         // 음성인식 서버를 종료합니다.
         naverRecognizer.getSpeechRecognizer().release();
+
+        try {
+            commSock.socket.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     // SpeechRecognizer 쓰레드의 메시지를 처리하는 핸들러를 정의합니다.
     static class RecognitionHandler extends Handler {
