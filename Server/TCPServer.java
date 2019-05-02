@@ -34,6 +34,9 @@ public class TCPServer implements Runnable {
             System.out.println(s.toString());
         }
 
+        ////////// FOR TEST
+        roomList.put("12345",new ArrayList<>());
+
         try {
             System.out.println("Server: DB Connecting..");
             db = new Database();
@@ -47,6 +50,7 @@ public class TCPServer implements Runnable {
                     Socket client = serverSocket.accept();
 
                     clientList.put(client, new ClientInfo());
+
                     System.out.println(new Date() + " Server: Accept " + client.getInetAddress().getHostAddress() + " " + client.getPort());
 
                     ServerHandler handler = new ServerHandler(client);
@@ -70,15 +74,15 @@ public class TCPServer implements Runnable {
 
     class ClientInfo {
         private String talker;
-        private int number;
+        private String number;
         private boolean host;
 
         ClientInfo(){
             talker = "";
-            number = 0;
+            number = "0";
             host = false;
         }
-        ClientInfo(String talker, int number, boolean host){
+        ClientInfo(String talker, String number, boolean host){
             this.talker = talker;
             this.number= number;
             this.host = host;
@@ -98,10 +102,10 @@ public class TCPServer implements Runnable {
             return this.talker;
         }
 
-        void setNumber(int num){
-            this.number = num;
+        void setNumber(String num){
+            this.number = new String(num);
         }
-        int getNumber(){
+        String getNumber(){
             return this.number;
         }
 
@@ -126,6 +130,9 @@ public class TCPServer implements Runnable {
         }
 
         public void run(){
+            String number = "", talker = "", message = "";
+            int func;
+
             while(true) {
                 try {
                     BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -138,10 +145,10 @@ public class TCPServer implements Runnable {
 
                     JSONObject msg = (JSONObject) parser.parse(str);
 
-                    String talker = msg.get("talker").toString();
-                    String message = msg.get("message").toString();
-                    int func = Integer.parseInt(msg.get("func").toString());
-                    String number = msg.get("number").toString();
+                    talker = new String(msg.get("talker").toString());
+                    message = new String(msg.get("message").toString());
+                    func = Integer.parseInt(msg.get("func").toString());
+                    number = new String(msg.get("number").toString());
                     //Date time = new Date(msg.get("time").toString());
 
                     System.out.println("time: " + new Date()+" talker: "+talker + " message: " + message + " func: " + func + " num: " + number);
@@ -149,26 +156,24 @@ public class TCPServer implements Runnable {
                     switch (func) {
                         case 0:
                             // default message
+                            ArrayList<Socket> receiver = roomList.get(number);
 
-                            /*ArrayList<Socket> clist = roomList.get(number);
-
-                            for(Socket t : clist){
-                                String s = clientList.get(t).getTalker();
-                                if(!s.equals(talker)){
-                                    PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(t.getOutputStream())), true);
-                                    o.println(msg.toString());
-                                }
-                            }*/
+                            for(Socket s : receiver){
+                                PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(conn.getOutputStream())), true);
+                                o.println("[" + talker + "] : " + message );
+                            }
 
                             break;
                         case 1:
                             // generate pin number
-                            Random r = new Random();
                             String pin = randomSeed.elementAt(seed++);
 
                             response = setMSG(func, pin, "[generatePin] "+ pin +" Done.");
 
-                            clientList.get(number).setHost();
+                            ClientInfo myInfo = clientList.get(conn);
+                            myInfo.setHost();
+                            myInfo.setNumber(pin);
+
                             roomList.put(pin,new ArrayList<>());
                             roomList.get(pin).add(conn);
 
@@ -176,9 +181,12 @@ public class TCPServer implements Runnable {
                             break;
                         case 2:
                             // request enter
-                            //db.query("hello", "bb");
                             if(number.equals("12345")){
 				                System.out.println("[requestEnter] TEST");
+				                //
+                                clientList.get(conn).setNumber(number);
+                                roomList.get(number).add(conn);
+
 				                response = setMSG(func, number, "detail ");
 			                }                    
 			                else if(roomList.get(number) == null){
@@ -187,7 +195,12 @@ public class TCPServer implements Runnable {
                             } else {
                                 // details of room
                                 System.out.println("[requestEnter] EXIST");
+
+                                clientList.get(conn).setNumber(number);
+                                roomList.get(number).add(conn);
+
                                 response = setMSG(func, number, "detail ");
+                                // 다른 참가자들에게 참가함을 알려줌.
                             }
                             out.println(response.toString());
                             break;
@@ -208,7 +221,12 @@ public class TCPServer implements Runnable {
                     }
                 } catch (Exception e) {
                     //e.printStackTrace();
+                    roomList.get(number).remove(conn);
+                    clientList.remove(conn);
+
                     System.out.println("Socket Close");
+
+
                     break;
                 }
             }
