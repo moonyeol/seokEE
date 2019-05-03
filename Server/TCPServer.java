@@ -117,21 +117,20 @@ public class TCPServer implements Runnable {
             this.conn = conn;
         }
 
-        private JSONObject setMSG(int func, String number, String message){
+        private JSONObject setMSG(int func, String message){
             JSONObject response = new JSONObject();
 
-            response.put("talker", "#Server");
             response.put("func", func);
-            response.put("number", number);
-            response.put("time", new Date().toString());
             response.put("message", message);
+            response.put("time", new Date().toString());
 
             return response;
         }
 
         public void run(){
-            String number = "", talker = "", message = "";
+            String message = "";
             int func;
+            ClientInfo myInfo = clientList.get(conn);
 
             while(true) {
                 try {
@@ -145,13 +144,13 @@ public class TCPServer implements Runnable {
 
                     JSONObject msg = (JSONObject) parser.parse(str);
 
-                    talker = new String(msg.get("talker").toString());
-                    message = new String(msg.get("message").toString());
+                    message = msg.get("message").toString();
                     func = Integer.parseInt(msg.get("func").toString());
-                    number = new String(msg.get("number").toString());
-                    //Date time = new Date(msg.get("time").toString());
 
-                    System.out.println("time: " + new Date()+" talker: "+talker + " message: " + message + " func: " + func + " num: " + number);
+                    String number = myInfo.getNumber();
+                    String talker = myInfo.getTalker();
+
+                    System.out.println("time: " + new Date() +" talker: "+ talker + " message: " + message + " func: " + func + " num: " + number);
 
                     switch (func) {
                         case 0:
@@ -159,18 +158,19 @@ public class TCPServer implements Runnable {
                             ArrayList<Socket> receiver = roomList.get(number);
 
                             for(Socket s : receiver){
-                                PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(conn.getOutputStream())), true);
+                                PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
                                 o.println("[" + talker + "] : " + message );
                             }
 
+                            db.insertTalk(new Talk(number, new Date().toString(), message, talker));
                             break;
                         case 1:
                             // generate pin number
                             String pin = randomSeed.elementAt(seed++);
 
-                            response = setMSG(func, pin, "[generatePin] "+ pin +" Done.");
+                            response = setMSG(func, "[generatePin] "+ pin +" Done.");
 
-                            ClientInfo myInfo = clientList.get(conn);
+                            myInfo = clientList.get(conn);
                             myInfo.setHost();
                             myInfo.setNumber(pin);
 
@@ -181,47 +181,72 @@ public class TCPServer implements Runnable {
                             break;
                         case 2:
                             // request enter
-                            if(number.equals("12345")){
+                            if(message.equals("12345")){
 				                System.out.println("[requestEnter] TEST");
 				                //
-                                clientList.get(conn).setNumber(number);
-                                roomList.get(number).add(conn);
+                                clientList.get(conn).setNumber("12345");
+                                roomList.get("12345").add(conn);
 
-				                response = setMSG(func, number, "detail ");
+				                response = setMSG(func, "detail ");
 			                }                    
-			                else if(roomList.get(number) == null){
+			                else if(roomList.get(message) == null){
                                 System.out.println("[requestEnter] NULL");
-                                response = setMSG(func, number, "false");
+                                response = setMSG(func, "false");
                             } else {
                                 // details of room
                                 System.out.println("[requestEnter] EXIST");
 
-                                clientList.get(conn).setNumber(number);
-                                roomList.get(number).add(conn);
+                                clientList.get(conn).setNumber(message);
+                                roomList.get(message).add(conn);
 
-                                response = setMSG(func, number, "detail ");
-                                // 다른 참가자들에게 참가함을 알려줌.
+                                response = setMSG(func, "detail ");
+                                
                             }
                             out.println(response.toString());
                             break;
                         case 3:
-                            // request exit
+                            // request Start
 
+                            //
+                            db.insertTalk(new Talk(number,new Date().toString(), "START", talker));
                             break;
                         case 4:
-                            // request past log
-
+                            // request Finish
+                            db.insertTalk(new Talk(number,new Date().toString(), "END", talker));
                             break;
                         case 5:
                             // set Talker
-                            clientList.get(conn).setTalker(talker);
-                            // response = setMSG(func, number, "[setTalker] Done.");
-                            // out.println(response.toString());
+                            clientList.get(conn).setTalker(message);
+                            break;
+                        case 6:
+                            // request exit
+
+                            ArrayList<Socket> part = roomList.get(myInfo.getNumber());
+                            roomList.get(myInfo.getNumber()).remove(conn);
+
+                            // broadcast to other participant.
+                            if(part.isEmpty()) db.insertTalk(new Talk(number,new Date().toString(), "END", talker));
+                            //
+                            break;
+                        case 7:
+                            // request enroll
+                            break;
+                        case 8:
+                            // request past Log
+
+
+                            break;
+                        case 9:
+                            // request Login
+
+
                             break;
                     }
                 } catch (Exception e) {
                     //e.printStackTrace();
-                    roomList.get(number).remove(conn);
+
+                    // temporary.....
+                    roomList.get(myInfo.getNumber()).remove(conn);
                     clientList.remove(conn);
 
                     System.out.println("Socket Close");
