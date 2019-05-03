@@ -17,10 +17,32 @@ public class enter extends Activity {
         setContentView(R.layout.activity_enter);
 
         Button button = (Button) findViewById(R.id.enter_room);
+        Button button2 = (Button) findViewById(R.id.make_room);
+        Button button3 = (Button) findViewById(R.id.mypage);
+        button2.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+
+                Intent intent = new Intent(enter.this, MainActivity.class);
+                intent.putExtra("ishost",true);
+                startActivity(intent);
+
+            }
+        });
+
         button.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
 
                 Intent intent = new Intent(enter.this, JoinRoom.class);
+
+                startActivity(intent);
+            }
+        });
+        button3.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+
+                Intent intent = new Intent(enter.this, mypage.class);
+
+
                 startActivity(intent);
             }
         });

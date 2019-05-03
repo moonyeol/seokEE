@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class second extends Activity {
     public static Activity _second;
+    public static boolean islogin = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         _second = second.this;

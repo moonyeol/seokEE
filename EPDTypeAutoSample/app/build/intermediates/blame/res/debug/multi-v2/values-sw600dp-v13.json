@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-2\\files-2.1\\4616a4e5d6a17dbe6e2854c13a957838\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

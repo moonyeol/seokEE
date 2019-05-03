@@ -1,5 +1,4 @@
 package com.naver.naverspeech.client;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Paint;
@@ -10,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class anonymous extends Activity {
-
+    public static String nickname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,14 +20,14 @@ public class anonymous extends Activity {
         button.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 EditText edittext = (EditText) findViewById(R.id.editText2);
-                String nickname = edittext.getText().toString();
-                commSock.kick(nickname,5,0,"");
+                nickname = edittext.getText().toString();
+                commSock.kick(5,nickname);
 
 
                 Intent intent = new Intent(anonymous.this, enter.class);
-                second se = (second)second._second;
+                loginActivity lo = (loginActivity)loginActivity._login;
                 startActivity(intent);
-                se.finish();
+                lo.finish();
                 finish();
 
             }

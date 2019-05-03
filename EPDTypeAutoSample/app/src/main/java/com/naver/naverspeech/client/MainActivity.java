@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
@@ -55,12 +56,15 @@ public class MainActivity extends Activity {
     private String mResult;
     private AudioWriterPCM writer;
 
+    private String msg;
+    private boolean flag = true;
+
     // 음성 인식 메시지를 처리합니다.
     private void handleMessage(Message msg) {
         switch (msg.what) {
             // 음성 인식을 시작할 준비가 완료된 경우
             case R.id.clientReady:
-                txtResult.setText("Connected");
+                Toast t = Toast.makeText(this, "Connected..", Toast.LENGTH_SHORT);
                 writer = new AudioWriterPCM(Environment.getExternalStorageDirectory().getAbsolutePath() + "/NaverSpeechTest");
                 writer.open("Test");
                 break;
@@ -70,24 +74,17 @@ public class MainActivity extends Activity {
                 break;
             // 처리가 되고 있는 도중에 결과를 받은 경우
             case R.id.partialResult:
-                mResult = (String) (msg.obj);
-                txtResult.setText(mResult);
                 break;
             // 최종 인식이 완료되면 유사 결과를 모두 보여줍니다.
             case R.id.finalResult:
                 SpeechRecognitionResult speechRecognitionResult = (SpeechRecognitionResult) msg.obj;
                 List<String> results = speechRecognitionResult.getResults();
-                StringBuilder strBuf = new StringBuilder();
                 String txt = results.get(0);
-                // 전달 받은 모든 문자열을 차례대로 출력합니다.
-                for(String result : results) {
-                    strBuf.append(result);
-                    strBuf.append("\n");
-                }
+
                 Toast.makeText(this,txt, Toast.LENGTH_SHORT).show();
-                commSock.kick("",0,0,txt);
-                mResult = strBuf.toString();
-                txtResult.setText(mResult);
+
+                // 12345 test
+                commSock.kick(0, txt);
                 break;
             // 인식 오류가 발생한 경우
             case R.id.recognitionError:
@@ -96,16 +93,22 @@ public class MainActivity extends Activity {
                 }
                 mResult = "Error code : " + msg.obj.toString();
                 txtResult.setText(mResult);
-                btnStart.setText(R.string.str_start);
-                btnStart.setEnabled(true);
+
+                //btnStart.setText(R.string.str_start);
+                //btnStart.setEnabled(true);
+
+                if(naverRecognizer != null) naverRecognizer.recognize();
                 break;
             // 음성 인식 비활성화 상태인 경우
             case R.id.clientInactive:
                 if (writer != null) {
                     writer.close();
                 }
-                btnStart.setText(R.string.str_start);
-                btnStart.setEnabled(true);
+
+                //btnStart.setText(R.string.str_start);
+                //btnStart.setEnabled(true);
+
+                if(naverRecognizer != null) naverRecognizer.recognize();
                 break;
         }
     }
@@ -113,10 +116,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtResult = (TextView) findViewById(R.id.txt_result);
+        txtResult = (TextView) findViewById(R.id.content);
         btnStart = (Button) findViewById(R.id.btn_start);
+
         handler = new RecognitionHandler(this);
         naverRecognizer = new NaverRecognizer(this, handler, CLIENT_ID);
+
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -159,7 +164,7 @@ public class MainActivity extends Activity {
                         /* 음성 인식 기능을 처리합니다. */
                         if(!naverRecognizer.getSpeechRecognizer().isRunning()) {
                             mResult = "";
-                            txtResult.setText("Connecting...");
+                            Toast.makeText(MainActivity.this, "Connecting..", Toast.LENGTH_SHORT);
                             btnStart.setText(R.string.str_stop);
                             naverRecognizer.recognize();
                         } else {
@@ -174,7 +179,7 @@ public class MainActivity extends Activity {
                     /* 음성 인식 기능을 처리합니다. */
                     if(!naverRecognizer.getSpeechRecognizer().isRunning()) {
                         mResult = "";
-                        txtResult.setText("Connecting...");
+                        Toast.makeText(MainActivity.this, "Connecting..", Toast.LENGTH_SHORT);
                         btnStart.setText(R.string.str_stop);
                         naverRecognizer.recognize();
                     } else {
@@ -185,6 +190,31 @@ public class MainActivity extends Activity {
                 }
             }
         });
+
+        new Thread(new Runnable(){
+            public void run(){
+                try {
+                    while(flag) {
+                        msg = commSock.read();
+
+                        // 원래는 여기서 func에 맞게 메시지 처리를 해줘야 한다.
+
+                        // 1. 참가자가 추가되거나 나가거나
+                        // 2. 호스트가 시작버튼을 눌렀거나
+                        // 3. 호스트가 종료버튼을 눌렀거나
+                        // 4. 메시지가 왔거나
+                        // 5.
+                        runOnUiThread(new Runnable() {
+                            public void run() {
+                                txtResult.append("\n"+msg);
+                            }
+                        });
+                    }
+                } catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     @Override
@@ -197,7 +227,6 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         mResult = "";
-        txtResult.setText("");
         btnStart.setText(R.string.str_start);
         btnStart.setEnabled(true);
     }
@@ -206,7 +235,13 @@ public class MainActivity extends Activity {
         super.onStop();
         // 음성인식 서버를 종료합니다.
         naverRecognizer.getSpeechRecognizer().release();
+        flag = false;
     }
+
+    protected void onDestroy(){
+        super.onDestroy();
+    }
+
     // SpeechRecognizer 쓰레드의 메시지를 처리하는 핸들러를 정의합니다.
     static class RecognitionHandler extends Handler {
         private final WeakReference<MainActivity> mActivity;
@@ -221,6 +256,7 @@ public class MainActivity extends Activity {
             }
         }
     }
+
 
 }
 
@@ -297,7 +333,6 @@ class NaverRecognizer implements SpeechRecognitionListener {
         msg.sendToTarget();
     }
 }
-
 
 
 

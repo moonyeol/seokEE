@@ -33,8 +33,7 @@ public class First extends Activity {
                 finish();
                 // Run next activity
                 Intent intent = new Intent();
-                intent.setClass(First.this,
-                        second.class);
+                intent.setClass(First.this, loginActivity.class);
                 startActivity(intent);
             }
         };

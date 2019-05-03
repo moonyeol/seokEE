@@ -15,4 +15,16 @@
     <string name="input">확인</string>
     <string name="login">로그인</string>
     <string name="anonymous">익명입장</string>
+    <string name="content">회의 내용</string>
+    <string name="users">참여자 목록</string>
+    <string name="sign_up">Sign up</string>
+    <string name="password">Password</string>
+    <string name="remember_login">Remember login</string>
+    <string name="log_in">Log in</string>
+    <string name="id">id</string>
+    <string name="my_page">my page</string>
+    <string name="ID_text">ID</string>
+    <string name="user_name">이름</string>
+    <string name="nickname_text">닉네임</string>
+    <string name="history">과거 기록</string>
 </resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+
+    <EditText
+        android:id="@+id/idInput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="16dp"
+        android:autofillHints=""
+        android:hint="@string/id"
+        android:inputType=""
+        app:layout_constraintBottom_toTopOf="@+id/passwordInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="0dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/passwordInput"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="26dp"
+        android:layout_toStartOf="@+id/joinButton"
+        android:text="@string/log_in"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/reid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/joinButton"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+
+    <Button
+        android:id="@+id/anonymous"
+        android:layout_width="140dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="17dp"
+        android:text="@string/anonymous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reid" />
+
+
+    <Button
+        android:id="@+id/joinButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignTop="@+id/loginButton"
+        android:layout_alignEnd="@+id/passwordInput"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/reid"
+        app:layout_constraintEnd_toStartOf="@+id/loginButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+
+    <CheckBox
+        android:id="@+id/reid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="176dp"
+        android:text="@string/remember_login"
+        app:layout_constraintBottom_toTopOf="@+id/anonymous"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/joinButton" />
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="23dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/joinButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idInput" />
+
+
+</android.support.constraint.ConstraintLayout>

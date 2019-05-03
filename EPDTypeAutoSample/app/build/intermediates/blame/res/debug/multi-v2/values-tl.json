@@ -4,7 +4,17 @@
             "outputFile": "C:\\Users\\ansduf94\\Downloads\\naverspeech-sdk-android-master\\naverspeech-sdk-android-master\\samples\\EPDTypeAutoSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-tl\\values-tl.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\9569b9cdc21335ffc7aedf7fbfc90b0e\\res\\values-tl\\values-tl.xml",
+                    "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-2\\files-2.1\\4616a4e5d6a17dbe6e2854c13a957838\\res\\values-tl\\values-tl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,224,332,449,537,643,764,843,921,1005,1114,1225,1326,1436,1553,1661,1824,1926",
+                        "endColumns": "118,107,116,87,105,120,78,77,83,108,110,100,109,116,107,162,101,83",
+                        "endOffsets": "219,327,444,532,638,759,838,916,1000,1109,1220,1321,1431,1548,1656,1819,1921,2005"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-2\\files-2.1\\c089cf8cc1bbb9cd3daf2d3cec86ff86\\res\\values-tl\\values-tl.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -18,16 +28,6 @@
                         "startOffsets": "2010",
                         "endColumns": "100",
                         "endOffsets": "2106"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\054ea5a4fb7cf760cf0b3641884dd32d\\res\\values-tl\\values-tl.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,224,332,449,537,643,764,843,921,1005,1114,1225,1326,1436,1553,1661,1824,1926",
-                        "endColumns": "118,107,116,87,105,120,78,77,83,108,110,100,109,116,107,162,101,83",
-                        "endOffsets": "219,327,444,532,638,759,838,916,1000,1109,1220,1321,1431,1548,1656,1819,1921,2005"
                     }
                 }
             ]

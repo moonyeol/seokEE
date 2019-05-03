@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Apr 26 17:49:14 KST 2019
+#Fri May 03 20:11:07 KST 2019
 17.baseType=DIRECTORY
 4.path=lib/mips64/libNaverspeechJNI-1.1.15.so
 8.set=DEX
