@@ -16,7 +16,7 @@ public class TCPServer implements Runnable {
     public static final int ServerPort = 9000;
     //public static final String ServerIP = "18.223.143.140";
 
-    private Database db;
+    private DBCon db;
     private int seed = 0;
     private HashMap<Socket, ClientInfo> clientList = new HashMap<>();
     private HashMap<String, ArrayList<Socket>> roomList = new HashMap<>();
@@ -39,7 +39,7 @@ public class TCPServer implements Runnable {
 
         try {
             System.out.println("Server: DB Connecting..");
-            db = new Database();
+            db = new DBCon();
             System.out.println("Server: Success DB Connect");
 
             System.out.println("Server: Socket Connecting...");
@@ -246,7 +246,7 @@ public class TCPServer implements Runnable {
                     //e.printStackTrace();
 
                     // temporary.....
-                    roomList.get(myInfo.getNumber()).remove(conn);
+                    if(roomList.get(myInfo.getNumber()) != null) roomList.get(myInfo.getNumber()).remove(conn);
                     clientList.remove(conn);
 
                     System.out.println("Socket Close");
