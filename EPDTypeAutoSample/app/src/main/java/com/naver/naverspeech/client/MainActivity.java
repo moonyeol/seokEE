@@ -55,9 +55,10 @@ public class MainActivity extends Activity {
     private Button btnStart;
     private String mResult;
     private AudioWriterPCM writer;
-
     private String msg;
-    private boolean flag = true;
+    private boolean isRunning = true;
+    private TextView et_pin;
+
 
     // 음성 인식 메시지를 처리합니다.
     private void handleMessage(Message msg) {
@@ -115,12 +116,24 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        txtResult = (TextView) findViewById(R.id.content);
-        btnStart = (Button) findViewById(R.id.btn_start);
+        txtResult = findViewById(R.id.content);
+        btnStart = findViewById(R.id.btn_start);
 
         handler = new RecognitionHandler(this);
         naverRecognizer = new NaverRecognizer(this, handler, CLIENT_ID);
+
+        Intent intent = getIntent();
+        Boolean host = intent.getExtras().getBoolean("isHost");
+        String pin = intent.getExtras().getString("pin");
+
+        et_pin = findViewById(R.id.pincode4);
+        et_pin.setText(pin);
+        Button startBtn = findViewById(R.id.btn_start);
+
+        if(host) startBtn.setVisibility(Button.VISIBLE);
+        else startBtn.setVisibility(Button.GONE);
 
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -194,7 +207,7 @@ public class MainActivity extends Activity {
         new Thread(new Runnable(){
             public void run(){
                 try {
-                    while(flag) {
+                    while(isRunning) {
                         msg = commSock.read();
 
                         // 원래는 여기서 func에 맞게 메시지 처리를 해줘야 한다.
@@ -235,7 +248,7 @@ public class MainActivity extends Activity {
         super.onStop();
         // 음성인식 서버를 종료합니다.
         naverRecognizer.getSpeechRecognizer().release();
-        flag = false;
+        isRunning = false;
     }
 
     protected void onDestroy(){
@@ -257,7 +270,30 @@ public class MainActivity extends Activity {
         }
     }
 
-
+    public void bt_exit(View view) // 나가기 버튼을 눌렀을 때
+    {
+        // 확인창을 띄우고 yes면 나가기, _데이터 저장은 필요없,,! no면 안나가기
+        new android.support.v7.app.AlertDialog.Builder(this)
+                .setTitle("회의 종료")
+                .setMessage("정말 나가시겠습니까?")
+                .setIcon(android.R.drawable.ic_menu_save)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // 확인시 처리 로직
+                        commSock.kick(commSock.EXIT, "");
+                        Toast.makeText(MainActivity.this, "저장을 완료했습니다.", Toast.LENGTH_SHORT).show();
+                        isRunning = false;
+                        finish();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // 취소시 처리 로직
+                        Toast.makeText(MainActivity.this, "취소하였습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .show();
+    }
 }
 
 
@@ -333,6 +369,3 @@ class NaverRecognizer implements SpeechRecognitionListener {
         msg.sendToTarget();
     }
 }
-
-
-

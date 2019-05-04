@@ -24,7 +24,6 @@
         <activity android:name="com.naver.naverspeech.client.mypage" />
         <activity android:name="com.naver.naverspeech.client.loginActivity" />
         <activity android:name="com.naver.naverspeech.client.joinActivity" />
-        <activity android:name="com.naver.naverspeech.client.second" />
         <activity android:name="com.naver.naverspeech.client.anonymous" />
         <activity android:name="com.naver.naverspeech.client.JoinRoom" />
         <activity android:name="com.naver.naverspeech.client.enter" />

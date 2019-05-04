@@ -9,11 +9,9 @@
     <Button
         android:id="@+id/make_room"
         android:layout_width="140dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="178dp"
-        android:layout_marginBottom="31dp"
         android:text="@string/make_room"
-        app:layout_constraintBottom_toTopOf="@+id/enter_room"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,11 +19,12 @@
     <Button
         android:id="@+id/enter_room"
         android:layout_width="140dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="274dp"
         android:text="@string/enter_room"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/make_room" />
 

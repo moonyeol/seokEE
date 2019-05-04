@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class JoinRoom extends Activity {
 
@@ -15,18 +16,26 @@ public class JoinRoom extends Activity {
         setContentView(R.layout.activity_join_room);
 
 
-        Button button = (Button) findViewById(R.id.button3);
+        Button button = findViewById(R.id.button3);
+
         button.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                EditText edittext = (EditText) findViewById(R.id.editText);
-                int pkey = Integer.parseInt(edittext.getText().toString());
-                commSock.kick(2,"");
-                Intent intent = new Intent(JoinRoom.this, MainActivity.class);
+                EditText edittext = findViewById(R.id.editText);
+                String key = edittext.getText().toString();
 
-                intent.putExtra("ishost",false);
-                intent.putExtra("pincode",pkey);
+                commSock.kick(commSock.ENTER,key);
+                String s = commSock.read();
 
-                startActivity(intent);
+                if(s.equals("true")) {
+                    Intent intent = new Intent(JoinRoom.this, MainActivity.class);
+
+                    intent.putExtra("isHost", false);
+                    intent.putExtra("pin", key);
+
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(JoinRoom.this, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

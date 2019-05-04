@@ -21,6 +21,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.naver.naverspeech.client.resultActivity" />
+        <activity android:name="com.naver.naverspeech.client.mypage" />
         <activity android:name="com.naver.naverspeech.client.loginActivity" />
         <activity android:name="com.naver.naverspeech.client.joinActivity" />
         <activity android:name="com.naver.naverspeech.client.second" />

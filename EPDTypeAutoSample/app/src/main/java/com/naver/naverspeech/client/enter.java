@@ -16,37 +16,39 @@ public class enter extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
 
-        Button button = (Button) findViewById(R.id.enter_room);
-        Button button2 = (Button) findViewById(R.id.make_room);
-        Button button3 = (Button) findViewById(R.id.mypage);
-        button2.setOnClickListener(new Button.OnClickListener(){
+        Button joinBtn = findViewById(R.id.enter_room);
+        Button makeBtn = findViewById(R.id.make_room);
+        Button pageBtn = findViewById(R.id.mypage);
+
+        joinBtn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-
-                Intent intent = new Intent(enter.this, MainActivity.class);
-                intent.putExtra("ishost",true);
-                startActivity(intent);
-
-            }
-        });
-
-        button.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v) {
-
                 Intent intent = new Intent(enter.this, JoinRoom.class);
-
                 startActivity(intent);
             }
         });
-        button3.setOnClickListener(new Button.OnClickListener(){
+
+        makeBtn.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) { //make_room
+                Intent intent = new Intent(enter.this, MainActivity.class);
+
+                commSock.kick(commSock.PINCODE, "");
+                String key = commSock.read();
+
+                intent.putExtra("isHost",true);
+                intent.putExtra("pin", key);
+                startActivity(intent);
+            }
+        });
+
+        pageBtn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
 
                 Intent intent = new Intent(enter.this, mypage.class);
-
-
                 startActivity(intent);
             }
         });
     }
+
     protected void onStop() {
         super.onStop();
 
@@ -54,6 +56,7 @@ public class enter extends Activity {
     protected void onDestroy(){
         Toast.makeText(this,"onDestroy", Toast.LENGTH_SHORT).show();
         super.onDestroy();
+
         try {
             commSock.socket.close();
         }catch(Exception e){

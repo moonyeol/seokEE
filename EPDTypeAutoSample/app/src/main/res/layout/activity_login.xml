@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/transparent"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
@@ -11,7 +12,7 @@
     <EditText
         android:id="@+id/idInput"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="60dp"
         android:layout_marginTop="96dp"
@@ -23,13 +24,14 @@
         app:layout_constraintBottom_toTopOf="@+id/passwordInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" tools:targetApi="o"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="o" />
 
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/passwordInput"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="26dp"
@@ -43,10 +45,16 @@
 
     <Button
         android:id="@+id/anonymous"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="140dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="17dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
         android:text="@string/anonymous"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textDirection="firstStrongRtl"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +64,7 @@
     <Button
         android:id="@+id/joinButton"
         android:layout_width="0dp"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/loginButton"
         android:layout_alignEnd="@+id/passwordInput"
         android:layout_marginStart="60dp"
@@ -77,13 +85,14 @@
         android:text="@string/remember_login"
         app:layout_constraintBottom_toTopOf="@+id/anonymous"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
     <EditText
         android:id="@+id/passwordInput"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="16dp"
@@ -94,7 +103,8 @@
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idInput" tools:targetApi="o"/>
+        app:layout_constraintTop_toBottomOf="@+id/idInput"
+        tools:targetApi="o" />
 
 
 </android.support.constraint.ConstraintLayout>

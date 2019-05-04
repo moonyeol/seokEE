@@ -17,7 +17,6 @@
         <activity android:name=".mypage" />
         <activity android:name=".loginActivity" />
         <activity android:name=".joinActivity" />
-        <activity android:name=".second" />
         <activity android:name=".anonymous" />
         <activity android:name=".JoinRoom" />
         <activity android:name=".enter" />

@@ -10,15 +10,17 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONObject;
 
 public class loginActivity extends AppCompatActivity {
 
     EditText idText, passwordText;
     Button loginButton, joinButton, anonymousbutton;
     TextView reid;
-    String ids, pws; // 정보 추가하기
+    String ids, pws;
     public static Activity _login;
-
 
 
     @Override
@@ -38,15 +40,31 @@ public class loginActivity extends AppCompatActivity {
 
         loginButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
+                // 로그인 맞는지 체크.
+                JSONObject send = new JSONObject();// JSONObject 생성
 
-                Intent intent = new Intent(loginActivity.this, enter.class);
-                finish();
-                startActivity(intent);
+                try {
+                    send.put("id", idText.getText().toString());
+                    send.put("pw", passwordText.getText().toString());
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+
+                commSock.kick(commSock.LOGIN, send.toString());
+                String check = commSock.read();
+
+                if(check.equals("true")){
+                    Toast.makeText(loginActivity.this, "로그인 성공!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(loginActivity.this, enter.class);
+                    finish();
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(loginActivity.this, "존재하지 않는 아이디거나 틀린 비밀번호입니다.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         joinButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-
                 Intent intent = new Intent(loginActivity.this, joinActivity.class);
                 finish();
                 startActivity(intent);
@@ -55,23 +73,11 @@ public class loginActivity extends AppCompatActivity {
 
         anonymousbutton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-
                 Intent intent = new Intent(loginActivity.this, anonymous.class);
                 finish();
                 startActivity(intent);
             }
         });
-
-    }
-
-    public void login_login(View view){
-
-        ids = idText.getText().toString();        //id
-        pws = passwordText.getText().toString();            //pw
-
-        // 로그인
-        commSock.kick(9,ids+"&"+pws);
-
     }
 
 

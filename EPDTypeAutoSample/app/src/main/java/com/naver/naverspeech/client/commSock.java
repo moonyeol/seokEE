@@ -25,8 +25,21 @@ public class commSock {
     public static BufferedWriter netWriter;
     public static BufferedReader netReader;
 
+    public static final int MSG = 0;
+    public static final int PINCODE = 1;
+    public static final int ENTER = 2;
+    public static final int START = 3;
+    public static final int END = 4;
+    public static final int SET_NICK = 5;
+    public static final int EXIT = 6;
+    public static final int ENROLL = 7;
+    public static final int PASTLOG = 8;
+    public static final int LOGIN = 9;
+    public static final int DUPLICATE = 10;
+
     public static void setSocket(){
         Log.i("my","Try SetSocket");
+
         try{
             socket = new Socket("18.223.143.140", 9000);
             netWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -45,31 +58,19 @@ public class commSock {
     public static void kick(int func, String strings)
     {
         JSONObject send = new JSONObject();// JSONObject 생성
-        JSONArray jsonArray = new JSONArray();
+
         try {
             send.put("func", func);
             send.put("time", new Date().toString());
             send.put("message", strings);
+
         }catch(Exception e){
             e.printStackTrace();
         }
-        // 메세지 보낼 때 commSock 클래스를 이용
-        // send.toString으로 해야 됩니다.
+
         commSock.sendMessage(send.toString());
     }
 
-    public static String convertChatMessage(JSONObject arg){
-        StringBuilder sb = new StringBuilder();
-
-        try {
-            sb.append("[" + arg.getString("talker") + "] : ");
-            sb.append(arg.getString("message") + "\n");
-        }catch(Exception e){
-            e.printStackTrace();
-            return null;
-        }
-        return sb.toString();
-    }
     public static String read(){
         try {
             String s = netReader.readLine();

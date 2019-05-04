@@ -19,6 +19,7 @@ public class First extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
         // The thread to wait for splash screen events
         splashThread = new Thread() {
             @Override
@@ -26,10 +27,10 @@ public class First extends Activity {
                 try {
                     synchronized (this) {
                         // Wait given period of time or exit on touch
-                        wait(10000);
+                        wait(1000);
                     }
-                } catch (InterruptedException ex) {
-                }
+                } catch (InterruptedException ex) {}
+
                 finish();
                 // Run next activity
                 Intent intent = new Intent();

@@ -16,20 +16,21 @@ public class anonymous extends Activity {
         setContentView(R.layout.activity_anonymous);
 
 
-        Button button = (Button) findViewById(R.id.button4);
+        Button button = findViewById(R.id.button4);
         button.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                EditText edittext = (EditText) findViewById(R.id.editText2);
+                EditText edittext = findViewById(R.id.editText2);
                 nickname = edittext.getText().toString();
-                commSock.kick(5,nickname);
 
 
+                commSock.kick(commSock.SET_NICK,nickname);
+
+                // nickname 을 서버에 보내고 메인메뉴화면으로 넘어감.
                 Intent intent = new Intent(anonymous.this, enter.class);
                 loginActivity lo = (loginActivity)loginActivity._login;
                 startActivity(intent);
                 lo.finish();
                 finish();
-
             }
         });
     }
