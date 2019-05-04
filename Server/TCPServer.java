@@ -20,7 +20,7 @@ public class TCPServer implements Runnable {
     private int seed = 0;
     private HashMap<Socket, ClientInfo> clientList = new HashMap<>();
     private HashMap<String, ArrayList<Socket>> roomList = new HashMap<>();
-    private Vector<String> randomSeed = new Vector<>();
+    private ArrayList<String> randomSeed = new ArrayList<>();
 
     @Override
     public void run() {
@@ -31,11 +31,8 @@ public class TCPServer implements Runnable {
                 if (r.nextInt(2) == 0) s.append((char) ((int) (r.nextInt(26)) + 97));
                 else s.append(r.nextInt(10));
             }
-            System.out.println(s.toString());
+            randomSeed.add(s.toString());
         }
-
-        ////////// FOR TEST
-        roomList.put("12345",new ArrayList<>());
 
         try {
             System.out.println("Server: DB Connecting..");
@@ -140,7 +137,7 @@ public class TCPServer implements Runnable {
                     String str = in.readLine();
 
                     JSONParser parser = new JSONParser();
-                    JSONObject response;
+                    JSONObject response, info;
 
                     JSONObject msg = (JSONObject) parser.parse(str);
 
@@ -166,32 +163,29 @@ public class TCPServer implements Runnable {
                             break;
                         case 1:
                             // generate pin number
-                            String pin = randomSeed.elementAt(seed++);
+                            System.out.println("[generate PIN number]");
 
-                            response = setMSG(func, "[generatePin] "+ pin +" Done.");
+                            String pin = randomSeed.get(seed++).toString();
 
+                            System.out.println("[assign PIN number]");
                             myInfo = clientList.get(conn);
                             myInfo.setHost();
                             myInfo.setNumber(pin);
 
+                            System.out.println("[Set HOST and Number Success.]");
+
                             roomList.put(pin,new ArrayList<>());
                             roomList.get(pin).add(conn);
 
-                            out.println(response.toString());
+                            System.out.println("[Set RoomList Success]");
+
+                            out.println(pin);
                             break;
                         case 2:
                             // request enter
-                            if(message.equals("12345")){
-				                System.out.println("[requestEnter] TEST");
-				                //
-                                clientList.get(conn).setNumber("12345");
-                                roomList.get("12345").add(conn);
-
-				                response = setMSG(func, "detail ");
-			                }                    
-			                else if(roomList.get(message) == null){
+                            if(roomList.get(message) == null){
                                 System.out.println("[requestEnter] NULL");
-                                response = setMSG(func, "false");
+                                out.println("false");
                             } else {
                                 // details of room
                                 System.out.println("[requestEnter] EXIST");
@@ -199,10 +193,8 @@ public class TCPServer implements Runnable {
                                 clientList.get(conn).setNumber(message);
                                 roomList.get(message).add(conn);
 
-                                response = setMSG(func, "detail ");
-                                
+                                out.println("detail");
                             }
-                            out.println(response.toString());
                             break;
                         case 3:
                             // request Start
@@ -220,7 +212,6 @@ public class TCPServer implements Runnable {
                             break;
                         case 6:
                             // request exit
-
                             ArrayList<Socket> part = roomList.get(myInfo.getNumber());
                             roomList.get(myInfo.getNumber()).remove(conn);
 
@@ -230,6 +221,21 @@ public class TCPServer implements Runnable {
                             break;
                         case 7:
                             // request enroll
+                            info = (JSONObject)parser.parse(message);
+
+                            boolean result = db.memberResgisterID(
+                                new Member(
+                                    info.get("id").toString(),
+                                    info.get("pw").toString(), 
+                                    info.get("gender").toString(), 
+                                    info.get("birth").toString(), 
+                                    info.get("nick").toString()
+                                )
+                            );
+
+                            if(result) out.println("true");
+                            else out.println("false");
+
                             break;
                         case 8:
                             // request past Log
@@ -238,20 +244,33 @@ public class TCPServer implements Runnable {
                             break;
                         case 9:
                             // request Login
+                            info = (JSONObject)parser.parse(message);
 
+                            boolean loginCheck = db.memberLoginCheck(info.get("id").toString(), info.get("pw").toString());
+
+                            // retrieve nickname
+                            if(loginCheck){
+                                // temporary set id to nickname
+                                clientList.get(conn).setTalker(info.get("id").toString());
+                                out.println("true");
+                            } else out.println("false");
+
+                            break;
+                        case 10:
+                            // check duplicate
+                            boolean check = db.memberIDCheck(message);
+
+                            if(check) out.println("true");
+                            else out.println("false");
 
                             break;
                     }
                 } catch (Exception e) {
-                    //e.printStackTrace();
 
-                    // temporary.....
                     if(roomList.get(myInfo.getNumber()) != null) roomList.get(myInfo.getNumber()).remove(conn);
                     clientList.remove(conn);
 
                     System.out.println("Socket Close");
-
-
                     break;
                 }
             }
