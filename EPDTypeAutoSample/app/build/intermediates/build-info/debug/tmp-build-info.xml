@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
+    abi="x86"
     api-level="28"
     build-mode="FULL"
-    density="xxhdpi"
+    density="420dpi"
     format="10"
     plugin-version="3.4.0"
-    timestamp="1556956656843"
+    timestamp="1556977888958"
     token="6755385364952849584"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -18,9 +18,13 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="431" />
     <task
         name="verifier"
-        duration="0" />
+        duration="112" />
+
+    <artifact
+        location="C:\Users\admin\Desktop\capstone\seokEE-master\EPDTypeAutoSample\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        type="SPLIT" />
 
 </instant-run>
