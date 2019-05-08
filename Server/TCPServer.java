@@ -85,8 +85,8 @@ public class TCPServer implements Runnable {
             this.host = host;
         }
 
-        void setHost(){
-            this.host = true;
+        void setHost(boolean v){
+            this.host = v;
         }
         boolean getHost(){
             return this.host;
@@ -127,7 +127,6 @@ public class TCPServer implements Runnable {
         public void run(){
             String message = "";
             int func;
-            ClientInfo myInfo = clientList.get(conn);
 
             while(true) {
                 try {
@@ -144,8 +143,8 @@ public class TCPServer implements Runnable {
                     message = msg.get("message").toString();
                     func = Integer.parseInt(msg.get("func").toString());
 
-                    String number = myInfo.getNumber();
-                    String talker = myInfo.getTalker();
+                    String number = clientList.get(conn).getNumber();
+                    String talker = clientList.get(conn).getTalker();
 
                     System.out.println("time: " + new Date() +" talker: "+ talker + " message: " + message + " func: " + func + " num: " + number);
 
@@ -156,7 +155,7 @@ public class TCPServer implements Runnable {
 
                             for(Socket s : receiver){
                                 PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
-                                o.println("[" + talker + "] : " + message );
+                                o.println(setMSG(0,"[" + talker + "] : " + message).toString());
                             }
 
                             db.insertTalk(new Talk(number, new Date().toString(), message, talker));
@@ -168,9 +167,9 @@ public class TCPServer implements Runnable {
                             String pin = randomSeed.get(seed++).toString();
 
                             System.out.println("[assign PIN number]");
-                            myInfo = clientList.get(conn);
-                            myInfo.setHost();
-                            myInfo.setNumber(pin);
+                            
+                            clientList.get(conn).setHost(true);
+                            clientList.get(conn).setNumber(pin);
 
                             System.out.println("[Set HOST and Number Success.]");
 
@@ -192,19 +191,27 @@ public class TCPServer implements Runnable {
 
                                 clientList.get(conn).setNumber(message);
                                 roomList.get(message).add(conn);
-
-                                out.println("detail");
+                                
+                                /*for(Socket s : roomList.get(number)){
+                                    PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
+                                    o.println(setMSG(2,"talker").toString());
+                                }*/
                             }
                             break;
                         case 3:
                             // request Start
-
-                            //
                             db.insertTalk(new Talk(number,new Date().toString(), "START", talker));
+
+                            // broadcast to Participant
+                            /*for(Socket s : roomList.get(number)){
+                                PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
+                                o.println(setMSG(3,"").toString());
+                            }*/
+
                             break;
                         case 4:
                             // request Finish
-                            db.insertTalk(new Talk(number,new Date().toString(), "END", talker));
+                            // db.insertTalk(new Talk(number,new Date().toString(), "END", talker));
                             break;
                         case 5:
                             // set Talker
@@ -212,12 +219,17 @@ public class TCPServer implements Runnable {
                             break;
                         case 6:
                             // request exit
-                            ArrayList<Socket> part = roomList.get(myInfo.getNumber());
-                            roomList.get(myInfo.getNumber()).remove(conn);
+                            ArrayList<Socket> part = roomList.get(clientList.get(conn).getNumber());
+                            roomList.get(clientList.get(conn).getNumber()).remove(conn);
 
-                            // broadcast to other participant.
-                            if(part.isEmpty()) db.insertTalk(new Talk(number,new Date().toString(), "END", talker));
-                            //
+                            if(part.isEmpty()){
+                                roomList.remove(clientList.get(conn).getNumber());
+                                db.insertTalk(new Talk(number,new Date().toString(), "END", talker));
+                            }
+
+                            clientList.get(conn).setNumber("");
+                            clientList.get(conn).setHost(false);
+
                             break;
                         case 7:
                             // request enroll
@@ -267,7 +279,7 @@ public class TCPServer implements Runnable {
                     }
                 } catch (Exception e) {
 
-                    if(roomList.get(myInfo.getNumber()) != null) roomList.get(myInfo.getNumber()).remove(conn);
+                    if(roomList.get(clientList.get(conn).getNumber()) != null) roomList.get(clientList.get(conn).getNumber()).remove(conn);
                     clientList.remove(conn);
 
                     System.out.println("Socket Close");

@@ -672,7 +672,9 @@ id async
 id audioRecording
 id barrier
 id beginning
-id birthInput
+id birthDay
+id birthMonth
+id birthYear
 id blocking
 id bottom
 id btn_start
@@ -814,6 +816,7 @@ id textSpacerNoTitle
 id textView
 id textView1
 id textView2
+id textView3
 id textView4
 id textView5
 id textView7
