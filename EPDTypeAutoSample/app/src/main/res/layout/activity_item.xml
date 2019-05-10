@@ -26,9 +26,9 @@
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
                 android:text="TITLE"
-                android:textSize="15sp"
                 android:textColor="@android:color/black"
-                android:textStyle="bold"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -56,5 +56,26 @@
         android:text="@string/history"
         android:textSize="24sp"
         android:animateLayoutChanges="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/export"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:text="@string/make"
+            android:animateLayoutChanges="true"/>
+
+        <Button
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/detail"
+            android:animateLayoutChanges="true"/>
+    </LinearLayout>
 
 </LinearLayout>

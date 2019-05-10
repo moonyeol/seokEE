@@ -34,5 +34,5 @@
     <string name="make">파일받기</string>
     <string name="word_cloud">word_cloud</string>
     <string name="result">result</string>
-
+    <string name="detail">detail</string>
 </resources>

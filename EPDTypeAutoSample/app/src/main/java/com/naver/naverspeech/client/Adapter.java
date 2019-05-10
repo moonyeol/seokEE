@@ -8,13 +8,14 @@ import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder> {
+public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
 
     // adapter에 들어갈 list 입니다.
     private ArrayList<Data> listData = new ArrayList<>();
@@ -57,8 +58,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
         private TextView textView1;
         private TextView textView2;
-//        private ImageView imageView1;
-//        private ImageView imageView2;
+        private TextView textView3;
+        private ImageView imageView1;
+        private Button export;
+        private Button detail;
+
         private Data data;
         private int position;
 
@@ -67,7 +71,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
             textView1 = itemView.findViewById(R.id.textView1);
             textView2 = itemView.findViewById(R.id.textView2);
-//            imageView1 = itemView.findViewById(R.id.imageView1);
+            textView3 = itemView.findViewById(R.id.history_content);
+            imageView1 = itemView.findViewById(R.id.imageView1);
+            export = itemView.findViewById(R.id.export);
+            detail = itemView.findViewById(R.id.detail);
 //            imageView2 = itemView.findViewById(R.id.imageView2);
         }
 
@@ -77,46 +84,39 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
             textView1.setText(data.getTitle());
             textView2.setText(data.getContent());
-//            imageView1.setImageResource(data.getResId());
-//            imageView2.setImageResource(data.getResId());
+            textView3.setText(data.getMember());
+            imageView1.setImageResource(data.getResId());
+
 
             changeVisibility(selectedItems.get(position));
 
             itemView.setOnClickListener(this);
             textView1.setOnClickListener(this);
             textView2.setOnClickListener(this);
-//            imageView1.setOnClickListener(this);
+            imageView1.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.linearItem:
-                    if (selectedItems.get(position)) {
-                        // 펼쳐진 Item을 클릭 시
-                        selectedItems.delete(position);
-                    } else {
-                        // 직전의 클릭됐던 Item의 클릭상태를 지움
-                        selectedItems.delete(prePosition);
-                        // 클릭한 Item의 position을 저장
-                        selectedItems.put(position, true);
-                    }
-                    // 해당 포지션의 변화를 알림
-                    if (prePosition != -1) notifyItemChanged(prePosition);
-                    notifyItemChanged(position);
-                    // 클릭된 position 저장
-                    prePosition = position;
-                    break;
-                case R.id.textView1:
-                    Toast.makeText(context, data.getTitle(), Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.textView2:
-                    Toast.makeText(context, data.getContent(), Toast.LENGTH_SHORT).show();
-                    break;
-//                case R.id.imageView:
-//                    Toast.makeText(context, data.getTitle() + " 이미지 입니다.", Toast.LENGTH_SHORT).show();
-//                    break;
+
+            if(v.getId()==R.id.linearItem) {
+                if (selectedItems.get(position)) {
+                    // 펼쳐진 Item을 클릭 시
+                    selectedItems.delete(position);
+                } else {
+                    // 직전의 클릭됐던 Item의 클릭상태를 지움
+                    selectedItems.delete(prePosition);
+                    // 클릭한 Item의 position을 저장
+                    selectedItems.put(position, true);
+                }
+                // 해당 포지션의 변화를 알림
+                if (prePosition != -1) notifyItemChanged(prePosition);
+                notifyItemChanged(position);
+                // 클릭된 position 저장
+                prePosition = position;
             }
+
+
         }
 
         /**
@@ -139,10 +139,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
                     // value는 height 값
                     int value = (int) animation.getAnimatedValue();
                     // imageView의 높이 변경
-//                    imageView2.getLayoutParams().height = value;
-//                    imageView2.requestLayout();
-//                    // imageView가 실제로 사라지게하는 부분
-//                    imageView2.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
+                    textView3.getLayoutParams().height = value;
+                    textView3.requestLayout();
+                    export.getLayoutParams().height = value;
+                    export.requestLayout();
+                    detail.getLayoutParams().height = value;
+                    detail.requestLayout();
+
+                    // textView3가 실제로 사라지게하는 부분
+                    textView3.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
+                    export.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
+                    detail.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
+
+
                 }
             });
             // Animation start

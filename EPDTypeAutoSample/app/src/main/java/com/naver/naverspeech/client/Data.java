@@ -4,6 +4,8 @@ public class Data {
 
     private String title;
     private String content;
+    private String member;
+    private String number;
     private int resId;
 
     public String getTitle() {
@@ -14,8 +16,20 @@ public class Data {
         this.title = title;
     }
 
+    public void setMember(String member) {
+        this.member = member;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
     public String getContent() {
         return content;
+    }
+
+    public String getMember() {
+        return member;
     }
 
     public void setContent(String content) {

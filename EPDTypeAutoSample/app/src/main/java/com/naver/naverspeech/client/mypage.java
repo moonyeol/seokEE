@@ -42,19 +42,17 @@ public class mypage extends AppCompatActivity {
 
             TextView id_tv = (TextView) findViewById(R.id.id_tv);
             id_tv.setText(info.id);
-            TextView name_tv = (TextView) findViewById(R.id.name_tv);
-            id_tv.setText(info.name);
             TextView nickname_tv = (TextView) findViewById(R.id.nickname_tv);
-            id_tv.setText(info.nickname);
+            nickname_tv.setText(info.nickname);
 
 
 
-            Button make = findViewById(R.id.make);
-        make.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v) {
-//                commSock.kick();
-            }
-        });
+//            Button make = findViewById(R.id.make);
+//        make.setOnClickListener(new Button.OnClickListener(){
+//            public void onClick(View v) {
+////                commSock.kick();
+//            }
+//        });
         }
 
     private void init() {
@@ -75,6 +73,8 @@ public class mypage extends AppCompatActivity {
             // 각 List의 값들을 data 객체에 set 해줍니다.
             Data data = new Data();
             data.setTitle(info.historys.get(i).date);
+            data.setMember(info.historys.get(i).members);
+            data.setNumber(info.historys.get(i).number);
             if(info.historys.get(i).content.length()>100)
                 data.setContent(info.historys.get(i).content.substring(0,100));
 //            data.setResId(linfo.historys.get(i).content);
@@ -89,24 +89,24 @@ public class mypage extends AppCompatActivity {
 
     public class Info{
         String id;
-        String name;
+
         String nickname;
         LinkedList<history> historys;
 
         Info(){
             try {
+                historys = new LinkedList<>();
                 commSock.kick(commSock.REQUEST_USERINFO," ");
                 JSONArray arr = commSock.read();
                 JSONObject jsonObject = arr.getJSONObject(0);
                 JSONObject message = new JSONObject(jsonObject.optString("message"));
 
 
-                this.id = message.optString("id");
-                this.name = message.optString("name");
-                this.nickname = message.optString("nickname");
+                this.id = message.get("id").toString();
+                this.nickname = message.get("nickname").toString();
                 int i = 1;
                 while(arr.isNull(i)) {
-                    this.historys.add(new history(arr.getJSONObject(i)));
+                    this.historys.add(new history(new JSONObject(arr.getJSONObject(i).optString("message"))));
                     i++;
                 }
 
@@ -120,12 +120,12 @@ public class mypage extends AppCompatActivity {
             String number;
             String content;
             String date;
-            String[] members;
+            String members;
             history(JSONObject jobject){
                 this.number = jobject.optString("number");
                 this.content = jobject.optString("content");
                 this.date = jobject.optString("date");
-                this.members = jobject.optString("member").split(" ");
+                this.members = jobject.optString("member");
             }
         }
 

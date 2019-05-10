@@ -208,8 +208,8 @@ public class MainActivity extends Activity {
             public void run(){
                 try {
                     while(isRunning) {
-                        msg = commSock.read();
 
+                        msg = commSock.read().getJSONObject(0).optString("message");
                         // 원래는 여기서 func에 맞게 메시지 처리를 해줘야 한다.
 
                         // 1. 참가자가 추가되거나 나가거나
