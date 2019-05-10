@@ -276,22 +276,7 @@ public class DBCon {
     	return data;
     }
     
-    public String searchStartByRoom(String room) {
-    	String data = "";
-    	String query = "select time from talk where room = ? order by time asc;";
-    	PreparedStatement pstmt = null;
-    	try {
-    		pstmt = conn.prepareStatement(query);
-    		pstmt.setString(1, room);
-    		ResultSet rs = pstmt.executeQuery();
-    		rs.next();
-    		data = rs.getString("time");
-    	}catch(SQLException e)
-    	{
-    		e.printStackTrace();
-    	}
-    	return data;
-    }
+    
     
 }
 
