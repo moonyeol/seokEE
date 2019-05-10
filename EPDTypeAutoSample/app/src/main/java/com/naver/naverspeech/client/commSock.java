@@ -17,6 +17,8 @@ import java.net.Socket;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +38,7 @@ public class commSock {
     public static final int PASTLOG = 8;
     public static final int LOGIN = 9;
     public static final int DUPLICATE = 10;
+    public static final int REQUEST_FILE = 11;
 
     public static void setSocket(){
         Log.i("my","Try SetSocket");
@@ -71,13 +74,22 @@ public class commSock {
         commSock.sendMessage(send.toString());
     }
 
-    public static String read(){
+    public static JSONArray read(){
         try {
-            String s = netReader.readLine();
-            return s;
+            String jsonString = netReader.readLine();
+            JSONArray jsonArray = new JSONObject(jsonString).getJSONArray("server");
+
+            // usage
+
+            /*JSONArray arr = read();
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
+            String id = jsonObject.optString("id");
+            String nickname = jsonObject.optString("nickname");*/
+
+            return jsonArray;
         } catch(Exception e){
             e.printStackTrace();
-            return "";
+            return null;
         }
     }
 }
