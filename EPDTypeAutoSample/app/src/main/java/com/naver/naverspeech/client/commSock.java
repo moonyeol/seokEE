@@ -39,6 +39,7 @@ public class commSock {
     public static final int LOGIN = 9;
     public static final int DUPLICATE = 10;
     public static final int REQUEST_FILE = 11;
+    public static final int REQUEST_USERINFO = 12;
 
     public static void setSocket(){
         Log.i("my","Try SetSocket");
@@ -81,10 +82,18 @@ public class commSock {
 
             // usage
 
-            /*JSONArray arr = read();
-            JSONObject jsonObject = jsonArray.getJSONObject(0);
-            String id = jsonObject.optString("id");
-            String nickname = jsonObject.optString("nickname");*/
+            // JSONArray arr = read();
+            // JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+            // int func = jsonObject.optInt("func");
+            // JSONObject message = new JSONObject(jsonObject.optString("message"));
+
+            // normal
+            // String s = message.optString("content");
+
+            // request_USERINFO
+            // String id = message.optString("id");
+            // String nickName = message.optString("nickname");
 
             return jsonArray;
         } catch(Exception e){
