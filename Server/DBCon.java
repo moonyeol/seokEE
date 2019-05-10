@@ -255,8 +255,43 @@ public class DBCon {
     	}
     	return false;
     }
+    // input ID, return where participated room 
+    public ArrayList<String> searchRoomByID(String id){
+    	ArrayList<String> data = new ArrayList<>();
+    	String query = "select room from talk where id = ? group by room;";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, id);
+    		ResultSet rs = pstmt.executeQuery();
+    		while(rs.next())
+    		{
+    			data.add(new String(rs.getString("room")));
+    		}
+    		System.out.println("Calling success");
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return data;
+    }
     
-    
+    public String searchStartByRoom(String room) {
+    	String data = "";
+    	String query = "select time from talk where room = ? order by time asc;";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, room);
+    		ResultSet rs = pstmt.executeQuery();
+    		rs.next();
+    		data = rs.getString("time");
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return data;
+    }
     
 }
 
