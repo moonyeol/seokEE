@@ -82,18 +82,18 @@ public class commSock {
 
             // usage
 
-            // JSONArray arr = read();
-            // JSONObject jsonObject = jsonArray.getJSONObject(0);
-
-            // int func = jsonObject.optInt("func");
-            // JSONObject message = new JSONObject(jsonObject.optString("message"));
-
-            // normal
-            // String s = message.optString("content");
-
-            // request_USERINFO
-            // String id = message.optString("id");
-            // String nickName = message.optString("nickname");
+//             JSONArray arr = read();
+//             JSONObject jsonObject = jsonArray.getJSONObject(0);
+//
+//             int func = jsonObject.optInt("func");
+//             JSONObject message = new JSONObject(jsonObject.optString("message"));
+//
+//             normal
+//             String s = message.optString("content");
+//
+//             request_USERINFO
+//             String id = message.optString("id");
+//             String nickName = message.optString("nickname");
 
             return jsonArray;
         } catch(Exception e){

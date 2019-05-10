@@ -60,7 +60,9 @@ public class joinActivity extends AppCompatActivity {
         sId = et_id.getText().toString();
 
         commSock.kick(commSock.DUPLICATE, sId);
-        String id_chk =  commSock.read();
+        try {
+            String id_chk = commSock.read().getJSONObject(0).optString("id_chk");
+
 
         if(id_chk.equals("false")){
             re_chk = false;
@@ -68,6 +70,9 @@ public class joinActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this,"가능한 아이디 입니다.", Toast.LENGTH_SHORT).show();
             re_chk = true;
+        }
+        }catch(org.json.JSONException e){
+            e.printStackTrace();
         }
     }
 
@@ -101,8 +106,10 @@ public class joinActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            commSock.kick(commSock.ENROLL, send.toString());
-            String check = commSock.read();
+
+            try {
+                commSock.kick(commSock.ENROLL, send.toString());
+                String check = commSock.read().getJSONObject(0).optString("message");
 
             if(check.equals("true")){
                 Toast.makeText(this,"회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
@@ -111,7 +118,9 @@ public class joinActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this,"예기치 못한 오류가 발생했습니다.\n다시 시도해주세요.", Toast.LENGTH_SHORT).show();
             }
-
+            }catch(org.json.JSONException e){
+                e.printStackTrace();
+            }
         }
     }
 }

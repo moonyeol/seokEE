@@ -51,7 +51,8 @@ public class loginActivity extends AppCompatActivity {
                 }
 
                 commSock.kick(commSock.LOGIN, send.toString());
-                String check = commSock.read();
+                try {
+                String check = commSock.read().getJSONObject(0).optString("message");
 
                 if(check.equals("true")){
                     Toast.makeText(loginActivity.this, "로그인 성공!", Toast.LENGTH_SHORT).show();
@@ -60,6 +61,9 @@ public class loginActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     Toast.makeText(loginActivity.this, "존재하지 않는 아이디거나 틀린 비밀번호입니다.", Toast.LENGTH_SHORT).show();
+                }
+                }catch(org.json.JSONException e){
+                    e.printStackTrace();
                 }
             }
         });

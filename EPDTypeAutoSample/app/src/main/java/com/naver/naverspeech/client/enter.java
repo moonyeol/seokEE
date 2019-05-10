@@ -31,12 +31,18 @@ public class enter extends Activity {
             public void onClick(View v) { //make_room
                 Intent intent = new Intent(enter.this, MainActivity.class);
 
-                commSock.kick(commSock.PINCODE, "");
-                String key = commSock.read();
+
+                try {
+                    commSock.kick(commSock.PINCODE, "");
+                    String key = commSock.read().getJSONObject(0).optString("message");
+
 
                 intent.putExtra("isHost",true);
                 intent.putExtra("pin", key);
                 startActivity(intent);
+                }catch(org.json.JSONException e){
+                    e.printStackTrace();
+                }
             }
         });
 

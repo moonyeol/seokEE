@@ -24,7 +24,9 @@ public class JoinRoom extends Activity {
                 String key = edittext.getText().toString();
 
                 commSock.kick(commSock.ENTER,key);
-                String s = commSock.read();
+                try {
+                    String s = commSock.read().getJSONObject(0).optString("message");
+
 
                 if(s.equals("true")) {
                     Intent intent = new Intent(JoinRoom.this, MainActivity.class);
@@ -35,6 +37,9 @@ public class JoinRoom extends Activity {
                     startActivity(intent);
                 } else {
                     Toast.makeText(JoinRoom.this, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
+                }
+                }catch(org.json.JSONException e){
+                    e.printStackTrace();
                 }
             }
         });

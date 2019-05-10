@@ -27,4 +27,12 @@
     <string name="user_name">이름</string>
     <string name="nickname_text">닉네임</string>
     <string name="history">과거 기록</string>
+    <string name="exit">EXIT</string>
+    <string name="button">Button</string>
+    <string name="hi">-</string>
+    <string name="no">NO.</string>
+    <string name="make">파일받기</string>
+    <string name="word_cloud">word_cloud</string>
+    <string name="result">result</string>
+
 </resources>
