@@ -21,6 +21,8 @@ public class TCPServer implements Runnable {
     private int seed = 0;
     private HashMap<Socket, ClientInfo> clientList = new HashMap<>();
     private HashMap<String, ArrayList<Socket>> roomList = new HashMap<>();
+    private HashMap<String, Boolean> roomRunning = new HashMap<>();
+
     private ArrayList<String> randomSeed = new ArrayList<>();
 
     @Override
@@ -228,6 +230,8 @@ public class TCPServer implements Runnable {
                             roomList.put(pin,new ArrayList<>());
                             roomList.get(pin).add(conn);
 
+                            roomRunning.put(pin, false);
+
                             System.out.println("[Set RoomList Success]");
 
                             out.println(setMSG(func, pin));
@@ -248,8 +252,14 @@ public class TCPServer implements Runnable {
 
                                 clientList.get(conn).setNumber(message);
                                 roomList.get(message).add(conn);
-                                
-                                out.println(setMSG(func,"true").toString()); 
+
+                                if(roomRunning.get(message) == true){
+                                    System.out.println("[requestEnter] response running!!");
+                                    out.println(setMSG(func,"running").toString());        
+                                } else {
+                                    System.out.println("[requestEnter] response not running!!");
+                                    out.println(setMSG(func,"not").toString()); 
+                                }                                
                             }
                             break;
                         case 3:
@@ -268,6 +278,7 @@ public class TCPServer implements Runnable {
                                 o.println(setMSG(func,"START").toString());
                             }
 
+                            roomRunning.put(number, true);
                             System.out.println("\nSUCCESS SENDING START MESSAGE");
 
                             break;
@@ -298,6 +309,8 @@ public class TCPServer implements Runnable {
                             if(part.isEmpty()){
                                 System.out.println("[REQUEST EXIT] ROOM EMPTY!!");
 
+                                roomRunning.remove(clientList.get(conn).getNumber());
+                                
                                 roomList.remove(clientList.get(conn).getNumber());
                                 db.insertTalk(new Talk(number,new Date().toString(), "END", talker));
                             }
@@ -424,6 +437,21 @@ public class TCPServer implements Runnable {
                             out.println(setMSGArr(func, msgList).toString());                         
                             break;
                         case 13:
+                            break;
+                        case 14:
+                            // request userlist
+
+                            JSONArray memList = new JSONArray();
+
+                            for(Socket s : roomList.get(number)){
+                                JSONObject mem = new JSONObject();
+                                mem.put("nick", clientList.get(s).getTalker());
+
+                                memList.add(mem);
+                            }
+                            System.out.println(memList.toString());
+    
+                            out.println(setMSGArr(func, memList).toString());   
                             break;
                     }
                 } catch (Exception e) {

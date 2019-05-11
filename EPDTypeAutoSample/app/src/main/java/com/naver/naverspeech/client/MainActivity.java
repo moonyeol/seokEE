@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +32,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 // 1. Main Activity 클래스를 정의합니다.
 public class MainActivity extends Activity {
@@ -47,8 +50,13 @@ public class MainActivity extends Activity {
     private boolean isRunning = true;
     private TextView et_pin;
 
+    private Context context;
+    private LinearLayout listView;
+
     private String msg;
     private int func;
+
+    ArrayList<UserListButton> userList = new ArrayList<>();
 
     // 음성 인식 메시지를 처리합니다.
     private void handleMessage(Message msg) {
@@ -108,6 +116,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        context = this;
+        listView = findViewById(R.id.userList);
+
         txtResult = findViewById(R.id.content);
         btnStart = findViewById(R.id.btn_start);
 
@@ -115,15 +127,14 @@ public class MainActivity extends Activity {
         naverRecognizer = new NaverRecognizer(this, handler, CLIENT_ID);
 
         Intent intent = getIntent();
-        Boolean host = intent.getExtras().getBoolean("isHost");
+        boolean host = intent.getExtras().getBoolean("isHost");
         String pin = intent.getExtras().getString("pin");
 
         et_pin = findViewById(R.id.pincode4);
         et_pin.setText(pin);
-        Button startBtn = findViewById(R.id.btn_start);
 
-        if(host) startBtn.setVisibility(Button.VISIBLE);
-        else startBtn.setVisibility(Button.GONE);
+        if(host) btnStart.setVisibility(Button.VISIBLE);
+        else btnStart.setVisibility(Button.GONE);
 
 
         btnStart.setOnClickListener(new View.OnClickListener() {
@@ -168,7 +179,6 @@ public class MainActivity extends Activity {
                         /* 음성 인식 기능을 처리합니다. */
                         if(!naverRecognizer.getSpeechRecognizer().isRunning()) {
                             mResult = "";
-                            Toast.makeText(MainActivity.this, "Connecting..", Toast.LENGTH_SHORT);
                             btnStart.setText(R.string.str_stop);
                             naverRecognizer.recognize();
 
@@ -185,7 +195,6 @@ public class MainActivity extends Activity {
                     /* 음성 인식 기능을 처리합니다. */
                     if(!naverRecognizer.getSpeechRecognizer().isRunning()) {
                         mResult = "";
-                        Toast.makeText(MainActivity.this, "Connecting..", Toast.LENGTH_SHORT);
                         btnStart.setText(R.string.str_stop);
                         naverRecognizer.recognize();
 
@@ -212,9 +221,24 @@ public class MainActivity extends Activity {
                         func = jsonObject.optInt("func");
                         msg = jsonObject.optString("message");
 
-                        Log.i("my", func + " " + msg);
+                        if(func == commSock.REQUEST_USERLIST){
+                            JSONObject msg = jsonArray.getJSONObject(0);
+                            JSONObject msg2 = new JSONObject(msg.get("message").toString());
+                            JSONArray msgCon = msg2.getJSONArray("con");
 
-                        // 원래는 여기서 func에 맞게 메시지 처리를 해줘야 한다.
+                            ArrayList<String> strings = new ArrayList<>();
+
+                            for(int i=0; i<msgCon.length(); i++)
+                                strings.add(msgCon.getJSONObject(i).toString());
+
+                            for(String s : strings){
+                                JSONObject json = new JSONObject(s);
+                                String nick = json.get("nick").toString();
+                                Button btn = new Button(context);
+                                btn.setText(nick);
+                                userList.add(new UserListButton(btn, nick));
+                            }
+                        }
 
                         runOnUiThread(new Runnable() {
                             public void run() {
@@ -233,10 +257,26 @@ public class MainActivity extends Activity {
                                     case commSock.EXIT:
                                         Toast.makeText(MainActivity.this, msg + " 종료", Toast.LENGTH_SHORT).show();
 
+                                        for(int i=0; i<userList.size();i++){
+                                            if(userList.get(i).getNickname().equals(msg)){
+                                                userList.remove(i);
+                                                break;
+                                            }
+                                        }
+                                        updateUserList();
+
                                         break;
                                     case commSock.ENTER:
                                         Toast.makeText(MainActivity.this, msg + " 입장", Toast.LENGTH_SHORT).show();
 
+                                        Button btn = new Button(context);
+                                        btn.setText(msg);
+                                        userList.add(new UserListButton(btn, msg));
+
+                                        updateUserList();
+                                        break;
+                                    case commSock.REQUEST_USERLIST:
+                                        updateUserList();
                                         break;
                                 }
 
@@ -256,6 +296,24 @@ public class MainActivity extends Activity {
             Toast.makeText(this, "녹음 시작!", Toast.LENGTH_SHORT).show();
             if(naverRecognizer != null) naverRecognizer.recognize();
         }
+
+        commSock.kick(commSock.REQUEST_USERLIST, "");
+    }
+
+    public void updateUserList(){
+        new Thread(new Runnable(){
+            public void run(){
+                runOnUiThread(new Runnable(){
+                    public void run(){
+                        listView.removeAllViews();
+
+                        for(UserListButton u : userList){
+                            listView.addView(u.getButton());
+                        }
+                    }
+                });
+            }
+        }).start();
     }
 
     @Override
@@ -394,5 +452,23 @@ class NaverRecognizer implements SpeechRecognitionListener {
     public void onEndPointDetectTypeSelected(SpeechConfig.EndPointDetectType epdType) {
         Message msg = Message.obtain(mHandler, R.id.endPointDetectTypeSelected, epdType);
         msg.sendToTarget();
+    }
+}
+
+class UserListButton {
+    String nickname;
+    Button btn;
+
+    UserListButton(Button btn, String nickname){
+        this.btn = btn;
+        this.nickname = nickname;
+    }
+
+    Button getButton(){
+        return this.btn;
+    }
+
+    String getNickname(){
+        return this.nickname;
     }
 }

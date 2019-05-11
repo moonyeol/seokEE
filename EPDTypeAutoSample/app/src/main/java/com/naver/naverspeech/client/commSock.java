@@ -40,9 +40,8 @@ public class commSock {
     public static final int DUPLICATE = 10;
     public static final int REQUEST_FILE = 11;
     public static final int REQUEST_USERINFO = 12;
-
-
     public static final int DEBUG = 13;
+    public static final int REQUEST_USERLIST = 14;
 
     public static void setSocket(){
         Log.i("my","Try SetSocket");
@@ -98,6 +97,15 @@ public class commSock {
 //             String nickName = message.optString("nickname");
 
             return jsonArray;
+        } catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String readString(){
+        try {
+            return netReader.readLine();
         } catch(Exception e){
             e.printStackTrace();
             return null;
