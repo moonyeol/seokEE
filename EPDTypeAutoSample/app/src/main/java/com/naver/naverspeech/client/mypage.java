@@ -38,19 +38,10 @@ public class mypage extends AppCompatActivity {
             Info info = new Info();
             init();
 
-            //getData(info);
+            getData(info);
 
             id_tv.setText(info.id);
-
-            StringBuilder sb = new StringBuilder();
-
-            for(history h : info.historys){
-                sb.append(h.toString());
-            }
-
-            //nickname_tv.setText(info.nickname);
-            nickname_tv.setText(sb.toString());
-
+            nickname_tv.setText(info.nickname);
 
             //            Button make = findViewById(R.id.make);
 //        make.setOnClickListener(new Button.OnClickListener(){
@@ -151,6 +142,7 @@ public class mypage extends AppCompatActivity {
                 for(String s : strings){
                     historys.add(new history(s));
                 }
+
             }catch(org.json.JSONException e){
                 e.printStackTrace();
             }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Download\\seokEE-master\\EPDTypeAutoSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-vi\\values-vi.xml",
+            "outputFile": "C:\\Users\\admin\\Documents\\GitHub\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-vi\\values-vi.xml",
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\6dd4d60169a217d23387cbddb490d4c0\\res\\values-vi\\values-vi.xml",

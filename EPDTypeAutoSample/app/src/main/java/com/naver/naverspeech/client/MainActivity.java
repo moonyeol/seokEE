@@ -72,10 +72,10 @@ public class MainActivity extends Activity {
                 List<String> results = speechRecognitionResult.getResults();
                 String txt = results.get(0);
 
-                Toast.makeText(this,txt, Toast.LENGTH_SHORT).show();
-
-                // 12345 test
-                commSock.kick(0, txt);
+                if(!txt.equals("")) {
+                    Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
+                    commSock.kick(commSock.MSG, txt);
+                }
                 break;
             // 인식 오류가 발생한 경우
             case R.id.recognitionError:
@@ -83,10 +83,10 @@ public class MainActivity extends Activity {
                     writer.close();
                 }
                 mResult = "Error code : " + msg.obj.toString();
-                txtResult.setText(mResult);
+                String s = txtResult.getText() + mResult;
+                txtResult.setText(s);
 
-                //btnStart.setText(R.string.str_start);
-                //btnStart.setEnabled(true);
+                btnStart.setVisibility(Button.GONE);
 
                 if(naverRecognizer != null) naverRecognizer.recognize();
                 break;
@@ -225,7 +225,10 @@ public class MainActivity extends Activity {
                                         break;
                                     case commSock.START:
                                         Toast.makeText(MainActivity.this, "녹음 시작", Toast.LENGTH_SHORT).show();
+
                                         btnStart.callOnClick();
+                                        if(!naverRecognizer.getSpeechRecognizer().isRunning())
+                                            if(naverRecognizer != null) naverRecognizer.recognize();
                                         break;
                                     case commSock.EXIT:
                                         Toast.makeText(MainActivity.this, msg + " 종료", Toast.LENGTH_SHORT).show();
@@ -245,6 +248,14 @@ public class MainActivity extends Activity {
                 }
             }
         }).start();
+
+
+        boolean isRecording = intent.getExtras().getBoolean("running");
+
+        if(isRecording){
+            Toast.makeText(this, "녹음 시작!", Toast.LENGTH_SHORT).show();
+            if(naverRecognizer != null) naverRecognizer.recognize();
+        }
     }
 
     @Override

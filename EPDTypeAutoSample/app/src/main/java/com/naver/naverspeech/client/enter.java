@@ -38,6 +38,8 @@ public class enter extends Activity {
 
                 intent.putExtra("isHost",true);
                 intent.putExtra("pin", key);
+                intent.putExtra("running", false);
+
                 startActivity(intent);
                 }catch(org.json.JSONException e){
                     e.printStackTrace();

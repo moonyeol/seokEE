@@ -27,18 +27,22 @@ public class JoinRoom extends Activity {
                 try {
                     String s = commSock.read().getJSONObject(0).optString("message");
 
-                if(s.equals("true")) {
-                    Intent intent = new Intent(JoinRoom.this, MainActivity.class);
+                    if(s.equals("false")){
+                        Toast.makeText(JoinRoom.this, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Intent intent = new Intent(JoinRoom.this, MainActivity.class);
 
-                    intent.putExtra("isHost", false);
-                    intent.putExtra("pin", key);
+                        intent.putExtra("isHost", false);
+                        intent.putExtra("pin", key);
 
-                    startActivity(intent);
+                        if(s.equals("running")) intent.putExtra("running", true);
+                        else intent.putExtra("running", false);
 
-                    finish();
-                } else {
-                    Toast.makeText(JoinRoom.this, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
-                }
+                        startActivity(intent);
+
+                        finish();
+                    }
                 }catch(org.json.JSONException e){
                     e.printStackTrace();
                 }

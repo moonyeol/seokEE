@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Download\\seokEE-master\\EPDTypeAutoSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\admin\\Documents\\GitHub\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\afd6d2458419522be0916d83893eb410\\res\\values\\values.xml",
@@ -42,39 +42,20 @@
                     }
                 },
                 {
-                    "source": "E:\\Download\\seokEE-master\\EPDTypeAutoSample\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\admin\\Documents\\GitHub\\seokEE\\EPDTypeAutoSample\\app\\src\\main\\res\\values\\msgids.xml",
                     "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "54",
-                        "endLines": "8",
-                        "endColumns": "12",
-                        "endOffsets": "368"
+                        "startLines": "9,8,7,13,6,5,11,4,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "297,253,212,434,166,125,387,82,341",
+                        "endColumns": "43,43,40,55,45,40,45,42,45",
+                        "endOffsets": "336,292,248,485,207,161,428,120,382"
                     },
                     "to": {
-                        "startLines": "430",
-                        "startColumns": "4",
-                        "startOffsets": "25078",
-                        "endLines": "435",
-                        "endColumns": "12",
-                        "endOffsets": "25392"
-                    }
-                },
-                {
-                    "source": "E:\\Download\\seokEE-master\\EPDTypeAutoSample\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "4,2,3,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "153,55,102,199",
-                        "endColumns": "45,46,50,39",
-                        "endOffsets": "194,97,148,234"
-                    },
-                    "to": {
-                        "startLines": "159,160,161,205",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "8083,8129,8176,11052",
-                        "endColumns": "45,46,50,39",
-                        "endOffsets": "8124,8171,8222,11087"
+                        "startLines": "332,333,334,335,336,337,338,343,346",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "19610,19654,19698,19739,19795,19841,19882,20098,20237",
+                        "endColumns": "43,43,40,55,45,40,45,42,45",
+                        "endOffsets": "19649,19693,19734,19790,19836,19877,19923,20136,20278"
                     }
                 },
                 {
@@ -94,6 +75,42 @@
                         "endLines": "183,184,283,284,285,286,287,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,326,327,341,342,348,349,350,351,357,419,1749,1753,1754,1758,1759,1896,1897,2053,2057",
                         "endColumns": "68,62,69,67,71,69,60,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,34,34,49,33,34,34,69,70,116,12,109,12,128,71,66,35,207",
                         "endOffsets": "9578,9641,16380,16448,16520,16590,16651,17882,17943,18005,18069,18131,18192,18260,18360,18420,18486,18559,18628,18685,18737,18799,19324,19400,20058,20093,20374,20408,20443,20478,20823,24413,112680,112881,112991,113192,113321,124219,124286,147016,147381"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\admin\\Documents\\GitHub\\seokEE\\EPDTypeAutoSample\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "54",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "368"
+                    },
+                    "to": {
+                        "startLines": "430",
+                        "startColumns": "4",
+                        "startOffsets": "25078",
+                        "endLines": "435",
+                        "endColumns": "12",
+                        "endOffsets": "25392"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\admin\\Documents\\GitHub\\seokEE\\EPDTypeAutoSample\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "4,2,3,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "153,55,102,199",
+                        "endColumns": "45,46,50,39",
+                        "endOffsets": "194,97,148,234"
+                    },
+                    "to": {
+                        "startLines": "159,160,161,205",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "8083,8129,8176,11052",
+                        "endColumns": "45,46,50,39",
+                        "endOffsets": "8124,8171,8222,11087"
                     }
                 },
                 {
@@ -135,7 +152,7 @@
                     }
                 },
                 {
-                    "source": "E:\\Download\\seokEE-master\\EPDTypeAutoSample\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\admin\\Documents\\GitHub\\seokEE\\EPDTypeAutoSample\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "25,3,16,1,30,17,36,11,7,29,2,31,28,23,14,12,9,6,22,15,33,8,24,13,27,32,20,10,21,35,19,4,5,26,18,34",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -149,23 +166,6 @@
                         "startOffsets": "20828,22986,23039,23082,23126,23168,23210,23252,23289,23335,23373,23426,23459,23501,23535,23572,23627,23687,23734,23776,23814,23852,23896,23940,23981,24027,24062,24108,24150,24208,24303,24418,24462,24504,24545,24586",
                         "endColumns": "38,52,42,43,41,41,41,36,45,37,52,32,41,33,36,54,59,46,41,37,37,43,43,40,45,34,45,41,57,41,43,43,41,40,40,49",
                         "endOffsets": "20862,23034,23077,23121,23163,23205,23247,23284,23330,23368,23421,23454,23496,23530,23567,23622,23682,23729,23771,23809,23847,23891,23935,23976,24022,24057,24103,24145,24203,24245,24342,24457,24499,24540,24581,24631"
-                    }
-                },
-                {
-                    "source": "E:\\Download\\seokEE-master\\EPDTypeAutoSample\\app\\src\\main\\res\\values\\msgids.xml",
-                    "from": {
-                        "startLines": "9,8,7,13,6,5,11,4,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "297,253,212,434,166,125,387,82,341",
-                        "endColumns": "43,43,40,55,45,40,45,42,45",
-                        "endOffsets": "336,292,248,485,207,161,428,120,382"
-                    },
-                    "to": {
-                        "startLines": "332,333,334,335,336,337,338,343,346",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "19610,19654,19698,19739,19795,19841,19882,20098,20237",
-                        "endColumns": "43,43,40,55,45,40,45,42,45",
-                        "endOffsets": "19649,19693,19734,19790,19836,19877,19923,20136,20278"
                     }
                 },
                 {
