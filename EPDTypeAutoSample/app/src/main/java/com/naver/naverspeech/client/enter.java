@@ -31,7 +31,6 @@ public class enter extends Activity {
             public void onClick(View v) { //make_room
                 Intent intent = new Intent(enter.this, MainActivity.class);
 
-
                 try {
                     commSock.kick(commSock.PINCODE, "");
                     String key = commSock.read().getJSONObject(0).optString("message");
@@ -45,7 +44,6 @@ public class enter extends Activity {
                 }
             }
         });
-
         pageBtn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
 

@@ -135,6 +135,8 @@ public class joinActivity extends AppCompatActivity {
                     Toast.makeText(this, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(joinActivity.this, loginActivity.class);
                     startActivity(intent);
+
+                    finish();
                 } else {
                     Toast.makeText(this, "예기치 못한 오류가 발생했습니다.\n다시 시도해주세요.", Toast.LENGTH_SHORT).show();
                 }

@@ -22,13 +22,14 @@ public class anonymous extends Activity {
                 EditText edittext = findViewById(R.id.editText2);
                 nickname = edittext.getText().toString();
 
-
                 commSock.kick(commSock.SET_NICK,nickname);
 
                 // nickname 을 서버에 보내고 메인메뉴화면으로 넘어감.
                 Intent intent = new Intent(anonymous.this, enter.class);
+
                 loginActivity lo = (loginActivity)loginActivity._login;
                 startActivity(intent);
+
                 lo.finish();
                 finish();
             }

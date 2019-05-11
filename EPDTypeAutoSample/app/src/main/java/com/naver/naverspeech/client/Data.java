@@ -36,6 +36,10 @@ public class Data {
         this.content = content;
     }
 
+    public String toString(){
+        return title + " " + content + " " + member + " " + number;
+    }
+
     public int getResId() {
         return resId;
     }

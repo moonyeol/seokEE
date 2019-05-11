@@ -41,6 +41,9 @@ public class commSock {
     public static final int REQUEST_FILE = 11;
     public static final int REQUEST_USERINFO = 12;
 
+
+    public static final int DEBUG = 13;
+
     public static void setSocket(){
         Log.i("my","Try SetSocket");
 
@@ -79,7 +82,6 @@ public class commSock {
         try {
             String jsonString = netReader.readLine();
             JSONArray jsonArray = new JSONObject(jsonString).getJSONArray("server");
-
             // usage
 
 //             JSONArray arr = read();

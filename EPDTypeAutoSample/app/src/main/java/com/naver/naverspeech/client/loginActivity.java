@@ -37,7 +37,6 @@ public class loginActivity extends AppCompatActivity {
         anonymousbutton = (Button) findViewById(R.id.anonymous);
         reid = (CheckBox) findViewById(R.id.reid);
 
-
         loginButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // 로그인 맞는지 체크.

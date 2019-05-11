@@ -676,7 +676,6 @@ id ALT
 id CTRL
 id FUNCTION
 id META
-id Passwordcheck
 id SHIFT
 id SYM
 id action_bar
@@ -713,11 +712,8 @@ id birthYear
 id blocking
 id bottom
 id btn_start
-id button
-id button2
 id button3
 id button4
-id button5
 id buttonPanel
 id center
 id center_horizontal
@@ -785,15 +781,13 @@ id line3
 id linearItem
 id listMode
 id list_item
+id login
 id loginButton
 id make_room
 id message
 id middle
 id multiply
 id mypage
-id name_tv
-id nestedScrollView
-id nestedScrollView2
 id never
 id nickInput
 id nickname_text
@@ -811,7 +805,6 @@ id partialResult
 id passwordInput
 id percent
 id pin4
-id pincode
 id pincode4
 id progress_circular
 id progress_horizontal
@@ -863,7 +856,6 @@ id textView1
 id textView2
 id textView3
 id textView4
-id textView5
 id textView6
 id textView7
 id time
@@ -876,6 +868,7 @@ id uniform
 id up
 id useLogo
 id userList
+id userListScroll
 id withText
 id word_cloud
 id wrap
@@ -922,6 +915,7 @@ layout activity_login
 layout activity_main
 layout activity_mypage
 layout activity_result
+layout activity_second
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

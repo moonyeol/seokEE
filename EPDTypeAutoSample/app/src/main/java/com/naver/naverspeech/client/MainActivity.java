@@ -7,20 +7,16 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.os.StrictMode;
 import android.support.annotation.WorkerThread;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,17 +27,10 @@ import com.naver.speech.clientapi.SpeechRecognitionListener;
 import com.naver.speech.clientapi.SpeechRecognitionResult;
 import com.naver.speech.clientapi.SpeechRecognizer;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.lang.ref.WeakReference;
-import java.net.Socket;
-import java.util.Date;
 import java.util.List;
 
 // 1. Main Activity 클래스를 정의합니다.
@@ -55,10 +44,11 @@ public class MainActivity extends Activity {
     private Button btnStart;
     private String mResult;
     private AudioWriterPCM writer;
-    private String msg;
     private boolean isRunning = true;
     private TextView et_pin;
 
+    private String msg;
+    private int func;
 
     // 음성 인식 메시지를 처리합니다.
     private void handleMessage(Message msg) {
@@ -135,6 +125,7 @@ public class MainActivity extends Activity {
         if(host) startBtn.setVisibility(Button.VISIBLE);
         else startBtn.setVisibility(Button.GONE);
 
+
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -180,6 +171,8 @@ public class MainActivity extends Activity {
                             Toast.makeText(MainActivity.this, "Connecting..", Toast.LENGTH_SHORT);
                             btnStart.setText(R.string.str_stop);
                             naverRecognizer.recognize();
+
+                            commSock.kick(commSock.START, "START");
                         } else {
                             Log.d(TAG, "stop and wait Final Result");
                             btnStart.setEnabled(false);
@@ -195,6 +188,8 @@ public class MainActivity extends Activity {
                         Toast.makeText(MainActivity.this, "Connecting..", Toast.LENGTH_SHORT);
                         btnStart.setText(R.string.str_stop);
                         naverRecognizer.recognize();
+
+                        commSock.kick(commSock.START, "START");
                     } else {
                         Log.d(TAG, "stop and wait Final Result");
                         btnStart.setEnabled(false);
@@ -207,19 +202,41 @@ public class MainActivity extends Activity {
         new Thread(new Runnable(){
             public void run(){
                 try {
+                    final ScrollView scrollview = ((ScrollView) findViewById(R.id.scrollView));
+
                     while(isRunning) {
 
-                        msg = commSock.read().getJSONObject(0).optString("message");
+                        JSONArray jsonArray = commSock.read();
+
+                        JSONObject jsonObject = jsonArray.getJSONObject(0);
+                        func = jsonObject.optInt("func");
+                        msg = jsonObject.optString("message");
+
+                        Log.i("my", func + " " + msg);
+
                         // 원래는 여기서 func에 맞게 메시지 처리를 해줘야 한다.
 
-                        // 1. 참가자가 추가되거나 나가거나
-                        // 2. 호스트가 시작버튼을 눌렀거나
-                        // 3. 호스트가 종료버튼을 눌렀거나
-                        // 4. 메시지가 왔거나
-                        // 5.
                         runOnUiThread(new Runnable() {
                             public void run() {
-                                txtResult.append("\n"+msg);
+                                switch(func){
+                                    case commSock.MSG:
+                                        scrollview.post(new Runnable() { @Override public void run() { scrollview.fullScroll(ScrollView.FOCUS_DOWN); } });
+                                        txtResult.append("\n"+msg);
+                                        break;
+                                    case commSock.START:
+                                        Toast.makeText(MainActivity.this, "녹음 시작", Toast.LENGTH_SHORT).show();
+                                        btnStart.callOnClick();
+                                        break;
+                                    case commSock.EXIT:
+                                        Toast.makeText(MainActivity.this, msg + " 종료", Toast.LENGTH_SHORT).show();
+
+                                        break;
+                                    case commSock.ENTER:
+                                        Toast.makeText(MainActivity.this, msg + " 입장", Toast.LENGTH_SHORT).show();
+
+                                        break;
+                                }
+
                             }
                         });
                     }
@@ -281,7 +298,6 @@ public class MainActivity extends Activity {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         // 확인시 처리 로직
                         commSock.kick(commSock.EXIT, "");
-                        Toast.makeText(MainActivity.this, "저장을 완료했습니다.", Toast.LENGTH_SHORT).show();
                         isRunning = false;
                         finish();
                     }

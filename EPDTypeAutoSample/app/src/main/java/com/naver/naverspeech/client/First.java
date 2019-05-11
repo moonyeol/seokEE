@@ -52,7 +52,6 @@ public class First extends Activity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             Log.i("my","make Handler and Thread");
         }
 

@@ -14,6 +14,7 @@ import java.util.LinkedList;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Button;
 import android.view.View;
 import android.os.Environment;
@@ -30,24 +31,28 @@ public class mypage extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_mypage);
-            Info info = new Info();
 
+            TextView nickname_tv = findViewById(R.id.nickname_tv);
+            TextView id_tv = findViewById(R.id.id_tv);
+
+            Info info = new Info();
             init();
 
-            getData(info);
+            //getData(info);
 
-
-
-
-
-            TextView id_tv = (TextView) findViewById(R.id.id_tv);
             id_tv.setText(info.id);
-            TextView nickname_tv = (TextView) findViewById(R.id.nickname_tv);
-            nickname_tv.setText(info.nickname);
+
+            StringBuilder sb = new StringBuilder();
+
+            for(history h : info.historys){
+                sb.append(h.toString());
+            }
+
+            //nickname_tv.setText(info.nickname);
+            nickname_tv.setText(sb.toString());
 
 
-
-//            Button make = findViewById(R.id.make);
+            //            Button make = findViewById(R.id.make);
 //        make.setOnClickListener(new Button.OnClickListener(){
 //            public void onClick(View v) {
 ////                commSock.kick();
@@ -69,66 +74,87 @@ public class mypage extends AppCompatActivity {
     private void getData(Info info) {
         // 임의의 데이터입니다.
 
-        for (int i = 0; i < info.historys.size(); i++) {
+        for (history h : info.historys){
             // 각 List의 값들을 data 객체에 set 해줍니다.
+
             Data data = new Data();
-            data.setTitle(info.historys.get(i).date);
-            data.setMember(info.historys.get(i).members);
-            data.setNumber(info.historys.get(i).number);
-            if(info.historys.get(i).content.length()>100)
-                data.setContent(info.historys.get(i).content.substring(0,100));
-//            data.setResId(linfo.historys.get(i).content);
+            data.setTitle(h.date);
+            data.setMember(h.members);
+            data.setNumber(h.number);
+
+            if(h.content.length()>100)
+                data.setContent(h.content.substring(0,100));
+
+//          data.setResId(linfo.historys.get(i).content);
+
 
             // 각 값이 들어간 data를 adapter에 추가합니다.
-            adapter.addItem(data);
+            //adapter.addItem(data);
         }
 
         // adapter의 값이 변경되었다는 것을 알려줍니다.
-        adapter.notifyDataSetChanged();
+        //adapter.notifyDataSetChanged();
     }
 
-    public class Info{
-        String id;
+    class history{
+        String number;
+        String content;
+        String date;
+        String members;
 
-        String nickname;
-        LinkedList<history> historys;
-
-        Info(){
+        history(String jString){
             try {
-                historys = new LinkedList<>();
-                commSock.kick(commSock.REQUEST_USERINFO," ");
-                JSONArray arr = commSock.read();
-                JSONObject jsonObject = arr.getJSONObject(0);
-                JSONObject message = new JSONObject(jsonObject.optString("message"));
+                JSONObject jobject = new JSONObject(jString);
+                this.number = jobject.get("number").toString();
+                this.content = jobject.get("content").toString();
+                this.date = jobject.get("date").toString();
+                this.members = jobject.get("members").toString();
 
-
-                this.id = message.get("id").toString();
-                this.nickname = message.get("nickname").toString();
-                int i = 1;
-                while(arr.isNull(i)) {
-                    this.historys.add(new history(new JSONObject(arr.getJSONObject(i).optString("message"))));
-                    i++;
-                }
-
-            }catch(org.json.JSONException e){
+            }catch(Exception e){
                 e.printStackTrace();
             }
         }
 
+        public String toString(){
+            return this.date + " " +this.members + " " + this.number + " " + this.content;
+        }
+    }
 
-        class history{
-            String number;
-            String content;
-            String date;
-            String members;
-            history(JSONObject jobject){
-                this.number = jobject.optString("number");
-                this.content = jobject.optString("content");
-                this.date = jobject.optString("date");
-                this.members = jobject.optString("member");
+    public class Info{
+        String id;
+        String nickname;
+        ArrayList<history> historys;
+        ArrayList<String> strings;
+
+        Info(){
+            try {
+                historys = new ArrayList<>();
+                strings = new ArrayList<>();
+
+                commSock.kick(commSock.REQUEST_USERINFO," ");
+                JSONArray info = commSock.read();
+
+                JSONObject infoObject = new JSONObject(info.getJSONObject(0).optString("message"));
+
+                this.id = infoObject.get("id").toString();
+                this.nickname = infoObject.get("nickname").toString();
+
+                JSONArray arr = commSock.read();
+                JSONObject msg = arr.getJSONObject(0);
+                JSONObject msg2 = new JSONObject(msg.get("message").toString());
+                JSONArray msgCon = msg2.getJSONArray("con");
+
+                for(int i=0; i<msgCon.length(); i++)
+                   strings.add(msgCon.getJSONObject(i).toString());
+
+
+                for(String s : strings){
+                    historys.add(new history(s));
+                }
+            }catch(org.json.JSONException e){
+                e.printStackTrace();
             }
         }
-
     }
 
 }
