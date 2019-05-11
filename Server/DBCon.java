@@ -1,15 +1,10 @@
-package seokee;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-//jdbc:mysql://localhost/dbname?user=(생략)&password=(생략)&Unicode=true&characterEncoding=UTF-
-//String dbPath = String.format(
-//        "jdbc:mysql://%s:%d/%s?user=%s&password=%s&characterEncoding=utf-8&" + 
-//        "useUnicode=true", ci.host, ci.port, ci.dbName, ci.user, ci.password);
+
 public class DBCon {
 	static final String JDBC_DRIVER ="com.mysql.cj.jdbc.Driver";
     static final String url = "jdbc:mysql://seokee0503.c9p1xpsot2og.ap-northeast-2.rds.amazonaws.com/seokee";
@@ -20,7 +15,7 @@ public class DBCon {
     public DBCon(){
     	try
         {
-            System.out.println("접속중입니다...");
+            System.out.println("Connecting...");
             Class.forName(JDBC_DRIVER);
             //conn = DriverManager.getConnection(url, USERNAME, PASSWORD);
             conn = DriverManager.getConnection( "jdbc:mysql://seokee0503.c9p1xpsot2og.ap-northeast-2.rds.amazonaws.com/seokee"
@@ -37,7 +32,6 @@ public class DBCon {
                 }
     	
     }
-    // Talk 한 열을 DB의 talk테이블로 삽입
     public void insertTalk(Talk a) {
     	String query = "insert into talk (room,time,msg,id) values(?,?,?,?);";
     	PreparedStatement pstmt = null;
@@ -48,13 +42,13 @@ public class DBCon {
     		pstmt.setString(3, a.msg);
     		pstmt.setString(4, a.id);
     		pstmt.executeUpdate();
-    		System.out.println("Insert success");
+
+    		//System.out.println("Insert success");
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
     }
-    // String room 을 매개변수로 room의 모든 열을 ArrayList로 반환
     public ArrayList<Talk> serachMessageRoom(String room) {
     	ArrayList<Talk> data = new ArrayList<>();
     	String query = "select * from talk where room = ? order by indexnum";
@@ -68,7 +62,7 @@ public class DBCon {
     		{
     			data.add(new Talk(rs.getString("room"), rs.getString("time"), rs.getString("msg"), rs.getString("id")));
     		}
-    		System.out.println("Calling success");
+    		//System.out.println("Calling success");
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
@@ -76,7 +70,6 @@ public class DBCon {
     	return data;
     	
     }
-    // String id 를 매개변수로 room의 모든 열을 ArrayList로 반환
     public ArrayList<Talk> serachMessageID(String id) {
     	ArrayList<Talk> data = new ArrayList<>();
     	String query = "select * from talk where id = ? order by indexnum";
@@ -89,14 +82,13 @@ public class DBCon {
     		{
     			data.add(new Talk(rs.getString("room"), rs.getString("time"), rs.getString("msg"), rs.getString("id")));
     		}
-    		System.out.println("Calling success");
+    		//System.out.println("Calling success");
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
     	return data;
     }
-    // String id 가 존재하는지 boolean 리턴
     public boolean memberIDCheck(String id) {
     	String query = "select count(*) from member where id = ?";
     	PreparedStatement pstmt = null;
@@ -104,11 +96,13 @@ public class DBCon {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, id);
     		ResultSet rs = pstmt.executeQuery();
-    		
-    		if (rs.getInt("count(*)")!=0) {
-    			System.out.println("Already existing ID");
-    			return false;
-    		}
+
+    		if(rs.next()){
+				if (rs.getInt("count(*)")!=0) {
+					System.out.println("[memberIDCheck] Already existing ID");
+					return false;
+				}
+			}
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
@@ -116,7 +110,6 @@ public class DBCon {
     	}
     	return true;
     }
-    // Member (id,password,gender,birth, nickname) 를 DB에 삽입, 성공하면 true 실패하면 false
     public boolean memberResgisterID(Member a) {
     	if (memberIDCheck(a.getID())) {
     		String query = "insert into member (id,password,gender,birth, nickname) values(?,?,?,?,?);";
@@ -129,7 +122,7 @@ public class DBCon {
         		pstmt.setString(4, a.getBirth());
         		pstmt.setString(5, a.getNickname());
         		pstmt.executeUpdate();
-        		System.out.println("Insert Member success");
+        		//System.out.println("Insert Member success");
         	}catch(SQLException e)
         	{
         		e.printStackTrace();
@@ -137,15 +130,13 @@ public class DBCon {
         	}
     	}
     	else {
-    		System.out.println("Register Fail, Already existing ID.");
+    		System.out.println("[memberRegisterID] Register Fail, Already existing ID.");
     		return false;
     	}
     	
-    	System.out.println("Register Complete.");
+    	System.out.println("[memberRegisterID] Register Complete.");
     	return true;
     }
-    
-    // id, password를 매개변수로 id와 password가 맞는지 확인, true false 반환
     public boolean memberLoginCheck(String id, String password) {
     	String query = "select password from member where id = ?";
     	PreparedStatement pstmt = null;
@@ -153,23 +144,23 @@ public class DBCon {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, id);
     		ResultSet rs = pstmt.executeQuery();
-    		rs.next();
-    		String x; // DB에서 password를 받아오는 변수
-    		x = rs.getString("password");
-    		if (x.contentEquals(password)) {
-    			System.out.println("id equals password");
-    			return true;
-    		}
-    		System.out.println("Calling success");
+    		
+			if(rs.next()){
+				String x; 
+				x = rs.getString("password");
+				if (x.contentEquals(password)) {
+					System.out.println("[memberRegisterID] Assertion Success.");
+					return true;
+				}
+			}
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
-    	System.out.println("id inequals password");
+    	System.out.println("[memberRegisterID] Assertion Failed.");
     	return false;
     }
 
-    // id를 매개변수로 받아 멤버의 모든 정보를 class로 반환
     public Member searchMyInfo(String id) {
     	Member data = new Member();
     	String query = "select * from member where id = ?";
@@ -178,21 +169,22 @@ public class DBCon {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, id);
     		ResultSet rs = pstmt.executeQuery();
-    		rs.next();
-			data.setID(rs.getString("id"));
-			data.setPassword(rs.getString("password"));
-			data.setGender(rs.getString("gender"));
-			data.setBirth(rs.getString("birth"));
-			data.setNickname(rs.getString("nickname"));
-    		
-    		System.out.println("Calling success22");
+
+    		if(rs.next()){
+				data.setID(rs.getString("id"));
+				data.setPassword(rs.getString("password"));
+				data.setGender(rs.getString("gender"));
+				data.setBirth(rs.getString("birth"));
+				data.setNickname(rs.getString("nickname"));
+				
+				//System.out.println("Calling success22");
+			}
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
     	return data;
     }
-    // room을 매개변수로 하여 회의에 참여한 id을 반환 
     public ArrayList<String> searchIDByRoom(String room){
     	ArrayList<String> data = new ArrayList<>();
     	String query = "select id from talk where room = ? group by id;";
@@ -205,17 +197,16 @@ public class DBCon {
     		{
     			data.add(new String(rs.getString("id")));
     		}
-    		System.out.println("Calling success");
+    		//System.out.println("Calling success");
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
     	return data;
     }
-    // room을 매개변수로 하여 회의의 Message을 반환 
     public ArrayList<String> searchMessageByRoom(String room){
     	ArrayList<String> data = new ArrayList<>();
-    	String query = "select 'msg' from talk where room = ?";
+    	String query = "select msg from talk where room = ?";
     	PreparedStatement pstmt = null;
     	try {
     		pstmt = conn.prepareStatement(query);
@@ -225,7 +216,7 @@ public class DBCon {
     		{
     			data.add(new String(rs.getString("msg")));
     		}
-    		System.out.println("Calling success");
+    		//System.out.println("Calling success");
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
@@ -233,7 +224,6 @@ public class DBCon {
     	return data;
     }
     
-    // room을 매개변수로 회의가 종료된것인지 true-> End, false-> not End or Error?
     public boolean isTalkEnded(String room) {
     	String data;
     	String query = "select * from talk where room= ? order by indexnum desc;";
@@ -242,20 +232,21 @@ public class DBCon {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, room);
     		ResultSet rs = pstmt.executeQuery();
-    		rs.next();
-    		data = rs.getString("msg");
-    		if (data.compareTo("END")==0) {
-    			return true; // 회의가 끝남
-    		}else {
-    			return false;
-    		}
+    		
+			if(rs.next()){
+				data = rs.getString("msg");
+				if (data.compareTo("END")==0) {
+					return true;
+				}else {
+					return false;
+				}
+			}
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
     	return false;
     }
-    // input ID, return where participated room 
     public ArrayList<String> searchRoomByID(String id){
     	ArrayList<String> data = new ArrayList<>();
     	String query = "select room from talk where id = ? group by room;";
@@ -268,7 +259,7 @@ public class DBCon {
     		{
     			data.add(new String(rs.getString("room")));
     		}
-    		System.out.println("Calling success");
+    		//System.out.println("Calling success");
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
@@ -284,8 +275,9 @@ public class DBCon {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, room);
     		ResultSet rs = pstmt.executeQuery();
-    		rs.next();
-    		data = rs.getString("time");
+    		if(rs.next()){
+    			data = rs.getString("time");
+			}
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
@@ -349,6 +341,18 @@ class Member {
 	String gender;
 	String birth;
 	String nickname;
+
+	Member(){
+
+	}
+	Member(String id, String pw, String gender, String birth ,String nick ){
+		this.id = id;
+		this.password = pw;
+		this.gender = gender;
+		this.birth = birth;
+		this.nickname = nick;
+	}
+
 	public String getID() {
 		return id;
 	}

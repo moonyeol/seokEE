@@ -1,4 +1,3 @@
-package docdoc;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,9 +11,6 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
-
-
-
 
 public class docs {
 	public void mkdoc(ArrayList<String> content,String path, String fname) throws FileNotFoundException, IOException, InvalidFormatException {
@@ -34,7 +30,7 @@ public class docs {
 
 		File dir = new File(path);
 
-		if (!dir.exists()) {//상위 디렉토리가 존재하지 않을 경우 생성
+		if (!dir.exists()) {//make directory when it doesn't exist.
 			dir.mkdirs();
 		}
 
@@ -50,7 +46,7 @@ public class docs {
 		File dir = new File(path);
 		File saveFile = new File(path +"/"+ fname +".txt");
 		
-		if (!dir.exists()) {//상위 디렉토리가 존재하지 않을 경우 생성
+		if (!dir.exists()) {//make directory when it doesn't exist.
 			dir.mkdirs();
 		}
 		BufferedWriter fw = new BufferedWriter(new FileWriter(saveFile, true));
