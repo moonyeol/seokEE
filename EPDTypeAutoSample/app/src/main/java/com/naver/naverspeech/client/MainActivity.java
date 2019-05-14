@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
@@ -16,6 +17,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -43,7 +46,7 @@ public class MainActivity extends Activity {
 
     private RecognitionHandler handler;
     private NaverRecognizer naverRecognizer;
-    private TextView txtResult;
+
     private Button btnStart;
     private String mResult;
     private AudioWriterPCM writer;
@@ -52,6 +55,10 @@ public class MainActivity extends Activity {
 
     private Context context;
     private LinearLayout listView;
+
+    private ArrayList<CheckBox> talk =  new ArrayList<>();
+    private LinearLayout talkList;
+    private String selectedUser = null;
 
     private String msg;
     private int func;
@@ -91,10 +98,9 @@ public class MainActivity extends Activity {
                     writer.close();
                 }
                 mResult = "Error code : " + msg.obj.toString();
-                String s = txtResult.getText() + mResult;
-                txtResult.setText(s);
 
-                btnStart.setVisibility(Button.GONE);
+                Toast.makeText(this, mResult, Toast.LENGTH_SHORT).show();
+                //btnStart.setVisibility(Button.GONE);
 
                 if(naverRecognizer != null) naverRecognizer.recognize();
                 break;
@@ -120,7 +126,7 @@ public class MainActivity extends Activity {
         context = this;
         listView = findViewById(R.id.userList);
 
-        txtResult = findViewById(R.id.content);
+        talkList = findViewById(R.id.talkList);
         btnStart = findViewById(R.id.btn_start);
 
         handler = new RecognitionHandler(this);
@@ -245,7 +251,16 @@ public class MainActivity extends Activity {
                                 switch(func){
                                     case commSock.MSG:
                                         scrollview.post(new Runnable() { @Override public void run() { scrollview.fullScroll(ScrollView.FOCUS_DOWN); } });
-                                        txtResult.append("\n"+msg);
+                                        CheckBox c = new CheckBox(context);
+                                        c.setText(msg);
+                                        c.setButtonDrawable(R.drawable.cb_check_on_off);
+                                        c.setPadding(8,8,8,8);
+
+                                        if(selectedUser != null)
+                                            if(msg.contains(selectedUser)) c.setBackgroundColor(Color.argb(60,63,172,220));
+
+                                        talk.add(c);
+                                        talkList.addView(c);
                                         break;
                                     case commSock.START:
                                         Toast.makeText(MainActivity.this, "녹음 시작", Toast.LENGTH_SHORT).show();
@@ -259,6 +274,10 @@ public class MainActivity extends Activity {
 
                                         for(int i=0; i<userList.size();i++){
                                             if(userList.get(i).getNickname().equals(msg)){
+                                                if(selectedUser.equals(userList.get(i).getNickname())){
+                                                    selectedUser = null;
+                                                    updateChatHighlight();
+                                                }
                                                 userList.remove(i);
                                                 break;
                                             }
@@ -300,6 +319,16 @@ public class MainActivity extends Activity {
         commSock.kick(commSock.REQUEST_USERLIST, "");
     }
 
+    public void updateChatHighlight(){
+        for(CheckBox chk : talk) {
+            String s = (String)chk.getText();
+            if(selectedUser != null && s.contains(selectedUser)) {
+                chk.setBackgroundColor(Color.argb(60,63,172,220));
+            } else {
+                chk.setBackgroundColor(Color.argb(0, 255, 255, 255));
+            }
+        }
+    }
     public void updateUserList(){
         new Thread(new Runnable(){
             public void run(){
@@ -379,6 +408,44 @@ public class MainActivity extends Activity {
                 })
                 .show();
     }
+
+    class UserListButton {
+        String nickname;
+        Button btn;
+        boolean selected;
+
+        UserListButton(Button btn, final String nickname){
+            this.btn = btn;
+            btn.setOnClickListener(new Button.OnClickListener(){
+                @Override
+                public void onClick(View view) {
+                    if(selectedUser != null && selectedUser.equals(nickname)){
+                        selectedUser = null;
+                        updateChatHighlight();
+                    } else {
+                        for (CheckBox c : talk) {
+                            String s = (String) c.getText();
+
+                            if (s.contains(nickname))
+                                c.setBackgroundColor(Color.argb(60, 63, 172, 220));
+                            else c.setBackgroundColor(Color.argb(0, 255, 255, 255));
+                        }
+                        selectedUser = nickname;
+                        updateChatHighlight();
+                    }
+                }
+            });
+            this.nickname = nickname;
+            this.selected = false;
+        }
+        Button getButton(){
+            return this.btn;
+        }
+
+        String getNickname(){
+            return this.nickname;
+        }
+    }
 }
 
 
@@ -452,23 +519,5 @@ class NaverRecognizer implements SpeechRecognitionListener {
     public void onEndPointDetectTypeSelected(SpeechConfig.EndPointDetectType epdType) {
         Message msg = Message.obtain(mHandler, R.id.endPointDetectTypeSelected, epdType);
         msg.sendToTarget();
-    }
-}
-
-class UserListButton {
-    String nickname;
-    Button btn;
-
-    UserListButton(Button btn, String nickname){
-        this.btn = btn;
-        this.nickname = nickname;
-    }
-
-    Button getButton(){
-        return this.btn;
-    }
-
-    String getNickname(){
-        return this.nickname;
     }
 }

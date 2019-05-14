@@ -52,12 +52,11 @@
         android:scrollbarStyle="insideOverlay"
         android:scrollbars="vertical">
 
-        <TextView
-            android:id="@+id/content"
+        <LinearLayout
+            android:id="@+id/talkList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/content"
-            android:verticalScrollbarPosition="defaultPosition" />
+            android:orientation="vertical"></LinearLayout>
     </ScrollView>
 
     <ScrollView
