@@ -250,7 +250,7 @@ public class MainActivity extends Activity {
                             public void run() {
                                 switch(func){
                                     case commSock.MSG:
-                                        scrollview.post(new Runnable() { @Override public void run() { scrollview.fullScroll(ScrollView.FOCUS_DOWN); } });
+
                                         CheckBox c = new CheckBox(context);
                                         c.setText(msg);
                                         c.setButtonDrawable(R.drawable.cb_check_on_off);
@@ -261,6 +261,8 @@ public class MainActivity extends Activity {
 
                                         talk.add(c);
                                         talkList.addView(c);
+
+                                        scrollview.post(new Runnable() { @Override public void run() { scrollview.fullScroll(ScrollView.FOCUS_DOWN); } });
                                         break;
                                     case commSock.START:
                                         Toast.makeText(MainActivity.this, "녹음 시작", Toast.LENGTH_SHORT).show();
@@ -270,20 +272,21 @@ public class MainActivity extends Activity {
                                             if(naverRecognizer != null) naverRecognizer.recognize();
                                         break;
                                     case commSock.EXIT:
-                                        Toast.makeText(MainActivity.this, msg + " 종료", Toast.LENGTH_SHORT).show();
+                                        if(isRunning) {
+                                            Toast.makeText(MainActivity.this, msg + " 종료", Toast.LENGTH_SHORT).show();
 
-                                        for(int i=0; i<userList.size();i++){
-                                            if(userList.get(i).getNickname().equals(msg)){
-                                                if(selectedUser.equals(userList.get(i).getNickname())){
-                                                    selectedUser = null;
-                                                    updateChatHighlight();
+                                            for (int i = 0; i < userList.size(); i++) {
+                                                if (userList.get(i).getNickname().equals(msg)) {
+                                                    if (selectedUser.equals(userList.get(i).getNickname())) {
+                                                        selectedUser = null;
+                                                        updateChatHighlight();
+                                                    }
+                                                    userList.remove(i);
+                                                    break;
                                                 }
-                                                userList.remove(i);
-                                                break;
                                             }
+                                            updateUserList();
                                         }
-                                        updateUserList();
-
                                         break;
                                     case commSock.ENTER:
                                         Toast.makeText(MainActivity.this, msg + " 입장", Toast.LENGTH_SHORT).show();

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat May 11 20:03:41 KST 2019
+#Thu May 16 01:47:09 KST 2019
 4.path=lib/x86_64/libNaverspeechJNI-1.1.15.so
 8.set=NATIVE_RESOURCE
 6.path=classes.dex
