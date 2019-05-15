@@ -18,6 +18,7 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -96,7 +97,7 @@ public class joinActivity extends AppCompatActivity {
         else {
 
             sId = et_id.getText().toString();        //id
-            sPw = et_pw.getText().toString();            //pw1
+            sPw = Hashing.SHA256(et_pw.getText().toString());            //pw1
             sBirth = bYear.getSelectedItem().toString();
 
             int m = Integer.parseInt(bMonth.getSelectedItem().toString());

@@ -31,11 +31,12 @@ public class First extends Activity {
                     }
                 } catch (InterruptedException ex) {}
 
-                finish();
+
                 // Run next activity
                 Intent intent = new Intent();
                 intent.setClass(First.this, loginActivity.class);
                 startActivity(intent);
+                finish();
             }
         };
         splashThread.start();

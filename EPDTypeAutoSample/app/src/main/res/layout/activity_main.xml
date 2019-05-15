@@ -27,73 +27,49 @@
             android:layout_marginBottom="8dp"
             android:text="@string/no"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintBottom_toTopOf="@+id/nestedScrollView"
-            app:layout_constraintEnd_toStartOf="@+id/pincode"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/pincode4"
-            android:layout_width="270dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/hi"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintBottom_toTopOf="@+id/nestedScrollView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/content"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="248dp"
-        android:text="@string/content"
-        android:verticalScrollbarPosition="defaultPosition" />
+        android:layout_height="236dp"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical">
 
-    <LinearLayout
+        <LinearLayout
+            android:id="@+id/talkList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/userListScroll"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:orientation="vertical">
+        android:layout_height="120dp">
 
-        <TextView
+        <LinearLayout
             android:id="@+id/userList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/users" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="button" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="button" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="button" />
-        </LinearLayout>
-    </LinearLayout>
+            android:orientation="horizontal" />
+    </ScrollView>
 
     <Button
         android:id="@+id/btn_start"
@@ -103,13 +79,12 @@
 
     <Button
         android:id="@+id/exitbt3"
-        android:layout_width="379dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="381dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:onClick="bt_exit"
-        android:text="@string/exit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nestedScrollView2" />
+        android:text="EXIT"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </LinearLayout>

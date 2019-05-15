@@ -44,7 +44,7 @@ public class loginActivity extends AppCompatActivity {
 
                 try {
                     send.put("id", idText.getText().toString());
-                    send.put("pw", passwordText.getText().toString());
+                    send.put("pw", Hashing.SHA256(passwordText.getText().toString()));
                 }catch(Exception e){
                     e.printStackTrace();
                 }
