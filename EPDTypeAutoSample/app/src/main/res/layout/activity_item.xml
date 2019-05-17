@@ -5,8 +5,9 @@
     android:layout_height="wrap_content"
     android:padding="8dp"
     android:gravity="center_vertical"
+
     android:layout_marginBottom="8dp"
-    android:background="@android:color/white">
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,37 +15,37 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center_vertical">
+            android:background="@drawable/borer_black_bottom"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumbarungothicbold"
                 android:includeFontPadding="false"
+
                 android:text="TITLE"
                 android:textColor="@android:color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textSize="16sp"
+                />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumbarungothic"
                 android:includeFontPadding="false"
+
                 android:text="content"
-                android:textSize="13sp"
-                android:textColor="@android:color/darker_gray"/>
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/three_dots"/>
     </LinearLayout>
 
     <TextView
@@ -52,10 +53,14 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:background="#CECECE"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:animateLayoutChanges="true"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/nanumbarungothic"
         android:text="@string/history"
-        android:textSize="24sp"
-        android:animateLayoutChanges="true"/>
+        android:textColor="#000000"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,17 +70,26 @@
         <Button
             android:id="@+id/export"
             android:layout_width="188dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/bt_radius_w"
+            android:fontFamily="@font/nanumbarungothic"
             android:text="@string/make"
-            android:animateLayoutChanges="true"/>
+            android:textColor="#3FACDC"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="188dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/bt_radius_w"
+            android:fontFamily="@font/nanumbarungothic"
             android:text="@string/detail"
-            android:animateLayoutChanges="true"/>
+            android:textColor="#3FACDC" />
     </LinearLayout>
 
 </LinearLayout>

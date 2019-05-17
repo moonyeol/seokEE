@@ -1,76 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".mypage"
+
     tools:layout_editor_absoluteY="81dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="@string/ID_text"
-            android:textSize="22sp" />
-
-        <TextView
-            android:id="@+id/id_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/nickname_text"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="@string/nickname_text"
-            android:textSize="22sp" />
-
-        <TextView
-            android:id="@+id/nickname_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
 
         <TextView
-            android:id="@+id/textView7"
-            android:layout_width="319dp"
-            android:layout_height="42dp"
-            android:text="@string/history"
-            android:textSize="24sp" />
+            android:id="@+id/textView8"
+            android:layout_width="fill_parent"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:background="@drawable/borer_black_bottom"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:gravity="center"
+            android:text="@string/my_tb"
+            android:textAlignment="gravity"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="8dp" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#F0F0F0" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:background="#E8E9EA"
+            android:gravity="bottom|right"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="bottom"
+                app:srcCompat="@drawable/logout_icon"
+                tools:layout_editor_absoluteX="320dp"
+                tools:layout_editor_absoluteY="118dp" />
+
+            <Button
+                android:id="@+id/button6"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="65dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom"
+                android:background="#E8E9EA"
+                android:fontFamily="@font/nanumbarungothic"
+                android:text="로그아웃"
+                android:textColor="#6E6F71"
+                android:textSize="15sp"
+                tools:layout_editor_absoluteX="338dp"
+                tools:layout_editor_absoluteY="122dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            android:background="#E8E9EA"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="89dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/pro_seok"
+                tools:layout_editor_absoluteY="122dp" />
+
+
+            <TextView
+                android:id="@+id/nicname_tv_pro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/nanumbarungothicbold"
+                android:text="닉네임"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="181dp"
+                tools:layout_editor_absoluteY="236dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:background="#E8E9EA"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp"></LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="62dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left|center_vertical"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical|left"
+                android:text="아이디"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="20dp"
+                tools:layout_editor_absoluteY="272dp" />
+
+            <TextView
+                android:id="@+id/id_tv"
+                android:layout_width="295dp"
+                android:layout_height="35dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_weight="1"
+
+                android:background="@drawable/borer_black_bottom"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical|left"
+                android:text="UserId"
+                android:textColor="#6E6F71"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="100dp"
+                tools:layout_editor_absoluteY="272dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp">
+
+            <TextView
+                android:id="@+id/nickname_text"
+                android:layout_width="67dp"
+                android:layout_height="35dp"
+                android:layout_gravity="left|center_vertical"
+
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical|left"
+                android:text="@string/nickname_text"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="20dp"
+                tools:layout_editor_absoluteY="315dp" />
+
+            <TextView
+                android:id="@+id/nickname_tv"
+                android:layout_width="295dp"
+                android:layout_height="35dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_weight="1"
+
+                android:background="@drawable/borer_black_bottom"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical|left"
+                android:text="nicname"
+                android:textColor="#6E6F71"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="90dp"
+                tools:layout_editor_absoluteY="328dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp">
+
+            <TextView
+                android:id="@+id/nickname_text2"
+                android:layout_width="79dp"
+                android:layout_height="35dp"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical|left"
+                android:text="과거기록"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="375dp" />
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="fill_parent"
+        android:layout_height="12dp"
+        android:background="@drawable/border_gray_top"
+        android:fontFamily="@font/nanumbarungothic"
+        android:gravity="center_vertical|left"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="673dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="fill_parent"
+        android:layout_height="12dp"
+        android:background="@drawable/border_gray_top"
+        android:fontFamily="@font/nanumbarungothic"
+        android:gravity="center_vertical|left"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="370dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="369dp"
+        android:layout_height="239dp"
+        android:background="#FFFFFF"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="424dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="fill_parent"
+            android:layout_height="12dp"
+            android:background="@drawable/border_gray_top"
+            android:fontFamily="@font/nanumbarungothic"
+            android:gravity="center_vertical|left"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="673dp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:paddin="0dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/del_file_b"
+                tools:layout_editor_absoluteX="97dp"
+                tools:layout_editor_absoluteY="699dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="200dp"
+
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:paddin="0dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/dow_file_b"
+                tools:layout_editor_absoluteX="251dp"
+                tools:layout_editor_absoluteY="699dp" />
+
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
