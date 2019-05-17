@@ -18,10 +18,10 @@ public class anonymous extends Activity {
         setContentView(R.layout.activity_anonymous);
 
 
-        Button button = findViewById(R.id.button4);
+        Button button = findViewById(R.id.button3);
         button.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                EditText edittext = findViewById(R.id.editText2);
+                EditText edittext = findViewById(R.id.editText);
                 nickname = edittext.getText().toString();
 
 

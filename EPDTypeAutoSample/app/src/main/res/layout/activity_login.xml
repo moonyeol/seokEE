@@ -4,107 +4,198 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@android:color/white"
     tools:context=".MainActivity"
+
     tools:layout_editor_absoluteY="81dp">
 
 
-    <EditText
-        android:id="@+id/idInput"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="20dp"
-        android:autofillHints=""
-        android:hint="@string/id"
-        android:inputType=""
-        app:layout_constraintBottom_toTopOf="@+id/passwordInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="o" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="59dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="59dp"></LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="235dp"
+            android:layout_height="174dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/StringValue"
+
+            android:src="@drawable/seok_loading"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="112dp" />
+
+        <EditText
+            android:id="@+id/idInput"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:autofillHints=""
+            android:background="@drawable/edit_border_black"
+            android:fontFamily="@font/nanumbarungothic"
+            android:hint="@string/login_id"
+            android:inputType=""
+            android:textColor="#747474"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="340dp"
+            tools:targetApi="o" />
 
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/passwordInput"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="26dp"
-        android:layout_toStartOf="@+id/joinButton"
-        android:text="@string/log_in"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/reid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/joinButton"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
 
-    <Button
-        android:id="@+id/anonymous"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
-        android:background="@android:color/transparent"
-        android:backgroundTint="@android:color/transparent"
-        android:text="@string/anonymous"
-        android:textAlignment="center"
-        android:textColor="@android:color/darker_gray"
-        android:textDirection="firstStrongRtl"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reid" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:background="@drawable/edit_border_black"
+            android:ems="10"
+            android:fontFamily="@font/nanumbarungothic"
+            android:hint="@string/login_pw"
+            android:inputType="textPassword"
+            android:textColor="#747474"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="402dp"
+            tools:targetApi="o" />
+
+        <CheckBox
+            android:id="@+id/reid"
+            android:layout_width="296dp"
+
+            android:layout_height="30dp"
+            android:layout_below="@+id/loginButton"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/nanumbarungothic"
+            android:text="@string/login_reid"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="58dp"
+            tools:layout_editor_absoluteY="460dp" />
+
+        <Button
+            android:id="@+id/loginButton"
+
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="300dp"
+
+            android:layout_height="50dp"
+            android:layout_below="@+id/passwordInput"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@+id/joinButton"
+            android:background="@drawable/bt_raidus"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="498dp" />
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <Button
+                android:id="@+id/anonymous"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="148dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:background="#FFFFFF"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/nanumbarungothic"
+                android:text="@string/anonymous"
+                android:textAlignment="center"
+                android:textColor="#747474"
+                android:textDirection="firstStrongRtl"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="56dp"
+                tools:layout_editor_absoluteY="556dp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="1dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/StringValue"
+                android:src="@drawable/line"
+                tools:layout_editor_absoluteX="204dp"
+                tools:layout_editor_absoluteY="569dp" />
 
 
-    <Button
-        android:id="@+id/joinButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/loginButton"
-        android:layout_alignEnd="@+id/passwordInput"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="18dp"
-        android:text="@string/sign_up"
-        android:textAllCaps="false"
-        app:layout_constraintBaseline_toBaselineOf="@+id/loginButton"
-        app:layout_constraintEnd_toStartOf="@+id/loginButton"
-        app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/joinButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="148dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/nanumbarungothic"
+                android:text="@string/login_join"
+                android:textAlignment="center"
+                android:textColor="#747474"
+                android:textDirection="firstStrongRtl"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="207dp"
+                tools:layout_editor_absoluteY="556dp" />
+        </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/reid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/loginButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="190dp"
-        android:text="@string/remember_login"
-        app:layout_constraintBottom_toTopOf="@+id/anonymous"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="59dp">
 
-    <EditText
-        android:id="@+id/passwordInput"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="16dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/loginButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idInput"
-        tools:targetApi="o" />
-
+            <TextView
+                android:id="@+id/anonymous2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="403dp"
+                android:layout_height="46dp"
+                android:layout_gravity="bottom"
+                android:background="#FFFFFF"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="@string/login_copy"
+                android:textAllCaps="false"
+                android:textColor="#747474"
+                android:textDirection="firstStrongRtl"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="4dp"
+                tools:layout_editor_absoluteY="711dp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

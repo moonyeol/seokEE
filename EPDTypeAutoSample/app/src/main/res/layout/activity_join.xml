@@ -1,134 +1,330 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+
+    android:baselineAligned="false"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/idInput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="false"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentTop="false"
-            android:layout_alignParentEnd="false"
-            android:layout_alignParentRight="false"
-
-            android:layout_margin="8dp"
-            android:ems="10"
-            android:hint="@string/ID_text"
-            android:inputType="textPersonName" />
-
-        <Button
-            android:id="@+id/okbt"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:onClick="bt_ok"
-            android:text="중복확인" />
-
-    </LinearLayout>
-
-    <EditText
-        android:id="@+id/passwordInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentRight="false"
-        android:layout_margin="8dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPersonName|textPassword" />
 
     <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal|top"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-40dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:layout_weight="1"
-            android:paddingLeft="4dp"
-            android:text="Birthday"
+            android:id="@+id/textView8"
+            android:layout_width="fill_parent"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/borer_black_bottom"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:gravity="center"
+            android:text="@string/jo_1"
+            android:textAlignment="gravity"
+            android:textColor="#000000"
             android:textSize="18sp" />
 
-        <Spinner
-            android:id="@+id/birthYear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
-        <Spinner
-            android:id="@+id/birthMonth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="0dp"></LinearLayout>
 
-        <Spinner
-            android:id="@+id/birthDay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="0dp">
+
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="202dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="8dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                android:autofillHints=""
+                android:background="@drawable/edit_border_black"
+                android:ems="10"
+                android:fontFamily="@font/nanumbarungothic"
+                android:hint="@string/login_id"
+                android:inputType="textPersonName"
+
+                android:padding="8dp"
+                android:textSize="16sp"
+                tools:targetApi="o" />
+
+            <Button
+                android:id="@+id/okbt"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="8dp"
+
+                android:background="@drawable/bt_radius_w"
+                android:fontFamily="@font/nanumbarungothic"
+                android:onClick="bt_ok"
+                android:padding="8dp"
+                android:text="@string/jo_2"
+                android:textAlignment="center"
+                android:textColor="#3FACDC"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="250dp"
+                tools:layout_editor_absoluteY="157dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="-40dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <EditText
+                android:id="@+id/passwordInput"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentRight="false"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+
+                android:background="@drawable/edit_border_black"
+                android:ems="10"
+                android:fontFamily="@font/nanumbarungothic"
+                android:hint="@string/login_pw"
+                android:inputType="textPersonName|textPassword"
+                android:textColor="#747474"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="41dp"
+                tools:layout_editor_absoluteY="219dp" />
+
+
+            <EditText
+                android:id="@+id/nickInput"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edit_border_black"
+                android:ems="10"
+                android:fontFamily="@font/nanumbarungothic"
+
+                android:hint="@string/an_nick"
+                android:inputType="textPersonName"
+                android:textColor="#747474"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="40dp"
+                tools:layout_editor_absoluteY="277dp" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-40dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/nanumbarungothic"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="4dp"
+            android:text="성별"
+            android:textColor="#5D5D5D"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="343dp" />
+
 
     <RadioGroup
-        android:id="@+id/gender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:id="@+id/radioGroup"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="343dp">
 
         <RadioButton
             android:id="@+id/genderMen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:checked="true"
-            android:text="남자" />
+            android:fontFamily="@font/nanumbarungothic"
+            android:gravity="center"
+            android:text="남자"
+            android:textColor="#747474"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/genderWomen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            android:checked="false"
-            android:text="여자" />
+            android:fontFamily="@font/nanumbarungothic"
+            android:gravity="center"
+            android:text="여자"
+            android:textColor="#747474"
+            android:textSize="16sp" />
 
     </RadioGroup>
+    </LinearLayout>
 
-    <EditText
-        android:id="@+id/nickInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="닉네임"
-        android:inputType="textPersonName" />
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="-40dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center"
+                android:paddingLeft="4dp"
+                android:text="@string/jo_6"
+                android:textAlignment="center"
+                android:textColor="#5D5D5D"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="40dp"
+                tools:layout_editor_absoluteY="409dp" />
+
+            <Spinner
+                android:id="@+id/birthYear"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/nanumbarungothic"
+                android:textColor="#747474"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="101dp"
+                tools:layout_editor_absoluteY="409dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:fontFamily="@font/nanumbarungothic"
+                android:text="@string/jo_7"
+
+                android:textColor="#747474"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="409dp" />
+
+
+            <Spinner
+                android:id="@+id/birthMonth"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/nanumbarungothic"
+                android:textColor="#747474"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="201dp"
+                tools:layout_editor_absoluteY="409dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/nanumbarungothic"
+                android:text="@string/jo_8"
+                android:gravity="center"
+
+                android:textColor="#747474"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="409dp" />
+
+            <Spinner
+                android:id="@+id/birthDay"
+
+                android:layout_width="45dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/nanumbarungothic"
+                android:textColor="#747474"
+                android:textSize="20dp"
+                tools:layout_editor_absoluteX="265dp"
+                tools:layout_editor_absoluteY="409dp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="30dp"
+                android:gravity="center"
+
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/nanumbarungothic"
+                android:text="@string/jo_9"
+                android:textColor="#747474"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="310dp"
+                tools:layout_editor_absoluteY="409dp" />
+
+        </LinearLayout>
 
     <Button
         android:id="@+id/join_joinButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="92dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="300dp"
+        android:layout_height="54dp"
+        android:background="@drawable/bt_raidus"
         android:clickable="true"
+        android:fontFamily="@font/nanumbarungothicbold"
+        android:layout_marginTop="30dp"
         android:onClick="bt_join"
-        android:text="JOIN" />
+        android:text="@string/jo_1"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="487dp" />
 
-</LinearLayout>
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

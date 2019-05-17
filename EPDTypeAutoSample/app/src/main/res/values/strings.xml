@@ -34,5 +34,30 @@
     <string name="make">파일받기</string>
     <string name="word_cloud">word_cloud</string>
     <string name="result">result</string>
-    <string name="detail">detail</string>
+    <string name="detail">세부사항</string>
+    <string name="login_id">\t아이디</string>
+    <string name="login_pw">\t비밀번호</string>
+    <string name="login_reid">로그인 상태 유지</string>
+    <string name="login_join">회원가입</string>
+    <string name="login_copy">Copyright ⓒ seokEE. All rights reserved.</string>
+    <string name="StringValue">이미지가 열리지 않습니다.</string>
+    <string name="an_tb">닉네임 입력</string>
+    <string name="an_nick">\t닉네임</string>
+    <string name="an_snick">사용할 닉네임을 입력해 주세요.</string>
+    <string name="er_1">회원방의 참여 코드를 입력해 주세요.</string>
+    <string name="er_tb">참여 코드 입력</string>
+    <string name="er_2">\t참여코드</string>
+    <string name="jo_1">회원가입</string>
+    <string name="jo_2">중복확인</string>
+    <string name="jo_3">성별</string>
+    <string name="jo_4">남자</string>
+    <string name="jo_5">여자</string>
+    <string name="jo_6">생년월일</string>
+    <string name="jo_7">년</string>
+    <string name="jo_8">월</string>
+    <string name="jo_9">일</string>
+    <string name="my_tb">마이페이지</string>
+    <string name="en_tb">활동 선택</string>
+    <string name="main_part">참여자 목록</string>
+
 </resources>

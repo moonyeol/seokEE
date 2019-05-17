@@ -80,7 +80,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
         private TextView textView1;
         private TextView textView2;
         private TextView textView3;
-        private ImageView imageView1;
+
         private Button export;
         private Button detail;
         private Layout item;
@@ -94,7 +94,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             textView1 = itemView.findViewById(R.id.textView1);
             textView2 = itemView.findViewById(R.id.textView2);
             textView3 = itemView.findViewById(R.id.history_content);
-            imageView1 = itemView.findViewById(R.id.imageView1);
+
             export = itemView.findViewById(R.id.export);
             detail = itemView.findViewById(R.id.detail);
 
@@ -115,7 +115,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             itemView.setOnClickListener(this);
             textView1.setOnClickListener(this);
             textView2.setOnClickListener(this);
-            imageView1.setOnClickListener(this);
+
 
 
             export.setOnClickListener(new Button.OnClickListener() {

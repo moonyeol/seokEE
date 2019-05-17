@@ -4,39 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JoinRoom">
+    android:background="#FFFFFF"
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="296dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/pincode"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.282"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="o" />
+    tools:context=".anonymous"
+    tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
-        android:textSize="22sp"
-        android:text="@string/input_pincode"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-    android:id="@+id/button3"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/enter"
-    app:layout_constraintEnd_toEndOf="@+id/textView"
-    app:layout_constraintTop_toTopOf="@+id/editText" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="fill_parent"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/borer_black_bottom"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:gravity="center"
+            android:text="@string/er_tb"
+            android:textAlignment="gravity"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="84dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="25dp"
+            android:contentDescription="@string/StringValue"
+            android:src="@drawable/part_code_simbol" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="9dp"
+            android:fontFamily="@font/nanumbarungothic"
+            android:padding="8dp"
+            android:text="@string/er_1"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:autofillHints=""
+            android:background="@drawable/edit_border_black"
+            android:ems="10"
+            android:fontFamily="@font/nanumbarungothic"
+            android:hint="@string/er_2"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:textSize="16sp"
+            tools:targetApi="o" />
+
+        <Button
+            android:id="@+id/button3"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_margin="19dp"
+            android:background="@drawable/bt_raidus"
+
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:text="@string/input"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>
