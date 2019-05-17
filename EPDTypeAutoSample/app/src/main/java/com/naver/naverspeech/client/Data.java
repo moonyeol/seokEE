@@ -40,11 +40,4 @@ public class Data {
         return title + " " + content + " " + member + " " + number;
     }
 
-    public int getResId() {
-        return resId;
-    }
-
-    public void setResId(int resId) {
-        this.resId = resId;
-    }
 }

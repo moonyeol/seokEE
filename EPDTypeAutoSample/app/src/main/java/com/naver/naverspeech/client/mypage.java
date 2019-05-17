@@ -36,7 +36,16 @@ public class mypage extends AppCompatActivity {
             TextView id_tv = findViewById(R.id.id_tv);
 
             Info info = new Info();
-            init();
+
+            RecyclerView recyclerView = findViewById(R.id.recyclerView);
+
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+            recyclerView.setLayoutManager(linearLayoutManager);
+
+            adapter = new Adapter();
+            recyclerView.setAdapter(adapter);
+
+
 
             getData(info);
 
@@ -75,16 +84,16 @@ public class mypage extends AppCompatActivity {
 
             if(h.content.length()>100)
                 data.setContent(h.content.substring(0,100));
+//                data.setContent(h.content);
 
-//          data.setResId(linfo.historys.get(i).content);
 
 
             // 각 값이 들어간 data를 adapter에 추가합니다.
-            //adapter.addItem(data);
+            adapter.addItem(data);
         }
 
         // adapter의 값이 변경되었다는 것을 알려줍니다.
-        //adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged();
     }
 
     class history{
@@ -100,7 +109,7 @@ public class mypage extends AppCompatActivity {
                 this.content = jobject.get("content").toString();
                 this.date = jobject.get("date").toString();
                 this.members = jobject.get("members").toString();
-
+                System.out.println(this.number);
             }catch(Exception e){
                 e.printStackTrace();
             }

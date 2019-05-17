@@ -83,9 +83,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             this.position = position;
 
             textView1.setText(data.getTitle());
-            textView2.setText(data.getContent());
-            textView3.setText(data.getMember());
-            imageView1.setImageResource(data.getResId());
+            textView3.setText(data.getContent());
+            textView2.setText(data.getMember());
+//            imageView1.setImageResource(data.getResId());
 
 
             changeVisibility(selectedItems.get(position));
@@ -132,7 +132,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             // ValueAnimator.ofInt(int... values)는 View가 변할 값을 지정, 인자는 int 배열
             ValueAnimator va = isExpanded ? ValueAnimator.ofInt(0, height) : ValueAnimator.ofInt(height, 0);
             // Animation이 실행되는 시간, n/1000초
-            va.setDuration(600);
+            va.setDuration(300);
             va.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
