@@ -15,11 +15,16 @@ public class enter extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
+        Intent intent = getIntent();
 
         Button joinBtn = findViewById(R.id.enter_room);
         Button makeBtn = findViewById(R.id.make_room);
         Button pageBtn = findViewById(R.id.mypage);
 
+        boolean is_login = intent.getBooleanExtra("is_login",false);
+
+
+        pageBtn.setVisibility(is_login ? View.VISIBLE : View.GONE);
         joinBtn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(enter.this, JoinRoom.class);

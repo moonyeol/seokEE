@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
 
     private String msg;
     private int func;
-
+    String pin;
     ArrayList<UserListButton> userList = new ArrayList<>();
 
     // 음성 인식 메시지를 처리합니다.
@@ -134,7 +134,7 @@ public class MainActivity extends Activity {
 
         Intent intent = getIntent();
         boolean host = intent.getExtras().getBoolean("isHost");
-        String pin = intent.getExtras().getString("pin");
+        pin = intent.getExtras().getString("pin");
 
         et_pin = findViewById(R.id.pincode4);
         et_pin.setText(pin);
@@ -397,6 +397,9 @@ public class MainActivity extends Activity {
                         // 확인시 처리 로직
                         commSock.kick(commSock.EXIT, "");
                         isRunning = false;
+                        Intent intent = new Intent(MainActivity.this, resultActivity.class);
+                        intent.putExtra("pincode", pin);
+                        startActivity(intent);
                         finish();
                     }
                 })

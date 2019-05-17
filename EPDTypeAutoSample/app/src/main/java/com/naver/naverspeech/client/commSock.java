@@ -42,6 +42,7 @@ public class commSock {
     public static final int REQUEST_USERINFO = 12;
     public static final int DEBUG = 13;
     public static final int REQUEST_USERLIST = 14;
+    public static final int REQUEST_RESULT = 15;
 
     public static void setSocket(){
         Log.i("my","Try SetSocket");

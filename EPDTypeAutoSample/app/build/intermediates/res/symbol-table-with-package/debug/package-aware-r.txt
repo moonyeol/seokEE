@@ -425,6 +425,7 @@ color material_grey_600
 color material_grey_800
 color material_grey_850
 color material_grey_900
+color navigationBarColor
 color notification_action_color_filter
 color notification_icon_bg_color
 color primary_dark_material_dark
@@ -774,6 +775,7 @@ id imageView1
 id info
 id invisible
 id italic
+id item
 id item_touch_helper_previous_elevation
 id joinButton
 id join_joinButton
@@ -859,8 +861,10 @@ id textView1
 id textView2
 id textView3
 id textView4
+id textView5
 id textView6
 id textView7
+id textView8
 id time
 id title
 id titleDividerNoCustom

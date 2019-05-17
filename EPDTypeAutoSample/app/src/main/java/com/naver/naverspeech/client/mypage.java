@@ -1,5 +1,6 @@
 package com.naver.naverspeech.client;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -27,6 +28,7 @@ import org.json.JSONObject;
 
 public class mypage extends AppCompatActivity {
     private Adapter adapter;
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -59,6 +61,8 @@ public class mypage extends AppCompatActivity {
 //            }
 //        });
         }
+
+
 
     private void init() {
 
@@ -114,11 +118,11 @@ public class mypage extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
         public String toString(){
             return this.date + " " +this.members + " " + this.number + " " + this.content;
         }
     }
+
 
     public class Info{
         String id;

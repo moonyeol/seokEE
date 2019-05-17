@@ -1,9 +1,12 @@
 package com.naver.naverspeech.client;
 
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +14,29 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
+import android.os.Environment;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.net.URL;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileOutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.util.logging.Handler;
+import java.io.*;
+import java.net.*;
+import android.app.DownloadManager;
+import android.net.Uri;
+import android.content.IntentFilter;
+import android.content.BroadcastReceiver;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
+
 
     // adapter에 들어갈 list 입니다.
     private ArrayList<Data> listData = new ArrayList<>();
@@ -62,9 +83,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
         private ImageView imageView1;
         private Button export;
         private Button detail;
-
-        private Data data;
+        private Layout item;
+        public Data data;
         private int position;
+        DownloadThread dThread;
 
         ItemViewHolder(View itemView) {
             super(itemView);
@@ -75,17 +97,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             imageView1 = itemView.findViewById(R.id.imageView1);
             export = itemView.findViewById(R.id.export);
             detail = itemView.findViewById(R.id.detail);
-//            imageView2 = itemView.findViewById(R.id.imageView2);
+
+
         }
 
         void onBind(Data data, int position) {
             this.data = data;
             this.position = position;
 
-            textView1.setText(data.getTitle());
-            textView3.setText(data.getContent());
-            textView2.setText(data.getMember());
-//            imageView1.setImageResource(data.getResId());
+            textView1.setText(this.data.getTitle());
+            textView3.setText(this.data.getContent());
+            textView2.setText(this.data.getMember());
 
 
             changeVisibility(selectedItems.get(position));
@@ -94,12 +116,75 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             textView1.setOnClickListener(this);
             textView2.setOnClickListener(this);
             imageView1.setOnClickListener(this);
+
+
+            export.setOnClickListener(new Button.OnClickListener() {
+                public void onClick(View v) {
+                    try {
+                        commSock.kick(11, ItemViewHolder.this.data.getNumber());
+                        String fileURL = commSock.read().getJSONObject(0).optString("link");
+                        String Save_folder = "/seokEE";
+                        String Save_Path = "";
+                        String File_Name = "test";
+                        String ext = Environment.getExternalStorageState();
+                        if (ext.equals(Environment.MEDIA_MOUNTED)) {
+                            Save_Path = Environment.getExternalStorageDirectory()+ Save_folder;
+                        }
+                        File dir = new File(Save_Path);
+                        if (!dir.exists()) {
+                            dir.mkdirs();
+                        }
+                        downloadFile(fileURL,Save_Path,File_Name);
+
+
+
+                    }catch(org.json.JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            detail.setOnClickListener(new Button.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, resultActivity.class);
+                    intent.putExtra("pincode", ItemViewHolder.this.data.getNumber());
+                    context.startActivity(intent);
+                }
+            });
         }
+
+
+        public void downloadFile(String furl,String fpath,String fname) {
+            File direct = new File(fpath);
+
+            if (!direct.exists()) {
+                direct.mkdirs();
+            }
+            Uri uri = Uri.parse(furl);
+            DownloadManager mgr = (DownloadManager) context.getSystemService(context.DOWNLOAD_SERVICE);
+
+            DownloadManager.Request request = new DownloadManager.Request(uri);
+
+            request.setAllowedNetworkTypes(
+                    DownloadManager.Request.NETWORK_WIFI
+                            | DownloadManager.Request.NETWORK_MOBILE)
+            .setDestinationInExternalPublicDir(direct+"/",fname+".docx")
+                    ;
+
+            mgr.enqueue(request);
+
+            // Open Download Manager to view File progress
+
+//            context.startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
+
+        }
+
+
 
         @Override
         public void onClick(View v) {
 
-            if(v.getId()==R.id.linearItem) {
+            if (v.getId() == R.id.linearItem) {
                 if (selectedItems.get(position)) {
                     // 펼쳐진 Item을 클릭 시
                     selectedItems.delete(position);
@@ -121,6 +206,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
 
         /**
          * 클릭된 Item의 상태 변경
+         *
          * @param isExpanded Item을 펼칠 것인지 여부
          */
         private void changeVisibility(final boolean isExpanded) {
@@ -146,6 +232,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     detail.getLayoutParams().height = value;
                     detail.requestLayout();
 
+
                     // textView3가 실제로 사라지게하는 부분
                     textView3.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
                     export.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
@@ -158,4 +245,81 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             va.start();
         }
     }
+
+    public class DownloadThread implements Runnable {
+
+        // 다운로드 받을 주소와 저장할 파일명을 위한 변수
+        String mAddr;
+        String mFile;
+
+        //생성자
+        public DownloadThread(String mAddr, String mFile) {
+            this.mAddr = mAddr;
+            this.mFile = mFile;
+
+        }
+
+        public void run() {
+            // 다운로드 받을 주소를 만들기 위한 변수
+            URL fUrl;
+            // 데이터를 바이트다윈로 읽을 때 읽을 위치를 저장할 변수
+            int read;
+            try {
+                // 다운로드 받을 URL 생성
+                fUrl = new URL(mAddr);
+                // 연결 객체 생성
+                HttpURLConnection conn = (HttpURLConnection) fUrl.openConnection();
+//                conn.setRequestMethod("GET");
+//                conn.setDoInput(true);
+//                conn.connect();
+                // 연결된 파일의 크기 가져오기
+                int len = conn.getContentLength();
+                // 데이터를 저장할 배열생성
+                byte raster[] = new byte[len];
+                // 웹에서  읽어올 스트림 생성  - 일반 파일을 읽는 경우
+                InputStream is = conn.getInputStream();
+                // 파일에 기록할 스트림 생성
+                File file = new File(mFile);
+                FileOutputStream fos = new FileOutputStream(file);
+
+                while (true) {
+                    // is 에서  읽어서 raster에 젖ㅇ하고 읽은 마지막위치를 read에 ㅈ장
+                    read = is.read(raster);
+
+                    // 읽은데이터가 없다면
+                    if (read <= 0) {
+                        break;
+                    }
+                    // raster 배열에서 0부턴 read 만큼 읽어서 fos에 기록
+                    fos.write(raster, 0, read);
+                }
+                is.close();
+                fos.close();
+                conn.disconnect();
+
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
+
+        }
+
+
+
+    }
+//    private void showDownloadFile() {
+//        Intent intent = new Intent();
+//        intent.setAction(android.content.Intent.ACTION_VIEW);
+//        File file = new File(Save_Path + "/" + File_Name);
+//
+//        // 파일 확장자 별로 mime type 지정해 준다.
+//        if (File_extend.equals("txt")) {
+//            intent.setDataAndType(Uri.fromFile(file), "text/*");
+//        } else if (File_extend.equals("doc") || File_extend.equals("docx")) {
+//            intent.setDataAndType(Uri.fromFile(file), "application/msword");
+//        }
+//        context.startActivity(intent);
+//    }
 }
+

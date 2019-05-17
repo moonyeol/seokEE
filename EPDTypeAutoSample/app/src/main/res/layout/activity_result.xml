@@ -15,11 +15,25 @@
     android:textSize="24sp" />
 
     <TextView
-    android:id="@+id/textView6"
-    android:layout_width="match_parent"
-    android:layout_height="393dp"
-    android:text="@string/result"
-    android:textSize="24sp" />
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:text="키워드"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="146dp"
+        android:text="회의 기여도(+참여자)"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:text="회의내용"
+        android:textSize="24sp" />
 
     <Button
     android:id="@+id/exit"

@@ -6,7 +6,7 @@ public class Data {
     private String content;
     private String member;
     private String number;
-    private int resId;
+
 
     public String getTitle() {
         return title;
@@ -30,6 +30,10 @@ public class Data {
 
     public String getMember() {
         return member;
+    }
+
+    public String getNumber() {
+        return number;
     }
 
     public void setContent(String content) {

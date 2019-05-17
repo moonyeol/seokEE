@@ -21,14 +21,15 @@ public class loginActivity extends AppCompatActivity {
     TextView reid;
     String ids, pws;
     public static Activity _login;
-
+    public boolean is_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         _login = loginActivity.this;
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         idText = (EditText) findViewById(R.id.idInput);
         passwordText = (EditText) findViewById(R.id.passwordInput);
 
@@ -57,6 +58,8 @@ public class loginActivity extends AppCompatActivity {
                     if(check.equals("true")){
                         Toast.makeText(loginActivity.this, "로그인 성공!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(loginActivity.this, enter.class);
+                        is_login = true;
+                        intent.putExtra("is_login",is_login);
                         finish();
                         startActivity(intent);
                     } else {

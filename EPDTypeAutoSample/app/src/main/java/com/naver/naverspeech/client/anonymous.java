@@ -10,7 +10,9 @@ import android.widget.EditText;
 
 public class anonymous extends Activity {
     public static String nickname;
+    public boolean is_login;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anonymous);
@@ -22,11 +24,14 @@ public class anonymous extends Activity {
                 EditText edittext = findViewById(R.id.editText2);
                 nickname = edittext.getText().toString();
 
+
+
                 commSock.kick(commSock.SET_NICK,nickname);
 
                 // nickname 을 서버에 보내고 메인메뉴화면으로 넘어감.
                 Intent intent = new Intent(anonymous.this, enter.class);
-
+                is_login = false;
+                intent.putExtra("is_login",is_login);
                 loginActivity lo = (loginActivity)loginActivity._login;
                 startActivity(intent);
 
