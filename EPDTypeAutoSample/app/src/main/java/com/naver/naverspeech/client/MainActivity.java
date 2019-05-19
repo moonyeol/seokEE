@@ -159,7 +159,6 @@ public class MainActivity extends Activity {
             }
         });
 
-
         new Thread(new Runnable(){
             public void run(){
                 try {
@@ -218,7 +217,7 @@ public class MainActivity extends Activity {
 
                                             for (int i = 0; i < userList.size(); i++) {
                                                 if (userList.get(i).getNickname().equals(msg)) {
-                                                    if (selectedUser.equals(userList.get(i).getNickname())) {
+                                                    if (selectedUser != null && selectedUser.equals(userList.get(i).getNickname())) {
                                                         selectedUser = null;
                                                         updateChatHighlight();
                                                     }
@@ -257,6 +256,7 @@ public class MainActivity extends Activity {
 
         if(isRecording){
             Toast.makeText(this, "녹음 시작!", Toast.LENGTH_SHORT).show();
+            naverRecognizer.getSpeechRecognizer().initialize();
             btnStart.callOnClick();
         }
 
@@ -348,11 +348,15 @@ public class MainActivity extends Activity {
 
                         commSock.kick(commSock.EXIT, markedData.toString());
                         isRunning = false;
+
+                        naverRecognizer.getSpeechRecognizer().release();
+
                         finish();
 
                         Intent intent = new Intent(MainActivity.this, resultActivity.class);
                         intent.putExtra("pincode", pin);
                         startActivity(intent);
+
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
