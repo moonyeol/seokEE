@@ -1,5 +1,6 @@
 package com.naver.naverspeech.client;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
@@ -8,6 +9,8 @@ import android.view.MotionEvent;
 import android.os.StrictMode;
 import android.util.Log;
 import android.widget.Toast;
+
+import org.json.JSONObject;
 
 public class First extends Activity {
 
@@ -33,9 +36,39 @@ public class First extends Activity {
 
                 finish();
                 // Run next activity
-                Intent intent = new Intent();
-                intent.setClass(First.this, loginActivity.class);
-                startActivity(intent);
+
+                SharedPreferences auto_login = getSharedPreferences("auto_login", MODE_PRIVATE);
+                String id = auto_login.getString("id","");
+                String pwd = auto_login.getString("pwd", "");
+
+                if(!id.equals("") && !pwd.equals("")){
+                    JSONObject send = new JSONObject();// JSONObject 생성
+
+                    try {
+                        send.put("id", id);
+                        send.put("pw", pwd);
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        commSock.kick(commSock.LOGIN, send.toString());
+                        String check = commSock.read().getJSONObject(0).optString("message");
+
+                        if(check.equals("true")){
+                            Intent intent = new Intent(First.this, enter.class);
+                            intent.putExtra("is_login",true);
+                            startActivity(intent);
+                        }
+                    } catch(Exception e){
+                        e.printStackTrace();
+                    }
+                } else {
+                    Intent intent = new Intent();
+                    intent.setClass(First.this, loginActivity.class);
+
+                    startActivity(intent);
+                }
             }
         };
         splashThread.start();

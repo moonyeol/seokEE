@@ -257,7 +257,7 @@ public class MainActivity extends Activity {
 
         if(isRecording){
             Toast.makeText(this, "녹음 시작!", Toast.LENGTH_SHORT).show();
-            if(naverRecognizer != null) naverRecognizer.recognize();
+            btnStart.callOnClick();
         }
 
         commSock.kick(commSock.REQUEST_USERLIST, "");
@@ -344,10 +344,6 @@ public class MainActivity extends Activity {
                         for(CheckBox t : talk){
                             if(t.isChecked()) markedData.append("1");
                             else markedData.append("0");
-                        }
-
-                        if (writer != null) {
-                            writer.close();
                         }
 
                         commSock.kick(commSock.EXIT, markedData.toString());

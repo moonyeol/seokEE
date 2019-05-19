@@ -16,10 +16,13 @@ import android.widget.Toast;
 
 public class enter extends Activity {
 
+    public static Activity _enter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
+        _enter = enter.this;
+
         Intent intent = getIntent();
 
         Button joinBtn = findViewById(R.id.enter_room);
@@ -45,11 +48,11 @@ public class enter extends Activity {
                     String key = commSock.read().getJSONObject(0).optString("message");
 
 
-                intent.putExtra("isHost",true);
-                intent.putExtra("pin", key);
-                intent.putExtra("running", false);
+                    intent.putExtra("isHost",true);
+                    intent.putExtra("pin", key);
+                    intent.putExtra("running", false);
 
-                startActivity(intent);
+                    startActivity(intent);
                 }catch(org.json.JSONException e){
                     e.printStackTrace();
                 }

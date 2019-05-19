@@ -1,6 +1,7 @@
 package com.naver.naverspeech.client;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -47,14 +48,29 @@ public class mypage extends AppCompatActivity {
             adapter = new Adapter();
             recyclerView.setAdapter(adapter);
 
-
-
             getData(info);
 
             id_tv.setText(info.id);
             nickname_tv.setText(info.nickname);
 
-            //            Button make = findViewById(R.id.make);
+            Button logoutBtn = findViewById(R.id.logout);
+
+            logoutBtn.setOnClickListener(new Button.OnClickListener(){
+                public void onClick(View v){
+                    SharedPreferences.Editor editor = getSharedPreferences("auto_login", MODE_PRIVATE).edit();
+                    editor.putString("id","");
+                    editor.putString("pwd", "");
+                    editor.apply();
+
+                    enter._enter.finish();
+                    Intent intent = new Intent(mypage.this, loginActivity.class);
+                    finish();
+                    startActivity(intent);
+                }
+            });
+
+
+            //Button make = findViewById(R.id.make);
 //        make.setOnClickListener(new Button.OnClickListener(){
 //            public void onClick(View v) {
 ////                commSock.kick();

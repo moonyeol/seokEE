@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,15 +24,13 @@ public class loginActivity extends AppCompatActivity {
 
     EditText idText, passwordText;
     Button loginButton, joinButton, anonymousbutton;
-    TextView reid;
-    String ids, pws;
+    CheckBox reid;
+
     public static Activity _login;
-    public boolean is_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         _login = loginActivity.this;
-
         super.onCreate(savedInstanceState);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -71,13 +70,13 @@ public class loginActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_login);
-        idText = (EditText) findViewById(R.id.idInput);
-        passwordText = (EditText) findViewById(R.id.passwordInput);
+        idText = findViewById(R.id.idInput);
+        passwordText = findViewById(R.id.passwordInput);
 
-        loginButton = (Button) findViewById(R.id.loginButton);
-        joinButton = (Button) findViewById(R.id.joinButton);
-        anonymousbutton = (Button) findViewById(R.id.anonymous);
-        reid = (CheckBox) findViewById(R.id.reid);
+        loginButton = findViewById(R.id.loginButton);
+        joinButton = findViewById(R.id.joinButton);
+        anonymousbutton = findViewById(R.id.anonymous);
+        reid = findViewById(R.id.autoLogin);
 
         loginButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
@@ -97,10 +96,17 @@ public class loginActivity extends AppCompatActivity {
                     String check = commSock.read().getJSONObject(0).optString("message");
 
                     if(check.equals("true")){
+                        if(reid.isChecked()){
+                            SharedPreferences.Editor editor = getSharedPreferences("auto_login", MODE_PRIVATE).edit();
+                            editor.putString("id",idText.getText().toString());
+                            editor.putString("pwd", passwordText.getText().toString());
+                            editor.apply();
+                        }
+
                         Toast.makeText(loginActivity.this, "로그인 성공!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(loginActivity.this, enter.class);
-                        is_login = true;
-                        intent.putExtra("is_login",is_login);
+
+                        intent.putExtra("is_login",true);
                         finish();
                         startActivity(intent);
                     } else {
