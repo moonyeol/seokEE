@@ -58,6 +58,7 @@
         android:animateLayoutChanges="true"
         android:background="#FFFFFF"
         android:fontFamily="@font/nanumbarungothic"
+        android:padding="5dp"
         android:text="@string/history"
         android:textColor="#000000"
         android:textSize="16sp" />
@@ -70,7 +71,7 @@
         <Button
             android:id="@+id/export"
             android:layout_width="188dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:animateLayoutChanges="true"
             android:background="@drawable/bt_radius_w"
@@ -82,7 +83,7 @@
         <Button
             android:id="@+id/detail"
             android:layout_width="188dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:animateLayoutChanges="true"

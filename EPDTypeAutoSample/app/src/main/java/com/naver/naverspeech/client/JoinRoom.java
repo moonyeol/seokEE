@@ -20,7 +20,7 @@ public class JoinRoom extends Activity {
 
         button.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                EditText edittext = findViewById(R.id.editText);
+                EditText edittext = findViewById(R.id.idInput);
                 String key = edittext.getText().toString();
 
                 commSock.kick(commSock.ENTER,key);

@@ -14,7 +14,7 @@ public class resultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         Intent intent = getIntent();
         pincode = intent.getStringExtra("pincode");
-        commSock.kick(15,pincode);
+        commSock.kick(commSock.REQUEST_RESULT,pincode);
         JSONArray info = commSock.read();
     }
 }

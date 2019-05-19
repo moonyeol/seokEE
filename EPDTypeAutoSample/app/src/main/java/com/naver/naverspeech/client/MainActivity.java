@@ -270,20 +270,21 @@ public class MainActivity extends Activity {
                                             if(naverRecognizer != null) naverRecognizer.recognize();
                                         break;
                                     case commSock.EXIT:
-                                        Toast.makeText(MainActivity.this, msg + " 종료", Toast.LENGTH_SHORT).show();
+                                        if(isRunning) {
+                                            Toast.makeText(MainActivity.this, msg + " 종료", Toast.LENGTH_SHORT).show();
 
-                                        for(int i=0; i<userList.size();i++){
-                                            if(userList.get(i).getNickname().equals(msg)){
-                                                if(selectedUser.equals(userList.get(i).getNickname())){
-                                                    selectedUser = null;
-                                                    updateChatHighlight();
+                                            for (int i = 0; i < userList.size(); i++) {
+                                                if (userList.get(i).getNickname().equals(msg)) {
+                                                    if (selectedUser.equals(userList.get(i).getNickname())) {
+                                                        selectedUser = null;
+                                                        updateChatHighlight();
+                                                    }
+                                                    userList.remove(i);
+                                                    break;
                                                 }
-                                                userList.remove(i);
-                                                break;
                                             }
+                                            updateUserList();
                                         }
-                                        updateUserList();
-
                                         break;
                                     case commSock.ENTER:
                                         Toast.makeText(MainActivity.this, msg + " 입장", Toast.LENGTH_SHORT).show();
@@ -374,7 +375,7 @@ public class MainActivity extends Activity {
     static class RecognitionHandler extends Handler {
         private final WeakReference<MainActivity> mActivity;
         RecognitionHandler(MainActivity activity) {
-            mActivity = new WeakReference<MainActivity>(activity);
+            mActivity = new WeakReference<>(activity);
         }
         @Override
         public void handleMessage(Message msg) {
@@ -397,10 +398,11 @@ public class MainActivity extends Activity {
                         // 확인시 처리 로직
                         commSock.kick(commSock.EXIT, "");
                         isRunning = false;
+                        finish();
+
                         Intent intent = new Intent(MainActivity.this, resultActivity.class);
                         intent.putExtra("pincode", pin);
                         startActivity(intent);
-                        finish();
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
