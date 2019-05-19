@@ -396,7 +396,14 @@ public class MainActivity extends Activity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         // 확인시 처리 로직
-                        commSock.kick(commSock.EXIT, "");
+                        StringBuilder markedData = new StringBuilder();
+
+                        for(CheckBox t : talk){
+                            if(t.isChecked()) markedData.append("1");
+                            else markedData.append("0");
+                        }
+
+                        commSock.kick(commSock.EXIT, markedData.toString());
                         isRunning = false;
                         finish();
 
