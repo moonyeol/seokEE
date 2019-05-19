@@ -142,77 +142,23 @@ public class MainActivity extends Activity {
         if(host) btnStart.setVisibility(Button.VISIBLE);
         else btnStart.setVisibility(Button.GONE);
 
-
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* 사용자의 OS 버전이 마시멜로우 이상인지 체크합니다. */
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    /* 사용자 단말기의 권한 중 권한이 허용되어 있는지 체크합니다. */
-                    int permissionResult = checkSelfPermission(Manifest.permission.RECORD_AUDIO);
-                    /* 권한이 없을 때 */
-                    if (permissionResult == PackageManager.PERMISSION_DENIED) {
-                        /* 사용자가 권한을 한번이라도 거부한 적이 있는 지 확인합니다. */
-                        if (shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO)) {
-                            AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                            dialog.setTitle("권한이 필요합니다.")
-                                    .setMessage("이 기능을 사용하기 위해서는 권한이 필요합니다. 계속하시겠습니까?")
-                                    .setPositiveButton("네", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                                requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, 1000);
-                                            }
-                                        }
-                                    })
-                                    .setNegativeButton("아니오", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            Toast.makeText(MainActivity.this, "기능을 취소했습니다.", Toast.LENGTH_SHORT).show();
-                                        }
-                                    })
-                                    .create()
-                                    .show();
-                        }
-                        // 최초로 권한을 요청하는 경우
-                        else {
-                            // 권한을 요청합니다.
-                            requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, 1000);
-                        }
-                    }
-                    /* 권한이 있는 경우 */
-                    else {
-                        /* 음성 인식 기능을 처리합니다. */
-                        if(!naverRecognizer.getSpeechRecognizer().isRunning()) {
-                            mResult = "";
-                            btnStart.setText(R.string.str_stop);
-                            naverRecognizer.recognize();
+                if(!naverRecognizer.getSpeechRecognizer().isRunning()) {
+                    mResult = "";
+                    btnStart.setText(R.string.str_stop);
+                    naverRecognizer.recognize();
 
-                            commSock.kick(commSock.START, "START");
-                        } else {
-                            Log.d(TAG, "stop and wait Final Result");
-                            btnStart.setEnabled(false);
-                            naverRecognizer.getSpeechRecognizer().stop();
-                        }
-                    }
-                }
-                /* 사용자의 OS 버전이 마시멜로우 이하일 떄 */
-                else {
-                    /* 음성 인식 기능을 처리합니다. */
-                    if(!naverRecognizer.getSpeechRecognizer().isRunning()) {
-                        mResult = "";
-                        btnStart.setText(R.string.str_stop);
-                        naverRecognizer.recognize();
-
-                        commSock.kick(commSock.START, "START");
-                    } else {
-                        Log.d(TAG, "stop and wait Final Result");
-                        btnStart.setEnabled(false);
-                        naverRecognizer.getSpeechRecognizer().stop();
-                    }
+                    commSock.kick(commSock.START, "START");
+                } else {
+                    Log.d(TAG, "stop and wait Final Result");
+                    btnStart.setEnabled(false);
+                    naverRecognizer.getSpeechRecognizer().stop();
                 }
             }
         });
+
 
         new Thread(new Runnable(){
             public void run(){
@@ -264,10 +210,7 @@ public class MainActivity extends Activity {
                                         break;
                                     case commSock.START:
                                         Toast.makeText(MainActivity.this, "녹음 시작", Toast.LENGTH_SHORT).show();
-
                                         btnStart.callOnClick();
-                                        if(!naverRecognizer.getSpeechRecognizer().isRunning())
-                                            if(naverRecognizer != null) naverRecognizer.recognize();
                                         break;
                                     case commSock.EXIT:
                                         if(isRunning) {
@@ -401,6 +344,10 @@ public class MainActivity extends Activity {
                         for(CheckBox t : talk){
                             if(t.isChecked()) markedData.append("1");
                             else markedData.append("0");
+                        }
+
+                        if (writer != null) {
+                            writer.close();
                         }
 
                         commSock.kick(commSock.EXIT, markedData.toString());

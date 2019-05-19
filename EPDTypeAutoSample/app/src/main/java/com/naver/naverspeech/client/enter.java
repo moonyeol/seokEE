@@ -1,5 +1,10 @@
 package com.naver.naverspeech.client;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -22,7 +27,6 @@ public class enter extends Activity {
         Button pageBtn = findViewById(R.id.mypage);
 
         boolean is_login = intent.getBooleanExtra("is_login",false);
-
 
         pageBtn.setVisibility(is_login ? View.VISIBLE : View.GONE);
         joinBtn.setOnClickListener(new Button.OnClickListener(){
