@@ -16,8 +16,8 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:layout_weight="0"
             android:background="@drawable/borer_black_bottom"
             android:gravity="center_vertical"
             android:orientation="vertical">
@@ -31,8 +31,7 @@
 
                 android:text="TITLE"
                 android:textColor="@android:color/black"
-                android:textSize="16sp"
-                />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -55,10 +54,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:layout_weight="1"
         android:animateLayoutChanges="true"
         android:background="#FFFFFF"
         android:fontFamily="@font/nanumbarungothic"
-        android:padding="5dp"
         android:text="@string/history"
         android:textColor="#000000"
         android:textSize="16sp" />
@@ -71,7 +70,7 @@
         <Button
             android:id="@+id/export"
             android:layout_width="188dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_marginRight="5dp"
             android:animateLayoutChanges="true"
             android:background="@drawable/bt_radius_w"
@@ -83,9 +82,8 @@
         <Button
             android:id="@+id/detail"
             android:layout_width="188dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_marginLeft="5dp"
-            android:layout_weight="1"
             android:animateLayoutChanges="true"
             android:background="@drawable/bt_radius_w"
             android:fontFamily="@font/nanumbarungothic"

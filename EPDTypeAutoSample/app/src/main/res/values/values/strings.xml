@@ -58,6 +58,6 @@
     <string name="jo_9">일</string>
     <string name="my_tb">마이페이지</string>
     <string name="en_tb">활동 선택</string>
-    <string name="en_tb">방 선택</string>
+    <string name="main_part">참여자 목록</string>
 
 </resources>
