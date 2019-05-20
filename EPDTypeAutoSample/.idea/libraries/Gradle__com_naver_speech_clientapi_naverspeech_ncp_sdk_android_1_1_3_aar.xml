@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad78d8310c8f1511e7a6760b725b33bd/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad78d8310c8f1511e7a6760b725b33bd/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f8b3f51778ee0209def67d92e060557f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f8b3f51778ee0209def67d92e060557f/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

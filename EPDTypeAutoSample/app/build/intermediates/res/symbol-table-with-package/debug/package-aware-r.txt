@@ -655,8 +655,11 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable back_gray_border_bottom
+drawable back_gray_border_top
 drawable border_blue
 drawable border_gray_top
+drawable border_t_b_b
 drawable borer_black_bottom
 drawable bt_radius_w
 drawable bt_raidus
@@ -667,6 +670,8 @@ drawable door
 drawable dow_file_b
 drawable dow_file_g
 drawable edit_border_black
+drawable exit_b
+drawable exit_g
 drawable ic_launcher
 drawable line
 drawable logout_icon
@@ -689,7 +694,11 @@ drawable part_code_simbol
 drawable pro_box
 drawable pro_seok
 drawable rec_b
+drawable rec_fin_b
+drawable rec_st_b
 drawable room_door
+drawable scroll_bar
+drawable scroll_box
 drawable seok_icon
 drawable seok_loading
 drawable three_dots
@@ -741,6 +750,7 @@ id birthYear
 id blocking
 id bottom
 id btn_start
+id button
 id button3
 id buttonPanel
 id center
@@ -763,6 +773,7 @@ id detail
 id dimensions
 id direct
 id disableHome
+id editText
 id edit_query
 id end
 id endPointDetectTypeSelected
@@ -888,10 +899,15 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView1
+id textView10
+id textView11
+id textView12
 id textView2
+id textView3
 id textView4
 id textView5
 id textView6
+id textView7
 id textView8
 id textView9
 id time
@@ -1398,6 +1414,7 @@ style Widget_AppCompat_Toolbar_Button_Navigation
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Support_CoordinatorLayout
+style scroll_custom
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

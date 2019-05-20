@@ -71,8 +71,8 @@
 
             android:scrollbarSize="4dp"
             android:scrollbarStyle="outsideOverlay"
-            android:scrollbarThumbVertical="#3FACDC"
-            android:scrollbarTrackVertical="#BBBDBF"
+
+
             android:scrollbars="vertical">
 
             <LinearLayout
