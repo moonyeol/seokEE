@@ -13,78 +13,170 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="379dp"
-        android:layout_height="80dp"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
 
-        <TextView
-            android:id="@+id/pin4"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/no"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="379dp"
+            android:layout_height="75dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
 
-        <TextView
-            android:id="@+id/pincode4"
+            <TextView
+                android:id="@+id/pin4"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical|left"
+
+                android:layout_margin="10dp"
+                android:fontFamily="@font/nanumbarungothicbold"
+                android:gravity="center"
+                android:text="@string/no"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#3FACDC"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pincode4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/nanumbarungothicbold"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:layout_height="100dp"
+            android:layout_weight="2.5"
+            android:background="@drawable/border_t_b_b"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarFadeDuration="0"
+
+            android:scrollbarSize="4dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbarThumbVertical="#3FACDC"
+            android:scrollbarTrackVertical="#BBBDBF"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:id="@+id/talkList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/main_part"
+            android:fontFamily="@font/nanumbarungothic"
+            android:textSize="16sp"
+            android:textColor="#000000"/>
+
+
+        <ScrollView
+            android:id="@+id/userListScroll"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:scrollbarStyle="outsideOverlay"
+
+            style="@style/scroll_custom"
+            android:background="@drawable/borer_black_bottom">
+
+            <LinearLayout
+                android:id="@+id/userList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+        <LinearLayout
+            android:layout_width="379dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"></LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_start"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/rec_b"
+                tools:layout_editor_absoluteX="251dp"
+                tools:layout_editor_absoluteY="699dp" />
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:orientation="vertical"></LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/exitbt3"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:onClick="bt_exit"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/exit_b"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
-
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="236dp"
-        android:scrollbarAlwaysDrawHorizontalTrack="false"
-        android:scrollbarAlwaysDrawVerticalTrack="true"
-        android:scrollbarStyle="insideOverlay"
-        android:scrollbars="vertical">
-
-        <LinearLayout
-            android:id="@+id/talkList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"></LinearLayout>
-    </ScrollView>
-
-    <ScrollView
-        android:id="@+id/userListScroll"
-        android:layout_width="match_parent"
-        android:layout_height="120dp">
-
-        <LinearLayout
-            android:id="@+id/userList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" />
-    </ScrollView>
-
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/str_start" />
-
-    <Button
-        android:id="@+id/exitbt3"
-        android:layout_width="381dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="bt_exit"
-        android:text="EXIT"
-        app:layout_constraintEnd_toEndOf="parent" />
-
 </LinearLayout>

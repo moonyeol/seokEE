@@ -15,81 +15,76 @@
         >
 
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="fill_parent"
-        android:layout_height="75dp"
-        android:layout_gravity="center"
-        android:background="@drawable/borer_black_bottom"
-        android:fontFamily="@font/nanumbarungothicbold"
-        android:gravity="center"
-        android:text="@string/en_tb"
-        android:textAlignment="gravity"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="8dp" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="fill_parent"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:background="@drawable/borer_black_bottom"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:gravity="center"
+            android:text="@string/en_tb"
+            android:textAlignment="gravity"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="8dp" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        ></LinearLayout>
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="125dp"
-        android:layout_height="124dp"
-        android:layout_margin="30dp"
-        android:src="@drawable/door"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="148dp" />
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="35dp"
+            android:src="@drawable/door"
+            tools:layout_editor_absoluteX="143dp"
+            tools:layout_editor_absoluteY="148dp" />
 
-    <Button
-        android:id="@+id/make_room"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="256dp"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
+        <Button
+            android:id="@+id/make_room"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
 
-        android:background="@drawable/bt_radius_w"
-        android:fontFamily="@font/nanumbarungothic"
-        android:text="@string/make_room"
+            android:background="@drawable/bt_radius_w"
+            android:fontFamily="@font/nanumbarungothic"
+            android:text="@string/make_room"
 
-        android:textColor="#3FACDC"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="296dp" />
+            android:textColor="#3FACDC"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="77dp"
+            tools:layout_editor_absoluteY="296dp" />
 
-    <Button
-        android:id="@+id/enter_room"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="256dp"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
+        <Button
+            android:id="@+id/enter_room"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
 
-        android:background="@drawable/bt_radius_w"
-        android:fontFamily="@font/nanumbarungothic"
-        android:text="@string/enter_room"
+            android:background="@drawable/bt_radius_w"
+            android:fontFamily="@font/nanumbarungothic"
+            android:text="@string/enter_room"
 
-        android:textColor="#3FACDC"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="372dp" />
+            android:textColor="#3FACDC"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="77dp"
+            tools:layout_editor_absoluteY="372dp" />
 
-    <Button
-        android:id="@+id/mypage"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="257dp"
-        android:layout_height="63dp"
-        android:layout_margin="10dp"
+        <Button
+            android:id="@+id/mypage"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
 
-        android:background="@drawable/bt_raidus"
-        android:text="@string/my_page"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="448dp" />
+            android:background="@drawable/bt_raidus"
+            android:text="@string/my_page"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="77dp"
+            tools:layout_editor_absoluteY="448dp" />
 
     </LinearLayout>
 
