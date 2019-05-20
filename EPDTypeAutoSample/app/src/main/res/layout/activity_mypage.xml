@@ -211,6 +211,121 @@
             </LinearLayout>
         </LinearLayout>
 
+     <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:background="@drawable/borer_black_bottom"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            android:scrollbarFadeDuration="0"
+
+
+
+            android:scrollbarSize="4dp"
+            android:scrollbarStyle="outsideOverlay"
+         android:scrollbarThumbVertical="#3FACDC"
+         android:scrollbarTrackVertical="#BBBDBF"
+            android:scrollbars="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="86dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/border_gray_top"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical|left"
+                android:text="자주 회의한 사람"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="673dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical|left"
+                android:text="자주 회의한 사람_목록"
+                android:textColor="#bbbdbf"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="673dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/border_gray_top"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical|left"
+                android:text="나의 평균 기여도"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="673dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical|left"
+                android:text="나의 평균 기여도와 백분위"
+                android:layout_marginBottom="10dp"
+
+                android:textColor="#bbbdbf"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="673dp" />
+
+
+        </LinearLayout>
         <TextView
             android:id="@+id/textView7"
             android:layout_width="fill_parent"
@@ -222,6 +337,7 @@
             android:textSize="20dp"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="673dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -236,35 +352,33 @@
                 android:layout_gravity="center_horizontal"
                 android:orientation="horizontal"
                 tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="86dp"
-                >
+                tools:layout_editor_absoluteY="86dp">
 
                 <TextView
                     android:id="@+id/nickname_text2"
                     android:layout_width="79dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="2"
                     android:fontFamily="@font/nanumbarungothic"
                     android:gravity="center_vertical|left"
                     android:text="과거기록"
                     android:textColor="#000000"
                     android:textSize="16sp"
                     tools:layout_editor_absoluteX="50dp"
-                    tools:layout_editor_absoluteY="375dp"
-                    android:layout_weight="2"/>
+                    tools:layout_editor_absoluteY="375dp" />
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:layout_width="369dp"
-                android:layout_height="100dp"
+                android:layout_width="360dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="2"
-                android:scrollbarThumbVertical="#3FACDC"
-                android:scrollbarTrackVertical="#BBBDBF"
                 android:background="#FFFFFF"
+
                 tools:layout_editor_absoluteX="21dp"
                 tools:layout_editor_absoluteY="424dp" />
 
@@ -276,11 +390,13 @@
                 android:fontFamily="@font/nanumbarungothic"
                 android:gravity="center_vertical|left"
                 android:textColor="#000000"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="673dp" />
 
-        </LinearLayout>
+                </LinearLayout>
+             </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
