@@ -59,5 +59,6 @@
     <string name="my_tb">마이페이지</string>
     <string name="en_tb">활동 선택</string>
     <string name="main_part">참여자 목록</string>
+    <string name="result_tb">결과</string>
 
 </resources>

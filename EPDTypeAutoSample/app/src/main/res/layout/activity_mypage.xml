@@ -73,7 +73,7 @@
             android:layout_height="110dp"
             android:background="#E8E9EA"
             android:gravity="center"
-            android:layout_marginBottom=""
+            android:layout_marginBottom="0dp"
             android:orientation="vertical"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="86dp">
@@ -260,6 +260,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="2"
                 android:scrollbarThumbVertical="#3FACDC"
                 android:scrollbarTrackVertical="#BBBDBF"
