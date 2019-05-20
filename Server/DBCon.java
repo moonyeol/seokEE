@@ -474,6 +474,104 @@ public class DBCon {
     	}
     	return data;
 	}
+	// 평균 기여도 (기하평균으로 구함)
+	public Double contributionById(String id) {
+    	Double data = 1.0;
+    	List <Double> tmp1 = new ArrayList<>();
+    	List <Double>tmp2 = new ArrayList<>();
+    	String query = "select room, count(*) as cnt from talk where room in (select room from talk where id = ? group by room) group by room;";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, id);
+    		ResultSet rs = pstmt.executeQuery();
+    		
+    		while (rs.next()){
+    			tmp1.add(rs.getDouble("cnt"));
+    		}
+    		
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	query = "select room, count(*) as cnt from talk where room in (select room from talk where id = ? group by room) and id=? group by room";
+    	pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, id);
+    		pstmt.setString(2, id);
+    		ResultSet rs = pstmt.executeQuery();
+    		
+    		while (rs.next()){
+    			tmp2.add(rs.getDouble("cnt"));
+    		}
+    		
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	for (int i=0; i<tmp1.size(); i++) {
+    		data = data*(tmp2.get(i)/tmp1.get(i));
+    	}
+    	
+    	data = Math.pow(data, 1.0/(double) tmp1.size());
+    	data = Math.round(data*1000)/1000.0;
+    	insertContributionToStats(id,data);
+    	return data;
+    }
+    public boolean memberIDCheckInStats(String id) {
+    	String query = "select count(*) from stats where id = ?";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, id);
+    		ResultSet rs = pstmt.executeQuery();
+    		rs.next();
+    		if (rs.getInt("count(*)")!=0) {
+    			System.out.println("Already existing ID");
+    			return false;
+    		}
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    		return false;
+    	}
+    	return true;
+    }
+    
+    public void insertContributionToStats(String id, Double data) {
+    	if(!memberIDCheckInStats(id)) {
+        	String query = "update stats set contribution = ? where id = ?;";	
+        	PreparedStatement pstmt = null;
+        	try {
+        		pstmt = conn.prepareStatement(query);
+        		pstmt.setDouble(1, data);
+        		pstmt.setString(2, id);
+
+        		pstmt.executeUpdate();
+        		System.out.println("Insert success");
+        	}catch(SQLException e)
+        	{
+        		e.printStackTrace();
+        	}
+    	}else {
+    	String query = "insert into stats (id,contribution) values(?,?);";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, id);
+    		pstmt.setDouble(2, data);
+
+    		pstmt.executeUpdate();
+    		System.out.println("Insert success");
+    	}catch(SQLException e){
+    		e.printStackTrace();
+    	}
+    	}
+    }
+    
+	
+	
 
 }
 
