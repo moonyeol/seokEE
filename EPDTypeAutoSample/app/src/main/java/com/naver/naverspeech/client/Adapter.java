@@ -184,7 +184,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
         @Override
         public void onClick(View v) {
 
-            if (v.getId() == R.id.linearItem) {
+            if (v.getId() == R.id.linearItem||v.getId() == R.id.textView1||v.getId() == R.id.textView2) {
                 if (selectedItems.get(position)) {
                     // 펼쳐진 Item을 클릭 시
                     selectedItems.delete(position);

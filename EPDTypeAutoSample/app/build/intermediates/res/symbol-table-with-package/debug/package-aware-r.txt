@@ -742,7 +742,6 @@ id blocking
 id bottom
 id btn_start
 id button3
-id button6
 id buttonPanel
 id center
 id center_horizontal
@@ -764,7 +763,6 @@ id detail
 id dimensions
 id direct
 id disableHome
-id editText
 id edit_query
 id end
 id endPointDetectTypeSelected
@@ -816,6 +814,7 @@ id linearItem
 id listMode
 id list_item
 id loginButton
+id logout
 id make_room
 id message
 id middle
@@ -889,16 +888,10 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView1
-id textView10
-id textView11
-id textView12
-id textView13
 id textView2
-id textView3
 id textView4
 id textView5
 id textView6
-id textView7
 id textView8
 id textView9
 id time

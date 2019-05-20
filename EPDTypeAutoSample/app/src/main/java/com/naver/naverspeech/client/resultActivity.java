@@ -18,9 +18,9 @@ public class resultActivity extends AppCompatActivity {
         pincode = intent.getStringExtra("pincode");
         commSock.kick(commSock.REQUEST_RESULT, pincode);
 
-        WebView wordCloud = findViewById(R.id.wordCloud);
-        wordCloud.getSettings().setJavaScriptEnabled(true);
-        wordCloud.loadUrl("file:///android_asset/www/index.html");
+//        WebView wordCloud = findViewById(R.id.wordCloud);
+//        wordCloud.getSettings().setJavaScriptEnabled(true);
+//        wordCloud.loadUrl("file:///android_asset/www/index.html");
 
         JSONArray info = commSock.read();
     }

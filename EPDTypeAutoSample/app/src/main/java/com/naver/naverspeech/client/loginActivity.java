@@ -76,7 +76,7 @@ public class loginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         joinButton = findViewById(R.id.joinButton);
         anonymousbutton = findViewById(R.id.anonymous);
-        reid = findViewById(R.id.autoLogin);
+        reid = findViewById(R.id.reid);
 
         loginButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {

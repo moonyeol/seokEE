@@ -104,7 +104,7 @@ public class mypage extends AppCompatActivity {
 
             if(h.content.length()>100)
                 data.setContent(h.content.substring(0,100));
-//                data.setContent(h.content);
+            else   data.setContent(h.content);
 
 
 
