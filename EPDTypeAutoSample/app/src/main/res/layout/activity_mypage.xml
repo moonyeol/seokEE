@@ -35,7 +35,7 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="25dp"
+            android:layout_height="30dp"
             android:background="@drawable/back_gray_border_top"
             android:gravity="bottom|right"
             android:orientation="horizontal"
@@ -46,7 +46,7 @@
                 android:id="@+id/imageView7"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:layout_gravity="bottom"
+                android:layout_gravity="center_vertical"
                 app:srcCompat="@drawable/logout_icon"
                 tools:layout_editor_absoluteX="320dp"
                 tools:layout_editor_absoluteY="118dp" />
@@ -55,7 +55,7 @@
                 android:id="@+id/logout"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="65dp"
-                android:layout_height="20dp"
+                android:layout_height="28dp"
                 android:layout_gravity="bottom"
                 android:layout_marginRight="10dp"
                 android:background="#E8E9EA"
@@ -73,6 +73,7 @@
             android:layout_height="110dp"
             android:background="#E8E9EA"
             android:gravity="center"
+            android:layout_marginBottom=""
             android:orientation="vertical"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="86dp">
@@ -260,6 +261,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:layout_weight="2"
+                android:scrollbarThumbVertical="#3FACDC"
+                android:scrollbarTrackVertical="#BBBDBF"
                 android:background="#FFFFFF"
                 tools:layout_editor_absoluteX="21dp"
                 tools:layout_editor_absoluteY="424dp" />
@@ -276,37 +279,6 @@
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="673dp" />
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="65dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="86dp">
-
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@color/white"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/del_file_b"
-                    tools:layout_editor_absoluteX="97dp"
-                    tools:layout_editor_absoluteY="699dp" />
-
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="200dp"
-
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@color/white"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/dow_file_b"
-                    tools:layout_editor_absoluteX="251dp"
-                    tools:layout_editor_absoluteY="699dp" />
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
