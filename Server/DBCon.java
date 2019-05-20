@@ -1,3 +1,4 @@
+package seokee;
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -349,7 +350,7 @@ public class DBCon {
             }
              
         });
-        Collections.reverse(list); // Ï£ºÏÑùÏãú Ïò§Î¶ÑÏ∞®Ïàú
+        Collections.reverse(list); // ¡÷ºÆΩ√ ø¿∏ß¬˜º¯
         return list;
     }
 
@@ -404,6 +405,75 @@ public class DBCon {
 		}
     	return data;
     }
+	// calculate contribution who id / from room (0.0 < data < 1.0)
+	public double contributionByRoomAndId(String room, String id) {
+    	double data = 0;
+    	String query = "select count(*)/(select count(*) from talk where room=\"?\") as cnt from talk where id=\"?\" and room = \"?\";";
+    	
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, room);
+    		pstmt.setString(2, id);
+    		pstmt.setString(3, room);
+    		ResultSet rs = pstmt.executeQuery();
+    		if(rs.next())
+    		{
+    			data = rs.getDouble("cnt");
+    		}
+    		//System.out.println("Calling success");
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return data;
+    }
+	// Contribution from Room : HashMap<id : contribution> (0.0 < contribution < 1.0)  
+	public HashMap<String , Double> calculateContributionByRoom(String room){
+		HashMap<String , Double> data = new HashMap <String , Double>();
+    	String query = "select id, count(*)/(select count(*) from talk where room = ?) as cnt from talk where room  = ? group by id";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, room);
+    		pstmt.setString(2, room);
+    		ResultSet rs = pstmt.executeQuery();
+    		
+    		while(rs.next()) {
+    			data.put(rs.getString("id"), rs.getDouble("cnt"));
+    		}
+    		
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return data;
+	}
+		// Someone who talked with me : HashMap <id, frequency> limit 5 
+	public HashMap<String , Integer> whoTalkedWithMe(String id){
+		HashMap<String , Integer> data = new HashMap <String , Integer>();
+    	String query = "select id, count(*) as cnt from "
+    					+ "(select distinct id,room from talk where room in "
+    						+ "(select room from talk where id = ? group by room) "
+    					+ "and id!=?)tmp "
+    				+ "group by id order by cnt desc limit 5;";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, id);
+    		pstmt.setString(2, id);
+    		ResultSet rs = pstmt.executeQuery();
+    		
+    		while(rs.next()) {
+    			data.put(rs.getString("id"), rs.getInt("cnt"));
+    		}
+    		
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return data;
+	}
 
 }
 
