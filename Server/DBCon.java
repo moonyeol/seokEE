@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.sql.PreparedStatement;
@@ -14,6 +17,7 @@ import kr.co.shineware.util.common.model.Pair;
 import kr.co.shineware.nlp.komoran.*;
 import kr.co.shineware.nlp.komoran.core.analyzer.Komoran;
 import java.sql.ResultSet;
+
 //jdbc:mysql://localhost/dbname?user=(생략)&password=(생략)&Unicode=true&characterEncoding=UTF-
 //String dbPath = String.format(
 //        "jdbc:mysql://%s:%d/%s?user=%s&password=%s&characterEncoding=utf-8&" + 
@@ -300,6 +304,7 @@ public class DBCon {
     	}
     	return data;
     }
+    
     public String IdAndRoomForMarked(String id, String room) {
     	String data = "";
     	String query = "select marked from mark where id=? and room = ?;";
@@ -354,7 +359,42 @@ public class DBCon {
 		}
     	return data;
     }
-    // We dont use PYTHON
+    
+    public static ArrayList<String> extractFiveKeyWordByNLPHashMap(HashMap<String , Integer> tmpMap){
+    	ArrayList<String> data = new ArrayList<>();
+    	Iterator it = sortByValue(tmpMap).iterator();
+    	int i = 0;
+    	while(it.hasNext()){
+    		if (i>5) {
+    			break;
+    		}
+            String temp = (String) it.next();
+            data.add(temp);
+            i++;
+        }
+    	return data;
+    }
+    // extractFiveKeyWordHashmaByRoom 를 실행하기 위한 메소드
+    public static List<String> sortByValue(final Map <String , Integer> map){
+        List<String> list = new ArrayList<>();
+        list.addAll(map.keySet());
+         
+        Collections.sort(list,new Comparator(){
+             
+            public int compare(Object o1,Object o2){
+                Object v1 = map.get(o1);
+                Object v2 = map.get(o2);
+                 
+                return ((Comparable) v1).compareTo(v2);
+            }
+             
+        });
+        Collections.reverse(list); // 주석시 오름차순
+        return list;
+    }
+    
+    
+    // We do not use PYTHON
     /*
     public boolean MakeWordCloudByRoom(String room) {
     	String s = null;
