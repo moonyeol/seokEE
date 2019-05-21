@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -70,7 +69,7 @@ public class loginActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_login);
-        idText = findViewById(R.id.idInput);
+        idText = findViewById(R.id.nickInput);
         passwordText = findViewById(R.id.passwordInput);
 
         loginButton = findViewById(R.id.loginButton);

@@ -52,7 +52,7 @@
 
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/id_input"
                 android:layout_width="160dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"

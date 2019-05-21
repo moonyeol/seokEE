@@ -80,7 +80,9 @@ public class commSock {
 
     public static JSONArray read(){
         try {
-            String jsonString = netReader.readLine();
+            String jsonString = null;
+            while(jsonString == null) jsonString = netReader.readLine();
+
             JSONArray jsonArray = new JSONObject(jsonString).getJSONArray("server");
             // usage
 

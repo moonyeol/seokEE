@@ -19,7 +19,7 @@ public class anonymous extends Activity {
         Button button = findViewById(R.id.button3);
         button.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                EditText edittext = findViewById(R.id.idInput);
+                EditText edittext = findViewById(R.id.nickInput);
                 nickname = edittext.getText().toString();
 
 

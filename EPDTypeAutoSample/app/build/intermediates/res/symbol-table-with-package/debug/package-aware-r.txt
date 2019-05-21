@@ -773,7 +773,6 @@ id detail
 id dimensions
 id direct
 id disableHome
-id editText
 id edit_query
 id end
 id endPointDetectTypeSelected
@@ -799,7 +798,7 @@ id home
 id homeAsUp
 id icon
 id icon_group
-id idInput
+id id_input
 id id_tv
 id ifRoom
 id image
@@ -858,9 +857,11 @@ id radioGroup
 id recognitionError
 id recyclerView
 id reid
+id resultView
 id right
 id right_icon
 id right_side
+id roomNumber
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -906,7 +907,6 @@ id textView2
 id textView3
 id textView4
 id textView5
-id textView6
 id textView7
 id textView8
 id textView9
@@ -921,8 +921,8 @@ id up
 id useLogo
 id userList
 id userListScroll
+id webView
 id withText
-id word_cloud
 id wrap
 id wrap_content
 integer abc_config_activityDefaultDur

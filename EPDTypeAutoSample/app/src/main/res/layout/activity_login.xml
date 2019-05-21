@@ -40,7 +40,7 @@
             tools:layout_editor_absoluteY="112dp" />
 
         <EditText
-            android:id="@+id/idInput"
+            android:id="@+id/nickInput"
             android:layout_width="260dp"
             android:layout_height="40dp"
 

@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -47,7 +48,7 @@ public class MainActivity extends Activity {
     private RecognitionHandler handler;
     private NaverRecognizer naverRecognizer;
 
-    private Button btnStart;
+    private ImageButton btnStart;
     private String mResult;
     private AudioWriterPCM writer;
     private boolean isRunning = true;
@@ -147,7 +148,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 if(!naverRecognizer.getSpeechRecognizer().isRunning()) {
                     mResult = "";
-                    btnStart.setText(R.string.str_stop);
+
                     naverRecognizer.recognize();
 
                     commSock.kick(commSock.START, "START");
@@ -299,7 +300,6 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         mResult = "";
-        btnStart.setText(R.string.str_start);
         btnStart.setEnabled(true);
     }
     @Override

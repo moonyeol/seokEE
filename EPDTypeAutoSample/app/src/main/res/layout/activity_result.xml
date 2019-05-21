@@ -9,15 +9,13 @@
 
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/word_cloud"
+    <WebView
+        android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:text="@string/word_cloud"
-        android:textSize="24sp" />
+        android:layout_height="180dp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/resultView"
         android:layout_width="match_parent"
         android:layout_height="393dp"
         android:text="@string/result"

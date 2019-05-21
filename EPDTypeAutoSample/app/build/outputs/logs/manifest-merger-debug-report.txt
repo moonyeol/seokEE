@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\ansduf94\.gradle\caches\transforms-2\files-2.1\4616a4e5d6a17dbe6e2854c13a957838\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ansduf94\.gradle\caches\transforms-2\files-2.1\4b5bce32ebc5ba5c4bffbabb93f30924\AndroidManifest.xml:2:1-11:12
 MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\ansduf94\.gradle\caches\transforms-2\files-2.1\f8b3f51778ee0209def67d92e060557f\AndroidManifest.xml:2:1-17:12
@@ -19,20 +19,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\ansduf94\.grad
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\ansduf94\.gradle\caches\transforms-2\files-2.1\d46b3497b11db21e90ab6722871e4275\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\ansduf94\.gradle\caches\transforms-2\files-2.1\58f3e1ab681fe709b85093ea80a2301b\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\ansduf94\.gradle\caches\transforms-2\files-2.1\220b8e6ba99cd93448ce649b2c1b2f1a\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:3:5-43
 		INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-34:12
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
 		INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-34:12
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
 		INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:11-69
@@ -57,7 +57,7 @@ ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidMa
 	android:name
 		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:8:22-77
 application
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:10:5-32:19
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:10:5-33:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ansduf94\.gradle\caches\transforms-2\files-2.1\4b5bce32ebc5ba5c4bffbabb93f30924\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ansduf94\.gradle\caches\transforms-2\files-2.1\4b5bce32ebc5ba5c4bffbabb93f30924\AndroidManifest.xml:9:5-20
 MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\ansduf94\.gradle\caches\transforms-2\files-2.1\f8b3f51778ee0209def67d92e060557f\AndroidManifest.xml:14:5-15:19
@@ -73,55 +73,55 @@ MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Us
 	android:theme
 		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:15:9-40
 activity#com.naver.naverspeech.client.item
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:16:9-51
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:16:9-42
 	android:name
 		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:16:19-39
 activity#com.naver.naverspeech.client.resultActivity
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:17:9-52
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:17:9-18:20
 	android:name
 		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:17:19-49
 activity#com.naver.naverspeech.client.mypage
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:18:9-53
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:19:9-44
 	android:name
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:18:19-41
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:19:19-41
 activity#com.naver.naverspeech.client.loginActivity
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:19:9-51
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:20:9-51
 	android:name
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:19:19-48
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:20:19-48
 activity#com.naver.naverspeech.client.joinActivity
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:20:9-50
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:21:9-50
 	android:name
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:20:19-47
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:21:19-47
 activity#com.naver.naverspeech.client.anonymous
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:21:9-47
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:22:9-47
 	android:name
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:21:19-44
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:22:19-44
 activity#com.naver.naverspeech.client.JoinRoom
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:22:9-46
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:23:9-46
 	android:name
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:22:19-43
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:23:19-43
 activity#com.naver.naverspeech.client.enter
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:23:9-43
-	android:name
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:23:19-40
-activity#com.naver.naverspeech.client.First
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:24:9-30:20
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:24:9-43
 	android:name
 		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:24:19-40
+activity#com.naver.naverspeech.client.First
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:25:9-31:20
+	android:name
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:25:19-40
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:25:13-29:29
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:29:27-74
 activity#com.naver.naverspeech.client.MainActivity
-ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:31:9-50
+ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:32:9-50
 	android:name
-		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:31:19-47
+		ADDED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:32:19-47
 uses-sdk
 INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ansduf94\git\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
