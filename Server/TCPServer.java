@@ -8,6 +8,15 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
 
+import javax.crypto.Cipher;
+import javax.crypto.CipherSpi;
+import java.security.*;
+import java.security.spec.X509EncodedKeySpec;
+import org.apache.commons.codec.binary.Base64;
+import java.security.KeyPair;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
@@ -15,18 +24,19 @@ import org.json.simple.parser.JSONParser;
 public class TCPServer implements Runnable {
 
     public static final int ServerPort = 9000;
-    //public static final String ServerIP = "18.223.143.140";
 
     private DBCon db;
     private int seed = 0;
     private HashMap<Socket, ClientInfo> clientList = new HashMap<>();
     private HashMap<String, ArrayList<Socket>> roomList = new HashMap<>();
     private HashMap<String, Boolean> roomRunning = new HashMap<>();
-
     private ArrayList<String> randomSeed = new ArrayList<>();
 
     @Override
     public void run() {
+
+        // initialize
+        // generate room number seed.
         Random r = new Random();
         for(int i=0; i<100; i++){
             StringBuffer s = new StringBuffer();
@@ -50,7 +60,6 @@ public class TCPServer implements Runnable {
                     Socket client = serverSocket.accept();
 
                     clientList.put(client, new ClientInfo());
-
                     System.out.println(new Date() + " Server: Accept " + client.getInetAddress().getHostAddress() + " " + client.getPort());
 
                     ServerHandler handler = new ServerHandler(client);
@@ -71,7 +80,6 @@ public class TCPServer implements Runnable {
         Thread desktopServerThread = new Thread(new TCPServer());
         desktopServerThread.start();
     }
-
     class ClientInfo {
         private boolean enrolled;
         private String id;
@@ -80,11 +88,11 @@ public class TCPServer implements Runnable {
         private boolean host;
 
         ClientInfo(){
-            id = "";
-            enrolled = false;
-            talker = "";
-            number = "0";
-            host = false;
+            this.id = "";
+            this.enrolled = false;
+            this.talker = "";
+            this.number = "0";
+            this.host = false;
         }
         ClientInfo(String talker, String number, boolean host, String id){
             this.talker = talker;
@@ -94,6 +102,11 @@ public class TCPServer implements Runnable {
 
             if(id.equals("")) enrolled = false;
             else enrolled = true;
+        }
+
+        void setAnonymous(){
+            this.id = "";
+            enrolled = false;
         }
 
         void setLogin(String id){
@@ -130,6 +143,7 @@ public class TCPServer implements Runnable {
         }
 
     }
+
     class ServerHandler extends Thread{
         private Socket conn;
 
@@ -137,7 +151,7 @@ public class TCPServer implements Runnable {
             this.conn = conn;
         }
 
-        private JSONObject setMSG(int func, String message){
+        private String setMSG(int func, String message){
             JSONArray jsonArray = new JSONArray();
             JSONObject response = new JSONObject();
 
@@ -150,7 +164,7 @@ public class TCPServer implements Runnable {
             JSONObject returnValue = new JSONObject();
             returnValue.put("server", jsonArray);
 
-            return returnValue;
+            return returnValue.toString();
         }
 
         private JSONObject setMSGArr(int func, JSONArray message){
@@ -183,6 +197,7 @@ public class TCPServer implements Runnable {
                     PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(conn.getOutputStream())), true);
 
                     String str = in.readLine();
+
                     JSONParser parser = new JSONParser();
                     JSONObject response, info;
 
@@ -208,7 +223,7 @@ public class TCPServer implements Runnable {
                                 System.out.print(clientList.get(s).getTalker() + " ");
 
                                 PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
-                                o.println(setMSG(func,"[" + talker + "] : " + message).toString());
+                                o.println(setMSG(func,"[" + talker + "] : " + message));
                             }
 
                             System.out.println("\n[SEND SUCCESS & INSERT MESSAGE TO DB]");
@@ -240,14 +255,14 @@ public class TCPServer implements Runnable {
                             // request enter
                             if(roomList.get(message) == null){
                                 System.out.println("[requestEnter] NULL RESPONSE FALSE");
-                                out.println(setMSG(func,"false").toString());
+                                out.println(setMSG(func,"false"));
                             } else {
                                 // details of room
                                 System.out.println("[requestEnter] EXIST RESPONSE TRUE");
 
                                 for(Socket s : roomList.get(message)){
                                     PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
-                                    o.println(setMSG(func,talker).toString());
+                                    o.println(setMSG(func,talker));
                                 }
 
                                 clientList.get(conn).setNumber(message);
@@ -255,10 +270,10 @@ public class TCPServer implements Runnable {
 
                                 if(roomRunning.get(message) == true){
                                     System.out.println("[requestEnter] response running!!");
-                                    out.println(setMSG(func,"running").toString());        
+                                    out.println(setMSG(func,"running"));        
                                 } else {
                                     System.out.println("[requestEnter] response not running!!");
-                                    out.println(setMSG(func,"not").toString()); 
+                                    out.println(setMSG(func,"not")); 
                                 }                                
                             }
                             break;
@@ -275,7 +290,7 @@ public class TCPServer implements Runnable {
 
                                 PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
 
-                                o.println(setMSG(func,"START").toString());
+                                o.println(setMSG(func,"START"));
                             }
 
                             roomRunning.put(number, true);
@@ -287,18 +302,23 @@ public class TCPServer implements Runnable {
                             break;
                         case 5:
                             // set Talker
+                            
                             System.out.println("[SET TALKER] nickname: " + message);
                             clientList.get(conn).setTalker(message);
+                            clientList.get(conn).setAnonymous();
                             break;
                         case 6:
                             // request exit
+                            System.out.println("[REQUEST EXIT] : " + message);
+                            db.insertMarkData(clientList.get(conn).getId(), clientList.get(conn).getNumber(), message);
+
                             System.out.print("[REQUEST EXIT] RECEIVER LIST: ");
 
                             for(Socket s : roomList.get(number)){  
                                 System.out.print(clientList.get(s).getTalker() + " ");
 
                                 PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
-                                o.println(setMSG(func,talker).toString());
+                                o.println(setMSG(func,talker));
                             }
 
                             System.out.println("\n[REQUEST EXIT] APPLY MY INFO");
@@ -337,8 +357,8 @@ public class TCPServer implements Runnable {
                             
                             System.out.println("[REQUEST ENROLL] SYSTEM: " + info.get("id") + " " + info.get("pw") + " " + ((result) ? "TRUE" : "FALSE") );
 
-                            if(result) out.println(setMSG(func,"true").toString());
-                            else out.println(setMSG(func,"false").toString());
+                            if(result) out.println(setMSG(func,"true"));
+                            else out.println(setMSG(func,"false"));
 
                             break;
                         case 8:
@@ -358,20 +378,21 @@ public class TCPServer implements Runnable {
                             if(loginCheck){
                                 // temporary set id to nickname
                                 clientList.get(conn).setTalker(info.get("id").toString());
-                                out.println(setMSG(func,"true").toString());
-                            } else out.println(setMSG(func,"false").toString());
+                                out.println(setMSG(func,"true"));
+                            } else out.println(setMSG(func,"false"));
 
                             break;
                         case 10:
                             // check duplicate
                             boolean check = db.memberIDCheck(message);
 
-                            if(check) out.println(setMSG(func,"true").toString());
-                            else out.println(setMSG(func,"false").toString());
+                            if(check) out.println(setMSG(func,"true"));
+                            else out.println(setMSG(func,"false"));
 
                             break;
                         case 11:
-                            // 
+                            // REQUEST FILE
+                            
                             break;
                         case 12:
                             // REQUEST_USERINFO     
@@ -380,29 +401,28 @@ public class TCPServer implements Runnable {
 
                             JSONArray msgList = new JSONArray();
                     
-
                             mInfo.put("id", me.getID());
                             mInfo.put("nickname", me.getNickname());
 
-                            System.out.println("[REQ_USERINFO] SEND INFO : " + me.getID() + " " + me.getNickname());
+                            //System.out.println("[REQ_USERINFO] SEND INFO : " + me.getID() + " " + me.getNickname());
                             out.println(setMSG(func, mInfo.toString()));
                             
-                            System.out.print("[REQ_USERINFO] My ROOM LIST: ");
+                            //System.out.print("[REQ_USERINFO] My ROOM LIST: ");
 
                             ArrayList<String> myRoomList = db.searchRoomByID(me.getID());
 
-                            for(String s: myRoomList) System.out.print(s + " ");
+                            //for(String s: myRoomList) System.out.print(s + " ");
                             
-                            System.out.println("\nGet Room CONTENT");
+                            //System.out.println("\nGet Room CONTENT");
 
                             for(String myRoomNumber : myRoomList){
-                                System.out.println("NUMBER: " + myRoomNumber);
+                                //System.out.println("NUMBER: " + myRoomNumber);
 
                                 JSONObject roomData = new JSONObject();
                                 roomData.put("number", myRoomNumber);
 
                                 ArrayList<String> roomMember = db.searchIDByRoom(myRoomNumber);
-                                System.out.println("Get Room member List");
+                                //System.out.println("Get Room member List");
 
                                 StringBuilder sb = new StringBuilder();
                                 for(String s : roomMember){
@@ -410,27 +430,28 @@ public class TCPServer implements Runnable {
                                 }
                                 roomData.put("members", sb.toString());
                                 
-                                System.out.println("MEMBERLIST : " + sb.toString());
+                                //System.out.println("MEMBERLIST : " + sb.toString());
 
                                 ArrayList<String> roomContent = db.searchMessageByRoom(myRoomNumber);
-                                System.out.println("Get Room Content");
+                                //System.out.println("Get Room Content");
 
                                 sb = new StringBuilder();
 
                                 for(String s : roomContent){
+                                    if(s.equals("START") || s.equals("END")) continue;
                                     sb.append(s + " ");
                                 }
 
-                                System.out.println("CONTENT: " + sb.toString());
+                                //System.out.println("CONTENT: " + sb.toString());
 
                                 roomData.put("content", sb.toString());
                                 roomData.put("date", db.searchStartByRoom(myRoomNumber));
 
-                                System.out.println("Get Start Time");
+                                //System.out.println("Get Start Time");
 
                                 msgList.add(roomData);
 
-                                System.out.println("Push to MSGLIST");
+                                //System.out.println("Push to MSGLIST");
                             }
 
                             //System.out.println(setMSGArr(func, msgList).toString());   
@@ -453,8 +474,27 @@ public class TCPServer implements Runnable {
     
                             out.println(setMSGArr(func, memList).toString());   
                             break;
+                        case 15:
+                            //REQUEST RESULT
+                            System.out.println("[REQUEST RESULT] " + message);
+
+                            HashMap<String, Integer> finalResult = db.NLPHashmapByRoom(message);
+                            ArrayList<String> keyword = db.extractFiveKeyWordByNLPHashMap(finalResult);
+
+                            for(String s: keyword){
+                                System.out.println(s);
+                            }
+
+                            out.println(setMSG(func, message));
+                            break;
+                        case 16:
+                            //REQUEST MARKER
+                            break;
+                        case 17:
+                            break;
                     }
                 } catch (Exception e) {
+
                     if(roomList.get(clientList.get(conn).getNumber()) != null) roomList.get(clientList.get(conn).getNumber()).remove(conn);
                     clientList.remove(conn);
 

@@ -27,7 +27,7 @@
     <string name="user_name">이름</string>
     <string name="nickname_text">닉네임</string>
     <string name="history">과거 기록</string>
-    <string name="exit">EXIT</string>
+    <string name="exit">나가기</string>
     <string name="button">Button</string>
     <string name="hi">-</string>
     <string name="no">NO.</string>
@@ -59,5 +59,8 @@
     <string name="my_tb">마이페이지</string>
     <string name="en_tb">활동 선택</string>
     <string name="main_part">참여자 목록</string>
+    <string name="result_tb">결과</string>
+    <string name="result_page">회의결과</string>
+    <string name="result_wc">Word Cloud</string>
 
 </resources>

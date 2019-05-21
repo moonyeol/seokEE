@@ -9,6 +9,7 @@
 
     android:orientation="vertical">
 
+<<<<<<< HEAD
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
@@ -20,10 +21,120 @@
         android:layout_height="393dp"
         android:text="@string/result"
         android:textSize="24sp" />
-
-    <Button
-        android:id="@+id/exit"
+=======
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/exit" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+>>>>>>> f4d3fbed16a5a979c662f95bb745e3a06538fba6
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="fill_parent"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:background="@drawable/borer_black_bottom"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:text="@string/result_tb"
+            android:textAlignment="gravity"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="8dp" />
+
+        <LinearLayout
+            android:layout_width="379dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/nanumbarungothic"
+            android:gravity="center_vertical"
+            android:text="@string/result_wc"
+            android:background="@drawable/borer_black_bottom"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/word_cloud"
+                android:layout_width="379dp"
+                android:layout_height="100dp"
+                android:layout_weight="1.5"
+                android:gravity="center_vertical"
+                app:srcCompat="@drawable/off" />
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="379dp"
+            android:gravity="center_vertical"
+
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#000000"
+            android:background="@drawable/borer_black_bottom"
+
+            android:fontFamily="@font/nanumbarungothic"
+            android:text="@string/result_page"
+            android:textSize="16sp" />
+
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="2.5"
+                android:background="@drawable/borer_black_bottom"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbarFadeDuration="0"
+
+                android:scrollbarSize="4dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbarThumbVertical="#3FACDC"
+                android:scrollbarTrackVertical="#BBBDBF"
+                android:scrollbars="vertical">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="379dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/nanumbarungothic"
+                    android:gravity="center_vertical"
+                    android:text="@string/result"
+                    android:textColor="#bbbdbf"
+                    android:textSize="16sp" />
+
+
+            </ScrollView>
+
+
+        <Button
+            android:id="@+id/exit"
+            android:gravity="center"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="379dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="@drawable/bt_radius_w"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:text="@string/exit"
+            android:textColor="#3FACDC"
+            android:textSize="20sp" />
+        </LinearLayout>
+</LinearLayout>
 </LinearLayout>

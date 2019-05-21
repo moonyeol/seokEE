@@ -10,9 +10,4 @@
 
     </style>
 
-    <style name="scroll_custom">
-        <item name="android:scrollbarThumbVertical">@drawable/scroll_box</item>
-        <item name="android:scrollbarTrackVertical">@drawable/scroll_bar</item>
-    </style>
-
 </resources>

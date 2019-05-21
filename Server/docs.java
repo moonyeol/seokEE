@@ -13,7 +13,7 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 public class docs {
-	public void mkdoc(ArrayList<String> content,String path, String fname) throws FileNotFoundException, IOException, InvalidFormatException {
+	public static void mkdoc(ArrayList<String> content,String path, String fname) throws FileNotFoundException, IOException, InvalidFormatException {
 
 		XWPFDocument document = new XWPFDocument();
 		XWPFParagraph tmpParagraph = document.createParagraph();
@@ -34,14 +34,14 @@ public class docs {
 			dir.mkdirs();
 		}
 
-		File saveFile = new File(path +"/"+ fname +"/seokee.doc");
+		File saveFile = new File(path +"/"+ fname +".doc");
 
 		FileOutputStream fos = new FileOutputStream(saveFile);
 		document.write(fos);
 		fos.close();
 	}
 	
-	public void mktxt(ArrayList<String> content,String path, String fname) {
+	public static void mktxt(ArrayList<String> content,String path, String fname) {
         try{
 		File dir = new File(path);
 		File saveFile = new File(path +"/"+ fname +".txt");
