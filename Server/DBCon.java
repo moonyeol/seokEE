@@ -528,7 +528,6 @@ public class DBCon {
     		ResultSet rs = pstmt.executeQuery();
     		rs.next();
     		if (rs.getInt("count(*)")!=0) {
-    			System.out.println("Already existing ID");
     			return false;
     		}
     	}catch(SQLException e)
@@ -569,6 +568,57 @@ public class DBCon {
     	}
     	}
     }
+    public double totalUserContributionMean() {
+    	double data = 1;
+    	double tmp=0.0;
+    	String query = "select contribution from stats;";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		ResultSet rs = pstmt.executeQuery();
+    		
+    		while (rs.next()){
+    			data *= rs.getDouble(1);
+    			tmp+=1.0;
+    		}
+    		
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	data = Math.pow(data, 1.0/(double) tmp);
+    	return data;
+    }
+    public Double contributionRank(String id) {
+    	double data=1.0;
+    	String query = "select (select count(*)+1 from stats where contribution>t.contribution)/(select count(*) from stats) as rank from stats as t where id =? ;";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, id);
+    		ResultSet rs = pstmt.executeQuery();
+    		while (rs.next()){
+    			data = rs.getDouble(1);
+    		}
+    		
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return data;
+    }
+    public String myPageContributionById(String id) {
+    	String data;
+    	double myMean = contributionById(id);
+    	double totalUserMean = totalUserContributionMean();
+    	double myRank = contributionRank(id);
+    	
+    	data = "이용자의 평균 회의 기여도는 "+ Math.round(totalUserMean*1000.0)/10.0 + "%입니다."+ 
+    			"당신의 평균 기여도는 "+ myMean *100.0 +"%입니다."+ 
+    			"당신은 상위 "+ myRank * 100.0 + "%의 기여도를 보이고 있습니다.";
+    	return data;
+    }
+    
     
 	
 	
