@@ -122,7 +122,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                 public void onClick(View v) {
                     try {
                         commSock.kick(11, ItemViewHolder.this.data.getNumber());
-                        String fileURL = commSock.read().getJSONObject(0).optString("link");
+                        String fileURL = commSock.read().getJSONObject(0).optString("message");
                         String Save_folder = "/seokEE";
                         String Save_Path = "";
                         String File_Name = "test";
@@ -168,7 +168,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             request.setAllowedNetworkTypes(
                     DownloadManager.Request.NETWORK_WIFI
                             | DownloadManager.Request.NETWORK_MOBILE)
-            .setDestinationInExternalPublicDir(direct+"/",fname+".docx")
+            .setDestinationInExternalPublicDir(direct+"/",fname+".doc")
                     ;
 
             mgr.enqueue(request);

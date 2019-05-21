@@ -20,12 +20,11 @@
     var myData = new Array();
 
     datas = window.android.requestStr();
-
-    var strings = datas.split(" ");
+    document.write(datas);
     for(var i=0; i<strings.length;i+=2){
         var data = new Object();
         data.text = strings[i];
-        data.size = strings[i+1];
+        data.size = strings[i+1]*10;
         myData.push(data);
     }
     showcloud(myData);

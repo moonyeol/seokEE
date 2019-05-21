@@ -697,10 +697,13 @@ drawable rec_b
 drawable rec_fin_b
 drawable rec_st_b
 drawable room_door
+drawable s_on
+drawable s_part_yellow
 drawable scroll_bar
 drawable scroll_box
 drawable seok_icon
 drawable seok_loading
+drawable success
 drawable three_dots
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -749,7 +752,7 @@ id birthMonth
 id birthYear
 id blocking
 id bottom
-id btn_start
+id btnstart
 id button
 id button3
 id buttonPanel
@@ -802,8 +805,6 @@ id id_input
 id id_tv
 id ifRoom
 id image
-id imageButton
-id imageButton2
 id imageView
 id imageView1
 id imageView3
@@ -848,7 +849,6 @@ id parentPanel
 id partialResult
 id passwordInput
 id percent
-id pin4
 id pincode4
 id progress_circular
 id progress_horizontal
@@ -1060,6 +1060,9 @@ string password
 string pincode
 string remember_login
 string result
+string result_page
+string result_tb
+string result_wc
 string search_menu_title
 string sign_up
 string status_bar_notification_info_overflow
@@ -1414,7 +1417,6 @@ style Widget_AppCompat_Toolbar_Button_Navigation
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Support_CoordinatorLayout
-style scroll_custom
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

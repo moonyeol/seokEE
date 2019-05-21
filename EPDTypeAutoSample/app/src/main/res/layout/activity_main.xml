@@ -55,8 +55,6 @@
 
             android:scrollbarSize="4dp"
             android:scrollbarStyle="outsideOverlay"
-            android:scrollbarThumbVertical="#3FACDC"
-            android:scrollbarTrackVertical="#BBBDBF"
             android:scrollbars="vertical">
 
             <LinearLayout
@@ -84,8 +82,6 @@
             android:layout_weight="1"
             android:scrollbarStyle="outsideOverlay"
 
-            android:scrollbarThumbVertical="#3FACDC"
-            android:scrollbarTrackVertical="#BBBDBF"
             android:background="@drawable/borer_black_bottom">
 
             <GridLayout
@@ -110,7 +106,7 @@
                     android:gravity="right|center_vertical"
                     android:text="가나다라마바사아자"
                     android:textSize="16sp"
-                    android:textcolor="#000000"
+                    android:textColor="#000000"
                     android:layout_weight="1"/>
 
 

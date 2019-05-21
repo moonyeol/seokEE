@@ -17,7 +17,7 @@ public class resultActivity extends AppCompatActivity {
     private String pincode;
     JSONArray info, info2;
     StringBuilder sb = new StringBuilder();
-
+    WebView wordCloud;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,16 +25,6 @@ public class resultActivity extends AppCompatActivity {
         Intent intent = getIntent();
         pincode = intent.getStringExtra("pincode");
         commSock.kick(commSock.REQUEST_RESULT, pincode);
-
-        WebView wordCloud = findViewById(R.id.webView);
-        wordCloud.getSettings().setJavaScriptEnabled(true);
-        wordCloud.loadUrl("file:///android_asset/test.html");
-        wordCloud.setWebChromeClient(new WebChromeClient());
-//        String userAgent = wordCloud.getSettings().getUserAgentString();
-//        wordCloud.getSettings().setUserAgentString(userAgent+"ahndroid");
-        wordCloud.addJavascriptInterface(new AndroidBridge(wordCloud,sb),"android");
-
-
         new Thread(new Runnable(){
                 public void run(){
                     info = commSock.read();
@@ -48,11 +38,15 @@ public class resultActivity extends AppCompatActivity {
                             sb.append(obj.getString("keyword"));
                             sb.append(" ");
                             sb.append(obj.getString("freq"));
+                            sb.append(" ");
                         }
 
                         msg = info2.getJSONObject(0);
 
                         sb.append(msg.get("message").toString());
+
+
+
                     } catch(Exception e){
                         e.printStackTrace();
                     }
@@ -61,6 +55,14 @@ public class resultActivity extends AppCompatActivity {
                             TextView tv = findViewById(R.id.resultView);
 
                             tv.setText(sb.toString());
+                            wordCloud = findViewById(R.id.webView);
+                            wordCloud.getSettings().setJavaScriptEnabled(true);
+                            wordCloud.loadUrl("file:///android_asset/test.html");
+                            wordCloud.setWebChromeClient(new WebChromeClient());
+                            String userAgent = wordCloud.getSettings().getUserAgentString();
+                            wordCloud.getSettings().setUserAgentString(userAgent+"ahndroid");
+                            wordCloud.addJavascriptInterface(new AndroidBridge(wordCloud,sb),"android");
+                            wordCloud.reload();
                         }
                     });
                 }

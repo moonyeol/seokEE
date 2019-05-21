@@ -128,7 +128,7 @@ public class MainActivity extends Activity {
         listView = findViewById(R.id.userList);
 
         talkList = findViewById(R.id.talkList);
-        btnStart = findViewById(R.id.btn_start);
+        btnStart = findViewById(R.id.btnstart);
 
         handler = new RecognitionHandler(this);
         naverRecognizer = new NaverRecognizer(this, handler, CLIENT_ID);

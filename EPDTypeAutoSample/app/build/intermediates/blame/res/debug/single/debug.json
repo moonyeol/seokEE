@@ -508,6 +508,14 @@
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-2\\files-2.1\\4616a4e5d6a17dbe6e2854c13a957838\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
+        "merged": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable_success.png.flat",
+        "source": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\src\\main\\res\\drawable\\success.png"
+    },
+    {
+        "merged": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable_s_on.png.flat",
+        "source": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\src\\main\\res\\drawable\\s_on.png"
+    },
+    {
         "merged": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-2\\files-2.1\\c089cf8cc1bbb9cd3daf2d3cec86ff86\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
@@ -1206,6 +1214,10 @@
     {
         "merged": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-2\\files-2.1\\4616a4e5d6a17dbe6e2854c13a957838\\res\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable_s_part_yellow.png.flat",
+        "source": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\src\\main\\res\\drawable\\s_part_yellow.png"
     },
     {
         "merged": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
