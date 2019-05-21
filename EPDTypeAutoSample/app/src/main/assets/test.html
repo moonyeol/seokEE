@@ -21,6 +21,7 @@
 
     datas = window.android.requestStr();
     document.write(datas);
+    strings = datas.split(" ");
     for(var i=0; i<strings.length;i+=2){
         var data = new Object();
         data.text = strings[i];

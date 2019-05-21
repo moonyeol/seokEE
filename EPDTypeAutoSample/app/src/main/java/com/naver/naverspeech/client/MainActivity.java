@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -55,7 +56,7 @@ public class MainActivity extends Activity {
     private TextView et_pin;
 
     private Context context;
-    private LinearLayout listView;
+    private GridLayout listView;
 
     private ArrayList<CheckBox> talk =  new ArrayList<>();
     private LinearLayout talkList;
