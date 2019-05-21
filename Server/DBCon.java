@@ -548,7 +548,6 @@ public class DBCon {
         		pstmt.setString(2, id);
 
         		pstmt.executeUpdate();
-        		System.out.println("Insert success");
         	}catch(SQLException e)
         	{
         		e.printStackTrace();
@@ -562,7 +561,6 @@ public class DBCon {
     		pstmt.setDouble(2, data);
 
     		pstmt.executeUpdate();
-    		System.out.println("Insert success");
     	}catch(SQLException e){
     		e.printStackTrace();
     	}
