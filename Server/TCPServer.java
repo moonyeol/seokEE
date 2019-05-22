@@ -8,14 +8,14 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
 
-import javax.crypto.Cipher;
+/*import javax.crypto.Cipher;
 import javax.crypto.CipherSpi;
 import java.security.*;
 import java.security.spec.X509EncodedKeySpec;
 import org.apache.commons.codec.binary.Base64;
 import java.security.KeyPair;
 import java.security.PrivateKey;
-import java.security.PublicKey;
+import java.security.PublicKey;*/
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
@@ -24,9 +24,10 @@ import org.json.simple.parser.JSONParser;
 public class TCPServer implements Runnable {
 
     public static final int ServerPort = 9000;
-
+    public static final String ip = "18.223.112.209";
     private DBCon db;
     private int seed = 0;
+    
     private HashMap<Socket, ClientInfo> clientList = new HashMap<>();
     private HashMap<String, ArrayList<Socket>> roomList = new HashMap<>();
     private HashMap<String, Boolean> roomRunning = new HashMap<>();
@@ -196,7 +197,10 @@ public class TCPServer implements Runnable {
                     BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                     PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(conn.getOutputStream())), true);
 
-                    String str = in.readLine();
+                    String str = null;
+                    while(str == null){
+                        str = in.readLine();
+                    }
 
                     JSONParser parser = new JSONParser();
                     JSONObject response, info;
@@ -211,6 +215,7 @@ public class TCPServer implements Runnable {
 
                     System.out.println("[FROM Client] TIME:" + new Date() +" TALKER: "+ talker + " MESSAGE: " + message + " FUNC: " + func + " NUMBER: " + number);
 
+                    long startTime = System.currentTimeMillis();
                     switch (func) {
                         case 0:
                             // default message
@@ -392,7 +397,20 @@ public class TCPServer implements Runnable {
                             break;
                         case 11:
                             // REQUEST FILE
+                            ArrayList<String> makeFile = new ArrayList<>();
+                            makeFile.add("[SAMPLE DATA]");
+                            makeFile.add("It is sample data.");
+                            makeFile.add("It is sample data.");
+                            makeFile.add("It is sample data.");
+                            makeFile.add("It is sample data.");
+                            makeFile.add("It is sample data.");
+                            makeFile.add("It is sample data.");
+                            makeFile.add("It is sample data.");
+                            makeFile.add("It is sample data.");
                             
+                            docs.mkdoc(makeFile, "/var/www/html/files", "sample");
+                            out.println(setMSG(func,"http://"+ ip +"/files/sample.docx"));
+
                             break;
                         case 12:
                             // REQUEST_USERINFO     
@@ -479,13 +497,40 @@ public class TCPServer implements Runnable {
                             System.out.println("[REQUEST RESULT] " + message);
 
                             HashMap<String, Integer> finalResult = db.NLPHashmapByRoom(message);
+
+                            System.out.println("[REQUEST RESULT HASH]");
                             ArrayList<String> keyword = db.extractFiveKeyWordByNLPHashMap(finalResult);
 
-                            for(String s: keyword){
-                                System.out.println(s);
+                            System.out.println("[REQUEST RESULT KEYWORD]");
+
+                            JSONArray jarr = new JSONArray();
+
+                            for (Map.Entry<String, Integer> entry : finalResult.entrySet()) {
+                                String text = entry.getKey();
+                                int freq = entry.getValue();
+                                System.out.println(text + " " + freq);
+
+                                JSONObject obj = new JSONObject();
+                                obj.put("keyword", text);
+                                obj.put("freq", freq);
+
+                                jarr.add(obj);
+                            }                                                      
+
+                            out.println(setMSG(func, jarr.toString()));
+                            System.out.println("[REQUEST RESULT PRINT] " + setMSG(func, jarr.toString()));
+
+                            StringBuilder resultText = new StringBuilder();
+
+                            for(String s : keyword){
+                                resultText.append(s);
+                                resultText.append(" ");
                             }
 
-                            out.println(setMSG(func, message));
+                            System.out.println("[REQUEST RESULT PRINT2] " + resultText.toString());
+                            out.println(setMSG(func,resultText.toString()));
+
+
                             break;
                         case 16:
                             //REQUEST MARKER
@@ -493,7 +538,11 @@ public class TCPServer implements Runnable {
                         case 17:
                             break;
                     }
+
+                    long endTime = System.currentTimeMillis();
+                    System.out.println("Elapsed Time: " + (endTime-startTime)/1000.0 + "ms");
                 } catch (Exception e) {
+                    e.printStackTrace();
 
                     if(roomList.get(clientList.get(conn).getNumber()) != null) roomList.get(clientList.get(conn).getNumber()).remove(conn);
                     clientList.remove(conn);
