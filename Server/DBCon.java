@@ -101,19 +101,18 @@ public class DBCon {
     	return data;
     }
     public boolean memberIDCheck(String id) {
-    	String query = "select count(*) from member where id = ?";
-    	PreparedStatement pstmt = null;
+    	String query = "select count(*) as cnt from member where id = ?";
     	try {
+    		PreparedStatement pstmt = null;
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, id);
     		ResultSet rs = pstmt.executeQuery();
-
-    		if(rs.next()){
-				if (rs.getInt("count(*)")!=0) {
-					System.out.println("[memberIDCheck] Already existing ID");
-					return false;
-				}
-			}
+    		if (rs.next()) {
+    			if(rs.getInt("cnt")!=0) {
+    				System.out.println("Already existing ID");
+    				return false;
+    			}
+    		}
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
@@ -371,6 +370,7 @@ public class DBCon {
 
 	public HashMap<String , Integer> NLPHashmapByRoom(String room) {
     	String roomMsg = "";
+    	StringBuilder sb = new StringBuilder("");
     	String query = "select msg from talk where room = ?;";
     	PreparedStatement pstmt = null;
     	try {
@@ -380,15 +380,18 @@ public class DBCon {
     		
     		while(rs.next()) {
     			roomMsg = roomMsg +" " +rs.getString("msg");
+    			sb.append(rs.getString("msg"));
+    			sb.append(" ");
     		}
     		
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
+    	System.out.println(sb);
     	// NLP
     	Komoran komoran = new Komoran("./lib/models-light");
-    	List<List<Pair<String,String>>> result = komoran.analyze(roomMsg);
+    	List<List<Pair<String,String>>> result = komoran.analyze(sb.toString());
 		HashMap<String , Integer> data = new HashMap <String , Integer>();
 		int tmp;
 		for (List<Pair<String, String>> eojeolResult : result) {
@@ -616,10 +619,21 @@ public class DBCon {
     			"당신은 상위 "+ myRank * 100.0 + "%의 기여도를 보이고 있습니다.";
     	return data;
     }
+    public void insertRoom(String room, String title) {
+    	String query = "insert into roomName (roomPin,roomTitle) values(?,?);";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, room);
+    		pstmt.setString(2, title);
+    		pstmt.executeUpdate();
+    		// System.out.println("Insert success");
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    }
     
-    
-	
-	
 
 }
 
