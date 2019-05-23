@@ -12,9 +12,9 @@
 <body>
 <div id="cloud"></div>
 <script type="text/javascript">
-    var weight = 3,   // change me
-        width = 960,
-        height = 500
+    var weight = 10,   // change me
+        width = 300,
+        height = 200
 
     var fill = d3.scale.category20();
     var myData = new Array();
@@ -25,7 +25,7 @@
     for(var i=0; i<strings.length;i+=2){
         var data = new Object();
         data.text = strings[i];
-        data.size = strings[i+1]*10;
+        data.size = strings[i+1]*weight;
         myData.push(data);
     }
     showcloud(myData);

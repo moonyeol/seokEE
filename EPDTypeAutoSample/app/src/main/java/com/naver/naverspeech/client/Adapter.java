@@ -2,7 +2,9 @@ package com.naver.naverspeech.client;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
@@ -120,27 +123,47 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
 
             export.setOnClickListener(new Button.OnClickListener() {
                 public void onClick(View v) {
-                    try {
-                        commSock.kick(11, ItemViewHolder.this.data.getNumber());
-                        String fileURL = commSock.read().getJSONObject(0).optString("message");
-                        String Save_folder = "/seokEE";
-                        String Save_Path = "";
-                        String File_Name = "test";
-                        String ext = Environment.getExternalStorageState();
-                        if (ext.equals(Environment.MEDIA_MOUNTED)) {
-                            Save_Path = Environment.getExternalStorageDirectory()+ Save_folder;
+                    final AlertDialog.Builder ad = new AlertDialog.Builder(context);
+                    ad.setTitle("회의록 파일 저장");
+                    ad.setMessage("파일 이름을 지정해주세요");
+                    final EditText et = new EditText(context);
+                    final String ffname;
+                    ad.setView(et);
+                    ad.setPositiveButton("저장", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            try {
+                                commSock.kick(11, ItemViewHolder.this.data.getNumber());
+                                String fileURL = commSock.read().getJSONObject(0).optString("message");
+                                String Save_folder = "/seokEE";
+                                String Save_Path = "";
+                                String File_Name = et.getText().toString();
+                                String ext = Environment.getExternalStorageState();
+                                if (ext.equals(Environment.MEDIA_MOUNTED)) {
+                                    Save_Path = Environment.getExternalStorageDirectory()+ Save_folder;
+                                }
+                                File dir = new File(Save_Path);
+                                if (!dir.exists()) {
+                                    dir.mkdirs();
+                                }
+                                downloadFile(fileURL,Save_Path,File_Name);
+
+
+
+                            }catch(org.json.JSONException e){
+                                e.printStackTrace();
+                            }
+                            dialogInterface.dismiss();
                         }
-                        File dir = new File(Save_Path);
-                        if (!dir.exists()) {
-                            dir.mkdirs();
+                    });
+                    ad.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
                         }
-                        downloadFile(fileURL,Save_Path,File_Name);
-
-
-
-                    }catch(org.json.JSONException e){
-                        e.printStackTrace();
-                    }
+                    });
+                    AlertDialog alert = ad.create();
+                    alert.show();
                 }
             });
 
@@ -169,7 +192,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     DownloadManager.Request.NETWORK_WIFI
                             | DownloadManager.Request.NETWORK_MOBILE)
             .setDestinationInExternalPublicDir(direct+"/",fname+".doc")
-                    ;
+            .setNotificationVisibility( DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+
 
             mgr.enqueue(request);
 

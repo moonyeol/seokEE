@@ -67,7 +67,6 @@ public class loginActivity extends AppCompatActivity {
             }
         }
 
-
         setContentView(R.layout.activity_login);
         idText = findViewById(R.id.nickInput);
         passwordText = findViewById(R.id.passwordInput);
@@ -111,8 +110,8 @@ public class loginActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(loginActivity.this, "존재하지 않는 아이디거나 틀린 비밀번호입니다.", Toast.LENGTH_SHORT).show();
                     }
-                    }catch(org.json.JSONException e){
-                        e.printStackTrace();
+                }catch(org.json.JSONException e){
+                    e.printStackTrace();
                 }
             }
         });
@@ -135,10 +134,3 @@ public class loginActivity extends AppCompatActivity {
 
 
 }
-
-
-
-
-
-
-
