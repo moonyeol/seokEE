@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -24,6 +25,7 @@ public class loginActivity extends AppCompatActivity {
     EditText idText, passwordText;
     Button loginButton, joinButton, anonymousbutton;
     CheckBox reid;
+    int permissionResult, permissionWrite;
 
     public static Activity _login;
 
@@ -34,11 +36,15 @@ public class loginActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             /* 사용자 단말기의 권한 중 권한이 허용되어 있는지 체크합니다. */
-            int permissionResult = checkSelfPermission(Manifest.permission.RECORD_AUDIO);
+            permissionResult = checkSelfPermission(Manifest.permission.RECORD_AUDIO);
+            permissionWrite = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
             /* 권한이 없을 때 */
-            if (permissionResult == PackageManager.PERMISSION_DENIED) {
+            if (permissionResult == PackageManager.PERMISSION_DENIED || permissionWrite == PackageManager.PERMISSION_DENIED) {
                 /* 사용자가 권한을 한번이라도 거부한 적이 있는 지 확인합니다. */
-                if (shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO)) {
+                if (shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO) ||
+                        shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    ) {
                     AlertDialog.Builder dialog = new AlertDialog.Builder(loginActivity.this);
                     dialog.setTitle("권한이 필요합니다.")
                             .setMessage("이 기능을 사용하기 위해서는 권한이 필요합니다. 계속하시겠습니까?")
@@ -46,7 +52,7 @@ public class loginActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                        requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, 1000);
+                                            requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
                                     }
                                 }
                             })
@@ -62,7 +68,7 @@ public class loginActivity extends AppCompatActivity {
                 // 최초로 권한을 요청하는 경우
                 else {
                     // 권한을 요청합니다.
-                    requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, 1000);
+                    requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
                 }
             }
         }
@@ -76,14 +82,27 @@ public class loginActivity extends AppCompatActivity {
         anonymousbutton = findViewById(R.id.anonymous);
         reid = findViewById(R.id.reid);
 
+        passwordText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                //Enter key Action
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    loginButton.callOnClick();
+                    return true;
+                }
+                return false;
+            }
+        });
+
         loginButton.setOnClickListener(new Button.OnClickListener(){
+
             public void onClick(View v) {
                 // 로그인 맞는지 체크.
                 JSONObject send = new JSONObject();// JSONObject 생성
 
                 try {
                     send.put("id", idText.getText().toString());
-                    send.put("pw", passwordText.getText().toString());
+                    send.put("pw", Hashing.SHA256(passwordText.getText().toString()));
                 }catch(Exception e){
                     e.printStackTrace();
                 }
@@ -97,7 +116,7 @@ public class loginActivity extends AppCompatActivity {
                         if(reid.isChecked()){
                             SharedPreferences.Editor editor = getSharedPreferences("auto_login", MODE_PRIVATE).edit();
                             editor.putString("id",idText.getText().toString());
-                            editor.putString("pwd", passwordText.getText().toString());
+                            editor.putString("pwd", Hashing.SHA256(passwordText.getText().toString()));
                             editor.apply();
                         }
 

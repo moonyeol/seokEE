@@ -19,28 +19,27 @@
         android:gravity="center_vertical"
         >
 
-        <LinearLayout
-            android:layout_width="379dp"
-            android:layout_height="75dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            >
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="TITLE"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/pincode4"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/nanumbarungothicbold"
-                android:gravity="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/pincode4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:text="@string/pincode"
+            android:textAlignment="center" />
 
         <ScrollView
             android:id="@+id/scrollView"
@@ -54,7 +53,7 @@
             android:scrollbarFadeDuration="0"
 
             android:scrollbarSize="4dp"
-            android:scrollbarStyle="outsideOverlay"
+            android:scrollbarStyle="insideOverlay"
             android:scrollbars="vertical">
 
             <LinearLayout
@@ -115,48 +114,35 @@
         </ScrollView>
 
         <LinearLayout
-            android:layout_width="379dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:layout_gravity="center">
 
             <ImageButton
                 android:id="@+id/btnstart"
-                android:layout_width="50dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="133dp"
 
                 android:layout_weight="1"
                 android:background="@color/white"
-                android:padding="0dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/rec_b"
+                android:src="@drawable/rec_b"
                 tools:layout_editor_absoluteX="251dp"
-                tools:layout_editor_absoluteY="699dp" />
+                tools:layout_editor_absoluteY="699dp"
+                tools:visibility="visible" />
 
-            <LinearLayout
-                android:layout_width="116dp"
-                android:layout_height="60dp"
+            <ImageButton
+                android:id="@+id/exitbt3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/exitbt3"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="right|center_vertical"
-
-                    android:layout_marginLeft="67dp"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:onClick="bt_exit"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/exit_b"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-            </LinearLayout>
+                android:background="@color/white"
+                android:onClick="bt_exit"
+                android:scaleType="fitCenter"
+                android:src="@drawable/exit_b" />
 
         </LinearLayout>
 

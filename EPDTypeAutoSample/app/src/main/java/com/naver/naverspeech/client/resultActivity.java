@@ -3,9 +3,11 @@ package com.naver.naverspeech.client;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONArray;
@@ -18,6 +20,7 @@ public class resultActivity extends AppCompatActivity {
     JSONArray info, info2;
     StringBuilder sb = new StringBuilder();
     WebView wordCloud;
+    Button exitBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +28,22 @@ public class resultActivity extends AppCompatActivity {
         Intent intent = getIntent();
         pincode = intent.getStringExtra("pincode");
         commSock.kick(commSock.REQUEST_RESULT, pincode);
+
+        exitBtn = findViewById(R.id.exit);
+
+        exitBtn.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                finish();
+            }
+        });
+
         new Thread(new Runnable(){
                 public void run(){
+                    exitBtn = findViewById(R.id.exit);
+                    exitBtn.setText("... 계산 중입니다.");
+                    exitBtn.setEnabled(false);
+
                     info = commSock.read();
                     info2 = commSock.read();
                     try {
@@ -45,8 +62,6 @@ public class resultActivity extends AppCompatActivity {
 
                         sb.append(msg.get("message").toString());
 
-
-
                     } catch(Exception e){
                         e.printStackTrace();
                     }
@@ -63,6 +78,9 @@ public class resultActivity extends AppCompatActivity {
                             wordCloud.getSettings().setUserAgentString(userAgent+"ahndroid");
                             wordCloud.addJavascriptInterface(new AndroidBridge(wordCloud,sb),"android");
                             wordCloud.reload();
+
+                            exitBtn.setText("나가기");
+                            exitBtn.setEnabled(true);
                         }
                     });
                 }

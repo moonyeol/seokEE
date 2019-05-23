@@ -1810,7 +1810,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>
@@ -3323,24 +3323,23 @@ public final class R {
     public static final int textView3=0x7f0800c0;
     public static final int textView4=0x7f0800c1;
     public static final int textView5=0x7f0800c2;
-    public static final int textView7=0x7f0800c3;
-    public static final int textView8=0x7f0800c4;
-    public static final int textView9=0x7f0800c5;
-    public static final int time=0x7f0800c6;
-    public static final int title=0x7f0800c7;
-    public static final int titleDividerNoCustom=0x7f0800c8;
-    public static final int title_template=0x7f0800c9;
-    public static final int top=0x7f0800ca;
-    public static final int topPanel=0x7f0800cb;
-    public static final int uniform=0x7f0800cc;
-    public static final int up=0x7f0800cd;
-    public static final int useLogo=0x7f0800ce;
-    public static final int userList=0x7f0800cf;
-    public static final int userListScroll=0x7f0800d0;
-    public static final int webView=0x7f0800d1;
-    public static final int withText=0x7f0800d2;
-    public static final int wrap=0x7f0800d3;
-    public static final int wrap_content=0x7f0800d4;
+    public static final int textView8=0x7f0800c3;
+    public static final int textView9=0x7f0800c4;
+    public static final int time=0x7f0800c5;
+    public static final int title=0x7f0800c6;
+    public static final int titleDividerNoCustom=0x7f0800c7;
+    public static final int title_template=0x7f0800c8;
+    public static final int top=0x7f0800c9;
+    public static final int topPanel=0x7f0800ca;
+    public static final int uniform=0x7f0800cb;
+    public static final int up=0x7f0800cc;
+    public static final int useLogo=0x7f0800cd;
+    public static final int userList=0x7f0800ce;
+    public static final int userListScroll=0x7f0800cf;
+    public static final int webView=0x7f0800d0;
+    public static final int withText=0x7f0800d1;
+    public static final int wrap=0x7f0800d2;
+    public static final int wrap_content=0x7f0800d3;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f090000;
@@ -8153,7 +8152,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>

@@ -1,14 +1,10 @@
 package com.naver.naverspeech.client;
 
-import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
@@ -18,7 +14,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -39,7 +34,6 @@ import org.json.JSONObject;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 // 1. Main Activity 클래스를 정의합니다.
 public class MainActivity extends Activity {
@@ -268,7 +262,7 @@ public class MainActivity extends Activity {
     public void updateChatHighlight(){
         for(CheckBox chk : talk) {
             String s = (String)chk.getText();
-            if(selectedUser != null && s.contains(selectedUser)) {
+            if(selectedUser != null && s.equals(selectedUser)) {
                 chk.setBackgroundColor(Color.argb(60,63,172,220));
             } else {
                 chk.setBackgroundColor(Color.argb(0, 255, 255, 255));

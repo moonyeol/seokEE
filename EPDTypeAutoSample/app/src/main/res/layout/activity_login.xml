@@ -18,20 +18,12 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="59dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="59dp"></LinearLayout>
-
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="235dp"
             android:layout_height="174dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="20dp"
             android:contentDescription="@string/StringValue"
 
@@ -44,19 +36,19 @@
             android:layout_width="260dp"
             android:layout_height="40dp"
 
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/edit_border_black"
             android:fontFamily="@font/nanumbarungothic"
             android:hint="@string/login_id"
-            android:inputType=""
             android:textColor="#747474"
             android:textSize="14sp"
+            android:nextFocusDown="@id/passwordInput"
             tools:layout_editor_absoluteX="57dp"
             tools:layout_editor_absoluteY="340dp"
-            tools:targetApi="o" />
+            tools:targetApi="o"
+            />
 
 
         <EditText
