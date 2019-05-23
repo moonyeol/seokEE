@@ -1,4 +1,3 @@
-package seokee;
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,15 +11,17 @@ import java.util.List;
 import java.util.Map;
 import java.sql.PreparedStatement;
 
-import kr.co.shineware.util.common.model.Pair;
-import kr.co.shineware.nlp.komoran.core.analyzer.Komoran;
+import kr.co.shineware.nlp.komoran.constant.DEFAULT_MODEL;
+import kr.co.shineware.nlp.komoran.core.Komoran;
+import kr.co.shineware.nlp.komoran.model.Token;
+
 import java.sql.ResultSet;
 
 public class DBCon {
-	static final String JDBC_DRIVER ="com.mysql.cj.jdbc.Driver";
-    static final String url = "jdbc:mysql://seokee0503.c9p1xpsot2og.ap-northeast-2.rds.amazonaws.com/seokee";
-    static String USERNAME = "indexoutofrange";
-    static String PASSWORD = "12341234";
+	static final String JDBC_DRIVER ="org.mariadb.jdbc.Driver";
+    static final String url = "jdbc:mariadb://localhost:3306/seokee";
+    static String USERNAME = "root";
+    static String PASSWORD = "dkakwhs12";
     //static String ENCODEING = "Unicode=true&characterEncoding=UTF-8";
     public static Connection conn = null;
     public DBCon(){
@@ -29,9 +30,8 @@ public class DBCon {
             System.out.println("Connecting...");
             Class.forName(JDBC_DRIVER);
             //conn = DriverManager.getConnection(url, USERNAME, PASSWORD);
-            conn = DriverManager.getConnection( "jdbc:mysql://seokee0503.c9p1xpsot2og.ap-northeast-2.rds.amazonaws.com/seokee"
-            		+ "?user=indexoutofrange&password=12341234&characterEncoding=utf-8&" 
-            		+ "useUnicode=true");
+            conn = DriverManager.getConnection( url, USERNAME, PASSWORD);
+
             if(conn !=null ) System.out.println("DB Conncted.");
             else System.out.println("DB connect fail.");
         } catch (ClassNotFoundException e) {
@@ -40,8 +40,7 @@ public class DBCon {
             } catch (SQLException e) {
                 System.out.println("SQL Exception :" + e.getMessage());
                 e.printStackTrace();
-                }
-    	
+            }    	
     }
     public void insertTalk(Talk a) {
     	String query = "insert into talk (room,time,msg,id) values(?,?,?,?);";
@@ -100,27 +99,28 @@ public class DBCon {
     	}
     	return data;
     }
-    public boolean memberIDCheck(String id) {
-    	String query = "select count(*) from member where id = ?";
-    	PreparedStatement pstmt = null;
-    	try {
-    		pstmt = conn.prepareStatement(query);
-    		pstmt.setString(1, id);
-    		ResultSet rs = pstmt.executeQuery();
 
-    		if(rs.next()){
-				if (rs.getInt("count(*)")!=0) {
-					System.out.println("[memberIDCheck] Already existing ID");
-					return false;
-				}
-			}
-    	}catch(SQLException e)
-    	{
-    		e.printStackTrace();
-    		return false;
-    	}
-    	return true;
+	public boolean memberIDCheck(String id) {
+       String query = "select count(*) as cnt from member where id = ?";
+       try {
+          PreparedStatement pstmt = null;
+          pstmt = conn.prepareStatement(query);
+          pstmt.setString(1, id);
+          ResultSet rs = pstmt.executeQuery();
+          if (rs.next()) {
+             if(rs.getInt("cnt")!=0) {
+                System.out.println("Already existing ID");
+                return false;
+             }
+          }
+       }catch(SQLException e)
+       {
+          e.printStackTrace();
+          return false;
+       }
+       return true;
     }
+    
     public boolean memberResgisterID(Member a) {
     	if (memberIDCheck(a.getID())) {
     		String query = "insert into member (id,password,gender,birth, nickname) values(?,?,?,?,?);";
@@ -350,7 +350,7 @@ public class DBCon {
             }
              
         });
-        Collections.reverse(list); // ¡÷ºÆΩ√ ø¿∏ß¬˜º¯
+        Collections.reverse(list);
         return list;
     }
 
@@ -370,28 +370,43 @@ public class DBCon {
     }
 
 	public HashMap<String , Integer> NLPHashmapByRoom(String room) {
-    	String roomMsg = "";
+		System.out.println("[DBCon] MAKE String");
     	String query = "select msg from talk where room = ?;";
     	PreparedStatement pstmt = null;
+		StringBuilder sb = new StringBuilder();
+
     	try {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, room);
     		ResultSet rs = pstmt.executeQuery();
-    		
-    		while(rs.next()) {
-    			roomMsg = roomMsg +" " +rs.getString("msg");
-    		}
-    		
+  
+      		while(rs.next()) {
+    			sb.append(rs.getString("msg")).append(" ");
+    		}    		
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
     	// NLP
-    	Komoran komoran = new Komoran("./lib/models-light");
-    	List<List<Pair<String,String>>> result = komoran.analyze(roomMsg);
+		System.out.println("[DBCon] Analyze " + sb.toString().length());
+
+    	Komoran komoran = new Komoran(DEFAULT_MODEL.FULL);
+    	List<Token> result = komoran.analyze(sb.toString()).getTokenList();
 		HashMap<String , Integer> data = new HashMap <String , Integer>();
-		int tmp;
-		for (List<Pair<String, String>> eojeolResult : result) {
+	
+		System.out.println("[DBCon] Counting..");
+
+		for(Token token : result){
+			if(token.getPos().equals("NNG")){
+				String morph = token.getMorph();
+				if(data.containsKey(morph)){
+					data.put(morph, data.get(morph)+1);
+				} else data.put(morph,1);
+			}
+		}
+
+		System.out.println("[DBCon] Success.");
+		/*for (List<Pair<String, String>> eojeolResult : result) {
 			for (Pair<String, String> wordMorph : eojeolResult) {
 				if (wordMorph.getSecond().equals("NNG")) {
 					if (data.containsKey(wordMorph.getFirst())) {
@@ -402,9 +417,11 @@ public class DBCon {
 					}
 				}
 			}
-		}
+		}*/
     	return data;
     }
+
+
 	// calculate contribution who id / from room (0.0 < data < 1.0)
 	public double contributionByRoomAndId(String room, String id) {
     	double data = 0;
@@ -474,7 +491,7 @@ public class DBCon {
     	}
     	return data;
 	}
-	// ∆Ú±’ ±‚ø©µµ (±‚«œ∆Ú±’¿∏∑Œ ±∏«‘)
+
 	public Double contributionById(String id) {
     	Double data = 1.0;
     	List <Double> tmp1 = new ArrayList<>();
@@ -605,21 +622,31 @@ public class DBCon {
     	}
     	return data;
     }
-    public String myPageContributionById(String id) {
+        public String myPageContributionById(String id) {
     	String data;
     	double myMean = contributionById(id);
     	double totalUserMean = totalUserContributionMean();
     	double myRank = contributionRank(id);
     	
-    	data = "¿ÃøÎ¿⁄¿« ∆Ú±’ »∏¿« ±‚ø©µµ¥¬ "+ Math.round(totalUserMean*1000.0)/10.0 + "%¿‘¥œ¥Ÿ."+ 
-    			"¥ÁΩ≈¿« ∆Ú±’ ±‚ø©µµ¥¬ "+ myMean *100.0 +"%¿‘¥œ¥Ÿ."+ 
-    			"¥ÁΩ≈¿∫ ªÛ¿ß "+ myRank * 100.0 + "%¿« ±‚ø©µµ∏¶ ∫∏¿Ã∞Ì ¿÷Ω¿¥œ¥Ÿ.";
+    	data = "Ïù¥Ïö©ÏûêÏùò ÌèâÍ∑† ÌöåÏùò Í∏∞Ïó¨ÎèÑÎäî "+ Math.round(totalUserMean*1000.0)/10.0 + "%ÏûÖÎãàÎã§."+ 
+    			"ÎãπÏã†Ïùò ÌèâÍ∑† Í∏∞Ïó¨ÎèÑÎäî "+ myMean *100.0 +"%ÏûÖÎãàÎã§."+ 
+    			"ÎãπÏã†ÏùÄ ÏÉÅÏúÑ "+ myRank * 100.0 + "%Ïùò Í∏∞Ïó¨ÎèÑÎ•º Î≥¥Ïù¥Í≥† ÏûàÏäµÎãàÎã§.";
     	return data;
     }
-    
-    
-	
-	
+    public void insertRoom(String room, String title) {
+    	String query = "insert into roomName (roomPin,roomTitle) values(?,?);";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, room);
+    		pstmt.setString(2, title);
+    		pstmt.executeUpdate();
+    		// System.out.println("Insert success");
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    }
 
 }
 
