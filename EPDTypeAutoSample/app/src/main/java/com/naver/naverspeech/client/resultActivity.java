@@ -104,7 +104,7 @@ public class resultActivity extends AppCompatActivity {
                         JSONArray contentList = new JSONArray(msg.get("message").toString());
                         for (int i = 0; i < conList.length(); i++) {
                             JSONObject obj = keywordList.getJSONObject(i);
-                            contents.add(new content(obj.getString("nickname"),obj.getString("mgs")));
+                            contents.add(new content(obj.getString("nickname"),obj.getString("msg")));
                         }
 
                         msg = info5.getJSONObject(0);

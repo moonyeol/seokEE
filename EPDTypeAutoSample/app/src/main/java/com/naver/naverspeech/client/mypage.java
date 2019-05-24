@@ -47,7 +47,7 @@ public class mypage extends AppCompatActivity {
             id_tv.setText(info.id);
             nickname_tv.setText(info.nickname);
             talkwithme.setText(info.talkWithMe);
-            talkwithme.setText("나의 회의 평균 기여도 : " +info.myMean+" | 유저 평균 기여도 : "+ info.totalUserMean + " | 나의 기여도 순위 : " + info.myRank);
+            contribution.setText("나의 회의 평균 기여도 : " +info.myMean+" | 유저 평균 기여도 : "+ info.totalUserMean + " | 나의 기여도 순위 : " + info.myRank);
             Button logoutBtn = findViewById(R.id.logout);
 
             logoutBtn.setOnClickListener(new Button.OnClickListener(){
