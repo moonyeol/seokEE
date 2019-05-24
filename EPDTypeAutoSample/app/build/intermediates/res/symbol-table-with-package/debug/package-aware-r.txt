@@ -768,6 +768,7 @@ id clip_horizontal
 id clip_vertical
 id collapseActionView
 id contentPanel
+id contributionTV
 id custom
 id customPanel
 id decor_content_parent
@@ -818,7 +819,13 @@ id italic
 id item_touch_helper_previous_elevation
 id joinButton
 id join_joinButton
+id keyword1
+id keyword2
+id keyword3
+id keyword4
+id keyword5
 id left
+id line
 id line1
 id line3
 id linearItem
@@ -857,7 +864,8 @@ id radioGroup
 id recognitionError
 id recyclerView
 id reid
-id resultView
+id resulScroll
+id result
 id right
 id right_icon
 id right_side
@@ -895,18 +903,19 @@ id submit_area
 id tabMode
 id tag_transition_group
 id talkList
+id talkWithMe
 id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textView
 id textView1
 id textView10
 id textView11
 id textView12
+id textView16
 id textView2
-id textView3
 id textView4
-id textView5
 id textView8
 id textView9
 id time
@@ -1015,6 +1024,7 @@ string anonymous
 string app_name
 string button
 string content
+string contribution
 string detail
 string en_tb
 string enter
@@ -1039,6 +1049,7 @@ string jo_6
 string jo_7
 string jo_8
 string jo_9
+string keyword
 string loading
 string log_in
 string login
@@ -1067,6 +1078,7 @@ string sign_up
 string status_bar_notification_info_overflow
 string str_start
 string str_stop
+string textview
 string user_name
 string users
 string word_cloud

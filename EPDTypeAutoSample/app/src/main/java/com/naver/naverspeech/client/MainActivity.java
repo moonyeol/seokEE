@@ -147,6 +147,7 @@ public class MainActivity extends Activity {
                     naverRecognizer.recognize();
 
                     commSock.kick(commSock.START, "START");
+                    btnStart.setVisibility(Button.GONE);
                 } else {
                     Log.d(TAG, "stop and wait Final Result");
                     btnStart.setEnabled(false);
