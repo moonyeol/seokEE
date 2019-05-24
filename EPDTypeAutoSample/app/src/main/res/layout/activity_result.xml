@@ -50,10 +50,12 @@
         <WebView
             android:id="@+id/webView"
             android:layout_width="match_parent"
-            android:layout_height="180dp" />
+            android:layout_height="180dp" >
+
+        </WebView>
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="30dp"
 
@@ -63,13 +65,106 @@
             android:gravity="center_vertical"
 
             android:padding="5dp"
+            android:text="@string/contribution"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/contributionTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textview" />
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/borer_black_bottom"
+            android:fontFamily="@font/nanumbarungothic"
+            android:gravity="center_vertical"
+
+            android:padding="5dp"
+            android:text="@string/keyword"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/keyword1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/keyword2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/keyword3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/keyword4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/keyword5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/borer_black_bottom"
+            android:fontFamily="@font/nanumbarungothic"
+
+            android:gravity="center_vertical"
+            android:padding="5dp"
             android:text="@string/result_page"
             android:textColor="#000000"
             android:textSize="16sp" />
 
 
         <ScrollView
-            android:id="@+id/scrollView"
+            android:id="@+id/resulScroll"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="2.5"
@@ -83,20 +178,11 @@
             android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical">
 
-            <TextView
-                android:id="@+id/resultView"
+            <LinearLayout
+                android:id="@+id/line"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center_vertical"
-                android:padding="5dp"
-                android:text="@string/result"
-                android:textColor="#bbbdbf"
-                android:textSize="16sp" />
-
-
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"></LinearLayout>
         </ScrollView>
 
 

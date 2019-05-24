@@ -263,7 +263,7 @@
                 tools:layout_editor_absoluteY="409dp" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/talkWithMe"
                 android:layout_width="25dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"

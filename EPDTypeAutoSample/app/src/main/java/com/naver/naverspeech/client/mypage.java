@@ -6,22 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-import java.io.FileOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
 
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.Button;
 import android.view.View;
-import android.os.Environment;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -37,6 +29,8 @@ public class mypage extends AppCompatActivity {
 
             TextView nickname_tv = findViewById(R.id.nickname_tv);
             TextView id_tv = findViewById(R.id.id_tv);
+            TextView talkwithme = findViewById(R.id.talkWithMe);
+            TextView contribution = findViewById(R.id.contributionTV);
 
             Info info = new Info();
 
@@ -52,7 +46,8 @@ public class mypage extends AppCompatActivity {
 
             id_tv.setText(info.id);
             nickname_tv.setText(info.nickname);
-
+            talkwithme.setText(info.talkWithMe);
+            talkwithme.setText("나의 회의 평균 기여도 : " +info.myMean+" | 유저 평균 기여도 : "+ info.totalUserMean + " | 나의 기여도 순위 : " + info.myRank);
             Button logoutBtn = findViewById(R.id.logout);
 
             logoutBtn.setOnClickListener(new Button.OnClickListener(){
@@ -143,6 +138,10 @@ public class mypage extends AppCompatActivity {
     public class Info{
         String id;
         String nickname;
+        double myMean;
+        double totalUserMean;
+        double myRank;
+        String talkWithMe;
         ArrayList<history> historys;
         ArrayList<String> strings;
 
@@ -159,10 +158,21 @@ public class mypage extends AppCompatActivity {
                 this.id = infoObject.get("id").toString();
                 this.nickname = infoObject.get("nickname").toString();
 
+
                 JSONArray arr = commSock.read();
                 JSONObject msg = arr.getJSONObject(0);
                 JSONObject msg2 = new JSONObject(msg.get("message").toString());
                 JSONArray msgCon = msg2.getJSONArray("con");
+
+
+                arr = commSock.read();
+                msg = arr.getJSONObject(0);
+                msg2 = new JSONObject(msg.get("message").toString());
+                myMean = msg2.getDouble("myMean");
+                totalUserMean = msg2.getDouble("totalUserMean");
+                myRank = msg2.getDouble("myRank");
+                talkWithMe = msg2.getString("talkWithMe");
+
 
                 for(int i=0; i<msgCon.length(); i++)
                    strings.add(msgCon.getJSONObject(i).toString());

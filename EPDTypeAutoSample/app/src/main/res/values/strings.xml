@@ -62,5 +62,7 @@
     <string name="result_tb">결과</string>
     <string name="result_page">회의결과</string>
     <string name="result_wc">Word Cloud</string>
-
+    <string name="keyword">키워드</string>
+    <string name="contribution">기여도</string>
+    <string name="textview">TextView</string>
 </resources>

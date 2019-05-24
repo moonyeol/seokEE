@@ -209,7 +209,7 @@
             </LinearLayout>
 
             <ScrollView
-                android:id="@+id/scrollView"
+                android:id="@+id/resulScroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -261,7 +261,7 @@
                             tools:layout_editor_absoluteY="673dp" />
 
                         <TextView
-                            android:id="@+id/textView3"
+                            android:id="@+id/talkWithMe"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -302,7 +302,7 @@
                             tools:layout_editor_absoluteY="673dp" />
 
                         <TextView
-                            android:id="@+id/textView5"
+                            android:id="@+id/contributionTV"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"

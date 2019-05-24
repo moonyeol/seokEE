@@ -20,23 +20,43 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.naver.naverspeech.client.item" />
-        <activity android:name="com.naver.naverspeech.client.resultActivity" >
+        <activity
+            android:name="com.naver.naverspeech.client.item"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.naver.naverspeech.client.resultActivity"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="com.naver.naverspeech.client.mypage" />
-        <activity android:name="com.naver.naverspeech.client.loginActivity" />
-        <activity android:name="com.naver.naverspeech.client.joinActivity" />
-        <activity android:name="com.naver.naverspeech.client.anonymous" />
-        <activity android:name="com.naver.naverspeech.client.JoinRoom" />
-        <activity android:name="com.naver.naverspeech.client.enter" />
-        <activity android:name="com.naver.naverspeech.client.First" >
+        <activity
+            android:name="com.naver.naverspeech.client.mypage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.naver.naverspeech.client.loginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.naver.naverspeech.client.joinActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.naver.naverspeech.client.anonymous"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.naver.naverspeech.client.JoinRoom"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.naver.naverspeech.client.enter"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.naver.naverspeech.client.First"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.naver.naverspeech.client.MainActivity" />
+        <activity
+            android:name="com.naver.naverspeech.client.MainActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

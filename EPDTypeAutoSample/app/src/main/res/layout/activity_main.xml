@@ -42,7 +42,7 @@
             android:textAlignment="center" />
 
         <ScrollView
-            android:id="@+id/scrollView"
+            android:id="@+id/resulScroll"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="2.5"
@@ -64,7 +64,7 @@
         </ScrollView>
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/contributionTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

@@ -158,7 +158,7 @@ public class MainActivity extends Activity {
         new Thread(new Runnable(){
             public void run(){
                 try {
-                    final ScrollView scrollview = ((ScrollView) findViewById(R.id.scrollView));
+                    final ScrollView scrollview = ((ScrollView) findViewById(R.id.resulScroll));
 
                     while(isRunning) {
 
