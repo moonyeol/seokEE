@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import static com.naver.naverspeech.client.commSock.gson;
+
 public class loginActivity extends AppCompatActivity {
 
     EditText idText, passwordText;
@@ -28,6 +30,11 @@ public class loginActivity extends AppCompatActivity {
     int permissionResult, permissionWrite;
 
     public static Activity _login;
+
+    class LoginInfo{
+        public String id;
+        public String pw;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,40 +104,31 @@ public class loginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new Button.OnClickListener(){
 
             public void onClick(View v) {
-                // 로그인 맞는지 체크.
-                JSONObject send = new JSONObject();// JSONObject 생성
+                LoginInfo info = new LoginInfo();
+                info.id = idText.getText().toString();
+                info.pw = Hashing.SHA256(passwordText.getText().toString());
 
-                try {
-                    send.put("id", idText.getText().toString());
-                    send.put("pw", Hashing.SHA256(passwordText.getText().toString()));
-                }catch(Exception e){
-                    e.printStackTrace();
-                }
+                commSock.kick(commSock.LOGIN, gson.toJson(info));
 
+                String msg = commSock.read();
+                SocketMessage check = gson.fromJson(msg,SocketMessage.class);
 
-                try {
-                    commSock.kick(commSock.LOGIN, send.toString());
-                    String check = commSock.read().getJSONObject(0).optString("message");
-
-                    if(check.equals("true")){
-                        if(reid.isChecked()){
-                            SharedPreferences.Editor editor = getSharedPreferences("auto_login", MODE_PRIVATE).edit();
-                            editor.putString("id",idText.getText().toString());
-                            editor.putString("pwd", Hashing.SHA256(passwordText.getText().toString()));
-                            editor.apply();
-                        }
-
-                        Toast.makeText(loginActivity.this, "로그인 성공!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(loginActivity.this, enter.class);
-
-                        intent.putExtra("is_login",true);
-                        finish();
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(loginActivity.this, "존재하지 않는 아이디거나 틀린 비밀번호입니다.", Toast.LENGTH_SHORT).show();
+                if(check.message.equals("true")){
+                    if(reid.isChecked()){
+                        SharedPreferences.Editor editor = getSharedPreferences("auto_login", MODE_PRIVATE).edit();
+                        editor.putString("id",info.id);
+                        editor.putString("pwd",info.pw);
+                        editor.apply();
                     }
-                }catch(org.json.JSONException e){
-                    e.printStackTrace();
+
+                    Toast.makeText(loginActivity.this, "로그인 성공!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(loginActivity.this, enter.class);
+
+                    intent.putExtra("is_login",true);
+                    finish();
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(loginActivity.this, "존재하지 않는 아이디거나 틀린 비밀번호입니다.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

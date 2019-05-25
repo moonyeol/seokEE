@@ -31,9 +31,15 @@ import com.naver.speech.clientapi.SpeechRecognizer;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import static com.naver.naverspeech.client.commSock.gson;
+import static com.naver.naverspeech.client.commSock.socket;
 
 // 1. Main Activity 클래스를 정의합니다.
 public class MainActivity extends Activity {
@@ -46,18 +52,22 @@ public class MainActivity extends Activity {
     private ImageButton btnStart;
     private String mResult;
     private AudioWriterPCM writer;
-    private boolean isRunning = true;
+    private AtomicBoolean isRunning = new AtomicBoolean(true);
     private TextView et_pin;
 
     private Context context;
     private GridLayout listView;
 
-    private ArrayList<CheckBox> talk =  new ArrayList<>();
+    private ArrayList<CustomTalk> talk =  new ArrayList<>();
     private LinearLayout talkList;
     private String selectedUser = null;
 
     private String msg;
     private int func;
+
+
+    StringBuilder sb;
+
     String pin;
     ArrayList<UserListButton> userList = new ArrayList<>();
 
@@ -159,71 +169,70 @@ public class MainActivity extends Activity {
         new Thread(new Runnable(){
             public void run(){
                 try {
-                    final ScrollView scrollview = ((ScrollView) findViewById(R.id.resulScroll));
+                    final ScrollView scrollview = findViewById(R.id.resulScroll);
 
-                    while(isRunning) {
+                    while(isRunning.compareAndSet(true,true)) {
+                        String message = commSock.read();
+                        SocketMessage sMsg = gson.fromJson(message, SocketMessage.class);
 
-                        JSONArray jsonArray = commSock.read();
+                        Log.e("TAG", sMsg.func + " " + sMsg.message);
 
-                        JSONObject jsonObject = jsonArray.getJSONObject(0);
-                        func = jsonObject.optInt("func");
-                        msg = jsonObject.optString("message");
+                        if(sMsg.func == commSock.REQUEST_USERLIST){
+                            MemberList mList = gson.fromJson(sMsg.message, MemberList.class);
 
-                        if(func == commSock.REQUEST_USERLIST){
-                            JSONObject msg = jsonArray.getJSONObject(0);
-                            JSONObject msg2 = new JSONObject(msg.get("message").toString());
-                            JSONArray msgCon = msg2.getJSONArray("con");
-
-                            ArrayList<String> strings = new ArrayList<>();
-
-                            for(int i=0; i<msgCon.length(); i++)
-                                strings.add(msgCon.getJSONObject(i).toString());
-
-                            for(String s : strings){
-                                JSONObject json = new JSONObject(s);
-                                String nick = json.get("nick").toString();
+                            for(String s : mList.list){
                                 Button btn = new Button(context);
-                                btn.setText(nick);
-                                userList.add(new UserListButton(btn, nick));
+                                btn.setText(s);
+                                userList.add(new UserListButton(btn, s));
                             }
                         }
+
+                        msg = sMsg.message;
+                        func = sMsg.func;
 
                         runOnUiThread(new Runnable() {
                             public void run() {
                                 switch(func){
                                     case commSock.MSG:
-                                        scrollview.post(new Runnable() { @Override public void run() { scrollview.fullScroll(ScrollView.FOCUS_DOWN); } });
                                         CheckBox c = new CheckBox(context);
-                                        c.setText(msg);
+
+                                        SimpleTalk t = gson.fromJson(msg, SimpleTalk.class);
+                                        sb = new StringBuilder();
+                                        sb.append(t.talker).append(" : ").append(t.content);
+
+                                        c.setText(sb.toString());
+
                                         c.setButtonDrawable(R.drawable.cb_check_on_off);
                                         c.setPadding(8,8,8,8);
 
                                         if(selectedUser != null)
-                                            if(msg.contains(selectedUser)) c.setBackgroundColor(Color.argb(60,63,172,220));
+                                            if(t.talker.equals(selectedUser)) c.setBackgroundColor(Color.argb(60,63,172,220));
 
-                                        talk.add(c);
+                                        CustomTalk customTalk = new CustomTalk(c, t.talker, t.content);
+
+                                        talk.add(customTalk);
                                         talkList.addView(c);
+
+                                        scrollview.post(new Runnable() { @Override public void run() { scrollview.fullScroll(ScrollView.FOCUS_DOWN); } });
                                         break;
                                     case commSock.START:
                                         Toast.makeText(MainActivity.this, "녹음 시작", Toast.LENGTH_SHORT).show();
                                         btnStart.callOnClick();
                                         break;
                                     case commSock.EXIT:
-                                        if(isRunning) {
-                                            Toast.makeText(MainActivity.this, msg + " 종료", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, msg + " 종료", Toast.LENGTH_SHORT).show();
 
-                                            for (int i = 0; i < userList.size(); i++) {
-                                                if (userList.get(i).getNickname().equals(msg)) {
-                                                    if (selectedUser != null && selectedUser.equals(userList.get(i).getNickname())) {
-                                                        selectedUser = null;
-                                                        updateChatHighlight();
-                                                    }
-                                                    userList.remove(i);
-                                                    break;
+                                        for (int i = 0; i < userList.size(); i++) {
+                                            if (userList.get(i).getNickname().equals(msg)) {
+                                                if (selectedUser != null && selectedUser.equals(userList.get(i).getNickname())) {
+                                                    selectedUser = null;
+                                                    updateChatHighlight();
                                                 }
+                                                userList.remove(i);
+                                                break;
                                             }
-                                            updateUserList();
                                         }
+                                        updateUserList();
                                         break;
                                     case commSock.ENTER:
                                         Toast.makeText(MainActivity.this, msg + " 입장", Toast.LENGTH_SHORT).show();
@@ -248,7 +257,6 @@ public class MainActivity extends Activity {
             }
         }).start();
 
-
         boolean isRecording = intent.getExtras().getBoolean("running");
 
         if(isRecording){
@@ -261,12 +269,11 @@ public class MainActivity extends Activity {
     }
 
     public void updateChatHighlight(){
-        for(CheckBox chk : talk) {
-            String s = (String)chk.getText();
-            if(selectedUser != null && s.equals(selectedUser)) {
-                chk.setBackgroundColor(Color.argb(60,63,172,220));
+        for(CustomTalk chk : talk) {
+            if(selectedUser != null && chk.talker.equals(selectedUser)) {
+                chk.checkBox.setBackgroundColor(Color.argb(60,63,172,220));
             } else {
-                chk.setBackgroundColor(Color.argb(0, 255, 255, 255));
+                chk.checkBox.setBackgroundColor(Color.argb(0, 255, 255, 255));
             }
         }
     }
@@ -303,7 +310,7 @@ public class MainActivity extends Activity {
         super.onStop();
         // 음성인식 서버를 종료합니다.
         naverRecognizer.getSpeechRecognizer().release();
-        isRunning = false;
+        isRunning.compareAndSet(true, false);
     }
 
     protected void onDestroy(){
@@ -325,8 +332,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void bt_exit(View view) // 나가기 버튼을 눌렀을 때
-    {
+    public void bt_exit(View view) {
         // 확인창을 띄우고 yes면 나가기, _데이터 저장은 필요없,,! no면 안나가기
         new android.support.v7.app.AlertDialog.Builder(this)
                 .setTitle("회의 종료")
@@ -337,20 +343,20 @@ public class MainActivity extends Activity {
                         // 확인시 처리 로직
                         StringBuilder markedData = new StringBuilder();
 
-                        for(CheckBox t : talk){
-                            if(t.isChecked()) markedData.append("1");
+                        for(CustomTalk t : talk){
+                            if(t.checkBox.isChecked()) markedData.append("1");
                             else markedData.append("0");
                         }
 
-                        commSock.kick(commSock.EXIT, markedData.toString());
-                        isRunning = false;
-
+                        isRunning.compareAndSet(true,false);
                         naverRecognizer.getSpeechRecognizer().release();
 
                         finish();
 
                         Intent intent = new Intent(MainActivity.this, resultActivity.class);
+                        intent.putExtra("exited", true);
                         intent.putExtra("pincode", pin);
+                        intent.putExtra("markData", markedData.toString());
                         startActivity(intent);
 
                     }
@@ -364,6 +370,17 @@ public class MainActivity extends Activity {
                 .show();
     }
 
+    class CustomTalk {
+        public CheckBox checkBox;
+        public String talker;
+        public String cont;
+
+        CustomTalk(CheckBox checkBox, String talker, String cont){
+            this.checkBox = checkBox;
+            this.talker = talker;
+            this.cont = cont;
+        }
+    }
     class UserListButton {
         String nickname;
         Button btn;
@@ -378,12 +395,12 @@ public class MainActivity extends Activity {
                         selectedUser = null;
                         updateChatHighlight();
                     } else {
-                        for (CheckBox c : talk) {
-                            String s = (String) c.getText();
+                        for (CustomTalk c : talk) {
+                            String s = c.talker;
 
-                            if (s.contains(nickname))
-                                c.setBackgroundColor(Color.argb(60, 63, 172, 220));
-                            else c.setBackgroundColor(Color.argb(0, 255, 255, 255));
+                            if (s.equals(nickname))
+                                c.checkBox.setBackgroundColor(Color.argb(60, 63, 172, 220));
+                            else c.checkBox.setBackgroundColor(Color.argb(0, 255, 255, 255));
                         }
                         selectedUser = nickname;
                         updateChatHighlight();

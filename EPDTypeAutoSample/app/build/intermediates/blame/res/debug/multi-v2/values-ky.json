@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ky\\values-ky.xml",
+            "outputFile": "E:\\Download\\seokEE-48139b5dcbbf486a743db75f31882945b8910bdd\\EPDTypeAutoSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ky\\values-ky.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-2\\files-2.1\\4616a4e5d6a17dbe6e2854c13a957838\\res\\values-ky\\values-ky.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,209,304,423,507,614,731,809,888,969,1079,1186,1284,1390,1497,1598,1759,1862",
-                        "endColumns": "103,94,118,83,106,116,77,78,80,109,106,97,105,106,100,160,102,80",
-                        "endOffsets": "204,299,418,502,609,726,804,883,964,1074,1181,1279,1385,1492,1593,1754,1857,1938"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-2\\files-2.1\\c089cf8cc1bbb9cd3daf2d3cec86ff86\\res\\values-ky\\values-ky.xml",
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\6dd4d60169a217d23387cbddb490d4c0\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "1943",
                         "endColumns": "100",
                         "endOffsets": "2039"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\15a4d72cb8b86c1c5b3a8eb1c8be171c\\res\\values-ky\\values-ky.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,209,304,423,507,614,731,809,888,969,1079,1186,1284,1390,1497,1598,1759,1862",
+                        "endColumns": "103,94,118,83,106,116,77,78,80,109,106,97,105,106,100,160,102,80",
+                        "endOffsets": "204,299,418,502,609,726,804,883,964,1074,1181,1279,1385,1492,1593,1754,1857,1938"
                     }
                 }
             ]

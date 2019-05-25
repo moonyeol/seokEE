@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.naver.naverspeech.client.commSock.gson;
+
 public class JoinRoom extends Activity {
 
     @Override
@@ -24,27 +26,25 @@ public class JoinRoom extends Activity {
                 String key = edittext.getText().toString();
 
                 commSock.kick(commSock.ENTER,key);
-                try {
-                    String s = commSock.read().getJSONObject(0).optString("message");
 
-                    if(s.equals("false")){
-                        Toast.makeText(JoinRoom.this, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        Intent intent = new Intent(JoinRoom.this, MainActivity.class);
+                String message = commSock.read();
+                SocketMessage msg = gson.fromJson(message,SocketMessage.class);
 
-                        intent.putExtra("isHost", false);
-                        intent.putExtra("pin", key);
+                if(msg.message.equals("false")){
+                    Toast.makeText(JoinRoom.this, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent = new Intent(JoinRoom.this, MainActivity.class);
 
-                        if(s.equals("running")) intent.putExtra("running", true);
-                        else intent.putExtra("running", false);
+                    intent.putExtra("isHost", false);
+                    intent.putExtra("pin", key);
 
-                        startActivity(intent);
+                    if(msg.message.equals("running")) intent.putExtra("running", true);
+                    else intent.putExtra("running", false);
 
-                        finish();
-                    }
-                }catch(org.json.JSONException e){
-                    e.printStackTrace();
+                    startActivity(intent);
+
+                    finish();
                 }
             }
         });

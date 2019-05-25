@@ -12,7 +12,14 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import static com.naver.naverspeech.client.commSock.gson;
+
 public class First extends Activity {
+
+    class LoginInfo{
+        public String id;
+        public String pw;
+    }
 
     private Thread splashThread;
 
@@ -42,20 +49,16 @@ public class First extends Activity {
                 String pwd = auto_login.getString("pwd", "");
 
                 if(!id.equals("") && !pwd.equals("")){
-                    JSONObject send = new JSONObject();// JSONObject 생성
+                    LoginInfo info = new LoginInfo();
+                    info.id = id;
+                    info.pw = pwd;
 
                     try {
-                        send.put("id", id);
-                        send.put("pw", pwd);
-                    }catch(Exception e){
-                        e.printStackTrace();
-                    }
+                        commSock.kick(commSock.LOGIN, gson.toJson(info));
+                        String msg = commSock.read();
+                        SocketMessage check = gson.fromJson(msg,SocketMessage.class);
 
-                    try {
-                        commSock.kick(commSock.LOGIN, send.toString());
-                        String check = commSock.read().getJSONObject(0).optString("message");
-
-                        if(check.equals("true")){
+                        if(check.message.equals("true")){
                             Intent intent = new Intent(First.this, enter.class);
                             intent.putExtra("is_login",true);
                             startActivity(intent);

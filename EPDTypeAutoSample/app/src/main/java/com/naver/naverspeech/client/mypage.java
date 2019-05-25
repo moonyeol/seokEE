@@ -5,77 +5,25 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-
 import java.util.ArrayList;
-
-
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.view.View;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import static com.naver.naverspeech.client.commSock.REQUEST_USERINFO;
+import static com.naver.naverspeech.client.commSock.gson;
 
 
 public class mypage extends AppCompatActivity {
     private Adapter adapter;
+    RequestUserInfo info;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_mypage);
-
-            TextView nickname_tv = findViewById(R.id.nickname_tv);
-            TextView id_tv = findViewById(R.id.id_tv);
-            TextView talkwithme = findViewById(R.id.talkWithMe);
-            TextView contribution = findViewById(R.id.contributionTV);
-
-            Info info = new Info();
-
-            RecyclerView recyclerView = findViewById(R.id.recyclerView);
-
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-            recyclerView.setLayoutManager(linearLayoutManager);
-
-            adapter = new Adapter();
-            recyclerView.setAdapter(adapter);
-
-            getData(info);
-
-            id_tv.setText(info.id);
-            nickname_tv.setText(info.nickname);
-            talkwithme.setText(info.talkWithMe);
-            contribution.setText("나의 회의 평균 기여도 : " +info.myMean+" | 유저 평균 기여도 : "+ info.totalUserMean + " | 나의 기여도 순위 : " + info.myRank);
-            Button logoutBtn = findViewById(R.id.logout);
-
-            logoutBtn.setOnClickListener(new Button.OnClickListener(){
-                public void onClick(View v){
-                    SharedPreferences.Editor editor = getSharedPreferences("auto_login", MODE_PRIVATE).edit();
-                    editor.putString("id","");
-                    editor.putString("pwd", "");
-                    editor.apply();
-
-                    enter._enter.finish();
-                    Intent intent = new Intent(mypage.this, loginActivity.class);
-                    finish();
-                    startActivity(intent);
-                }
-            });
-
-
-            //Button make = findViewById(R.id.make);
-//        make.setOnClickListener(new Button.OnClickListener(){
-//            public void onClick(View v) {
-////                commSock.kick();
-//            }
-//        });
-        }
-
-
-
-    private void init() {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mypage);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
@@ -84,24 +32,66 @@ public class mypage extends AppCompatActivity {
 
         adapter = new Adapter();
         recyclerView.setAdapter(adapter);
+
+        new Thread(new Runnable(){
+            public void run(){
+                commSock.kick(REQUEST_USERINFO, "");
+                String message = commSock.read();
+
+                info = gson.fromJson(message, RequestUserInfo.class);
+                runOnUiThread(new Runnable(){
+                    public void run(){
+                        setData(info);
+                    }
+                });
+            }
+        }).start();
+
+        Button logoutBtn = findViewById(R.id.logout);
+
+        logoutBtn.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v){
+                SharedPreferences.Editor editor = getSharedPreferences("auto_login", MODE_PRIVATE).edit();
+                editor.putString("id","");
+                editor.putString("pwd", "");
+                editor.apply();
+
+                enter._enter.finish();
+                Intent intent = new Intent(mypage.this, loginActivity.class);
+                finish();
+                startActivity(intent);
+            }
+        });
+
     }
 
-    private void getData(Info info) {
-        // 임의의 데이터입니다.
+    private void setData(RequestUserInfo info){
+        TextView nickname_tv = findViewById(R.id.nickname_tv);
+        TextView id_tv = findViewById(R.id.id_tv);
+        TextView talkwithme = findViewById(R.id.talkWithMe);
+        TextView contribution = findViewById(R.id.contributionTV);
 
-        for (history h : info.historys){
+        id_tv.setText(info.id);
+
+        nickname_tv.setText(info.nickname);
+        talkwithme.setText(info.talkWithMe);
+
+        String temp = "나의 회의 평균 기여도 : " +info.contributionData.get(0)+" | 유저 평균 기여도 : "+ info.contributionData.get(1) + " | 나의 기여도 순위 : " + info.contributionData.get(2);
+        contribution.setText(temp);
+
+
+        for (History h : info.histories){
             // 각 List의 값들을 data 객체에 set 해줍니다.
 
             Data data = new Data();
-            data.setTitle(h.date);
-            data.setMember(h.members);
-            data.setNumber(h.number);
+            data.setTitle(h.getDate());
+            data.setMember(h.getMembers());
+            data.setNumber(h.getNumber());
 
-            if(h.content.length()>100)
-                data.setContent(h.content.substring(0,100));
-            else   data.setContent(h.content);
-
-
+            String content = h.getContent();
+            if(content.length()>100)
+                data.setContent(content.substring(0,100));
+            else   data.setContent(content);
 
             // 각 값이 들어간 data를 adapter에 추가합니다.
             adapter.addItem(data);
@@ -110,82 +100,4 @@ public class mypage extends AppCompatActivity {
         // adapter의 값이 변경되었다는 것을 알려줍니다.
         adapter.notifyDataSetChanged();
     }
-
-    class history{
-        String number;
-        String content;
-        String date;
-        String members;
-
-        history(String jString){
-            try {
-                JSONObject jobject = new JSONObject(jString);
-                this.number = jobject.get("number").toString();
-                this.content = jobject.get("content").toString();
-                this.date = jobject.get("date").toString();
-                this.members = jobject.get("members").toString();
-                System.out.println(this.number);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-        public String toString(){
-            return this.date + " " +this.members + " " + this.number + " " + this.content;
-        }
-    }
-
-
-    public class Info{
-        String id;
-        String nickname;
-        double myMean;
-        double totalUserMean;
-        double myRank;
-        String talkWithMe;
-        ArrayList<history> historys;
-        ArrayList<String> strings;
-
-        Info(){
-            try {
-                historys = new ArrayList<>();
-                strings = new ArrayList<>();
-
-                commSock.kick(commSock.REQUEST_USERINFO," ");
-                JSONArray info = commSock.read();
-
-                JSONObject infoObject = new JSONObject(info.getJSONObject(0).optString("message"));
-
-                this.id = infoObject.get("id").toString();
-                this.nickname = infoObject.get("nickname").toString();
-
-
-                JSONArray arr = commSock.read();
-                JSONObject msg = arr.getJSONObject(0);
-                JSONObject msg2 = new JSONObject(msg.get("message").toString());
-                JSONArray msgCon = msg2.getJSONArray("con");
-
-
-                arr = commSock.read();
-                msg = arr.getJSONObject(0);
-                msg2 = new JSONObject(msg.get("message").toString());
-                myMean = msg2.getDouble("myMean");
-                totalUserMean = msg2.getDouble("totalUserMean");
-                myRank = msg2.getDouble("myRank");
-                talkWithMe = msg2.getString("talkWithMe");
-
-
-                for(int i=0; i<msgCon.length(); i++)
-                   strings.add(msgCon.getJSONObject(i).toString());
-
-
-                for(String s : strings){
-                    historys.add(new history(s));
-                }
-
-            }catch(org.json.JSONException e){
-                e.printStackTrace();
-            }
-        }
-    }
-
 }

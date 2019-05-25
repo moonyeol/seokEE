@@ -17,6 +17,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import static com.naver.naverspeech.client.commSock.gson;
+
 public class joinActivity extends AppCompatActivity {
 
     EditText et_id, et_pw, et_nick;
@@ -69,11 +71,13 @@ public class joinActivity extends AppCompatActivity {
         sId = et_id.getText().toString();
         commSock.kick(commSock.DUPLICATE, sId);
 
-        JSONArray jsonArray = commSock.read();
-        try {
-            JSONObject id_chk = jsonArray.getJSONObject(0);
+        String s = commSock.read();
+        SocketMessage msg = gson.fromJson(s,SocketMessage.class);
 
-            if (id_chk.optString("message").equals("false")) {
+        try {
+            String id_chk = msg.message;
+
+            if (id_chk.equals("false")) {
                 re_chk = false;
                 Toast.makeText(this, "존재하는 아이디 입니다.", Toast.LENGTH_SHORT).show();
             } else {
@@ -91,8 +95,8 @@ public class joinActivity extends AppCompatActivity {
         }
         else {
 
-            sId = et_id.getText().toString();        //id
-            sPw = Hashing.SHA256(et_pw.getText().toString());            //pw1
+            Member info = new Member();
+
             sBirth = bYear.getSelectedItem().toString();
 
             int m = Integer.parseInt(bMonth.getSelectedItem().toString());
@@ -107,39 +111,29 @@ public class joinActivity extends AppCompatActivity {
                 sGender = "FEMALE";
             }
 
-            sNick = et_nick.getText().toString();
+            info.setID(et_id.getText().toString());
+            info.setPassword(Hashing.SHA256(et_pw.getText().toString()));
+            info.setBirth(sBirth);
+            info.setGender(sGender);
+            info.setNickname(et_nick.getText().toString());
 
-            JSONObject send = new JSONObject();// JSONObject 생성
+            commSock.kick(commSock.ENROLL, gson.toJson(info));
+            String message = commSock.read();
+            SocketMessage msg = gson.fromJson(message, SocketMessage.class);
 
-            try {
-                send.put("id", sId);
-                send.put("pw", sPw);
-                send.put("gender", sGender);
-                send.put("birth", sBirth);
-                send.put("nick", sNick);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
 
-            commSock.kick(commSock.ENROLL, send.toString());
-            JSONArray jsonArray = commSock.read();
+            if (msg.message.equals("true")) {
+                Toast.makeText(this, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(joinActivity.this, loginActivity.class);
+                startActivity(intent);
 
-            try {
-                JSONObject check = jsonArray.getJSONObject(0);
-
-                if (check.optString("message").equals("true")) {
-                    Toast.makeText(this, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(joinActivity.this, loginActivity.class);
-                    startActivity(intent);
-
-                    finish();
-                } else {
-                    Toast.makeText(this, "예기치 못한 오류가 발생했습니다.\n다시 시도해주세요.", Toast.LENGTH_SHORT).show();
-                }
-            } catch(Exception e){
-                e.printStackTrace();
+                finish();
+            } else {
+                Toast.makeText(this, "예기치 못한 오류가 발생했습니다.\n다시 시도해주세요.", Toast.LENGTH_SHORT).show();
             }
 
         }
     }
+
+
 }

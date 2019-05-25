@@ -16,7 +16,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_margin="10dp"
             android:orientation="vertical">
 
@@ -208,165 +208,134 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <ScrollView
-                android:id="@+id/resulScroll"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/borer_black_bottom"
-
-                android:scrollbarAlwaysDrawHorizontalTrack="false"
-                android:scrollbarAlwaysDrawVerticalTrack="false"
-
-
-                android:scrollbarFadeDuration="0"
-                android:scrollbarSize="4dp"
-
-                android:scrollbarStyle="outsideOverlay"
-                android:scrollbars="vertical">
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="86dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:background="@drawable/border_gray_top"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="86dp">
 
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/textView1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/border_gray_top"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical"
-                        tools:layout_editor_absoluteX="0dp"
-                        tools:layout_editor_absoluteY="86dp">
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/nanumbarungothic"
+                        android:gravity="center_vertical|left"
+                        android:text="자주 회의한 사람"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="673dp" />
 
-                        <TextView
-                            android:id="@+id/textView1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/nanumbarungothic"
-                            android:gravity="center_vertical|left"
-                            android:text="자주 회의한 사람"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            tools:layout_editor_absoluteX="8dp"
-                            tools:layout_editor_absoluteY="673dp" />
-
-                        <TextView
-                            android:id="@+id/talkWithMe"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/nanumbarungothic"
-                            android:gravity="center_vertical|left"
-                            android:text="자주 회의한 사람_목록"
-                            android:textColor="#bbbdbf"
-                            android:textSize="16sp"
-                            tools:layout_editor_absoluteX="8dp"
-                            tools:layout_editor_absoluteY="673dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/talkWithMe"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/border_gray_top"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical"
-                        tools:layout_editor_absoluteX="0dp"
-                        tools:layout_editor_absoluteY="86dp">
 
-                        <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/nanumbarungothic"
-                            android:gravity="center_vertical|left"
-                            android:text="나의 평균 기여도"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            tools:layout_editor_absoluteX="8dp"
-                            tools:layout_editor_absoluteY="673dp" />
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/nanumbarungothic"
+                        android:gravity="center_vertical|left"
+                        android:text="자주 회의한 사람_목록"
+                        android:textColor="#bbbdbf"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="673dp" />
 
-                        <TextView
-                            android:id="@+id/contributionTV"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/nanumbarungothic"
-                            android:gravity="center_vertical|left"
+                </LinearLayout>
 
-                            android:text="나의 평균 기여도와 백분위"
-                            android:textColor="#bbbdbf"
-                            android:textSize="16sp"
-                            tools:layout_editor_absoluteX="8dp"
-                            tools:layout_editor_absoluteY="673dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/border_gray_top"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="86dp">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/nanumbarungothic"
+                        android:gravity="center_vertical|left"
+                        android:text="나의 평균 기여도"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="673dp" />
+
+                    <TextView
+                        android:id="@+id/contributionTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/nanumbarungothic"
+                        android:gravity="center_vertical|left"
+
+                        android:text="나의 평균 기여도와 백분위"
+                        android:textColor="#bbbdbf"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="673dp" />
 
 
-                    </LinearLayout>
+                </LinearLayout>
 
-                    <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/border_gray_top"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="86dp">
+
+                    <TextView
+                        android:id="@+id/nickname_text2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/nanumbarungothic"
+                        android:gravity="center_vertical|left"
+                        android:text="과거기록"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="50dp"
+                        tools:layout_editor_absoluteY="375dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/border_gray_top"
-                        android:orientation="vertical"
-                        tools:layout_editor_absoluteX="0dp"
-                        tools:layout_editor_absoluteY="86dp">
+                        android:layout_margin="5dp"
 
-                        <TextView
-                            android:id="@+id/nickname_text2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:fontFamily="@font/nanumbarungothic"
-                            android:gravity="center_vertical|left"
-                            android:text="과거기록"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            tools:layout_editor_absoluteX="50dp"
-                            tools:layout_editor_absoluteY="375dp" />
+                        android:background="#FFFFFF"
+                        tools:layout_editor_absoluteX="21dp"
+                        tools:layout_editor_absoluteY="424dp" />
 
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/recyclerView"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_margin="5dp"
-
-                            android:background="#FFFFFF"
-                            tools:layout_editor_absoluteX="21dp"
-                            tools:layout_editor_absoluteY="424dp" />
-
-                        <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="fill_parent"
-                            android:layout_height="5dp"
-                            android:background="@drawable/border_gray_top"
-                            android:fontFamily="@font/nanumbarungothic"
-                            android:gravity="center_vertical|left"
-                            android:textColor="#000000"
-                            android:textSize="20sp"
-                            tools:layout_editor_absoluteX="8dp"
-                            tools:layout_editor_absoluteY="673dp" />
-
-                    </LinearLayout>
                 </LinearLayout>
-            </ScrollView>
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

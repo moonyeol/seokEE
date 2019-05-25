@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.app.Activity;
 import android.widget.Toast;
 
+import static com.naver.naverspeech.client.commSock.gson;
+
 
 public class enter extends Activity {
 
@@ -45,22 +47,22 @@ public class enter extends Activity {
 
                 try {
                     commSock.kick(commSock.PINCODE, "");
-                    String key = commSock.read().getJSONObject(0).optString("message");
-
+                    String msg = commSock.read();
+                    SocketMessage key = gson.fromJson(msg, SocketMessage.class);
 
                     intent.putExtra("isHost",true);
-                    intent.putExtra("pin", key);
+                    intent.putExtra("pin", key.message);
                     intent.putExtra("running", false);
 
                     startActivity(intent);
-                }catch(org.json.JSONException e){
+
+                }catch(Exception e){
                     e.printStackTrace();
                 }
             }
         });
         pageBtn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-
                 Intent intent = new Intent(enter.this, mypage.class);
                 startActivity(intent);
             }

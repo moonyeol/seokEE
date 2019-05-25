@@ -1,7 +1,6 @@
 package com.naver.naverspeech.client;
 
 import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,28 +14,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import android.os.Environment;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import java.net.URL;
 import java.io.FileOutputStream;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.File;
-import java.io.IOException;
-import java.io.FileOutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.util.logging.Handler;
-import java.io.*;
-import java.net.*;
 import android.app.DownloadManager;
 import android.net.Uri;
-import android.content.IntentFilter;
-import android.content.BroadcastReceiver;
+
+import static com.naver.naverspeech.client.commSock.REQUEST_FILE;
+import static com.naver.naverspeech.client.commSock.gson;
+import static com.naver.naverspeech.client.commSock.read;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
 
@@ -112,14 +103,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             textView3.setText(this.data.getContent());
             textView2.setText(this.data.getMember());
 
-
             changeVisibility(selectedItems.get(position));
 
             itemView.setOnClickListener(this);
             textView1.setOnClickListener(this);
             textView2.setOnClickListener(this);
-
-
 
             export.setOnClickListener(new Button.OnClickListener() {
                 public void onClick(View v) {
@@ -127,14 +115,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     ad.setTitle("회의록 파일 저장");
                     ad.setMessage("파일 이름을 지정해주세요");
                     final EditText et = new EditText(context);
-                    final String ffname;
+
+                    et.setText(textView1.getText());
                     ad.setView(et);
                     ad.setPositiveButton("저장", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             try {
-                                commSock.kick(11, ItemViewHolder.this.data.getNumber());
-                                String fileURL = commSock.read().getJSONObject(0).optString("message");
+                                commSock.kick(REQUEST_FILE, ItemViewHolder.this.data.getNumber());
+
+                                String value = read();
+                                SocketMessage receive = gson.fromJson(value, SocketMessage.class);
+
+                                String fileURL = receive.message;
+
                                 String Save_folder = "/seokEE";
                                 String Save_Path = "";
                                 String File_Name = et.getText().toString();
@@ -148,9 +142,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                                 }
                                 downloadFile(fileURL,Save_Path,File_Name);
 
-
-
-                            }catch(org.json.JSONException e){
+                            }catch(Exception e){
                                 e.printStackTrace();
                             }
                             dialogInterface.dismiss();
@@ -171,6 +163,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                 public void onClick(View v) {
                     Intent intent = new Intent(context, resultActivity.class);
                     intent.putExtra("pincode", ItemViewHolder.this.data.getNumber());
+                    intent.putExtra("markData", "");
                     context.startActivity(intent);
                 }
             });

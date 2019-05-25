@@ -1,11 +1,12 @@
 package com.naver.naverspeech.client;
 
-import android.app.ActivityManager;
-import android.content.Context;
-import android.os.Handler;
-import android.util.JsonReader;
+
 import android.util.Log;
-import android.widget.Toast;
+
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,35 +15,28 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class commSock {
     public static Socket socket;
     public static BufferedWriter netWriter;
     public static BufferedReader netReader;
 
+    public static Gson gson = new Gson();
+
     public static final int MSG = 0;
     public static final int PINCODE = 1;
     public static final int ENTER = 2;
     public static final int START = 3;
-    public static final int END = 4;
-    public static final int SET_NICK = 5;
-    public static final int EXIT = 6;
-    public static final int ENROLL = 7;
-    public static final int PASTLOG = 8;
-    public static final int LOGIN = 9;
-    public static final int DUPLICATE = 10;
-    public static final int REQUEST_FILE = 11;
-    public static final int REQUEST_USERINFO = 12;
-    public static final int DEBUG = 13;
-    public static final int REQUEST_USERLIST = 14;
-    public static final int REQUEST_RESULT = 15;
+    public static final int SET_NICK = 4;
+    public static final int EXIT = 5;
+    public static final int ENROLL = 6;
+    public static final int LOGIN = 7;
+    public static final int DUPLICATE = 8;
+    public static final int REQUEST_FILE = 9;
+    public static final int REQUEST_USERINFO = 10;
+    public static final int REQUEST_USERLIST = 11;
+    public static final int REQUEST_RESULT = 12;
 
     public static void setSocket(){
         Log.i("my","Try SetSocket");
@@ -57,58 +51,21 @@ public class commSock {
 
         Log.i("my","setSocket Finished");
     }
-    public static void sendMessage(String msg){
-        PrintWriter out = new PrintWriter(netWriter, true);
-        out.println(msg);
-    }
 
-    public static void kick(int func, String strings)
+    public static void kick(int func, String msg)
     {
-        JSONObject send = new JSONObject();// JSONObject 생성
+        PrintWriter out = new PrintWriter(netWriter, true);
+        SocketMessage sMsg = new SocketMessage(func, msg);
 
-        try {
-            send.put("func", func);
-            send.put("time", new Date().toString());
-            send.put("message", strings);
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-
-        commSock.sendMessage(send.toString());
+        out.println(gson.toJson(sMsg));
     }
 
-    public static JSONArray read(){
+    public static String read(){
         try {
-            String jsonString = null;
-            while(jsonString == null) jsonString = netReader.readLine();
+            String readValue = null;
+            while(readValue == null) readValue = netReader.readLine();
 
-            JSONArray jsonArray = new JSONObject(jsonString).getJSONArray("server");
-            // usage
-
-//             JSONArray arr = read();
-//             JSONObject jsonObject = jsonArray.getJSONObject(0);
-//
-//             int func = jsonObject.optInt("func");
-//             JSONObject message = new JSONObject(jsonObject.optString("message"));
-//
-//             normal
-//             String s = message.optString("content");
-//
-//             request_USERINFO
-//             String id = message.optString("id");
-//             String nickName = message.optString("nickname");
-
-            return jsonArray;
-        } catch(Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    public static String readString(){
-        try {
-            return netReader.readLine();
+            return readValue;
         } catch(Exception e){
             e.printStackTrace();
             return null;
