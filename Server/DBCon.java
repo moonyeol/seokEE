@@ -59,7 +59,7 @@ public class DBCon {
     		e.printStackTrace();
     	}
     }
-    public ArrayList<Talk> serachMessageRoom(String room) {
+    public ArrayList<Talk> searchMessageRoom(String room) {
     	ArrayList<Talk> data = new ArrayList<>();
     	String query = "select * from talk where room = ? order by indexnum";
     	
@@ -70,6 +70,9 @@ public class DBCon {
     		ResultSet rs = pstmt.executeQuery();
     		while(rs.next())
     		{
+				String msg = rs.getString("msg");
+				if(msg.equals("START") || msg.equals("END")) continue;
+				
     			data.add(new Talk(rs.getString("room"), rs.getString("time"), rs.getString("msg"), rs.getString("id")));
     		}
     		//System.out.println("Calling success");
@@ -369,7 +372,7 @@ public class DBCon {
     	return data;
     }
 
-	public HashMap<String , Integer> NLPHashmapByRoom(String room) {
+	public HashMap<String , Integer> NLPHashmapByRoom(String room) {	
 		System.out.println("[DBCon] MAKE String");
     	String query = "select msg from talk where room = ?;";
     	PreparedStatement pstmt = null;
@@ -388,6 +391,7 @@ public class DBCon {
     		e.printStackTrace();
     	}
     	// NLP
+		
 		System.out.println("[DBCon] Analyze " + sb.toString().length());
 
     	Komoran komoran = new Komoran(DEFAULT_MODEL.FULL);
@@ -406,19 +410,7 @@ public class DBCon {
 		}
 
 		System.out.println("[DBCon] Success.");
-		/*for (List<Pair<String, String>> eojeolResult : result) {
-			for (Pair<String, String> wordMorph : eojeolResult) {
-				if (wordMorph.getSecond().equals("NNG")) {
-					if (data.containsKey(wordMorph.getFirst())) {
-						tmp = data.get(wordMorph.getFirst());
-						data.put(wordMorph.getFirst(), tmp+1);
-					}else {
-						data.put(wordMorph.getFirst(),1);
-					}
-				}
-			}
-		}*/
-    	return data;
+		return data;
     }
 
 
@@ -622,15 +614,16 @@ public class DBCon {
     	}
     	return data;
     }
-        public String myPageContributionById(String id) {
-    	String data;
+        public ArrayList<Double> myPageContributionById(String id) {
+    	ArrayList<Double> data = new ArrayList<>();
     	double myMean = contributionById(id);
     	double totalUserMean = totalUserContributionMean();
     	double myRank = contributionRank(id);
     	
-    	data = "이용자의 평균 회의 기여도는 "+ Math.round(totalUserMean*1000.0)/10.0 + "%입니다."+ 
-    			"당신의 평균 기여도는 "+ myMean *100.0 +"%입니다."+ 
-    			"당신은 상위 "+ myRank * 100.0 + "%의 기여도를 보이고 있습니다.";
+		data.add(Math.round(totalUserMean*1000.0)/10.0);
+		data.add(myMean *100.0);
+		data.add(myRank * 100.0);
+
     	return data;
     }
     public void insertRoom(String room, String title) {
@@ -647,104 +640,101 @@ public class DBCon {
     		e.printStackTrace();
     	}
     }
-
-}
-
-
-
-class Talk {
-	int indexnum = 0;
-	String room;
-	String time;
-	String msg;
-	String id;
-	
-	Talk(String room, String time, String msg, String id){
-		this.room = room;
-		this.time = time;
-		this.msg = msg;
-		this.id = id;
-	}
-	
-	public int getIndexnum() {
-		return indexnum;
-	}
-	public void setIndexnum(int indexnum) {
-		this.indexnum= indexnum;
-	}
-	public void setRoom(String room){
-		this.room = room;
-	}
-	public String getRoom(){
-		return room;
-	}
-	public void setTime(String time){
-		this.time = time;
-	}
-	public String getTime(){
-		return time;
-	}
-	public void setMsg(String msg){
-		this.msg = msg;
-	}
-	public String getMsg(){
-		return msg;
-	}
-	public void setID(String id){
-		this.id = id;
-	}
-	public String getID(){
-		return id;
-	}
-}
-
-class Member {
-	String id;
-	String password;
-	String gender;
-	String birth;
-	String nickname;
-
-	Member(){
-
-	}
-	Member(String id, String pw, String gender, String birth ,String nick ){
-		this.id = id;
-		this.password = pw;
-		this.gender = gender;
-		this.birth = birth;
-		this.nickname = nick;
-	}
-
-	public String getID() {
-		return id;
-	}
-	public void setID(String id) {
-		this.id = id;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public String getBirth() {
-		return birth;
-	}
-	public void setBirth(String birth) {
-		this.birth = birth;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
+    public void dbNLPCon(String roomPin, HashMap<String , Integer> tmpMap) {
+    	 for (Map.Entry<String, Integer> entry : tmpMap.entrySet()) {
+             String text = entry.getKey();
+             int freq = entry.getValue();
+             int tmp = isExistNLPWord(roomPin, text);
+             if (tmp!=0) {
+            	 updateNLPWord(roomPin,text, freq+tmp);
+     		}else {
+     			insertNLPWord(roomPin,text,freq);
+     		}
+    	 }
+    }
+    public int isExistNLPWord(String roomPin, String word) {
+    	String query = "select count(*) as cnt from dbNLP where roomPin= ? and word = ?;";
+    	
+    	try {
+    		PreparedStatement pstmt = null;
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, roomPin);
+    		pstmt.setString(2, word);
+    		ResultSet rs = pstmt.executeQuery();
+    		if (rs.next()) {
+    			return rs.getInt("cnt");
+    		}
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return 0;
+    }
+    public void insertNLPWord(String roomPin, String word, int freq) {
+    	String query = "insert into dbNLP (roomPin, word, frequency) values(?,?,?);";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, roomPin);
+    		pstmt.setString(2, word);
+    		pstmt.setInt(3, freq);
+    		pstmt.executeUpdate();
+    		// System.out.println("Insert success");
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    }
+    public void updateNLPWord(String roomPin, String word, int freq) {
+    	String query = "update dbNLP set frequency = ? where roomPin= ? and word = ? ;";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setInt(1, freq);
+    		pstmt.setString(2, roomPin);
+    		pstmt.setString(3, word);
+    		pstmt.executeUpdate();
+    		// System.out.println("Insert success");
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    }
+    // all for WordCloud
+    public HashMap<String, Integer> dbNLPSearch(String roomPin){
+    	HashMap<String , Integer> data = new HashMap <String , Integer>();
+    	String query = "select word, frequency from dbNLP where roomPin=? order by frequency desc;";    	
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, roomPin);
+    		ResultSet rs = pstmt.executeQuery();
+    		while (rs.next()){
+    			data.put(rs.getString("word"), rs.getInt("frequency"));
+    		}
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return data;
+    }
+    // five for Keyword
+    public HashMap<String, Integer> extractFiveKeyWordByDBNLP(String roomPin){
+    	HashMap<String , Integer> data = new HashMap <String , Integer>();
+    	String query = "select word, frequency from dbNLP where roomPin=? order by frequency desc limit 5;";    	
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, roomPin);
+    		ResultSet rs = pstmt.executeQuery();
+    		while (rs.next()){
+    			data.put(rs.getString("word"), rs.getInt("frequency"));
+    		}
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return data;
+    }
 
 }

@@ -7,6 +7,7 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
+import com.google.gson.Gson;
 
 /*import javax.crypto.Cipher;
 import javax.crypto.CipherSpi;
@@ -17,14 +18,16 @@ import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;*/
 
-import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;
+import kr.co.shineware.nlp.komoran.constant.DEFAULT_MODEL;
+import kr.co.shineware.nlp.komoran.core.Komoran;
+import kr.co.shineware.nlp.komoran.model.Token;
 
 public class TCPServer implements Runnable {
 
     public static final int ServerPort = 9000;
     public static final String ip = "18.223.112.209";
+    public static final Gson gson = new Gson();
+
     private DBCon db;
     private int seed = 0;
     
@@ -32,12 +35,10 @@ public class TCPServer implements Runnable {
     private HashMap<String, ArrayList<Socket>> roomList = new HashMap<>();
     private HashMap<String, Boolean> roomRunning = new HashMap<>();
     private ArrayList<String> randomSeed = new ArrayList<>();
+    private Komoran analyzer = new Komoran(DEFAULT_MODEL.FULL);
 
     @Override
     public void run() {
-
-        // initialize
-        // generate room number seed.
         Random r = new Random();
         for(int i=0; i<100; i++){
             StringBuffer s = new StringBuffer();
@@ -47,6 +48,7 @@ public class TCPServer implements Runnable {
             }
             randomSeed.add(s.toString());
         }
+
 
         try {
             System.out.println("Server: DB Connecting..");
@@ -67,12 +69,10 @@ public class TCPServer implements Runnable {
                     handler.start();
 
                 } catch (Exception e) {
-                    //System.out.println("S: Error");
                     e.printStackTrace();
                 }
             }
         } catch (Exception e) {
-            //System.out.println("S: Error");
             e.printStackTrace();
         }
     }
@@ -81,24 +81,22 @@ public class TCPServer implements Runnable {
         Thread desktopServerThread = new Thread(new TCPServer());
         desktopServerThread.start();
     }
+
     class ClientInfo {
         private boolean enrolled;
         private String id;
         private String talker;
         private String number;
-        private boolean host;
 
         ClientInfo(){
             this.id = "";
             this.enrolled = false;
             this.talker = "";
             this.number = "0";
-            this.host = false;
         }
-        ClientInfo(String talker, String number, boolean host, String id){
+        ClientInfo(String talker, String number, String id){
             this.talker = talker;
             this.number= number;
-            this.host = host;
             this.id = id;
 
             if(id.equals("")) enrolled = false;
@@ -122,13 +120,6 @@ public class TCPServer implements Runnable {
             return this.id;
         }
 
-        void setHost(boolean v){
-            this.host = v;
-        }
-        boolean getHost(){
-            return this.host;
-        }
-
         void setTalker(String t){
             this.talker = t;
         }
@@ -144,7 +135,7 @@ public class TCPServer implements Runnable {
         }
 
     }
-
+    
     class ServerHandler extends Thread{
         private Socket conn;
 
@@ -152,395 +143,337 @@ public class TCPServer implements Runnable {
             this.conn = conn;
         }
 
-        private String setMSG(int func, String message){
-            JSONArray jsonArray = new JSONArray();
-            JSONObject response = new JSONObject();
+        public String makeMessage(int func, String message){
+            SocketMessage msg = new SocketMessage();
+            msg.func = func;
+            msg.message = message;
 
-            response.put("func", func);
-            response.put("message", message);
-            response.put("time", new Date().toString());
-
-            jsonArray.add(response);
-
-            JSONObject returnValue = new JSONObject();
-            returnValue.put("server", jsonArray);
-
-            return returnValue.toString();
-        }
-
-        private JSONObject setMSGArr(int func, JSONArray message){
-            JSONArray jsonArray = new JSONArray();
-            JSONObject response = new JSONObject();
-
-            response.put("func", func);
-
-            JSONObject obj = new JSONObject();
-            obj.put("con", message);
-
-            response.put("message", obj.toString());
-            response.put("time", new Date().toString());
-
-            jsonArray.add(response);
-
-            JSONObject returnValue = new JSONObject();
-            returnValue.put("server", jsonArray);
-
-            return returnValue; 
+            return gson.toJson(msg);
         }
 
         public void run(){
-            String message = "";
-            int func;
+            SocketMessage msg = new SocketMessage();
+            SocketMessage fromServer = new SocketMessage();
+
+            String stringData = new String();
+
+            List<Token> result = null;
+            HashMap<String , Integer> data = null;
+
+            StringBuilder sb = new StringBuilder();
+
+            ArrayList<Socket> receiverList = null;
+            ClientInfo info = null;
 
             while(true) {
                 try {
                     BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                     PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(conn.getOutputStream())), true);
 
-                    String str = null;
-                    while(str == null){
-                        str = in.readLine();
+                    String readValue = null;
+                    while( readValue == null){
+                        readValue = in.readLine();
                     }
 
-                    JSONParser parser = new JSONParser();
-                    JSONObject response, info;
-
-                    JSONObject msg = (JSONObject) parser.parse(str);
-
-                    message = msg.get("message").toString();
-                    func = Integer.parseInt(msg.get("func").toString());
+                    msg = gson.fromJson(readValue, SocketMessage.class);
 
                     String number = clientList.get(conn).getNumber();
                     String talker = clientList.get(conn).getTalker();
 
-                    System.out.println("[FROM Client] TIME:" + new Date() +" TALKER: "+ talker + " MESSAGE: " + message + " FUNC: " + func + " NUMBER: " + number);
+                    System.out.println("[FROM Client] TIME:" + new Date() +" TALKER: "+ talker + " MESSAGE: " + msg.message + " FUNC: " + msg.func + " NUMBER: " + number);
 
                     long startTime = System.currentTimeMillis();
-                    switch (func) {
-                        case 0:
-                            // default message
+
+                    switch (msg.func) {
+                        case Constant.MSG:
                             System.out.println("[DEFAULT MESSAGE]");
 
-                            ArrayList<Socket> receiver = roomList.get(number);
+                            receiverList = roomList.get(number);
+
+                            SimpleTalk t = new SimpleTalk();
+                            t.talker = talker;
+                            t.content = msg.message;
+
+                            stringData = makeMessage(msg.func, gson.toJson(t));
 
                             System.out.print("[RECEIVER LIST] : ");
-                            for(Socket s : receiver){
-                                System.out.print(clientList.get(s).getTalker() + " ");
-
+                            for(Socket s : receiverList){
                                 PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
-                                o.println(setMSG(func,"[" + talker + "] : " + message));
+                                o.println(stringData);
                             }
 
-                            System.out.println("\n[SEND SUCCESS & INSERT MESSAGE TO DB]");
-                            db.insertTalk(new Talk(number, new Date().toString(), message, talker));
+                            result = analyzer.analyze(msg.message).getTokenList();
+                            data = new HashMap <String , Integer>();
+                
+                            sb = new StringBuilder();
+
+                            for(Token token : result){
+                                if(token.getPos().equals("NNG")){
+                                    String morph = token.getMorph();
+                                    sb.append(morph).append(" ");
+
+                                    if(data.containsKey(morph)){
+                                        data.put(morph, data.get(morph)+1);
+                                    } else data.put(morph,1);
+                                }
+                            }
+                            
+                            db.dbNLPCon(number,data);
+
+                            System.out.println(sb.toString() + "[SEND SUCCESS & INSERT MESSAGE TO DB]");
+
+                            if(clientList.get(conn).getLogin())
+                                db.insertTalk(new Talk(number, new Date().toString(), msg.message, clientList.get(conn).getId()));
+                            else
+                                db.insertTalk(new Talk(number, new Date().toString(), msg.message, talker));
                             break;
-                        case 1:
-                            // generate pin number
+                        case Constant.PINCODE:
                             System.out.println("[generate PIN number]");
 
-                            String pin = randomSeed.get(seed++).toString();
+                            stringData = randomSeed.get(seed++).toString();
 
                             System.out.println("[assign PIN number]");
-                            
-                            clientList.get(conn).setHost(true);
-                            clientList.get(conn).setNumber(pin);
+
+                            clientList.get(conn).setNumber(stringData);
 
                             System.out.println("[Set HOST and Number Success.]");
 
-                            roomList.put(pin,new ArrayList<>());
-                            roomList.get(pin).add(conn);
+                            roomList.put(stringData,new ArrayList<>());
+                            roomList.get(stringData).add(conn);
 
-                            roomRunning.put(pin, false);
+                            roomRunning.put(stringData, false);
 
                             System.out.println("[Set RoomList Success]");
 
-                            out.println(setMSG(func, pin));
+                            out.println(makeMessage(msg.func, stringData));
                             break;
-                        case 2:
-                            // request enter
-                            if(roomList.get(message) == null){
+                        case Constant.ENTER:
+                            if(roomList.get(msg.message) == null){
                                 System.out.println("[requestEnter] NULL RESPONSE FALSE");
-                                out.println(setMSG(func,"false"));
+
+                                out.println(makeMessage(msg.func, "false"));
                             } else {
-                                // details of room
                                 System.out.println("[requestEnter] EXIST RESPONSE TRUE");
 
-                                for(Socket s : roomList.get(message)){
+                                receiverList = roomList.get(msg.message);
+                                for(Socket s : receiverList){
                                     PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
-                                    o.println(setMSG(func,talker));
+                                    o.println(makeMessage(msg.func,talker));
                                 }
 
-                                clientList.get(conn).setNumber(message);
-                                roomList.get(message).add(conn);
+                                clientList.get(conn).setNumber(msg.message);
+                                roomList.get(msg.message).add(conn);
 
-                                if(roomRunning.get(message) == true){
+                                if(roomRunning.get(msg.message) == true){
                                     System.out.println("[requestEnter] response running!!");
-                                    out.println(setMSG(func,"running"));        
+                                    out.println(makeMessage(msg.func,"running"));
                                 } else {
                                     System.out.println("[requestEnter] response not running!!");
-                                    out.println(setMSG(func,"not")); 
+                                    out.println(makeMessage(msg.func,"not running"));
                                 }                                
                             }
                             break;
-                        case 3:
+                        case Constant.START:
                             // request Start
                             System.out.println("[REQUEST START] INSERT START MESSAGE TO DB");
-                            db.insertTalk(new Talk(number,new Date().toString(), "START", talker));
+
+                            if(clientList.get(conn).getLogin())
+                                db.insertTalk(new Talk(number,new Date().toString(), "START", clientList.get(conn).getId()));
+                            else 
+                                db.insertTalk(new Talk(number,new Date().toString(), "START", talker));
 
                             System.out.print("[REQUEST START] RECEIVER LIST : ");
-                            for(Socket s : roomList.get(number)){
+                            receiverList = roomList.get(number);
+
+                            for(Socket s : receiverList){
                                 if(clientList.get(s).getTalker().equals(talker)) continue;
 
                                 System.out.print(clientList.get(s).getTalker() + " ");
 
                                 PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
 
-                                o.println(setMSG(func,"START"));
+                                o.println(makeMessage(msg.func,"START"));
                             }
 
                             roomRunning.put(number, true);
-                            System.out.println("\nSUCCESS SENDING START MESSAGE");
-
                             break;
-                        case 4:
-
-                            break;
-                        case 5:
+                        case Constant.SET_NICK:
                             // set Talker
-                            
-                            System.out.println("[SET TALKER] nickname: " + message);
-                            clientList.get(conn).setTalker(message);
+                            System.out.println("[SET TALKER] nickname: " + msg.message);
+                            clientList.get(conn).setTalker("GUEST_" + msg.message);
                             clientList.get(conn).setAnonymous();
                             break;
-                        case 6:
+                        case Constant.EXIT:
                             // request exit
-                            System.out.println("[REQUEST EXIT] : " + message);
-                            db.insertMarkData(clientList.get(conn).getId(), clientList.get(conn).getNumber(), message);
+                            System.out.println("[REQUEST EXIT] " + msg.message);
+
+                            if(clientList.get(conn).getLogin()) db.insertMarkData(clientList.get(conn).getId(), number, msg.message);
+                            else db.insertMarkData(talker, number, msg.message);
 
                             System.out.print("[REQUEST EXIT] RECEIVER LIST: ");
 
-                            for(Socket s : roomList.get(number)){  
-                                System.out.print(clientList.get(s).getTalker() + " ");
-
-                                PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
-                                o.println(setMSG(func,talker));
-                            }
-
-                            System.out.println("\n[REQUEST EXIT] APPLY MY INFO");
-
-                            roomList.get(clientList.get(conn).getNumber()).remove(conn);
-                            ArrayList<Socket> part = roomList.get(clientList.get(conn).getNumber());
-
-                            if(part.isEmpty()){
-                                System.out.println("[REQUEST EXIT] ROOM EMPTY!!");
-
-                                roomRunning.remove(clientList.get(conn).getNumber());
-                                
-                                roomList.remove(clientList.get(conn).getNumber());
-                                db.insertTalk(new Talk(number,new Date().toString(), "END", talker));
-                            }
-
+                            roomList.get(number).remove(conn);
                             clientList.get(conn).setNumber("");
-                            clientList.get(conn).setHost(false);
+
+                            receiverList = roomList.get(number);
+
+                            for(Socket s : receiverList){
+                                PrintWriter o = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())), true);
+                                o.println(makeMessage(msg.func,talker));
+                            }
+
+                            System.out.println("\n[REQUEST EXIT] APPLY MY INFO");                            
+
+                            if(receiverList.isEmpty()){
+                                System.out.println("[REQUEST EXIT] ROOM EMPTY!!");
+                                roomRunning.remove(number);                                
+                                roomList.remove(number);
+
+                                if(clientList.get(conn).getLogin())
+                                    db.insertTalk(new Talk(number,new Date().toString(), "END", clientList.get(conn).getId()));
+                                else 
+                                    db.insertTalk(new Talk(number,new Date().toString(), "END", talker));
+                            }
+                            out.println(makeMessage(msg.func, "exit"));
+                            
                             break;
-                        case 7:
+                        case Constant.ENROLL:
                             // request enroll
                             System.out.println("[REQUEST ENROLL]");
 
-                            info = (JSONObject)parser.parse(message);
-
+                            Member member = gson.fromJson(msg.message, Member.class);
                             
-                            boolean result = db.memberResgisterID(
-                                new Member(
-                                    info.get("id").toString(),
-                                    info.get("pw").toString(), 
-                                    info.get("gender").toString(), 
-                                    info.get("birth").toString(), 
-                                    info.get("nick").toString()
-                                )
-                            );
+                            boolean rValue = db.memberResgisterID(member);
                             
-                            System.out.println("[REQUEST ENROLL] SYSTEM: " + info.get("id") + " " + info.get("pw") + " " + ((result) ? "TRUE" : "FALSE") );
+                            System.out.println("[REQUEST ENROLL] SYSTEM: " + ((rValue) ? "Success" : "Fail") );
 
-                            if(result) out.println(setMSG(func,"true"));
-                            else out.println(setMSG(func,"false"));
+                            if(rValue) out.println(makeMessage(msg.func,"true"));
+                            else out.println(makeMessage(msg.func,"false"));
 
                             break;
-                        case 8:
-                            // request past Log
-
-
-                            break;
-                        case 9:
+                        case Constant.LOGIN:
                             // request Login
-                            info = (JSONObject)parser.parse(message);
+                            LoginInfo loginInfo = gson.fromJson(msg.message, LoginInfo.class);
 
-                            boolean loginCheck = db.memberLoginCheck(info.get("id").toString(), info.get("pw").toString());
+                            boolean loginCheck = db.memberLoginCheck(loginInfo.id, loginInfo.pw);
 
-                            clientList.get(conn).setLogin(info.get("id").toString());
-                            
-                            // retrieve nickname
+                            System.out.println("id: " + loginInfo.id + " pwd: " + loginInfo.pw);
+
                             if(loginCheck){
-                                // temporary set id to nickname
-                                clientList.get(conn).setTalker(info.get("id").toString());
-                                out.println(setMSG(func,"true"));
-                            } else out.println(setMSG(func,"false"));
+                                clientList.get(conn).setLogin(loginInfo.id);
+                                clientList.get(conn).setTalker(db.searchMyInfo(loginInfo.id).getNickname());
+                                out.println(makeMessage(msg.func,"true"));
+                            } else out.println(makeMessage(msg.func,"false"));
 
                             break;
-                        case 10:
+                        case Constant.DUPLICATE:
                             // check duplicate
-                            boolean check = db.memberIDCheck(message);
+                            boolean check = db.memberIDCheck(msg.message);
 
-                            if(check) out.println(setMSG(func,"true"));
-                            else out.println(setMSG(func,"false"));
+                            System.out.println("check: " + check);
+
+                            if(check) out.println(makeMessage(msg.func,"true"));
+                            else out.println(makeMessage(msg.func,"false"));
 
                             break;
-                        case 11:
+                        case Constant.REQUEST_FILE:
                             // REQUEST FILE
-                            ArrayList<String> makeFile = new ArrayList<>();
-                            makeFile.add("[SAMPLE DATA]");
-                            makeFile.add("It is sample data.");
-                            makeFile.add("It is sample data.");
-                            makeFile.add("It is sample data.");
-                            makeFile.add("It is sample data.");
-                            makeFile.add("It is sample data.");
-                            makeFile.add("It is sample data.");
-                            makeFile.add("It is sample data.");
-                            makeFile.add("It is sample data.");
-                            
-                            docs.mkdoc(makeFile, "/var/www/html/files", "sample");
-                            out.println(setMSG(func,"http://"+ ip +"/files/sample.docx"));
+                            ArrayList<String> makeFile = db.searchMessageByRoom(msg.message);
+
+                            docs.mkdoc(makeFile, "/var/www/html/files", "content_" + msg.message);
+                            out.println(makeMessage(msg.func,"http://"+ ip +"/files/content_"+msg.message+".docx"));
 
                             break;
-                        case 12:
-                            // REQUEST_USERINFO     
+                        case Constant.REQUEST_USERINFO:
+
+                            RequestUserInfo userInfo = new RequestUserInfo();
+
                             Member me = db.searchMyInfo(clientList.get(conn).getId());
-                            JSONObject mInfo = new JSONObject();
-
-                            JSONArray msgList = new JSONArray();
-                    
-                            mInfo.put("id", me.getID());
-                            mInfo.put("nickname", me.getNickname());
-
-                            //System.out.println("[REQ_USERINFO] SEND INFO : " + me.getID() + " " + me.getNickname());
-                            out.println(setMSG(func, mInfo.toString()));
-                            
-                            //System.out.print("[REQ_USERINFO] My ROOM LIST: ");
+                            userInfo.id = me.getID();
+                            userInfo.nickname = me.getNickname();
 
                             ArrayList<String> myRoomList = db.searchRoomByID(me.getID());
-
-                            //for(String s: myRoomList) System.out.print(s + " ");
-                            
-                            //System.out.println("\nGet Room CONTENT");
+                            ArrayList<History> histories = new ArrayList<>();
 
                             for(String myRoomNumber : myRoomList){
-                                //System.out.println("NUMBER: " + myRoomNumber);
-
-                                JSONObject roomData = new JSONObject();
-                                roomData.put("number", myRoomNumber);
+                                History history = new History();
+                                history.number = myRoomNumber;
 
                                 ArrayList<String> roomMember = db.searchIDByRoom(myRoomNumber);
-                                //System.out.println("Get Room member List");
-
-                                StringBuilder sb = new StringBuilder();
-                                for(String s : roomMember){
-                                    sb.append(s + " ");
-                                }
-                                roomData.put("members", sb.toString());
-                                
-                                //System.out.println("MEMBERLIST : " + sb.toString());
-
-                                ArrayList<String> roomContent = db.searchMessageByRoom(myRoomNumber);
-                                //System.out.println("Get Room Content");
 
                                 sb = new StringBuilder();
+                                for(String s : roomMember) sb.append(s + " ");
 
+                                history.members = sb.toString();
+
+                                ArrayList<String> roomContent = db.searchMessageByRoom(myRoomNumber);
+
+                                sb = new StringBuilder();
                                 for(String s : roomContent){
                                     if(s.equals("START") || s.equals("END")) continue;
                                     sb.append(s + " ");
                                 }
+                                history.content = sb.toString();
+                                history.date = db.searchStartByRoom(myRoomNumber);
 
-                                //System.out.println("CONTENT: " + sb.toString());
-
-                                roomData.put("content", sb.toString());
-                                roomData.put("date", db.searchStartByRoom(myRoomNumber));
-
-                                //System.out.println("Get Start Time");
-
-                                msgList.add(roomData);
-
-                                //System.out.println("Push to MSGLIST");
+                                histories.add(history);
                             }
 
-                            //System.out.println(setMSGArr(func, msgList).toString());   
-                            out.println(setMSGArr(func, msgList).toString());                         
+                            userInfo.histories = histories;
+
+                            HashMap<String , Integer> frequentUser = db.whoTalkedWithMe(me.getID());
+                            StringBuilder fUser = new StringBuilder();
+                            for (Map.Entry<String, Integer> entry : frequentUser.entrySet()) {
+                                String id = entry.getKey();
+                                fUser.append(id).append(" ");
+                            }
+
+                            userInfo.talkWithMe = fUser.toString();
+                            userInfo.contributionData = db.myPageContributionById(me.getID());
+
+                            System.out.println(gson.toJson(userInfo));
+                            out.println(gson.toJson(userInfo));
+
                             break;
-                        case 13:
-                            break;
-                        case 14:
+                        case Constant.REQUEST_USERLIST:
                             // request userlist
 
-                            JSONArray memList = new JSONArray();
+                            receiverList = roomList.get(number);
 
-                            for(Socket s : roomList.get(number)){
-                                JSONObject mem = new JSONObject();
-                                mem.put("nick", clientList.get(s).getTalker());
+                            ArrayList<String> memList = new ArrayList<>();
+                            for(Socket s : receiverList)
+                                memList.add(clientList.get(s).getTalker());
 
-                                memList.add(mem);
-                            }
-                            System.out.println(memList.toString());
-    
-                            out.println(setMSGArr(func, memList).toString());   
+                            MemberList mList = new MemberList();
+                            mList.list = memList;
+
+                            out.println(makeMessage(msg.func, gson.toJson(mList)));
                             break;
-                        case 15:
+                        case Constant.REQUEST_RESULT:
                             //REQUEST RESULT
-                            System.out.println("[REQUEST RESULT] " + message);
 
-                            HashMap<String, Integer> finalResult = db.NLPHashmapByRoom(message);
+                            System.out.println("[REQUEST_RESULT] : " + msg.message);
 
-                            System.out.println("[REQUEST RESULT HASH]");
-                            ArrayList<String> keyword = db.extractFiveKeyWordByNLPHashMap(finalResult);
+                            RequestResult requestResult = new RequestResult();
 
-                            System.out.println("[REQUEST RESULT KEYWORD]");
+                            requestResult.wordFrequency = db.dbNLPSearch(msg.message);
+                            requestResult.fiveKeyWord = db.extractFiveKeyWordByDBNLP(msg.message);
+                            requestResult.contrib = db.calculateContributionByRoom(msg.message);
+                            requestResult.cont = db.searchMessageRoom(msg.message);
 
-                            JSONArray jarr = new JSONArray();
+                            if(clientList.get(conn).getLogin())
+                                requestResult.markData = db.IdAndRoomForMarked(clientList.get(conn).getId(),msg.message);
+                            else
+                                requestResult.markData = db.IdAndRoomForMarked(clientList.get(conn).getId(),msg.message);
+                            
+                            System.out.println(gson.toJson(requestResult));
+                            out.println(gson.toJson(requestResult));
 
-                            for (Map.Entry<String, Integer> entry : finalResult.entrySet()) {
-                                String text = entry.getKey();
-                                int freq = entry.getValue();
-                                System.out.println(text + " " + freq);
-
-                                JSONObject obj = new JSONObject();
-                                obj.put("keyword", text);
-                                obj.put("freq", freq);
-
-                                jarr.add(obj);
-                            }                                                      
-
-                            out.println(setMSG(func, jarr.toString()));
-                            System.out.println("[REQUEST RESULT PRINT] " + setMSG(func, jarr.toString()));
-
-                            StringBuilder resultText = new StringBuilder();
-
-                            for(String s : keyword){
-                                resultText.append(s);
-                                resultText.append(" ");
-                            }
-
-                            System.out.println("[REQUEST RESULT PRINT2] " + resultText.toString());
-                            out.println(setMSG(func,resultText.toString()));
-
-
-                            break;
-                        case 16:
-                            //REQUEST MARKER
-                            break;
-                        case 17:
                             break;
                     }
 
                     long endTime = System.currentTimeMillis();
-                    System.out.println("Elapsed Time: " + (endTime-startTime)/1000.0 + "ms");
+                    System.out.println("Elapsed Time: " + (endTime-startTime)/1000.0 + "s");
                 } catch (Exception e) {
                     e.printStackTrace();
 

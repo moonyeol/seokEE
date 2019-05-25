@@ -34,7 +34,7 @@ public class docs {
 			dir.mkdirs();
 		}
 
-		File saveFile = new File(path +"/"+ fname +".doc");
+		File saveFile = new File(path +"/"+ fname +".docx");
 
 		FileOutputStream fos = new FileOutputStream(saveFile);
 		document.write(fos);
