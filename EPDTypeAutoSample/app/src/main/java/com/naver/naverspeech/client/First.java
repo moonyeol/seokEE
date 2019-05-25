@@ -15,7 +15,6 @@ import org.json.JSONObject;
 import static com.naver.naverspeech.client.commSock.gson;
 
 public class First extends Activity {
-
     private Thread splashThread;
 
     /** Called when the activity is first created. */
@@ -64,9 +63,7 @@ public class First extends Activity {
                         e.printStackTrace();
                     }
                 } else {
-                    Intent intent = new Intent();
-                    intent.setClass(First.this, loginActivity.class);
-
+                    Intent intent = new Intent(First.this, loginActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -74,7 +71,6 @@ public class First extends Activity {
         };
         splashThread.start();
     }
-
 
 
     @Override

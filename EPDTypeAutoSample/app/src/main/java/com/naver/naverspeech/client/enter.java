@@ -56,7 +56,7 @@ public class enter extends Activity {
                 final EditText et = new EditText(_enter);
 
                 Calendar cal = Calendar.getInstance();
-                SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+                SimpleDateFormat sdf = new SimpleDateFormat("yy_MM_dd");
 
                 et.setText(sdf.format(cal.getTime()));
                 et.setPadding(10,10,10,15);
@@ -112,7 +112,6 @@ public class enter extends Activity {
 
     protected void onStop() {
         super.onStop();
-
     }
     protected void onDestroy(){
         Toast.makeText(this,"onDestroy", Toast.LENGTH_SHORT).show();

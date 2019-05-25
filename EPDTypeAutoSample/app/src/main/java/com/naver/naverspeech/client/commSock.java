@@ -62,8 +62,8 @@ public class commSock {
 
     public static String read(){
         try {
-            String readValue = null;
-            while(readValue == null) readValue = netReader.readLine();
+            String readValue = netReader.readLine();
+
 
             return readValue;
         } catch(Exception e){

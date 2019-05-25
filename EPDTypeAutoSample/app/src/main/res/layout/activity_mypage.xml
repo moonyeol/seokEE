@@ -222,7 +222,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/border_gray_top"
+                    android:background="@color/white"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
                     tools:layout_editor_absoluteX="0dp"
@@ -328,7 +328,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
-                        android:layout_margin="5dp"
 
                         android:background="#FFFFFF"
                         tools:layout_editor_absoluteX="21dp"

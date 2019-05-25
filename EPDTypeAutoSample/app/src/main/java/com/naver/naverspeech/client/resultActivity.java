@@ -16,13 +16,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.CombinedChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.CombinedData;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -60,6 +69,11 @@ public class resultActivity extends AppCompatActivity {
     ArrayList<sentenceLine> slist = new ArrayList<>();
     String[] makingLocations;
 
+    String[] mMonths = new String[] {
+            "Jan", "Feb", "Mar", "Apr", "May", "June"
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,7 +106,7 @@ public class resultActivity extends AppCompatActivity {
 
         new Thread(new Runnable(){
             public void run(){
-                if(isExited) commSock.kick(commSock.EXIT, markedData);
+                //if(isExited) commSock.kick(commSock.EXIT, markedData);
 
                 commSock.kick(commSock.REQUEST_RESULT, pincode);
                 String msg = commSock.read();
@@ -193,67 +207,94 @@ public class resultActivity extends AppCompatActivity {
 
     }
 
-    private void drawChart() {
-        BarChart barChart = findViewById(R.id.barChart);
-        barChart.setDrawBarShadow(false);
-        barChart.setDrawValueAboveBar(true);
-        Description description = new Description();
-        description.setText("");
-        barChart.setDescription(description);
-        barChart.setMaxVisibleValueCount(50);
-        barChart.setPinchZoom(false);
-        barChart.setDrawGridBackground(false);
+    public void drawChart(){
+        ArrayList<Entry> lineEntries = new ArrayList<>();
+        ArrayList<BarEntry> barEntries = new ArrayList<>();
 
-        XAxis xl = barChart.getXAxis();
-        xl.setGranularity(1f);
-        xl.setCenterAxisLabels(true);
+        lineEntries.add(new Entry(0,0.6f));
+        lineEntries.add(new Entry(1,0.3f));
+        lineEntries.add(new Entry(2,0.4f));
+        lineEntries.add(new Entry(3,0.8f));
+        lineEntries.add(new Entry(4,0.2f));
+        lineEntries.add(new Entry(5,0.3f));
 
-        YAxis leftAxis = barChart.getAxisLeft();
+        barEntries.add(new BarEntry(0,0.3f));
+        barEntries.add(new BarEntry(1,0.5f));
+        barEntries.add(new BarEntry(2,0.7f));
+        barEntries.add(new BarEntry(3,0.2f));
+        barEntries.add(new BarEntry(4,0.1f));
+        barEntries.add(new BarEntry(5,0.1f));
+
+
+        LineData lineData = new LineData();
+        LineDataSet set = new LineDataSet(lineEntries, "키워드 발언 비율");
+
+        set.setColor(Color.rgb(80, 80, 80));
+        set.setLineWidth(2f);
+        set.setCircleColor(Color.rgb(80, 80, 80));
+
+        set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set.setDrawValues(true);
+        set.setValueTextSize(10f);
+        set.setValueTextColor(Color.rgb(80, 80, 80));
+
+        set.setAxisDependency(YAxis.AxisDependency.LEFT);
+        lineData.addDataSet(set);
+
+        BarDataSet set1 = new BarDataSet(barEntries, "모든 발언 비율");
+        set1.setColor(Color.rgb(60, 170, 220));
+        set1.setValueTextColor(Color.rgb(80, 80, 80));
+        set1.setValueTextSize(10f);
+        set1.setAxisDependency(YAxis.AxisDependency.LEFT);
+
+        float barWidth = 0.3f; // x2 dataset
+
+        BarData barData = new BarData(set1);
+        barData.setBarWidth(barWidth);
+
+        CombinedChart chart = findViewById(R.id.chart1);
+        chart.getDescription().setText("Description");
+        chart.setDrawGridBackground(false);
+        chart.setDrawBarShadow(false);
+        chart.setHighlightFullBarEnabled(false);
+
+        chart.setDrawOrder(new CombinedChart.DrawOrder[]{
+                CombinedChart.DrawOrder.BAR, CombinedChart.DrawOrder.LINE
+        });
+
+        Legend legend = chart.getLegend();
+        legend.setWordWrapEnabled(true);
+        legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+        legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+
+        YAxis leftAxis = chart.getAxisLeft();
         leftAxis.setDrawGridLines(false);
-        leftAxis.setSpaceTop(30f);
-        barChart.getAxisRight().setEnabled(false);
+        leftAxis.setAxisMinimum(0f);
+        leftAxis.setAxisMaximum(1f);
 
-        //data
-        float groupSpace = 0.04f;
-        float barSpace = 0.02f;
-        float barWidth = 0.3f;
+        YAxis rightAxis = chart.getAxisRight();
+        rightAxis.setDrawGridLines(false);
+        rightAxis.setDrawLabels(false);
 
-        List<BarEntry> yVals1 = new ArrayList<>();
-        List<BarEntry> yVals2 = new ArrayList<>();
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setGranularity(1f);
+        xAxis.setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return mMonths[(int) value % mMonths.length];
+            }
+        });
 
-        int i = 1;
-        for(Map.Entry<String, Double> entry : result.contrib.entrySet()) {
-            yVals1.add(new BarEntry(i, entry.getValue().floatValue()));
-            yVals2.add(new BarEntry(i, 2f));
-        }
 
-        BarDataSet set1, set2;
+        CombinedData data = new CombinedData();
 
-        if (barChart.getData() != null && barChart.getData().getDataSetCount() > 0) {
-            set1 = (BarDataSet) barChart.getData().getDataSetByIndex(0);
-            set2 = (BarDataSet) barChart.getData().getDataSetByIndex(1);
-            set1.setValues(yVals1);
-            set2.setValues(yVals2);
-            barChart.getData().notifyDataChanged();
-            barChart.notifyDataSetChanged();
-        } else {
-            set1 = new BarDataSet(yVals1, "키워드 발언 횟수");
-            set1.setColor(Color.rgb(104, 241, 175));
-            set2 = new BarDataSet(yVals2, "총 발언 횟수");
-            set2.setColor(Color.rgb(164, 228, 251));
+        data.setData(lineData);
+        data.setData(barData);
 
-            ArrayList<IBarDataSet> dataSets = new ArrayList<>();
-            dataSets.add(set1);
-            dataSets.add(set2);
-
-            BarData data = new BarData(dataSets);
-            barChart.setData(data);
-        }
-
-        barChart.getBarData().setBarWidth(barWidth);
-        barChart.groupBars(i, groupSpace, barSpace);
-        barChart.invalidate();
-
+        chart.setData(data);
+        chart.invalidate();
     }
 
     class sentenceLine{

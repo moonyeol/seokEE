@@ -224,6 +224,7 @@ public class MainActivity extends Activity {
                                     case commSock.EXIT:
                                         Toast.makeText(MainActivity.this, msg + " 종료", Toast.LENGTH_SHORT).show();
 
+
                                         for (int i = 0; i < userList.size(); i++) {
                                             if (userList.get(i).getNickname().equals(msg)) {
                                                 if (selectedUser != null && selectedUser.equals(userList.get(i).getNickname())) {
@@ -234,6 +235,7 @@ public class MainActivity extends Activity {
                                                 break;
                                             }
                                         }
+
                                         updateUserList();
                                         break;
                                     case commSock.ENTER:
@@ -271,6 +273,8 @@ public class MainActivity extends Activity {
     }
 
     public void updateChatHighlight(){
+        if(!isRunning.get()) return;
+
         for(CustomTalk chk : talk) {
             if(selectedUser != null && chk.talker.equals(selectedUser)) {
                 chk.checkBox.setBackgroundColor(Color.argb(60,63,172,220));
@@ -280,6 +284,8 @@ public class MainActivity extends Activity {
         }
     }
     public void updateUserList(){
+        if(!isRunning.get()) return;
+
         new Thread(new Runnable(){
             public void run(){
                 runOnUiThread(new Runnable(){

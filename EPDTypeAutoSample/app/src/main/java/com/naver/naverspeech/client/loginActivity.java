@@ -40,8 +40,8 @@ public class loginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        _login = loginActivity.this;
         super.onCreate(savedInstanceState);
+        _login = loginActivity.this;
 
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8) {

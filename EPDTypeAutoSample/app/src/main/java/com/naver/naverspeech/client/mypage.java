@@ -74,10 +74,9 @@ public class mypage extends AppCompatActivity {
         id_tv.setText(info.id);
 
         nickname_tv.setText(info.nickname);
-
         talkwithme.setText(info.talkWithMe);
 
-        String temp = "나의 회의 평균 기여도 : " +info.contributionData.get(0)+" | 유저 평균 기여도 : "+ info.contributionData.get(1) + " | 나의 기여도 순위 : " + info.contributionData.get(2);
+        String temp = "나의 회의 평균 기여도 : " +info.contributionData.get(0)+"% | 유저 평균 기여도 : "+ info.contributionData.get(1) + "% | 나의 기여도 순위 : 상위 " + info.contributionData.get(2) + "%";
         contribution.setText(temp);
 
 
