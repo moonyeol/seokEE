@@ -535,10 +535,11 @@ public class DBCon {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, id);
     		ResultSet rs = pstmt.executeQuery();
-    		rs.next();
-    		if (rs.getInt("count(*)")!=0) {
-    			return false;
-    		}
+    		if(rs.next()){
+				if (rs.getInt("count(*)")!=0) {
+					return false;
+				}
+			}
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
@@ -640,6 +641,26 @@ public class DBCon {
     		e.printStackTrace();
     	}
     }
+	public String getTitle(String room) {
+    	String query = "select roomTitle from roomName where roomPin = ?";
+    	PreparedStatement pstmt = null;
+
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, room);
+    		ResultSet rs = pstmt.executeQuery();
+    		if(rs.next()){
+				return rs.getString("roomTitle");
+			}    		
+		}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    		return null;
+    	}
+
+		return null;
+    }
+
     public void dbNLPCon(String roomPin, HashMap<String , Integer> tmpMap) {
     	 for (Map.Entry<String, Integer> entry : tmpMap.entrySet()) {
              String text = entry.getKey();

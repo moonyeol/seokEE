@@ -147,8 +147,10 @@ public class MainActivity extends Activity {
 
         et_pin.setText(pin);
 
-        if(host) btnStart.setVisibility(Button.VISIBLE);
-        else btnStart.setVisibility(Button.GONE);
+
+        if(host) btnStart.setEnabled(true);
+        else btnStart.setEnabled(false);
+
 
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,7 +161,7 @@ public class MainActivity extends Activity {
                     naverRecognizer.recognize();
 
                     commSock.kick(commSock.START, "START");
-                    btnStart.setVisibility(Button.GONE);
+                    btnStart.setEnabled(false);
                 } else {
                     Log.d(TAG, "stop and wait Final Result");
                     btnStart.setEnabled(false);
@@ -267,6 +269,7 @@ public class MainActivity extends Activity {
             Toast.makeText(this, "녹음 시작!", Toast.LENGTH_SHORT).show();
             naverRecognizer.getSpeechRecognizer().initialize();
             btnStart.callOnClick();
+            btnStart.setEnabled(false);
         }
 
         commSock.kick(commSock.REQUEST_USERLIST, "");

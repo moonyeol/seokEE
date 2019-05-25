@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".MainActivity"
 
-    tools:layout_editor_absoluteY="81dp">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="59dp">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="235dp"
             android:layout_height="174dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+
             android:layout_marginBottom="20dp"
             android:contentDescription="@string/StringValue"
-
             android:src="@drawable/seok_loading"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="112dp" />
@@ -36,27 +33,26 @@
             android:layout_width="260dp"
             android:layout_height="40dp"
 
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:autofillHints=""
             android:background="@drawable/edit_border_black"
             android:fontFamily="@font/nanumbarungothic"
             android:hint="@string/login_id"
+            android:inputType="text"
+            android:nextFocusDown="@id/passwordInput"
             android:textColor="#747474"
             android:textSize="14sp"
-            android:nextFocusDown="@id/passwordInput"
             tools:layout_editor_absoluteX="57dp"
             tools:layout_editor_absoluteY="340dp"
-            tools:targetApi="o"
-            />
-
+            tools:targetApi="o" />
 
         <EditText
             android:id="@+id/passwordInput"
             android:layout_width="260dp"
             android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
 
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:autofillHints=""
@@ -78,37 +74,17 @@
             android:layout_height="30dp"
             android:layout_below="@+id/loginButton"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             android:fontFamily="@font/nanumbarungothic"
             android:text="@string/login_reid"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="58dp"
             tools:layout_editor_absoluteY="460dp" />
 
-        <Button
-            android:id="@+id/loginButton"
-
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="260dp"
-
-            android:layout_height="40dp"
-            android:layout_below="@+id/passwordInput"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_toStartOf="@+id/joinButton"
-            android:background="@drawable/bt_raidus"
-            android:fontFamily="@font/nanumbarungothicbold"
-            android:text="@string/login"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="498dp" />
-
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="40dp"
@@ -160,34 +136,45 @@
                 tools:layout_editor_absoluteY="556dp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="59dp">
+        <Button
+            android:id="@+id/loginButton"
 
-            <TextView
-                android:id="@+id/anonymous2"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="403dp"
-                android:layout_height="46dp"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="20dp"
-                android:background="#FFFFFF"
-                android:backgroundTint="@android:color/transparent"
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center"
-                android:text="@string/login_copy"
-                android:textAllCaps="false"
-                android:textColor="#747474"
-                android:textDirection="firstStrongRtl"
-                android:textSize="14sp"
-                tools:layout_editor_absoluteX="4dp"
-                tools:layout_editor_absoluteY="711dp" />
-        </LinearLayout>
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="260dp"
+
+            android:layout_height="40dp"
+            android:layout_below="@+id/passwordInput"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@+id/joinButton"
+            android:background="@drawable/bt_raidus"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="498dp" />
+
+        <TextView
+            android:id="@+id/anonymous2"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="403dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center|center_vertical"
+            android:layout_marginBottom="20dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="@android:color/transparent"
+            android:fontFamily="@font/nanumbarungothic"
+            android:gravity="center"
+            android:text="@string/login_copy"
+            android:textAllCaps="false"
+            android:textColor="#747474"
+            android:textDirection="firstStrongRtl"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="711dp" />
+
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

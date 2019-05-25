@@ -24,7 +24,20 @@ public class First extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
+        int SDK_INT = android.os.Build.VERSION.SDK_INT;
+        if (SDK_INT > 8) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build();
+            StrictMode.setThreadPolicy(policy);
 
+            try {
+                commSock.setSocket();
+                Log.i("my", "Socket Connected.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            Log.i("my","make Handler and Thread");
+        }
 
         // The thread to wait for splash screen events
         splashThread = new Thread() {

@@ -43,20 +43,6 @@ public class loginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         _login = loginActivity.this;
 
-        int SDK_INT = android.os.Build.VERSION.SDK_INT;
-        if (SDK_INT > 8) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-                    .permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-
-            try {
-                commSock.setSocket();
-                Log.i("my", "Socket Connected.");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            Log.i("my","make Handler and Thread");
-        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             /* 사용자 단말기의 권한 중 권한이 허용되어 있는지 체크합니다. */

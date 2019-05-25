@@ -69,9 +69,7 @@ public class resultActivity extends AppCompatActivity {
     ArrayList<sentenceLine> slist = new ArrayList<>();
     String[] makingLocations;
 
-    String[] mMonths = new String[] {
-            "Jan", "Feb", "Mar", "Apr", "May", "June"
-    };
+    ArrayList<String> userNameList = new ArrayList<>();
 
 
     @Override
@@ -211,20 +209,21 @@ public class resultActivity extends AppCompatActivity {
         ArrayList<Entry> lineEntries = new ArrayList<>();
         ArrayList<BarEntry> barEntries = new ArrayList<>();
 
-        lineEntries.add(new Entry(0,0.6f));
-        lineEntries.add(new Entry(1,0.3f));
-        lineEntries.add(new Entry(2,0.4f));
-        lineEntries.add(new Entry(3,0.8f));
-        lineEntries.add(new Entry(4,0.2f));
-        lineEntries.add(new Entry(5,0.3f));
+        userNameList.add("");
+        lineEntries.add(new Entry(0, 0));
+        barEntries.add(new BarEntry(0, 0));
 
-        barEntries.add(new BarEntry(0,0.3f));
-        barEntries.add(new BarEntry(1,0.5f));
-        barEntries.add(new BarEntry(2,0.7f));
-        barEntries.add(new BarEntry(3,0.2f));
-        barEntries.add(new BarEntry(4,0.1f));
-        barEntries.add(new BarEntry(5,0.1f));
+        int i = 1;
+        for(Map.Entry<String, Double> entry : result.contrib.entrySet()){
+            userNameList.add(entry.getKey());
 
+            lineEntries.add(new Entry(i, entry.getValue().floatValue()/2));
+            barEntries.add(new BarEntry(i++, entry.getValue().floatValue()));
+        }
+
+        userNameList.add("");
+        lineEntries.add(new Entry(i, 0));
+        barEntries.add(new BarEntry(i++, 0));
 
         LineData lineData = new LineData();
         LineDataSet set = new LineDataSet(lineEntries, "키워드 발언 비율");
@@ -247,13 +246,13 @@ public class resultActivity extends AppCompatActivity {
         set1.setValueTextSize(10f);
         set1.setAxisDependency(YAxis.AxisDependency.LEFT);
 
-        float barWidth = 0.3f; // x2 dataset
+        float barWidth = 1f / userNameList.size(); // x2 dataset
 
         BarData barData = new BarData(set1);
         barData.setBarWidth(barWidth);
 
         CombinedChart chart = findViewById(R.id.chart1);
-        chart.getDescription().setText("Description");
+
         chart.setDrawGridBackground(false);
         chart.setDrawBarShadow(false);
         chart.setHighlightFullBarEnabled(false);
@@ -283,7 +282,7 @@ public class resultActivity extends AppCompatActivity {
         xAxis.setValueFormatter(new IAxisValueFormatter() {
             @Override
             public String getFormattedValue(float value, AxisBase axis) {
-                return mMonths[(int) value % mMonths.length];
+                return userNameList.get((int) value % userNameList.size());
             }
         });
 

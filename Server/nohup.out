@@ -3,1366 +3,37 @@ Connecting...
 DB Conncted.
 Server: Success DB Connect
 Server: Socket Connecting...
-Tue May 21 13:32:30 KST 2019 Server: Accept 223.33.165.85 8294
-[FROM Client] TIME:Tue May 21 13:32:37 KST 2019 TALKER:  MESSAGE: {"id":"chanwool12","pw":"1234"} FUNC: 9 NUMBER: 0
+Sat May 25 09:51:31 UTC 2019 Server: Accept 118.216.115.231 8514
+[FROM Client] TIME:Sat May 25 09:51:45 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
 [memberRegisterID] Assertion Success.
-Tue May 21 13:33:03 KST 2019 Server: Accept 223.62.203.151 33482
-[FROM Client] TIME:Tue May 21 13:33:11 KST 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 13:33:13 KST 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 13:33:18 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] y11g1
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-경기 2
-대물 1
-테스트 1
-센터 1
-시작 1
-닭 1
-마이크 1
-면 1
-안녕 1
-회의 1
-직원 1
-교수 1
-학생 7
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 13:33:39 KST 2019","message":"[{\"freq\":2,\"keyword\":\"경기\"},{\"freq\":1,\"keyword\":\"대물\"},{\"freq\":1,\"keyword\":\"테스트\"},{\"freq\":1,\"keyword\":\"센터\"},{\"freq\":1,\"keyword\":\"시작\"},{\"freq\":1,\"keyword\":\"닭\"},{\"freq\":1,\"keyword\":\"마이크\"},{\"freq\":1,\"keyword\":\"면\"},{\"freq\":1,\"keyword\":\"안녕\"},{\"freq\":1,\"keyword\":\"회의\"},{\"freq\":1,\"keyword\":\"직원\"},{\"freq\":1,\"keyword\":\"교수\"},{\"freq\":7,\"keyword\":\"학생\"}]"}]}
-[REQUEST RESULT PRINT2] 학생 경기 교수 직원 회의 안녕 
-Tue May 21 13:35:58 KST 2019 Server: Accept 223.62.203.151 33496
-[FROM Client] TIME:Tue May 21 13:36:14 KST 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 13:36:17 KST 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 13:36:21 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] y11g1
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-경기 2
-대물 1
-테스트 1
-센터 1
-시작 1
-닭 1
-마이크 1
-면 1
-안녕 1
-회의 1
-직원 1
-교수 1
-학생 7
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 13:36:30 KST 2019","message":"[{\"freq\":2,\"keyword\":\"경기\"},{\"freq\":1,\"keyword\":\"대물\"},{\"freq\":1,\"keyword\":\"테스트\"},{\"freq\":1,\"keyword\":\"센터\"},{\"freq\":1,\"keyword\":\"시작\"},{\"freq\":1,\"keyword\":\"닭\"},{\"freq\":1,\"keyword\":\"마이크\"},{\"freq\":1,\"keyword\":\"면\"},{\"freq\":1,\"keyword\":\"안녕\"},{\"freq\":1,\"keyword\":\"회의\"},{\"freq\":1,\"keyword\":\"직원\"},{\"freq\":1,\"keyword\":\"교수\"},{\"freq\":7,\"keyword\":\"학생\"}]"}]}
-[REQUEST RESULT PRINT2] 학생 경기 교수 직원 회의 안녕 
-Server: DB Connecting..
-Connecting...
-DB Conncted.
-Server: Success DB Connect
-Server: Socket Connecting...
-java.net.BindException: Address already in use (Bind failed)
-	at java.net.PlainSocketImpl.socketBind(Native Method)
-	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
-	at java.net.ServerSocket.bind(ServerSocket.java:375)
-	at java.net.ServerSocket.<init>(ServerSocket.java:237)
-	at java.net.ServerSocket.<init>(ServerSocket.java:128)
-	at TCPServer.run(TCPServer.java:56)
-	at java.lang.Thread.run(Thread.java:748)
-Server: DB Connecting..
-Connecting...
-DB Conncted.
-Server: Success DB Connect
-Server: Socket Connecting...
-Tue May 21 14:12:26 KST 2019 Server: Accept 125.130.12.110 36472
-Tue May 21 14:13:10 KST 2019 Server: Accept 211.246.68.235 37948
-[FROM Client] TIME:Tue May 21 14:13:24 KST 2019 TALKER:  MESSAGE: {"id":"chanwool12","pw":"1234"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 14:13:27 KST 2019 TALKER: chanwool12 MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 14:13:36 KST 2019 TALKER: chanwool12 MESSAGE: 2a664 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] 2a664
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-저하 2
-귤 1
-사용 1
-향상 2
-시스템 2
-효율 1
-성능 4
-요인 2
-과 1
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 14:13:53 KST 2019","message":"[{\"freq\":2,\"keyword\":\"저하\"},{\"freq\":1,\"keyword\":\"귤\"},{\"freq\":1,\"keyword\":\"사용\"},{\"freq\":2,\"keyword\":\"향상\"},{\"freq\":2,\"keyword\":\"시스템\"},{\"freq\":1,\"keyword\":\"효율\"},{\"freq\":4,\"keyword\":\"성능\"},{\"freq\":2,\"keyword\":\"요인\"},{\"freq\":1,\"keyword\":\"과\"}]"}]}
-[REQUEST RESULT PRINT2] 성능 요인 시스템 향상 저하 과 
-[FROM Client] TIME:Tue May 21 14:13:57 KST 2019 TALKER: chanwool12 MESSAGE: 2a664 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] 2a664
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-저하 2
-귤 1
-사용 1
-향상 2
-시스템 2
-효율 1
-성능 4
-요인 2
-과 1
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 14:14:05 KST 2019","message":"[{\"freq\":2,\"keyword\":\"저하\"},{\"freq\":1,\"keyword\":\"귤\"},{\"freq\":1,\"keyword\":\"사용\"},{\"freq\":2,\"keyword\":\"향상\"},{\"freq\":2,\"keyword\":\"시스템\"},{\"freq\":1,\"keyword\":\"효율\"},{\"freq\":4,\"keyword\":\"성능\"},{\"freq\":2,\"keyword\":\"요인\"},{\"freq\":1,\"keyword\":\"과\"}]"}]}
-[REQUEST RESULT PRINT2] 성능 요인 시스템 향상 저하 과 
-Tue May 21 15:08:35 KST 2019 Server: Accept 211.246.68.235 38148
-[FROM Client] TIME:Tue May 21 15:08:42 KST 2019 TALKER:  MESSAGE: {"id":"chanwool12","pw":"1234"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 15:08:44 KST 2019 TALKER: chanwool12 MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 15:08:49 KST 2019 TALKER: chanwool12 MESSAGE: 2a664 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] 2a664
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-저하 2
-귤 1
-사용 1
-향상 2
-시스템 2
-효율 1
-성능 4
-요인 2
-과 1
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 15:08:56 KST 2019","message":"[{\"freq\":2,\"keyword\":\"저하\"},{\"freq\":1,\"keyword\":\"귤\"},{\"freq\":1,\"keyword\":\"사용\"},{\"freq\":2,\"keyword\":\"향상\"},{\"freq\":2,\"keyword\":\"시스템\"},{\"freq\":1,\"keyword\":\"효율\"},{\"freq\":4,\"keyword\":\"성능\"},{\"freq\":2,\"keyword\":\"요인\"},{\"freq\":1,\"keyword\":\"과\"}]"}]}
-[REQUEST RESULT PRINT2] 성능 요인 시스템 향상 저하 과 
-[FROM Client] TIME:Tue May 21 15:09:06 KST 2019 TALKER: chanwool12 MESSAGE: 2a664 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] 2a664
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-저하 2
-귤 1
-사용 1
-향상 2
-시스템 2
-효율 1
-성능 4
-요인 2
-과 1
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 15:09:14 KST 2019","message":"[{\"freq\":2,\"keyword\":\"저하\"},{\"freq\":1,\"keyword\":\"귤\"},{\"freq\":1,\"keyword\":\"사용\"},{\"freq\":2,\"keyword\":\"향상\"},{\"freq\":2,\"keyword\":\"시스템\"},{\"freq\":1,\"keyword\":\"효율\"},{\"freq\":4,\"keyword\":\"성능\"},{\"freq\":2,\"keyword\":\"요인\"},{\"freq\":1,\"keyword\":\"과\"}]"}]}
-[REQUEST RESULT PRINT2] 성능 요인 시스템 향상 저하 과 
-[FROM Client] TIME:Tue May 21 15:09:20 KST 2019 TALKER: chanwool12 MESSAGE:   FUNC: 12 NUMBER: 0
-Tue May 21 15:09:24 KST 2019 Server: Accept 211.246.68.235 18699
-[FROM Client] TIME:Tue May 21 15:09:32 KST 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 15:09:34 KST 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 15:09:38 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] y11g1
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-경기 2
-대물 1
-테스트 1
-센터 1
-시작 1
-닭 1
-마이크 1
-면 1
-안녕 1
-회의 1
-직원 1
-교수 1
-학생 7
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 15:09:46 KST 2019","message":"[{\"freq\":2,\"keyword\":\"경기\"},{\"freq\":1,\"keyword\":\"대물\"},{\"freq\":1,\"keyword\":\"테스트\"},{\"freq\":1,\"keyword\":\"센터\"},{\"freq\":1,\"keyword\":\"시작\"},{\"freq\":1,\"keyword\":\"닭\"},{\"freq\":1,\"keyword\":\"마이크\"},{\"freq\":1,\"keyword\":\"면\"},{\"freq\":1,\"keyword\":\"안녕\"},{\"freq\":1,\"keyword\":\"회의\"},{\"freq\":1,\"keyword\":\"직원\"},{\"freq\":1,\"keyword\":\"교수\"},{\"freq\":7,\"keyword\":\"학생\"}]"}]}
-[REQUEST RESULT PRINT2] 학생 경기 교수 직원 회의 안녕 
-Tue May 21 19:21:17 KST 2019 Server: Accept 89.248.172.90 51015
-Tue May 21 19:21:19 KST 2019 Server: Accept 89.248.172.90 51850
-Unexpected character (G) at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:207)
-Socket Close
-Tue May 21 19:21:27 KST 2019 Server: Accept 89.248.172.90 53512
-Unexpected character () at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:207)
-Socket Close
-Tue May 21 19:21:47 KST 2019 Server: Accept 89.248.172.90 33310
-Unexpected character () at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:207)
-Socket Close
-Tue May 21 21:52:33 KST 2019 Server: Accept 118.216.115.231 2532
-[FROM Client] TIME:Tue May 21 21:52:57 KST 2019 TALKER:  MESSAGE: {"id":"chanwool","pw":"1234"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Failed.
-[FROM Client] TIME:Tue May 21 21:53:05 KST 2019 TALKER:  MESSAGE: {"id":"chanwool12","pw":"1234"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 21:53:07 KST 2019 TALKER: chanwool12 MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 21:53:23 KST 2019 TALKER: chanwool12 MESSAGE: 2a664 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] 2a664
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-저하 2
-귤 1
-사용 1
-향상 2
-시스템 2
-효율 1
-성능 4
-요인 2
-과 1
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 21:53:36 KST 2019","message":"[{\"freq\":2,\"keyword\":\"저하\"},{\"freq\":1,\"keyword\":\"귤\"},{\"freq\":1,\"keyword\":\"사용\"},{\"freq\":2,\"keyword\":\"향상\"},{\"freq\":2,\"keyword\":\"시스템\"},{\"freq\":1,\"keyword\":\"효율\"},{\"freq\":4,\"keyword\":\"성능\"},{\"freq\":2,\"keyword\":\"요인\"},{\"freq\":1,\"keyword\":\"과\"}]"}]}
-[REQUEST RESULT PRINT2] 성능 요인 시스템 향상 저하 과 
-Tue May 21 21:54:23 KST 2019 Server: Accept 118.216.115.231 44496
-[FROM Client] TIME:Tue May 21 21:54:33 KST 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 21:54:34 KST 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 21:54:39 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] y11g1
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-경기 2
-대물 1
-테스트 1
-센터 1
-시작 1
-닭 1
-마이크 1
-면 1
-안녕 1
-회의 1
-직원 1
-교수 1
-학생 7
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 21:54:52 KST 2019","message":"[{\"freq\":2,\"keyword\":\"경기\"},{\"freq\":1,\"keyword\":\"대물\"},{\"freq\":1,\"keyword\":\"테스트\"},{\"freq\":1,\"keyword\":\"센터\"},{\"freq\":1,\"keyword\":\"시작\"},{\"freq\":1,\"keyword\":\"닭\"},{\"freq\":1,\"keyword\":\"마이크\"},{\"freq\":1,\"keyword\":\"면\"},{\"freq\":1,\"keyword\":\"안녕\"},{\"freq\":1,\"keyword\":\"회의\"},{\"freq\":1,\"keyword\":\"직원\"},{\"freq\":1,\"keyword\":\"교수\"},{\"freq\":7,\"keyword\":\"학생\"}]"}]}
-[REQUEST RESULT PRINT2] 학생 경기 교수 직원 회의 안녕 
-[FROM Client] TIME:Tue May 21 21:55:45 KST 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 21:55:49 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] y11g1
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-경기 2
-대물 1
-테스트 1
-센터 1
-시작 1
-닭 1
-마이크 1
-면 1
-안녕 1
-회의 1
-직원 1
-교수 1
-학생 7
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 21:56:03 KST 2019","message":"[{\"freq\":2,\"keyword\":\"경기\"},{\"freq\":1,\"keyword\":\"대물\"},{\"freq\":1,\"keyword\":\"테스트\"},{\"freq\":1,\"keyword\":\"센터\"},{\"freq\":1,\"keyword\":\"시작\"},{\"freq\":1,\"keyword\":\"닭\"},{\"freq\":1,\"keyword\":\"마이크\"},{\"freq\":1,\"keyword\":\"면\"},{\"freq\":1,\"keyword\":\"안녕\"},{\"freq\":1,\"keyword\":\"회의\"},{\"freq\":1,\"keyword\":\"직원\"},{\"freq\":1,\"keyword\":\"교수\"},{\"freq\":7,\"keyword\":\"학생\"}]"}]}
-[REQUEST RESULT PRINT2] 학생 경기 교수 직원 회의 안녕 
-Tue May 21 21:56:51 KST 2019 Server: Accept 223.62.162.4 42646
-[FROM Client] TIME:Tue May 21 21:56:59 KST 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 21:57:01 KST 2019 TALKER: mon MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-[FROM Client] TIME:Tue May 21 21:57:02 KST 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 21:57:06 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] y11g1
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-경기 2
-대물 1
-테스트 1
-센터 1
-시작 1
-닭 1
-마이크 1
-면 1
-안녕 1
-회의 1
-직원 1
-교수 1
-학생 7
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 21:57:21 KST 2019","message":"[{\"freq\":2,\"keyword\":\"경기\"},{\"freq\":1,\"keyword\":\"대물\"},{\"freq\":1,\"keyword\":\"테스트\"},{\"freq\":1,\"keyword\":\"센터\"},{\"freq\":1,\"keyword\":\"시작\"},{\"freq\":1,\"keyword\":\"닭\"},{\"freq\":1,\"keyword\":\"마이크\"},{\"freq\":1,\"keyword\":\"면\"},{\"freq\":1,\"keyword\":\"안녕\"},{\"freq\":1,\"keyword\":\"회의\"},{\"freq\":1,\"keyword\":\"직원\"},{\"freq\":1,\"keyword\":\"교수\"},{\"freq\":7,\"keyword\":\"학생\"}]"}]}
-[REQUEST RESULT PRINT2] 학생 경기 교수 직원 회의 안녕 
-Tue May 21 21:58:52 KST 2019 Server: Accept 118.216.115.231 44922
-[FROM Client] TIME:Tue May 21 21:59:05 KST 2019 TALKER:  MESSAGE: {"id":"chanwool12","pw":"1234"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 21:59:09 KST 2019 TALKER: chanwool12 MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 21:59:31 KST 2019 TALKER: chanwool12 MESSAGE: 2a664 FUNC: 11 NUMBER: 0
-Tue May 21 22:00:06 KST 2019 Server: Accept 118.216.115.231 45064
-[FROM Client] TIME:Tue May 21 22:00:14 KST 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 22:00:16 KST 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 22:00:19 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 11 NUMBER: 0
-Tue May 21 22:01:15 KST 2019 Server: Accept 223.8.141.140 38214
-Tue May 21 22:02:45 KST 2019 Server: Accept 223.62.162.4 42714
-Tue May 21 22:02:46 KST 2019 Server: Accept 118.216.115.231 2618
-[FROM Client] TIME:Tue May 21 22:02:58 KST 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 22:03:00 KST 2019 TALKER: mon MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-[FROM Client] TIME:Tue May 21 22:03:01 KST 2019 TALKER:  MESSAGE: {"id":"chanwool12","pw":"1234"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 22:03:04 KST 2019 TALKER: chanwool12 MESSAGE:   FUNC: 12 NUMBER: 0
-Tue May 21 22:03:06 KST 2019 Server: Accept 223.62.162.4 42716
-[FROM Client] TIME:Tue May 21 22:03:10 KST 2019 TALKER: chanwool12 MESSAGE: 2a664 FUNC: 11 NUMBER: 0
-[FROM Client] TIME:Tue May 21 22:03:15 KST 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-[FROM Client] TIME:Tue May 21 22:03:17 KST 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-[FROM Client] TIME:Tue May 21 22:03:23 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 11 NUMBER: 0
-[FROM Client] TIME:Tue May 21 22:03:33 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 11 NUMBER: 0
-[FROM Client] TIME:Tue May 21 22:03:34 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 11 NUMBER: 0
-[FROM Client] TIME:Tue May 21 22:03:37 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 11 NUMBER: 0
-[FROM Client] TIME:Tue May 21 22:03:39 KST 2019 TALKER: mon MESSAGE: y11g1 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] y11g1
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-경기 2
-대물 1
-테스트 1
-센터 1
-시작 1
-닭 1
-마이크 1
-면 1
-안녕 1
-회의 1
-직원 1
-교수 1
-학생 7
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Tue May 21 22:04:13 KST 2019","message":"[{\"freq\":2,\"keyword\":\"경기\"},{\"freq\":1,\"keyword\":\"대물\"},{\"freq\":1,\"keyword\":\"테스트\"},{\"freq\":1,\"keyword\":\"센터\"},{\"freq\":1,\"keyword\":\"시작\"},{\"freq\":1,\"keyword\":\"닭\"},{\"freq\":1,\"keyword\":\"마이크\"},{\"freq\":1,\"keyword\":\"면\"},{\"freq\":1,\"keyword\":\"안녕\"},{\"freq\":1,\"keyword\":\"회의\"},{\"freq\":1,\"keyword\":\"직원\"},{\"freq\":1,\"keyword\":\"교수\"},{\"freq\":7,\"keyword\":\"학생\"}]"}]}
-[REQUEST RESULT PRINT2] 학생 경기 교수 직원 회의 안녕 
-Server: DB Connecting..
-Connecting...
-DB Conncted.
-Server: Success DB Connect
-Server: Socket Connecting...
-Wed May 22 00:29:16 KST 2019 Server: Accept 118.216.115.231 5942
-Wed May 22 00:30:53 KST 2019 Server: Accept 118.216.115.231 6223
-Wed May 22 00:30:55 KST 2019 Server: Accept 118.216.115.231 6239
-Wed May 22 00:31:53 KST 2019 Server: Accept 118.216.115.231 6442
-Wed May 22 00:31:54 KST 2019 Server: Accept 118.216.115.231 6454
-[FROM Client] TIME:Wed May 22 00:32:01 KST 2019 TALKER:  MESSAGE: {"id":"chanwool12","pw":"1234"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-Elapsed Time: 0.126ms
-[FROM Client] TIME:Wed May 22 00:32:08 KST 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 00:32:12 KST 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-Elapsed Time: 0.005ms
-[FROM Client] TIME:Wed May 22 00:32:17 KST 2019 TALKER: mon MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 00:32:17 KST 2019 TALKER: mon MESSAGE:  FUNC: 14 NUMBER: o14d0
-[{"nick":"mon"}]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 00:32:27 KST 2019 TALKER: chanwool12 MESSAGE: o14d0 FUNC: 2 NUMBER: 0
-[requestEnter] EXIST RESPONSE TRUE
-[requestEnter] response not running!!
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:32:27 KST 2019 TALKER: chanwool12 MESSAGE:  FUNC: 14 NUMBER: o14d0
-[{"nick":"mon"},{"nick":"chanwool12"}]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:32:32 KST 2019 TALKER: mon MESSAGE: START FUNC: 3 NUMBER: o14d0
-[REQUEST START] INSERT START MESSAGE TO DB
-[REQUEST START] RECEIVER LIST : chanwool12 
-SUCCESS SENDING START MESSAGE
-Elapsed Time: 0.003ms
-[FROM Client] TIME:Wed May 22 00:32:33 KST 2019 TALKER: chanwool12 MESSAGE: START FUNC: 3 NUMBER: o14d0
-[REQUEST START] INSERT START MESSAGE TO DB
-[REQUEST START] RECEIVER LIST : mon 
-SUCCESS SENDING START MESSAGE
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:32:41 KST 2019 TALKER: chanwool12 MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon chanwool12 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.007ms
-[FROM Client] TIME:Wed May 22 00:32:41 KST 2019 TALKER: mon MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon chanwool12 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:32:46 KST 2019 TALKER: mon MESSAGE: 알고리즘 문제 해결 전략 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon chanwool12 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:32:46 KST 2019 TALKER: chanwool12 MESSAGE: 알고리즘 문제 해결 전략 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon chanwool12 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:32:51 KST 2019 TALKER: mon MESSAGE: 알고리즘 알고리즘 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon chanwool12 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-[FROM Client] TIME:Wed May 22 00:32:51 KST 2019 TALKER: chanwool12 MESSAGE: 알고리즘 알고리즘 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon chanwool12 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.008ms
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:32:59 KST 2019 TALKER: chanwool12 MESSAGE: 000000 FUNC: 6 NUMBER: o14d0
-[REQUEST EXIT] : 000000
-[REQUEST EXIT] RECEIVER LIST: mon chanwool12 
-[REQUEST EXIT] APPLY MY INFO
-Elapsed Time: 0.01ms
-[FROM Client] TIME:Wed May 22 00:33:00 KST 2019 TALKER: chanwool12 MESSAGE: o14d0 FUNC: 15 NUMBER: 
-[REQUEST RESULT] o14d0
-Wed May 22 00:33:23 KST 2019 Server: Accept 118.216.115.231 6562
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-전략 2
-라마 2
-문제 해결 2
-가나 2
-바사 2
-알고리즘 6
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Wed May 22 00:33:25 KST 2019","message":"[{\"freq\":2,\"keyword\":\"전략\"},{\"freq\":2,\"keyword\":\"라마\"},{\"freq\":2,\"keyword\":\"문제 해결\"},{\"freq\":2,\"keyword\":\"가나\"},{\"freq\":2,\"keyword\":\"바사\"},{\"freq\":6,\"keyword\":\"알고리즘\"}]"}]}
-[REQUEST RESULT PRINT2] 알고리즘 바사 가나 문제 해결 라마 전략 
-Elapsed Time: 25.131ms
-[FROM Client] TIME:Wed May 22 00:33:32 KST 2019 TALKER:  MESSAGE: iojiojio FUNC: 5 NUMBER: 0
-[SET TALKER] nickname: iojiojio
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 00:33:40 KST 2019 TALKER: iojiojio MESSAGE: o14d0 FUNC: 2 NUMBER: 0
-[requestEnter] EXIST RESPONSE TRUE
-[requestEnter] response running!!
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:33:40 KST 2019 TALKER: iojiojio MESSAGE: START FUNC: 3 NUMBER: o14d0
-[REQUEST START] INSERT START MESSAGE TO DB
-[REQUEST START] RECEIVER LIST : mon 
-SUCCESS SENDING START MESSAGE
-Elapsed Time: 0.006ms
-[FROM Client] TIME:Wed May 22 00:33:41 KST 2019 TALKER: iojiojio MESSAGE:  FUNC: 14 NUMBER: o14d0
-[{"nick":"mon"},{"nick":"iojiojio"}]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 00:33:48 KST 2019 TALKER: iojiojio MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003ms
-[FROM Client] TIME:Wed May 22 00:33:48 KST 2019 TALKER: mon MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.023ms
-[FROM Client] TIME:Wed May 22 00:33:54 KST 2019 TALKER: mon MESSAGE: 추정되는 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.004ms
-[FROM Client] TIME:Wed May 22 00:33:54 KST 2019 TALKER: iojiojio MESSAGE: 추정되는 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:34:00 KST 2019 TALKER: iojiojio MESSAGE: 알고리즘 문제 해결 전략 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:34:00 KST 2019 TALKER: mon MESSAGE: 알고리즘 문제 해결 전략 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003ms
-[FROM Client] TIME:Wed May 22 00:34:04 KST 2019 TALKER: iojiojio MESSAGE: 알고리즘 알고리즘 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:34:04 KST 2019 TALKER: mon MESSAGE: 알고리즘 알고리즘 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:34:09 KST 2019 TALKER: iojiojio MESSAGE: 이산수학 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:34:09 KST 2019 TALKER: mon MESSAGE: 이산수학 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.013ms
-[FROM Client] TIME:Wed May 22 00:34:12 KST 2019 TALKER: iojiojio MESSAGE: 운영체제 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.018ms
-[FROM Client] TIME:Wed May 22 00:34:12 KST 2019 TALKER: mon MESSAGE: 운영체제 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:34:17 KST 2019 TALKER: mon MESSAGE: 답도 알고리즘 트레이딩 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.041ms
-[FROM Client] TIME:Wed May 22 00:34:17 KST 2019 TALKER: iojiojio MESSAGE: 답도 알고리즘 트레이딩 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:34:22 KST 2019 TALKER: iojiojio MESSAGE: 인공지능 현대적 접근방식 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.04ms
-[FROM Client] TIME:Wed May 22 00:34:22 KST 2019 TALKER: mon MESSAGE: 현대적 접근방식 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:34:26 KST 2019 TALKER: mon MESSAGE: 디지털디자인 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:34:26 KST 2019 TALKER: iojiojio MESSAGE: 디지털디자인 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:34:32 KST 2019 TALKER: iojiojio MESSAGE: 에요 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:34:32 KST 2019 TALKER: mon MESSAGE: 에요 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:34:39 KST 2019 TALKER: iojiojio MESSAGE: 공학 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:34:39 KST 2019 TALKER: mon MESSAGE: 공학 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:34:46 KST 2019 TALKER: mon MESSAGE: 트위 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:34:46 KST 2019 TALKER: iojiojio MESSAGE: 비트윈 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.046ms
-[FROM Client] TIME:Wed May 22 00:34:57 KST 2019 TALKER: mon MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-[FROM Client] TIME:Wed May 22 00:34:57 KST 2019 TALKER: iojiojio MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: o14d0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon iojiojio 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003ms
-Elapsed Time: 0.04ms
-[FROM Client] TIME:Wed May 22 00:35:01 KST 2019 TALKER: mon MESSAGE: 00000000000000000000000000000000 FUNC: 6 NUMBER: o14d0
-[REQUEST EXIT] : 00000000000000000000000000000000
-[REQUEST EXIT] RECEIVER LIST: mon iojiojio 
-[REQUEST EXIT] APPLY MY INFO
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 00:35:01 KST 2019 TALKER: mon MESSAGE: o14d0 FUNC: 15 NUMBER: 
-[REQUEST RESULT] o14d0
-[FROM Client] TIME:Wed May 22 00:35:04 KST 2019 TALKER: iojiojio MESSAGE: 00000000000000000000000000 FUNC: 6 NUMBER: o14d0
-[REQUEST EXIT] : 00000000000000000000000000
-[REQUEST EXIT] RECEIVER LIST: iojiojio 
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.025s
+[FROM Client] TIME:Sat May 25 09:51:49 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"m1xb0","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 서버가 너무 느리다 서버가 너무 느리다 소고 소고 소고 로봇이 아니야 아니 ","date":"Sat May 25 09:28:28 UTC 2019","members":"c1234 test1234 "},{"number":"w9l23","content":"가사 운영체제 소프트 순하고 향기로운 섬유향수 자료구조 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 ","date":"Sat May 25 09:22:50 UTC 2019","members":"c1234 "}],"talkWithMe":"test1234 ","contributionData":[60.4,67.9,50.0]}
+Elapsed Time: 0.021s
+[FROM Client] TIME:Sat May 25 09:51:53 UTC 2019 TALKER: nicks MESSAGE: m1xb0 FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : m1xb0
+{"wordFrequency":{"전략":2},"fiveKeyWord":{"전략":2},"contrib":{"test1234":0.5385,"c1234":0.4615},"cont":[{"room":"m1xb0","time":"Sat May 25 09:28:40 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:29 UTC 2019","msg":"소고 소고 소고","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"로봇이 아니야","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"아니","id":"test1234"}],"markData":"0000000000"}
+Elapsed Time: 0.013s
+[FROM Client] TIME:Sat May 25 09:52:00 UTC 2019 TALKER: nicks MESSAGE: w9l23 FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : w9l23
+{"wordFrequency":{"체제":1,"향기":1,"구조":1,"자료":1,"운영":1,"전략":2},"fiveKeyWord":{"구조":1,"체제":1,"자료":1,"운영":1,"전략":2},"contrib":{"c1234":1.0},"cont":[{"room":"w9l23","time":"Sat May 25 09:22:57 UTC 2019","msg":"가사","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:00 UTC 2019","msg":"운영체제","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:05 UTC 2019","msg":"소프트","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:12 UTC 2019","msg":"순하고 향기로운 섬유향수","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:17 UTC 2019","msg":"자료구조","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:29 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:41 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"}],"markData":"0000000"}
+Elapsed Time: 0.008s
+[FROM Client] TIME:Sat May 25 09:52:22 UTC 2019 TALKER: nicks MESSAGE: 회의 제목을 뭘로 해야 되나? FUNC: 1 NUMBER: 0
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sat May 25 09:52:22 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: xcadw
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sat May 25 09:52:34 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 5 NUMBER: xcadw
+[REQUEST EXIT] 
+[REQUEST EXIT] RECEIVER LIST: 
 [REQUEST EXIT] APPLY MY INFO
 [REQUEST EXIT] ROOM EMPTY!!
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 00:35:05 KST 2019 TALKER: iojiojio MESSAGE: o14d0 FUNC: 15 NUMBER: 
-[REQUEST RESULT] o14d0
-Wed May 22 00:37:19 KST 2019 Server: Accept 118.216.115.231 6661
-Exception in thread "Thread-5" java.lang.OutOfMemoryError: Java heap space
-	at sun.reflect.GeneratedSerializationConstructorAccessor1.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at java.io.ObjectStreamClass.newInstance(ObjectStreamClass.java:1091)
-	at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2052)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1572)
-	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:430)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:141)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:149)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:149)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:149)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:149)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:149)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:149)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:149)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:149)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:149)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:149)
-	at kr.co.shineware.ds.aho_corasick.model.AhoCorasickNode.load(AhoCorasickNode.java:130)
-	at kr.co.shineware.ds.aho_corasick.AhoCorasickDictionary.load(AhoCorasickDictionary.java:33)
-	at kr.co.shineware.nlp.komoran.modeler.model.Observation.load(Observation.java:84)
-	at kr.co.shineware.nlp.komoran.core.model.Resources.loadObservation(Resources.java:96)
-	at kr.co.shineware.nlp.komoran.core.Komoran.<init>(Komoran.java:102)
-	at DBCon.NLPHashmapByRoom(DBCon.java:390)
-	at TCPServer$ServerHandler.run(TCPServer.java:498)
-Wed May 22 00:37:32 KST 2019 Server: Accept 118.216.115.231 6698
-[FROM Client] TIME:Wed May 22 00:37:39 KST 2019 TALKER:  MESSAGE: {"id":"chanwool12","pw":"1234"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-Elapsed Time: 0.119ms
-[FROM Client] TIME:Wed May 22 00:37:46 KST 2019 TALKER: chanwool12 MESSAGE:   FUNC: 12 NUMBER: 0
-Elapsed Time: 0.615ms
-[FROM Client] TIME:Wed May 22 00:37:58 KST 2019 TALKER: chanwool12 MESSAGE:   FUNC: 12 NUMBER: 0
-Elapsed Time: 5.282ms
-[FROM Client] TIME:Wed May 22 00:38:15 KST 2019 TALKER: chanwool12 MESSAGE: o14d0 FUNC: 15 NUMBER: 0
-[REQUEST RESULT] o14d0
-Server: DB Connecting..
-Connecting...
-DB Conncted.
-Server: Success DB Connect
-Server: Socket Connecting...
-Tue May 21 18:57:04 UTC 2019 Server: Accept 172.104.84.223 43422
-Unexpected character (G) at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:207)
-Socket Close
-Tue May 21 22:26:03 UTC 2019 Server: Accept 173.72.101.149 41842
-Unexpected character ($) at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:207)
-Socket Close
-Tue May 21 23:25:04 UTC 2019 Server: Accept 104.178.227.242 47482
-Unexpected character (R) at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:207)
-Socket Close
-Wed May 22 01:24:12 UTC 2019 Server: Accept 94.102.49.190 45176
-Unexpected character () at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:207)
-Socket Close
-Wed May 22 01:24:14 UTC 2019 Server: Accept 94.102.49.190 45418
-Unexpected character (G) at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:207)
-Socket Close
-Wed May 22 03:27:07 UTC 2019 Server: Accept 223.62.162.207 52680
-[FROM Client] TIME:Wed May 22 03:27:22 UTC 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Broken pipe (Write failed)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:156)
-	at TCPServer$ServerHandler.run(TCPServer.java:377)
-Caused by: java.sql.SQLNonTransientConnectionException: Broken pipe (Write failed)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.handleIoException(AbstractQueryProtocol.java:1894)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:293)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Caused by: java.net.SocketException: Broken pipe (Write failed)
-	at java.net.SocketOutputStream.socketWrite0(Native Method)
-	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
-	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
-	at org.mariadb.jdbc.internal.io.output.StandardPacketOutputStream.flushBuffer(StandardPacketOutputStream.java:111)
-	at org.mariadb.jdbc.internal.io.output.AbstractPacketOutputStream.flush(AbstractPacketOutputStream.java:185)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:286)
-	... 5 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.034ms
-[FROM Client] TIME:Wed May 22 03:27:32 UTC 2019 TALKER:  MESSAGE: mon FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:27:54 UTC 2019 TALKER:  MESSAGE: mon FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:27:57 UTC 2019 TALKER:  MESSAGE: mon FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:28:01 UTC 2019 TALKER:  MESSAGE: mon FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-Wed May 22 03:28:06 UTC 2019 Server: Accept 223.62.162.207 52694
-[FROM Client] TIME:Wed May 22 03:28:12 UTC 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:156)
-	at TCPServer$ServerHandler.run(TCPServer.java:377)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 03:28:19 UTC 2019 TALKER:  MESSAGE: {"id":"mon","pw":"940525"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:156)
-	at TCPServer$ServerHandler.run(TCPServer.java:377)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:28:25 UTC 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:156)
-	at TCPServer$ServerHandler.run(TCPServer.java:377)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 03:28:32 UTC 2019 TALKER:  MESSAGE: m FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:28:35 UTC 2019 TALKER:  MESSAGE: mo FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:28:37 UTC 2019 TALKER:  MESSAGE: mooo FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:28:55 UTC 2019 TALKER:  MESSAGE: mooo FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:28:58 UTC 2019 TALKER:  MESSAGE: moooo FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:29:00 UTC 2019 TALKER:  MESSAGE: moooop FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 03:29:02 UTC 2019 TALKER:  MESSAGE: mooooph FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 03:29:13 UTC 2019 TALKER:  MESSAGE: kang123 FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-Wed May 22 03:30:58 UTC 2019 Server: Accept 223.62.162.207 52726
-[FROM Client] TIME:Wed May 22 03:31:06 UTC 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:156)
-	at TCPServer$ServerHandler.run(TCPServer.java:377)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.001ms
-Wed May 22 03:31:10 UTC 2019 Server: Accept 223.62.162.207 52728
-[FROM Client] TIME:Wed May 22 03:31:15 UTC 2019 TALKER:  MESSAGE: ㅎㅇ FUNC: 5 NUMBER: 0
-[SET TALKER] nickname: ㅎㅇ
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 03:31:20 UTC 2019 TALKER: ㅎㅇ MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 03:31:20 UTC 2019 TALKER: ㅎㅇ MESSAGE:  FUNC: 14 NUMBER: 5sd5j
-[{"nick":"ㅎㅇ"}]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 03:31:23 UTC 2019 TALKER: ㅎㅇ MESSAGE:  FUNC: 6 NUMBER: 5sd5j
-[REQUEST EXIT] : 
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertMarkData(DBCon.java:306)
-	at TCPServer$ServerHandler.run(TCPServer.java:317)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[REQUEST EXIT] RECEIVER LIST: ㅎㅇ 
-[REQUEST EXIT] APPLY MY INFO
-[REQUEST EXIT] ROOM EMPTY!!
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:339)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.015ms
-[FROM Client] TIME:Wed May 22 03:31:23 UTC 2019 TALKER: ㅎㅇ MESSAGE: 5sd5j FUNC: 15 NUMBER: 
-[REQUEST RESULT] 5sd5j
-[DBCon] MAKE String
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.NLPHashmapByRoom(DBCon.java:380)
-	at TCPServer$ServerHandler.run(TCPServer.java:498)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[DBCon] Analyze 0
-java.lang.NullPointerException
-	at kr.co.shineware.nlp.komoran.model.KomoranResult.getTokenList(KomoranResult.java:131)
-	at DBCon.NLPHashmapByRoom(DBCon.java:393)
-	at TCPServer$ServerHandler.run(TCPServer.java:498)
-Socket Close
-Wed May 22 03:31:54 UTC 2019 Server: Accept 223.62.162.207 52740
-[FROM Client] TIME:Wed May 22 03:32:08 UTC 2019 TALKER:  MESSAGE: {"id":"chan","pw":"123"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:156)
-	at TCPServer$ServerHandler.run(TCPServer.java:377)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.009ms
-Wed May 22 03:32:22 UTC 2019 Server: Accept 223.62.162.207 52768
-[FROM Client] TIME:Wed May 22 03:32:36 UTC 2019 TALKER:  MESSAGE: ㅎㅇ FUNC: 5 NUMBER: 0
-[SET TALKER] nickname: ㅎㅇ
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 03:32:39 UTC 2019 TALKER: ㅎㅇ MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:32:39 UTC 2019 TALKER: ㅎㅇ MESSAGE:  FUNC: 14 NUMBER: 06j8m
-[{"nick":"ㅎㅇ"}]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:32:54 UTC 2019 TALKER: ㅎㅇ MESSAGE: START FUNC: 3 NUMBER: 06j8m
-[REQUEST START] INSERT START MESSAGE TO DB
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:287)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[REQUEST START] RECEIVER LIST : 
-SUCCESS SENDING START MESSAGE
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:32:58 UTC 2019 TALKER: ㅎㅇ MESSAGE: 하아 FUNC: 0 NUMBER: 06j8m
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : ㅎㅇ 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:234)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 03:33:04 UTC 2019 TALKER: ㅎㅇ MESSAGE: test FUNC: 0 NUMBER: 06j8m
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : ㅎㅇ 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:234)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:33:12 UTC 2019 TALKER: ㅎㅇ MESSAGE: 한미테크 FUNC: 0 NUMBER: 06j8m
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : ㅎㅇ 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:234)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:33:20 UTC 2019 TALKER: ㅎㅇ MESSAGE: 관리 FUNC: 0 NUMBER: 06j8m
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : ㅎㅇ 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:234)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:33:25 UTC 2019 TALKER: ㅎㅇ MESSAGE: 경기대 FUNC: 0 NUMBER: 06j8m
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : ㅎㅇ 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:234)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:33:34 UTC 2019 TALKER: ㅎㅇ MESSAGE: 오늘은 FUNC: 0 NUMBER: 06j8m
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : ㅎㅇ 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:234)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:33:38 UTC 2019 TALKER: ㅎㅇ MESSAGE: 날씨가 FUNC: 0 NUMBER: 06j8m
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : ㅎㅇ 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:234)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:33:40 UTC 2019 TALKER: ㅎㅇ MESSAGE: 날씨가 FUNC: 0 NUMBER: 06j8m
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : ㅎㅇ 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:234)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:33:43 UTC 2019 TALKER: ㅎㅇ MESSAGE: 날씨 FUNC: 0 NUMBER: 06j8m
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : ㅎㅇ 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:234)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:33:50 UTC 2019 TALKER: ㅎㅇ MESSAGE: 오늘 FUNC: 0 NUMBER: 06j8m
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : ㅎㅇ 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:234)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 03:33:57 UTC 2019 TALKER: ㅎㅇ MESSAGE: 0000000000 FUNC: 6 NUMBER: 06j8m
-[REQUEST EXIT] : 0000000000
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertMarkData(DBCon.java:306)
-	at TCPServer$ServerHandler.run(TCPServer.java:317)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[REQUEST EXIT] RECEIVER LIST: ㅎㅇ 
-[REQUEST EXIT] APPLY MY INFO
-[REQUEST EXIT] ROOM EMPTY!!
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:339)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 03:33:57 UTC 2019 TALKER: ㅎㅇ MESSAGE: 06j8m FUNC: 15 NUMBER: 
-[REQUEST RESULT] 06j8m
-[DBCon] MAKE String
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.NLPHashmapByRoom(DBCon.java:380)
-	at TCPServer$ServerHandler.run(TCPServer.java:498)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[DBCon] Analyze 0
-java.lang.NullPointerException
-	at kr.co.shineware.nlp.komoran.model.KomoranResult.getTokenList(KomoranResult.java:131)
-	at DBCon.NLPHashmapByRoom(DBCon.java:393)
-	at TCPServer$ServerHandler.run(TCPServer.java:498)
-Socket Close
-Wed May 22 04:13:22 UTC 2019 Server: Accept 223.62.162.207 52990
-[FROM Client] TIME:Wed May 22 04:13:36 UTC 2019 TALKER:  MESSAGE: {"id":"mon","pw":"0525"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:156)
-	at TCPServer$ServerHandler.run(TCPServer.java:377)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.001ms
-Wed May 22 04:21:35 UTC 2019 Server: Accept 223.62.162.207 53022
-[FROM Client] TIME:Wed May 22 04:21:40 UTC 2019 TALKER:  MESSAGE: mm FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=15) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:108)
-	at TCPServer$ServerHandler.run(TCPServer.java:391)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
+Elapsed Time: 0.003s
+[FROM Client] TIME:Sat May 25 09:52:35 UTC 2019 TALKER: nicks MESSAGE: xcadw FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : xcadw
+{"wordFrequency":{},"fiveKeyWord":{},"contrib":{"c1234":1.0},"cont":[],"markData":""}
+Elapsed Time: 0.002s
+Sat May 25 09:57:46 UTC 2019 Server: Accept 175.116.179.198 58579
 java.net.SocketException: Connection reset
 	at java.net.SocketInputStream.read(SocketInputStream.java:210)
 	at java.net.SocketInputStream.read(SocketInputStream.java:141)
@@ -1373,632 +44,367 @@ java.net.SocketException: Connection reset
 	at java.io.BufferedReader.fill(BufferedReader.java:161)
 	at java.io.BufferedReader.readLine(BufferedReader.java:324)
 	at java.io.BufferedReader.readLine(BufferedReader.java:389)
-	at TCPServer$ServerHandler.run(TCPServer.java:201)
+	at TCPServer$ServerHandler.run(TCPServer.java:177)
 Socket Close
+Sat May 25 10:14:57 UTC 2019 Server: Accept 118.216.115.231 8757
+Sat May 25 10:14:58 UTC 2019 Server: Accept 118.216.115.231 8763
+[FROM Client] TIME:Sat May 25 10:15:08 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.003s
+[FROM Client] TIME:Sat May 25 10:15:10 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"m1xb0","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 서버가 너무 느리다 서버가 너무 느리다 소고 소고 소고 로봇이 아니야 아니 ","date":"Sat May 25 09:28:28 UTC 2019","members":"c1234 test1234 "},{"number":"w9l23","content":"가사 운영체제 소프트 순하고 향기로운 섬유향수 자료구조 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 ","date":"Sat May 25 09:22:50 UTC 2019","members":"c1234 "},{"number":"xcadw","content":"","date":"Sat May 25 09:52:34 UTC 2019","members":"c1234 "}],"talkWithMe":"test1234 ","contributionData":[64.5,77.3,50.0]}
+Elapsed Time: 0.014s
+[FROM Client] TIME:Sat May 25 10:15:27 UTC 2019 TALKER: nicks MESSAGE: 19-05-25 회의입니다. FUNC: 1 NUMBER: 0
+Elapsed Time: 0.014s
+[FROM Client] TIME:Sat May 25 10:15:28 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: 25928
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sat May 25 10:15:31 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 5 NUMBER: 25928
+[REQUEST EXIT] 
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+[REQUEST EXIT] ROOM EMPTY!!
+Elapsed Time: 0.009s
+[FROM Client] TIME:Sat May 25 10:15:42 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"25928","content":"","date":"Sat May 25 10:15:31 UTC 2019","members":"c1234 "},{"number":"m1xb0","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 서버가 너무 느리다 서버가 너무 느리다 소고 소고 소고 로봇이 아니야 아니 ","date":"Sat May 25 09:28:28 UTC 2019","members":"c1234 test1234 "},{"number":"w9l23","content":"가사 운영체제 소프트 순하고 향기로운 섬유향수 자료구조 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 ","date":"Sat May 25 09:22:50 UTC 2019","members":"c1234 "},{"number":"xcadw","content":"","date":"Sat May 25 09:52:34 UTC 2019","members":"c1234 "}],"talkWithMe":"test1234 ","contributionData":[66.6,82.39999999999999,50.0]}
+Elapsed Time: 0.021s
+Sat May 25 10:15:45 UTC 2019 Server: Accept 118.216.115.231 8794
+Sat May 25 10:15:50 UTC 2019 Server: Accept 118.216.115.231 8814
+Sat May 25 10:15:50 UTC 2019 Server: Accept 118.216.115.231 8819
+[FROM Client] TIME:Sat May 25 10:15:56 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.01s
+[FROM Client] TIME:Sat May 25 10:15:57 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"25928","content":"","date":"Sat May 25 10:15:31 UTC 2019","members":"c1234 "},{"number":"m1xb0","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 서버가 너무 느리다 서버가 너무 느리다 소고 소고 소고 로봇이 아니야 아니 ","date":"Sat May 25 09:28:28 UTC 2019","members":"c1234 test1234 "},{"number":"w9l23","content":"가사 운영체제 소프트 순하고 향기로운 섬유향수 자료구조 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 ","date":"Sat May 25 09:22:50 UTC 2019","members":"c1234 "},{"number":"xcadw","content":"","date":"Sat May 25 09:52:34 UTC 2019","members":"c1234 "}],"talkWithMe":"test1234 ","contributionData":[66.6,82.39999999999999,50.0]}
+Elapsed Time: 0.999s
+[FROM Client] TIME:Sat May 25 10:16:07 UTC 2019 TALKER: nicks MESSAGE: m1xb0 FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : m1xb0
+{"wordFrequency":{"전략":2},"fiveKeyWord":{"전략":2},"contrib":{"test1234":0.5385,"c1234":0.4615},"cont":[{"room":"m1xb0","time":"Sat May 25 09:28:40 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:29 UTC 2019","msg":"소고 소고 소고","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"로봇이 아니야","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"아니","id":"test1234"}],"markData":"0000000000"}
+Elapsed Time: 0.013s
+[FROM Client] TIME:Sat May 25 10:16:11 UTC 2019 TALKER: nicks MESSAGE: m1xb0 FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : m1xb0
+{"wordFrequency":{"전략":2},"fiveKeyWord":{"전략":2},"contrib":{"test1234":0.5385,"c1234":0.4615},"cont":[{"room":"m1xb0","time":"Sat May 25 09:28:40 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:29 UTC 2019","msg":"소고 소고 소고","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"로봇이 아니야","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"아니","id":"test1234"}],"markData":"0000000000"}
+Elapsed Time: 0.003s
 Server: DB Connecting..
 Connecting...
 DB Conncted.
 Server: Success DB Connect
 Server: Socket Connecting...
-Wed May 22 07:34:25 UTC 2019 Server: Accept 223.62.202.181 53186
-[FROM Client] TIME:Wed May 22 07:34:37 UTC 2019 TALKER:  MESSAGE: {"id":"mm","pw":"940525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.024ms
-[FROM Client] TIME:Wed May 22 07:34:44 UTC 2019 TALKER:  MESSAGE: mon FUNC: 10 NUMBER: 0
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 07:34:58 UTC 2019 TALKER:  MESSAGE: {"id":"mon","pw":"940525","gender":"MALE","birth":"19540707","nick":"mon"} FUNC: 7 NUMBER: 0
-[REQUEST ENROLL]
-[memberRegisterID] Register Complete.
-[REQUEST ENROLL] SYSTEM: mon 940525 TRUE
-Elapsed Time: 0.003ms
-[FROM Client] TIME:Wed May 22 07:35:06 UTC 2019 TALKER:  MESSAGE: {"id":"mon","pw":"940525"} FUNC: 9 NUMBER: 0
+Sat May 25 13:35:17 UTC 2019 Server: Accept 118.216.115.231 14144
+Sat May 25 13:35:17 UTC 2019 Server: Accept 118.216.115.231 14151
+[FROM Client] TIME:Sat May 25 13:35:23 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
 [memberRegisterID] Assertion Success.
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 07:35:16 UTC 2019 TALKER: mon MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 07:35:17 UTC 2019 TALKER: mon MESSAGE:  FUNC: 14 NUMBER: j1ya1
-[{"nick":"mon"}]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Wed May 22 07:35:19 UTC 2019 TALKER: mon MESSAGE: START FUNC: 3 NUMBER: j1ya1
-[REQUEST START] INSERT START MESSAGE TO DB
-[REQUEST START] RECEIVER LIST : 
-SUCCESS SENDING START MESSAGE
-Elapsed Time: 0.004ms
-[FROM Client] TIME:Wed May 22 07:35:22 UTC 2019 TALKER: mon MESSAGE: 월전 FUNC: 0 NUMBER: j1ya1
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003ms
-[FROM Client] TIME:Wed May 22 07:35:28 UTC 2019 TALKER: mon MESSAGE: 어디 파트 어딘지 거래소 FUNC: 0 NUMBER: j1ya1
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 07:35:34 UTC 2019 TALKER: mon MESSAGE: 아직 안되고 아아 마이크 테스트 FUNC: 0 NUMBER: j1ya1
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 07:35:40 UTC 2019 TALKER: mon MESSAGE: 경기대학교 학생 이문열 FUNC: 0 NUMBER: j1ya1
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 07:35:45 UTC 2019 TALKER: mon MESSAGE: 경기대 FUNC: 0 NUMBER: j1ya1
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.004ms
-[FROM Client] TIME:Wed May 22 07:35:51 UTC 2019 TALKER: mon MESSAGE: 경기대의 키워드 분석도 있다 FUNC: 0 NUMBER: j1ya1
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.004ms
-[FROM Client] TIME:Wed May 22 07:35:57 UTC 2019 TALKER: mon MESSAGE: 통한 FUNC: 0 NUMBER: j1ya1
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mon 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 07:36:25 UTC 2019 TALKER: mon MESSAGE: 0000000 FUNC: 6 NUMBER: j1ya1
-[REQUEST EXIT] : 0000000
-[REQUEST EXIT] RECEIVER LIST: mon 
-[REQUEST EXIT] APPLY MY INFO
-[REQUEST EXIT] ROOM EMPTY!!
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Wed May 22 07:36:26 UTC 2019 TALKER: mon MESSAGE: j1ya1 FUNC: 15 NUMBER: 
-[REQUEST RESULT] j1ya1
-[DBCon] MAKE String
-[DBCon] Analyze 81
-[DBCon] Counting..
-[DBCon] Success.
-[REQUEST RESULT HASH]
-[REQUEST RESULT KEYWORD]
-키워드 1
-파트 1
-안 1
-학생 1
-분석 1
-[REQUEST RESULT PRINT] {"server":[{"func":15,"time":"Wed May 22 07:36:30 UTC 2019","message":"[{\"freq\":1,\"keyword\":\"키워드\"},{\"freq\":1,\"keyword\":\"파트\"},{\"freq\":1,\"keyword\":\"안\"},{\"freq\":1,\"keyword\":\"학생\"},{\"freq\":1,\"keyword\":\"분석\"}]"}]}
-[REQUEST RESULT PRINT2] 분석 학생 안 파트 키워드 
-Elapsed Time: 4.195ms
-java.net.SocketException: Connection reset
-	at java.net.SocketInputStream.read(SocketInputStream.java:210)
-	at java.net.SocketInputStream.read(SocketInputStream.java:141)
-	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
-	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
-	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
-	at java.io.InputStreamReader.read(InputStreamReader.java:184)
-	at java.io.BufferedReader.fill(BufferedReader.java:161)
-	at java.io.BufferedReader.readLine(BufferedReader.java:324)
-	at java.io.BufferedReader.readLine(BufferedReader.java:389)
-	at TCPServer$ServerHandler.run(TCPServer.java:202)
-Socket Close
-Wed May 22 12:07:32 UTC 2019 Server: Accept 107.170.192.222 41874
-Wed May 22 13:36:52 UTC 2019 Server: Accept 223.38.36.118 49424
-[FROM Client] TIME:Wed May 22 13:37:02 UTC 2019 TALKER:  MESSAGE: {"id":"mm","pw":"940525"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 13:37:10 UTC 2019 TALKER:  MESSAGE: {"id":"mon","pw":"940525"} FUNC: 9 NUMBER: 0
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.025s
+[FROM Client] TIME:Sat May 25 13:35:26 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 0.027s
+[FROM Client] TIME:Sat May 25 13:35:29 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.027s
+Sat May 25 13:37:17 UTC 2019 Server: Accept 118.216.115.231 14228
+Sat May 25 13:37:17 UTC 2019 Server: Accept 118.216.115.231 14235
+[FROM Client] TIME:Sat May 25 13:37:26 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
 [memberRegisterID] Assertion Success.
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 13:37:15 UTC 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-Elapsed Time: 0.042ms
-[FROM Client] TIME:Wed May 22 13:37:25 UTC 2019 TALKER: mon MESSAGE: j1ya1 FUNC: 11 NUMBER: 0
-Elapsed Time: 15.386ms
-Wed May 22 13:37:45 UTC 2019 Server: Accept 223.38.36.118 49460
-[FROM Client] TIME:Wed May 22 13:38:00 UTC 2019 TALKER:  MESSAGE: {"id":"mon","pw":"940525"} FUNC: 9 NUMBER: 0
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.039s
+[FROM Client] TIME:Sat May 25 13:37:37 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 0.41s
+[FROM Client] TIME:Sat May 25 13:37:46 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.247s
+Sat May 25 13:41:05 UTC 2019 Server: Accept 118.216.115.231 14306
+Sat May 25 13:41:05 UTC 2019 Server: Accept 118.216.115.231 14313
+[FROM Client] TIME:Sat May 25 13:41:06 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
 [memberRegisterID] Assertion Success.
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Wed May 22 13:38:03 UTC 2019 TALKER: mon MESSAGE:   FUNC: 12 NUMBER: 0
-Elapsed Time: 0.004ms
-Wed May 22 15:11:37 UTC 2019 Server: Accept 71.6.146.185 53352
-Unexpected character () at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:208)
-Socket Close
-Wed May 22 15:11:39 UTC 2019 Server: Accept 71.6.146.185 53948
-Unexpected character (G) at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:208)
-Socket Close
-Wed May 22 19:42:08 UTC 2019 Server: Accept 129.122.137.156 53576
-Unexpected character (R) at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:208)
-Socket Close
-Wed May 22 22:15:56 UTC 2019 Server: Accept 123.117.31.26 41000
-Thu May 23 00:20:52 UTC 2019 Server: Accept 172.104.84.223 48786
-Unexpected character (G) at position 0.
-	at org.json.simple.parser.Yylex.yylex(Yylex.java:610)
-	at org.json.simple.parser.JSONParser.nextToken(JSONParser.java:269)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:118)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:81)
-	at org.json.simple.parser.JSONParser.parse(JSONParser.java:75)
-	at TCPServer$ServerHandler.run(TCPServer.java:208)
-Socket Close
-Thu May 23 06:57:51 UTC 2019 Server: Accept 223.38.24.74 48632
-[FROM Client] TIME:Thu May 23 06:58:02 UTC 2019 TALKER:  MESSAGE: {"id":"kang123","pw":"123"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=13) Broken pipe (Write failed)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:157)
-	at TCPServer$ServerHandler.run(TCPServer.java:378)
-Caused by: java.sql.SQLNonTransientConnectionException: Broken pipe (Write failed)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.handleIoException(AbstractQueryProtocol.java:1894)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:293)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Caused by: java.net.SocketException: Broken pipe (Write failed)
-	at java.net.SocketOutputStream.socketWrite0(Native Method)
-	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
-	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
-	at org.mariadb.jdbc.internal.io.output.StandardPacketOutputStream.flushBuffer(StandardPacketOutputStream.java:111)
-	at org.mariadb.jdbc.internal.io.output.AbstractPacketOutputStream.flush(AbstractPacketOutputStream.java:185)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:286)
-	... 5 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.701ms
-[FROM Client] TIME:Thu May 23 06:58:25 UTC 2019 TALKER:  MESSAGE: kang123 FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:109)
-	at TCPServer$ServerHandler.run(TCPServer.java:392)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Thu May 23 06:58:30 UTC 2019 TALKER:  MESSAGE: kang123qqqq FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:109)
-	at TCPServer$ServerHandler.run(TCPServer.java:392)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.0ms
-Thu May 23 07:02:58 UTC 2019 Server: Accept 223.38.24.74 54178
-[FROM Client] TIME:Thu May 23 07:03:01 UTC 2019 TALKER:  MESSAGE:  FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:109)
-	at TCPServer$ServerHandler.run(TCPServer.java:392)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Thu May 23 07:03:02 UTC 2019 TALKER:  MESSAGE:  FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:109)
-	at TCPServer$ServerHandler.run(TCPServer.java:392)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Thu May 23 07:03:04 UTC 2019 TALKER:  MESSAGE:  FUNC: 10 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberIDCheck(DBCon.java:109)
-	at TCPServer$ServerHandler.run(TCPServer.java:392)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.0ms
-Thu May 23 07:03:26 UTC 2019 Server: Accept 223.38.24.74 54188
-Thu May 23 07:03:30 UTC 2019 Server: Accept 223.38.24.74 54190
-[FROM Client] TIME:Thu May 23 07:03:38 UTC 2019 TALKER:  MESSAGE: {"id":"kang123","pw":"123"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:157)
-	at TCPServer$ServerHandler.run(TCPServer.java:378)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Thu May 23 07:05:04 UTC 2019 TALKER:  MESSAGE: {"id":"kang123","pw":"123"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:157)
-	at TCPServer$ServerHandler.run(TCPServer.java:378)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Thu May 23 07:05:12 UTC 2019 TALKER:  MESSAGE: {"id":"kang123","pw":"123"} FUNC: 9 NUMBER: 0
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.memberLoginCheck(DBCon.java:157)
-	at TCPServer$ServerHandler.run(TCPServer.java:378)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.0ms
-Thu May 23 07:05:59 UTC 2019 Server: Accept 223.38.24.74 54234
-[FROM Client] TIME:Thu May 23 07:06:04 UTC 2019 TALKER:  MESSAGE: kkk FUNC: 5 NUMBER: 0
-[SET TALKER] nickname: kkk
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Thu May 23 07:06:05 UTC 2019 TALKER: kkk MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Thu May 23 07:06:05 UTC 2019 TALKER: kkk MESSAGE:  FUNC: 14 NUMBER: jscxa
-[{"nick":"kkk"}]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Thu May 23 07:06:10 UTC 2019 TALKER: kkk MESSAGE:  FUNC: 6 NUMBER: jscxa
-[REQUEST EXIT] : 
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertMarkData(DBCon.java:307)
-	at TCPServer$ServerHandler.run(TCPServer.java:318)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[REQUEST EXIT] RECEIVER LIST: kkk 
-[REQUEST EXIT] APPLY MY INFO
-[REQUEST EXIT] ROOM EMPTY!!
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeUpdate(ClientSidePreparedStatement.java:192)
-	at DBCon.insertTalk(DBCon.java:54)
-	at TCPServer$ServerHandler.run(TCPServer.java:340)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Thu May 23 07:06:10 UTC 2019 TALKER: kkk MESSAGE: jscxa FUNC: 15 NUMBER: 
-[REQUEST RESULT] jscxa
-[DBCon] MAKE String
-java.sql.SQLNonTransientConnectionException: (conn=13) Connection is closed
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:240)
-	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:171)
-	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:238)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:230)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:157)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:172)
-	at DBCon.NLPHashmapByRoom(DBCon.java:381)
-	at TCPServer$ServerHandler.run(TCPServer.java:499)
-Caused by: java.sql.SQLException: Connection is closed
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.cmdPrologue(AbstractQueryProtocol.java:1807)
-	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:273)
-	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:221)
-	... 4 more
-[DBCon] Analyze 0
-Thu May 23 07:06:34 UTC 2019 Server: Accept 223.38.24.74 54244
-[FROM Client] TIME:Thu May 23 07:06:39 UTC 2019 TALKER:  MESSAGE: kkk FUNC: 5 NUMBER: 0
-[SET TALKER] nickname: kkk
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Thu May 23 07:06:40 UTC 2019 TALKER: kkk MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Thu May 23 07:06:40 UTC 2019 TALKER: kkk MESSAGE:  FUNC: 14 NUMBER: 3vq6b
-[{"nick":"kkk"}]
-Elapsed Time: 0.0ms
-Thu May 23 07:07:00 UTC 2019 Server: Accept 223.38.24.74 54254
-[FROM Client] TIME:Thu May 23 07:07:08 UTC 2019 TALKER:  MESSAGE: 111 FUNC: 5 NUMBER: 0
-[SET TALKER] nickname: 111
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Thu May 23 07:07:09 UTC 2019 TALKER: 111 MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Thu May 23 07:07:10 UTC 2019 TALKER: 111 MESSAGE:  FUNC: 14 NUMBER: mi44p
-[{"nick":"111"}]
-Elapsed Time: 0.0ms
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.046s
+[FROM Client] TIME:Sat May 25 13:41:15 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 0.529s
+[FROM Client] TIME:Sat May 25 13:41:24 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.079s
+[FROM Client] TIME:Sat May 25 13:41:52 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.369s
+[FROM Client] TIME:Sat May 25 13:43:15 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.041s
+Sat May 25 13:45:52 UTC 2019 Server: Accept 118.216.115.231 14435
+Sat May 25 13:45:52 UTC 2019 Server: Accept 118.216.115.231 14443
+Sat May 25 13:45:52 UTC 2019 Server: Accept 118.216.115.231 14461
+[FROM Client] TIME:Sat May 25 13:46:01 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sat May 25 13:46:11 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 0.696s
+[FROM Client] TIME:Sat May 25 13:46:20 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.082s
+Sat May 25 14:00:12 UTC 2019 Server: Accept 118.216.115.231 14578
+Sat May 25 14:00:40 UTC 2019 Server: Accept 118.216.115.231 14619
+Sat May 25 14:00:40 UTC 2019 Server: Accept 118.216.115.231 14626
+Sat May 25 14:00:40 UTC 2019 Server: Accept 118.216.115.231 14630
+[FROM Client] TIME:Sat May 25 14:00:41 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sat May 25 14:00:42 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 8.496s
+[FROM Client] TIME:Sat May 25 14:00:59 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.533s
+Sat May 25 14:01:18 UTC 2019 Server: Accept 118.216.115.231 14649
+Sat May 25 14:03:46 UTC 2019 Server: Accept 118.216.115.231 14964
+Sat May 25 14:04:05 UTC 2019 Server: Accept 118.216.115.231 1042
+[FROM Client] TIME:Sat May 25 14:04:13 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.163s
+[FROM Client] TIME:Sat May 25 14:04:22 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 0.816s
+[FROM Client] TIME:Sat May 25 14:04:32 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 9.512s
+[FROM Client] TIME:Sat May 25 14:04:50 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.783s
+Sat May 25 14:07:47 UTC 2019 Server: Accept 118.216.115.231 1123
+Sat May 25 14:07:48 UTC 2019 Server: Accept 118.216.115.231 1129
+[FROM Client] TIME:Sat May 25 14:07:57 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sat May 25 14:08:06 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 0.82s
+[FROM Client] TIME:Sat May 25 14:08:15 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.123s
+[FROM Client] TIME:Sat May 25 14:09:02 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 9.532s
+[FROM Client] TIME:Sat May 25 14:09:20 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 9 NUMBER: 0
+Sat May 25 14:10:17 UTC 2019 Server: Accept 118.216.115.231 1198
+Sat May 25 14:10:17 UTC 2019 Server: Accept 118.216.115.231 1204
+[FROM Client] TIME:Sat May 25 14:10:17 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sat May 25 14:10:27 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 1.02s
+[FROM Client] TIME:Sat May 25 14:10:36 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.079s
+Elapsed Time: 654.918s
+Sat May 25 14:24:07 UTC 2019 Server: Accept 118.216.115.231 1317
+Sat May 25 14:24:07 UTC 2019 Server: Accept 118.216.115.231 1322
+[FROM Client] TIME:Sat May 25 14:24:16 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.903s
+[FROM Client] TIME:Sat May 25 14:24:25 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 18.798s
+[FROM Client] TIME:Sat May 25 14:24:53 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.407s
+Sat May 25 14:26:44 UTC 2019 Server: Accept 118.216.115.231 1399
+Sat May 25 14:26:45 UTC 2019 Server: Accept 118.216.115.231 1404
+[FROM Client] TIME:Sat May 25 14:26:54 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sat May 25 14:27:03 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 0.287s
+[FROM Client] TIME:Sat May 25 14:27:13 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.081s
+Sat May 25 14:30:27 UTC 2019 Server: Accept 118.216.115.231 1492
+Sat May 25 14:30:28 UTC 2019 Server: Accept 118.216.115.231 1496
+[FROM Client] TIME:Sat May 25 14:30:37 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 9.249s
+[FROM Client] TIME:Sat May 25 14:30:55 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 9.824s
+[FROM Client] TIME:Sat May 25 14:31:33 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 9.772s
+Sat May 25 14:35:24 UTC 2019 Server: Accept 118.216.115.231 1601
+Sat May 25 14:35:24 UTC 2019 Server: Accept 118.216.115.231 1605
+[FROM Client] TIME:Sat May 25 14:35:33 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.123s
+[FROM Client] TIME:Sat May 25 14:35:42 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
+Elapsed Time: 10.316s
+[FROM Client] TIME:Sat May 25 14:36:11 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 23fdw
+{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
+Elapsed Time: 0.291s
 Server: DB Connecting..
 Connecting...
 DB Conncted.
 Server: Success DB Connect
 Server: Socket Connecting...
-Fri May 24 07:35:54 UTC 2019 Server: Accept 125.130.12.69 57530
-[FROM Client] TIME:Fri May 24 07:36:01 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"b485b6b897b80469512ec3b7d3798954460a231341356cc972dd12825cd6cff9"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Failed.
-Elapsed Time: 0.025ms
-[FROM Client] TIME:Fri May 24 07:36:07 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 9 NUMBER: 0
+Sat May 25 17:48:36 UTC 2019 Server: Accept 118.216.115.231 57394
+[FROM Client] TIME:Sat May 25 17:48:37 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
 [memberRegisterID] Assertion Success.
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Fri May 24 07:36:11 UTC 2019 TALKER: c1234 MESSAGE:   FUNC: 12 NUMBER: 0
-Elapsed Time: 0.023ms
-Fri May 24 07:50:27 UTC 2019 Server: Accept 223.38.36.215 39920
-[FROM Client] TIME:Fri May 24 07:50:40 UTC 2019 TALKER:  MESSAGE: {"id":"mmm","pw":"ca6ee3fbbf82d7188c01cf92ceb416ff1ca2537ed3baf031cd67fa7a23486dcb"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-Elapsed Time: 0.039ms
-[FROM Client] TIME:Fri May 24 07:50:43 UTC 2019 TALKER: mmm MESSAGE:   FUNC: 12 NUMBER: 0
-Elapsed Time: 0.003ms
-[FROM Client] TIME:Fri May 24 07:50:45 UTC 2019 TALKER: mmm MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Fri May 24 07:50:46 UTC 2019 TALKER: mmm MESSAGE:  FUNC: 14 NUMBER: 86wq0
-[{"nick":"mmm"}]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Fri May 24 07:50:48 UTC 2019 TALKER: mmm MESSAGE: START FUNC: 3 NUMBER: 86wq0
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.034s
+[FROM Client] TIME:Sat May 25 17:48:39 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"092gk","content":"","date":"Sat May 25 15:10:38 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"135ua","content":"가나다 라마바사 미국은 잘되지 가나다 라마바사 키보드 하나라도 나와야 된다 키보드 티월드 키워드 키워드 ","date":"Sat May 25 16:16:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"2k799","content":"","date":"Sat May 25 17:18:14 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"43bhp","content":"","date":"Sat May 25 16:14:28 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"66dze","content":"녹음 시작합니다 인지 확인할 수 있나요 강조 북마크 다 잘됩니다 순하고 향기로운 섬유향수 알고리즘 문제 해결 전략 알고리즘 트레이닝 인공지능 현대적 접근방식 소프트웨어 공학은 너무 어렵다 데이터베이스 시스템은 점수가 잘 안나왔다 대명사 고유명사 일반명사 의존명사 모란 네이버 클로바 ","date":"Sat May 25 17:19:44 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"8h5v2","content":"시작되나 시작 바이크 안개등 마이크가 안 됐던 거야 된다 됀다 블루 스택 10승 자료구조 마이크가 어디 있나 알고리즘 문제 해결 전략 c로 쓴 자료 구조론 소프트웨어 공학 가나다 라마바사 순하고 향기로운 섬유향수 김민정 서버에서 프로 산 후에 클라이언트에서도 크로스를 호출해 주어 정상적인 상태가 됩니다 unix network programming 2장에 보면 11개 tcp 상태 전이 그림이 나와 있습니다 참고하시면 될 것 같습니다 ","date":"Sat May 25 15:15:50 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"},{"number":"n0340","content":"","date":"Sat May 25 17:04:16 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"p5282","content":"","date":"Sat May 25 16:10:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"pw2mk","content":"","date":"Sat May 25 15:13:19 UTC 2019","members":"c1234 ","title":"19_05_261234"},{"number":"q8z18","content":"도검 시작 합니다 토스트 만들기 나빼고 아구찜 등기부 등본 드럽게 못 알아들어 일기보다 라든요 코도모 드래곤 코도모 드래곤 목소리가 커도 못 알아들어 ","date":"Sat May 25 15:24:29 UTC 2019","members":"c1234 ","title":"19_05_26"}],"talkWithMe":"chan ","contributionData":[67.0,94.8,50.0]}
+Elapsed Time: 0.051s
+[FROM Client] TIME:Sat May 25 17:49:05 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"092gk","content":"","date":"Sat May 25 15:10:38 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"135ua","content":"가나다 라마바사 미국은 잘되지 가나다 라마바사 키보드 하나라도 나와야 된다 키보드 티월드 키워드 키워드 ","date":"Sat May 25 16:16:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"2k799","content":"","date":"Sat May 25 17:18:14 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"43bhp","content":"","date":"Sat May 25 16:14:28 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"66dze","content":"녹음 시작합니다 인지 확인할 수 있나요 강조 북마크 다 잘됩니다 순하고 향기로운 섬유향수 알고리즘 문제 해결 전략 알고리즘 트레이닝 인공지능 현대적 접근방식 소프트웨어 공학은 너무 어렵다 데이터베이스 시스템은 점수가 잘 안나왔다 대명사 고유명사 일반명사 의존명사 모란 네이버 클로바 ","date":"Sat May 25 17:19:44 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"8h5v2","content":"시작되나 시작 바이크 안개등 마이크가 안 됐던 거야 된다 됀다 블루 스택 10승 자료구조 마이크가 어디 있나 알고리즘 문제 해결 전략 c로 쓴 자료 구조론 소프트웨어 공학 가나다 라마바사 순하고 향기로운 섬유향수 김민정 서버에서 프로 산 후에 클라이언트에서도 크로스를 호출해 주어 정상적인 상태가 됩니다 unix network programming 2장에 보면 11개 tcp 상태 전이 그림이 나와 있습니다 참고하시면 될 것 같습니다 ","date":"Sat May 25 15:15:50 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"},{"number":"n0340","content":"","date":"Sat May 25 17:04:16 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"p5282","content":"","date":"Sat May 25 16:10:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"pw2mk","content":"","date":"Sat May 25 15:13:19 UTC 2019","members":"c1234 ","title":"19_05_261234"},{"number":"q8z18","content":"도검 시작 합니다 토스트 만들기 나빼고 아구찜 등기부 등본 드럽게 못 알아들어 일기보다 라든요 코도모 드래곤 코도모 드래곤 목소리가 커도 못 알아들어 ","date":"Sat May 25 15:24:29 UTC 2019","members":"c1234 ","title":"19_05_26"}],"talkWithMe":"chan ","contributionData":[67.0,94.8,50.0]}
+Elapsed Time: 0.029s
+[FROM Client] TIME:Sat May 25 17:49:12 UTC 2019 TALKER: nicks MESSAGE: 66dze FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 66dze
+{"wordFrequency":{"북":1,"방식":1,"의존":1,"일반":1,"네이버":1,"향수":1,"알고리즘":2,"모란":1,"명사":3,"인지":1,"점수":1,"접근":1,"바":1,"고유":1,"수":1,"확인":1,"데이터베이스 시스템":1,"녹음":1,"현대":1,"전략":1,"문제 해결":1,"인공지능":1,"트레이닝":1,"섬유":1,"시작":1,"소프트웨어 공학":1,"강조":1,"대명사":1,"클로":1,"향기":1,"마크":1},"fiveKeyWord":{"명사":3,"의존":1,"인공지능":1,"강조":1,"알고리즘":2},"contrib":{"c1234":1.0},"cont":[{"room":"66dze","time":"Sat May 25 17:19:47 UTC 2019","msg":"녹음 시작합니다","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:19:52 UTC 2019","msg":"인지 확인할 수 있나요","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:19:58 UTC 2019","msg":"강조 북마크 다 잘됩니다","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:09 UTC 2019","msg":"순하고 향기로운 섬유향수","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:15 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:21 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:26 UTC 2019","msg":"인공지능 현대적 접근방식","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:32 UTC 2019","msg":"소프트웨어 공학은 너무 어렵다","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:38 UTC 2019","msg":"데이터베이스 시스템은 점수가 잘 안나왔다","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:46 UTC 2019","msg":"대명사 고유명사","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:52 UTC 2019","msg":"일반명사 의존명사","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:58 UTC 2019","msg":"모란","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:21:02 UTC 2019","msg":"네이버 클로바","id":"c1234"}],"markData":"0000000000000"}
+Elapsed Time: 0.012s
+[FROM Client] TIME:Sat May 25 17:49:43 UTC 2019 TALKER: nicks MESSAGE: 많이 말한 거 FUNC: 1 NUMBER: 0
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sat May 25 17:49:43 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: g4coi
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sat May 25 17:49:45 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: g4coi
 [REQUEST START] INSERT START MESSAGE TO DB
-[REQUEST START] RECEIVER LIST : 
-SUCCESS SENDING START MESSAGE
-Elapsed Time: 0.041ms
-[FROM Client] TIME:Fri May 24 07:50:57 UTC 2019 TALKER: mmm MESSAGE: 하하 FUNC: 0 NUMBER: 86wq0
+[REQUEST START] RECEIVER LIST : Elapsed Time: 0.001s
+[FROM Client] TIME:Sat May 25 17:49:49 UTC 2019 TALKER: nicks MESSAGE: 주가 FUNC: 0 NUMBER: g4coi
 [DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Fri May 24 07:51:01 UTC 2019 TALKER: mmm MESSAGE: 다스 FUNC: 0 NUMBER: 86wq0
+[RECEIVER LIST] : 주가 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.016s
+[FROM Client] TIME:Sat May 25 17:49:53 UTC 2019 TALKER: nicks MESSAGE: 녹음 중입니까 FUNC: 0 NUMBER: g4coi
 [DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Fri May 24 07:51:06 UTC 2019 TALKER: mmm MESSAGE: 테스 FUNC: 0 NUMBER: 86wq0
+[RECEIVER LIST] : 녹음 중 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.01s
+[FROM Client] TIME:Sat May 25 17:49:58 UTC 2019 TALKER: nicks MESSAGE: 과연 FUNC: 0 NUMBER: g4coi
 [DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Fri May 24 07:51:09 UTC 2019 TALKER: mmm MESSAGE: 테스트 FUNC: 0 NUMBER: 86wq0
+[RECEIVER LIST] : [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sat May 25 17:50:14 UTC 2019 TALKER: nicks MESSAGE: 갤럭시 s9 FUNC: 0 NUMBER: g4coi
 [DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.004ms
-[FROM Client] TIME:Fri May 24 07:51:24 UTC 2019 TALKER: mmm MESSAGE: 0000 FUNC: 6 NUMBER: 86wq0
-[REQUEST EXIT] : 0000
-[REQUEST EXIT] RECEIVER LIST: mmm 
+[RECEIVER LIST] : 갤럭시 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.004s
+[FROM Client] TIME:Sat May 25 17:50:22 UTC 2019 TALKER: nicks MESSAGE: 스마트폰은 좋은 것 같다 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 스마트폰 것 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.007s
+[FROM Client] TIME:Sat May 25 17:50:27 UTC 2019 TALKER: nicks MESSAGE: 생각보다 클로바는 잘 못 알아듣는다 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 생각 클로 바 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.01s
+[FROM Client] TIME:Sat May 25 17:50:32 UTC 2019 TALKER: nicks MESSAGE: 구글 api는 비탈리 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 구글 비탈리 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.006s
+[FROM Client] TIME:Sat May 25 17:50:41 UTC 2019 TALKER: nicks MESSAGE: 구글 api가 노숙을 했다 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 구글 노숙 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.011s
+[FROM Client] TIME:Sat May 25 17:50:47 UTC 2019 TALKER: nicks MESSAGE: 구글 api도 한번 써볼 걸 그랬다 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 구글 번 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.006s
+[FROM Client] TIME:Sat May 25 17:50:54 UTC 2019 TALKER: nicks MESSAGE: 아니 말한거는 뭐라고 말할까 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 말 것 뭐 말 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.011s
+[FROM Client] TIME:Sat May 25 17:51:02 UTC 2019 TALKER: nicks MESSAGE: 코팅 다크 리 잘되고 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 코팅 다크 리 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.007s
+[FROM Client] TIME:Sat May 25 17:51:07 UTC 2019 TALKER: nicks MESSAGE: 버튼도 캐릭터 잘 되고 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 버튼 캐릭터 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.009s
+[FROM Client] TIME:Sat May 25 17:51:13 UTC 2019 TALKER: nicks MESSAGE: 무영도 괜찮은 곳 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 영도 곳 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.004s
+[FROM Client] TIME:Sat May 25 17:51:20 UTC 2019 TALKER: nicks MESSAGE: 이제 잘 시간입니다 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 시간 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.005s
+[FROM Client] TIME:Sat May 25 17:51:24 UTC 2019 TALKER: nicks MESSAGE: 파일 만든 것 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 파일 것 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.005s
+[FROM Client] TIME:Sat May 25 17:51:31 UTC 2019 TALKER: nicks MESSAGE: 팔봉면 구도 스타트로 105 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 팔봉면 구도 스타트 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.01s
+[FROM Client] TIME:Sat May 25 17:51:38 UTC 2019 TALKER: nicks MESSAGE: 파일 뽑는거에서 스타트랑 인데 제외하고 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 파일 거 스타트 제외 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.011s
+[FROM Client] TIME:Sat May 25 17:51:44 UTC 2019 TALKER: nicks MESSAGE: 나머지 꽃들로 시간 출력 해 사면 될 것 같다 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 나머지 꽃 시간 출력 사면 것 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.012s
+[FROM Client] TIME:Sat May 25 17:51:51 UTC 2019 TALKER: nicks MESSAGE: 마크 데이터 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 마크 데이터 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.003s
+[FROM Client] TIME:Sat May 25 17:51:59 UTC 2019 TALKER: nicks MESSAGE: 짝수는 모르겠습니다 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 짝수 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.004s
+[FROM Client] TIME:Sat May 25 17:52:10 UTC 2019 TALKER: nicks MESSAGE: 얼마나 나올지 궁금하다 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.003s
+[FROM Client] TIME:Sat May 25 17:52:15 UTC 2019 TALKER: nicks MESSAGE: 중간에 들어오는 거 확인 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 중간 거 확인 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.01s
+[FROM Client] TIME:Sat May 25 17:52:20 UTC 2019 TALKER: nicks MESSAGE: 중간에 들어온 거 확인해서 생각해보니까 FUNC: 0 NUMBER: g4coi
+[DEFAULT MESSAGE]
+[RECEIVER LIST] : 중간 거 확인 생각 [SEND SUCCESS & INSERT MESSAGE TO DB]
+Elapsed Time: 0.01s
+[FROM Client] TIME:Sat May 25 17:52:23 UTC 2019 TALKER: nicks MESSAGE: 01010101010101010101000 FUNC: 5 NUMBER: g4coi
+[REQUEST EXIT] 01010101010101010101000
+[REQUEST EXIT] RECEIVER LIST: 
 [REQUEST EXIT] APPLY MY INFO
 [REQUEST EXIT] ROOM EMPTY!!
-Elapsed Time: 0.043ms
-[FROM Client] TIME:Fri May 24 07:51:25 UTC 2019 TALKER: mmm MESSAGE: 86wq0 FUNC: 15 NUMBER: 
-[REQUEST RESULT] 86wq0
-[DBCon] MAKE String
-START 하하 다스 테스 테스트 END 
-Elapsed Time: 0.001ms
-[FROM Client] TIME:Fri May 24 07:53:48 UTC 2019 TALKER: mmm MESSAGE:  FUNC: 1 NUMBER: 
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.0ms
-Fri May 24 07:54:33 UTC 2019 Server: Accept 223.38.36.215 39984
-[FROM Client] TIME:Fri May 24 07:54:40 UTC 2019 TALKER:  MESSAGE: {"id":"mmm","pw":"ca6ee3fbbf82d7188c01cf92ceb416ff1ca2537ed3baf031cd67fa7a23486dcb"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-Elapsed Time: 0.04ms
-[FROM Client] TIME:Fri May 24 07:54:42 UTC 2019 TALKER: mmm MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Fri May 24 07:54:42 UTC 2019 TALKER: mmm MESSAGE:  FUNC: 14 NUMBER: aj125
-[{"nick":"mmm"}]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Fri May 24 07:54:58 UTC 2019 TALKER: mmm MESSAGE: START FUNC: 3 NUMBER: aj125
-[REQUEST START] INSERT START MESSAGE TO DB
-[REQUEST START] RECEIVER LIST : 
-SUCCESS SENDING START MESSAGE
-Elapsed Time: 0.084ms
-[FROM Client] TIME:Fri May 24 07:55:04 UTC 2019 TALKER: mmm MESSAGE: test FUNC: 0 NUMBER: aj125
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.365ms
-[FROM Client] TIME:Fri May 24 07:55:55 UTC 2019 TALKER: mmm MESSAGE: 하하 FUNC: 0 NUMBER: aj125
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003ms
-[FROM Client] TIME:Fri May 24 07:56:09 UTC 2019 TALKER: mmm MESSAGE: 하아 FUNC: 0 NUMBER: aj125
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003ms
-Fri May 24 09:46:41 UTC 2019 Server: Accept 223.38.36.215 41100
-[FROM Client] TIME:Fri May 24 09:46:50 UTC 2019 TALKER:  MESSAGE: {"id":"mmm","pw":"ca6ee3fbbf82d7188c01cf92ceb416ff1ca2537ed3baf031cd67fa7a23486dcb"} FUNC: 9 NUMBER: 0
-[memberRegisterID] Assertion Success.
-Elapsed Time: 0.159ms
-[FROM Client] TIME:Fri May 24 09:46:52 UTC 2019 TALKER: mmm MESSAGE:  FUNC: 1 NUMBER: 0
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Fri May 24 09:46:52 UTC 2019 TALKER: mmm MESSAGE:  FUNC: 14 NUMBER: uw8x3
-[{"nick":"mmm"}]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Fri May 24 09:46:54 UTC 2019 TALKER: mmm MESSAGE: START FUNC: 3 NUMBER: uw8x3
-[REQUEST START] INSERT START MESSAGE TO DB
-[REQUEST START] RECEIVER LIST : 
-SUCCESS SENDING START MESSAGE
-Elapsed Time: 0.082ms
-[FROM Client] TIME:Fri May 24 09:47:02 UTC 2019 TALKER: mmm MESSAGE: 하아 FUNC: 0 NUMBER: uw8x3
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.12ms
-[FROM Client] TIME:Fri May 24 09:47:06 UTC 2019 TALKER: mmm MESSAGE: 하이 FUNC: 0 NUMBER: uw8x3
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 1.516ms
-[FROM Client] TIME:Fri May 24 09:47:10 UTC 2019 TALKER: mmm MESSAGE: 하이 FUNC: 0 NUMBER: uw8x3
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.041ms
-[FROM Client] TIME:Fri May 24 09:47:13 UTC 2019 TALKER: mmm MESSAGE: 해 FUNC: 0 NUMBER: uw8x3
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Fri May 24 09:47:26 UTC 2019 TALKER: mmm MESSAGE: 네 그렇게 적어서 다음주까지 완성하는 것 좀 FUNC: 0 NUMBER: uw8x3
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003ms
-[FROM Client] TIME:Fri May 24 09:51:09 UTC 2019 TALKER: mmm MESSAGE:   FUNC: 12 NUMBER: uw8x3
-Elapsed Time: 0.288ms
-[FROM Client] TIME:Fri May 24 09:51:17 UTC 2019 TALKER: mmm MESSAGE:  FUNC: 1 NUMBER: uw8x3
-[generate PIN number]
-[assign PIN number]
-[Set HOST and Number Success.]
-[Set RoomList Success]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Fri May 24 09:51:17 UTC 2019 TALKER: mmm MESSAGE:  FUNC: 14 NUMBER: wxpv0
-[{"nick":"mmm"}]
-Elapsed Time: 0.0ms
-[FROM Client] TIME:Fri May 24 09:51:19 UTC 2019 TALKER: mmm MESSAGE: START FUNC: 3 NUMBER: wxpv0
-[REQUEST START] INSERT START MESSAGE TO DB
-[REQUEST START] RECEIVER LIST : 
-SUCCESS SENDING START MESSAGE
-Elapsed Time: 0.042ms
-[FROM Client] TIME:Fri May 24 09:51:23 UTC 2019 TALKER: mmm MESSAGE: 하 FUNC: 0 NUMBER: wxpv0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.039ms
-[FROM Client] TIME:Fri May 24 09:51:26 UTC 2019 TALKER: mmm MESSAGE: 테스트 FUNC: 0 NUMBER: wxpv0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 1.892ms
-[FROM Client] TIME:Fri May 24 09:51:32 UTC 2019 TALKER: mmm MESSAGE: 잘되는지 모르겠네 FUNC: 0 NUMBER: wxpv0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003ms
-[FROM Client] TIME:Fri May 24 09:51:38 UTC 2019 TALKER: mmm MESSAGE: 말귀를 잘 알아듣는지 잘 모르겠어서 FUNC: 0 NUMBER: wxpv0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Fri May 24 09:51:45 UTC 2019 TALKER: mmm MESSAGE: 조용하면 잘 되네 FUNC: 0 NUMBER: wxpv0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003ms
-[FROM Client] TIME:Fri May 24 09:51:49 UTC 2019 TALKER: mmm MESSAGE: 시끄러우니까 잘 안되는구나 FUNC: 0 NUMBER: wxpv0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.536ms
-[FROM Client] TIME:Fri May 24 09:51:55 UTC 2019 TALKER: mmm MESSAGE: 경기대 FUNC: 0 NUMBER: wxpv0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Fri May 24 09:51:58 UTC 2019 TALKER: mmm MESSAGE: 테스트 FUNC: 0 NUMBER: wxpv0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 2.786ms
-[FROM Client] TIME:Fri May 24 09:52:01 UTC 2019 TALKER: mmm MESSAGE: 아무리 FUNC: 0 NUMBER: wxpv0
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : mmm 
-[SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002ms
-[FROM Client] TIME:Fri May 24 09:52:07 UTC 2019 TALKER: mmm MESSAGE: 000000000 FUNC: 6 NUMBER: wxpv0
-[REQUEST EXIT] : 000000000
-[REQUEST EXIT] RECEIVER LIST: mmm 
-[REQUEST EXIT] APPLY MY INFO
-[REQUEST EXIT] ROOM EMPTY!!
-Elapsed Time: 0.046ms
-[FROM Client] TIME:Fri May 24 09:52:08 UTC 2019 TALKER: mmm MESSAGE: wxpv0 FUNC: 15 NUMBER: 
-[REQUEST RESULT] wxpv0
-[DBCon] MAKE String
-START 하 테스트 잘되는지 모르겠네 말귀를 잘 알아듣는지 잘 모르겠어서 조용하면 잘 되네 시끄러우니까 잘 안되는구나 경기대 테스트 아무리 END 
-Elapsed Time: 0.039ms
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sat May 25 17:52:24 UTC 2019 TALKER: nicks MESSAGE: g4coi FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : g4coi
+{"wordFrequency":{"구글":2,"짝수":1,"것":2,"꽃":1,"제외":1,"번":1,"중간":2,"비탈리":1,"구도":1,"나머지":1,"말":2,"출력":1,"사면":1,"뭐":1,"중":1,"스마트폰":1,"바":1,"데이터":1,"확인":2,"생각":2,"주가":1,"다크":1,"녹음":1,"스타트":2,"코팅":1,"파일":2,"리":1,"캐릭터":1,"갤럭시":1,"버튼":1,"시간":2,"거":2,"팔봉면":1,"클로":1,"곳":1,"마크":1,"노숙":1,"영도":1},"fiveKeyWord":{"시간":2,"말":2,"스타트":2,"확인":2,"중간":2},"contrib":{"c1234":1.0},"cont":[{"room":"g4coi","time":"Sat May 25 17:49:49 UTC 2019","msg":"주가","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:49:53 UTC 2019","msg":"녹음 중입니까","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:49:58 UTC 2019","msg":"과연","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:14 UTC 2019","msg":"갤럭시 s9","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:22 UTC 2019","msg":"스마트폰은 좋은 것 같다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:27 UTC 2019","msg":"생각보다 클로바는 잘 못 알아듣는다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:32 UTC 2019","msg":"구글 api는 비탈리","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:41 UTC 2019","msg":"구글 api가 노숙을 했다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:47 UTC 2019","msg":"구글 api도 한번 써볼 걸 그랬다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:54 UTC 2019","msg":"아니 말한거는 뭐라고 말할까","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:02 UTC 2019","msg":"코팅 다크 리 잘되고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:07 UTC 2019","msg":"버튼도 캐릭터 잘 되고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:13 UTC 2019","msg":"무영도 괜찮은 곳","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:20 UTC 2019","msg":"이제 잘 시간입니다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:24 UTC 2019","msg":"파일 만든 것","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:31 UTC 2019","msg":"팔봉면 구도 스타트로 105","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:38 UTC 2019","msg":"파일 뽑는거에서 스타트랑 인데 제외하고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:44 UTC 2019","msg":"나머지 꽃들로 시간 출력 해 사면 될 것 같다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:51 UTC 2019","msg":"마크 데이터","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:59 UTC 2019","msg":"짝수는 모르겠습니다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:10 UTC 2019","msg":"얼마나 나올지 궁금하다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:15 UTC 2019","msg":"중간에 들어오는 거 확인","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:20 UTC 2019","msg":"중간에 들어온 거 확인해서 생각해보니까","id":"c1234"}],"markData":"01010101010101010101000"}
+Elapsed Time: 0.005s
+[FROM Client] TIME:Sat May 25 17:53:12 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"092gk","content":"","date":"Sat May 25 15:10:38 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"135ua","content":"가나다 라마바사 미국은 잘되지 가나다 라마바사 키보드 하나라도 나와야 된다 키보드 티월드 키워드 키워드 ","date":"Sat May 25 16:16:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"2k799","content":"","date":"Sat May 25 17:18:14 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"43bhp","content":"","date":"Sat May 25 16:14:28 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"66dze","content":"녹음 시작합니다 인지 확인할 수 있나요 강조 북마크 다 잘됩니다 순하고 향기로운 섬유향수 알고리즘 문제 해결 전략 알고리즘 트레이닝 인공지능 현대적 접근방식 소프트웨어 공학은 너무 어렵다 데이터베이스 시스템은 점수가 잘 안나왔다 대명사 고유명사 일반명사 의존명사 모란 네이버 클로바 ","date":"Sat May 25 17:19:44 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"8h5v2","content":"시작되나 시작 바이크 안개등 마이크가 안 됐던 거야 된다 됀다 블루 스택 10승 자료구조 마이크가 어디 있나 알고리즘 문제 해결 전략 c로 쓴 자료 구조론 소프트웨어 공학 가나다 라마바사 순하고 향기로운 섬유향수 김민정 서버에서 프로 산 후에 클라이언트에서도 크로스를 호출해 주어 정상적인 상태가 됩니다 unix network programming 2장에 보면 11개 tcp 상태 전이 그림이 나와 있습니다 참고하시면 될 것 같습니다 ","date":"Sat May 25 15:15:50 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"g4coi","content":"주가 녹음 중입니까 과연 갤럭시 s9 스마트폰은 좋은 것 같다 생각보다 클로바는 잘 못 알아듣는다 구글 api는 비탈리 구글 api가 노숙을 했다 구글 api도 한번 써볼 걸 그랬다 아니 말한거는 뭐라고 말할까 코팅 다크 리 잘되고 버튼도 캐릭터 잘 되고 무영도 괜찮은 곳 이제 잘 시간입니다 파일 만든 것 팔봉면 구도 스타트로 105 파일 뽑는거에서 스타트랑 인데 제외하고 나머지 꽃들로 시간 출력 해 사면 될 것 같다 마크 데이터 짝수는 모르겠습니다 얼마나 나올지 궁금하다 중간에 들어오는 거 확인 중간에 들어온 거 확인해서 생각해보니까 ","date":"Sat May 25 17:49:45 UTC 2019","members":"c1234 ","title":"많이 말한 거"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"},{"number":"n0340","content":"","date":"Sat May 25 17:04:16 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"p5282","content":"","date":"Sat May 25 16:10:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"pw2mk","content":"","date":"Sat May 25 15:13:19 UTC 2019","members":"c1234 ","title":"19_05_261234"},{"number":"q8z18","content":"도검 시작 합니다 토스트 만들기 나빼고 아구찜 등기부 등본 드럽게 못 알아들어 일기보다 라든요 코도모 드래곤 코도모 드래곤 목소리가 커도 못 알아들어 ","date":"Sat May 25 15:24:29 UTC 2019","members":"c1234 ","title":"19_05_26"}],"talkWithMe":"chan ","contributionData":[67.2,95.19999999999999,50.0]}
+Elapsed Time: 0.023s
+[FROM Client] TIME:Sat May 25 17:53:34 UTC 2019 TALKER: nicks MESSAGE: g4coi FUNC: 9 NUMBER: 
+Elapsed Time: 0.22s
+[FROM Client] TIME:Sat May 25 17:53:39 UTC 2019 TALKER: nicks MESSAGE: g4coi FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : g4coi
+{"wordFrequency":{"구글":2,"짝수":1,"것":2,"꽃":1,"제외":1,"번":1,"중간":2,"비탈리":1,"구도":1,"나머지":1,"말":2,"출력":1,"사면":1,"뭐":1,"중":1,"스마트폰":1,"바":1,"데이터":1,"확인":2,"생각":2,"주가":1,"다크":1,"녹음":1,"스타트":2,"코팅":1,"파일":2,"리":1,"캐릭터":1,"갤럭시":1,"버튼":1,"시간":2,"거":2,"팔봉면":1,"클로":1,"곳":1,"마크":1,"노숙":1,"영도":1},"fiveKeyWord":{"시간":2,"말":2,"스타트":2,"확인":2,"중간":2},"contrib":{"c1234":1.0},"cont":[{"room":"g4coi","time":"Sat May 25 17:49:49 UTC 2019","msg":"주가","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:49:53 UTC 2019","msg":"녹음 중입니까","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:49:58 UTC 2019","msg":"과연","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:14 UTC 2019","msg":"갤럭시 s9","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:22 UTC 2019","msg":"스마트폰은 좋은 것 같다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:27 UTC 2019","msg":"생각보다 클로바는 잘 못 알아듣는다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:32 UTC 2019","msg":"구글 api는 비탈리","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:41 UTC 2019","msg":"구글 api가 노숙을 했다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:47 UTC 2019","msg":"구글 api도 한번 써볼 걸 그랬다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:54 UTC 2019","msg":"아니 말한거는 뭐라고 말할까","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:02 UTC 2019","msg":"코팅 다크 리 잘되고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:07 UTC 2019","msg":"버튼도 캐릭터 잘 되고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:13 UTC 2019","msg":"무영도 괜찮은 곳","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:20 UTC 2019","msg":"이제 잘 시간입니다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:24 UTC 2019","msg":"파일 만든 것","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:31 UTC 2019","msg":"팔봉면 구도 스타트로 105","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:38 UTC 2019","msg":"파일 뽑는거에서 스타트랑 인데 제외하고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:44 UTC 2019","msg":"나머지 꽃들로 시간 출력 해 사면 될 것 같다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:51 UTC 2019","msg":"마크 데이터","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:59 UTC 2019","msg":"짝수는 모르겠습니다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:10 UTC 2019","msg":"얼마나 나올지 궁금하다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:15 UTC 2019","msg":"중간에 들어오는 거 확인","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:20 UTC 2019","msg":"중간에 들어온 거 확인해서 생각해보니까","id":"c1234"}],"markData":"01010101010101010101000"}
+Elapsed Time: 0.01s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:196)
+Socket Close

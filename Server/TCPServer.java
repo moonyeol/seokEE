@@ -25,7 +25,7 @@ import kr.co.shineware.nlp.komoran.model.Token;
 public class TCPServer implements Runnable {
 
     public static final int ServerPort = 9000;
-    public static final String ip = "18.223.112.209";
+    public static final String ip = "13.209.64.113";
     public static final Gson gson = new Gson();
 
     private DBCon db;
@@ -138,6 +138,9 @@ public class TCPServer implements Runnable {
     
     class ServerHandler extends Thread{
         private Socket conn;
+        BufferedReader in;
+        PrintWriter out;
+        docs doc = new docs();
 
         public ServerHandler(Socket conn){
             this.conn = conn;
@@ -165,15 +168,25 @@ public class TCPServer implements Runnable {
             ArrayList<Socket> receiverList = null;
             ClientInfo info = null;
 
-            while(true) {
-                try {
-                    BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                    PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(conn.getOutputStream())), true);
+            Title title = null;
 
-                    String readValue = null;
+            try{
+                in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(conn.getOutputStream())), true);
+            } catch(Exception e){
+                e.printStackTrace();
+                return;
+            }
+
+            while(true) {
+                try {                   
+                    
+                    /*String readValue = null;
                     while( readValue == null){
                         readValue = in.readLine();
-                    }
+                    }*/
+
+                    String readValue = in.readLine();
 
                     msg = gson.fromJson(readValue, SocketMessage.class);
 
@@ -208,7 +221,7 @@ public class TCPServer implements Runnable {
                             sb = new StringBuilder();
 
                             for(Token token : result){
-                                if(token.getPos().equals("NNG")){
+                                if(token.getPos().contains("NN") || token.getPos().equals("NP")){
                                     String morph = token.getMorph();
                                     sb.append(morph).append(" ");
 
@@ -228,30 +241,34 @@ public class TCPServer implements Runnable {
                                 db.insertTalk(new Talk(number, new Date().toString(), msg.message, talker));
                             break;
                         case Constant.PINCODE:
-                            System.out.println("[generate PIN number]");
-
                             stringData = randomSeed.get(seed++).toString();
 
-                            System.out.println("[assign PIN number]");
-
                             clientList.get(conn).setNumber(stringData);
-
-                            System.out.println("[Set HOST and Number Success.]");
 
                             roomList.put(stringData,new ArrayList<>());
                             roomList.get(stringData).add(conn);
 
                             roomRunning.put(stringData, false);
 
-                            System.out.println("[Set RoomList Success]");
+                            db.insertRoom(stringData, msg.message);
+                            
+                            title = new Title();
+                            title.title = msg.message;
+                            title.pincode = stringData;
 
-                            out.println(makeMessage(msg.func, stringData));
+                            out.println(makeMessage(msg.func, gson.toJson(title)));
                             break;
                         case Constant.ENTER:
+                            title = new Title();
+
                             if(roomList.get(msg.message) == null){
                                 System.out.println("[requestEnter] NULL RESPONSE FALSE");
 
-                                out.println(makeMessage(msg.func, "false"));
+                                title.pincode = "false";
+                                title.title = "";
+
+                                out.println(makeMessage(msg.func, gson.toJson(title)));
+
                             } else {
                                 System.out.println("[requestEnter] EXIST RESPONSE TRUE");
 
@@ -264,13 +281,17 @@ public class TCPServer implements Runnable {
                                 clientList.get(conn).setNumber(msg.message);
                                 roomList.get(msg.message).add(conn);
 
+                                title.title = db.getTitle(msg.message);
+
                                 if(roomRunning.get(msg.message) == true){
+                                    title.pincode = "running";
                                     System.out.println("[requestEnter] response running!!");
-                                    out.println(makeMessage(msg.func,"running"));
                                 } else {
+                                    title.pincode = "not running";
                                     System.out.println("[requestEnter] response not running!!");
-                                    out.println(makeMessage(msg.func,"not running"));
-                                }                                
+                                } 
+
+                                out.println(makeMessage(msg.func, gson.toJson(title)));                               
                             }
                             break;
                         case Constant.START:
@@ -380,8 +401,9 @@ public class TCPServer implements Runnable {
                             // REQUEST FILE
                             ArrayList<String> makeFile = db.searchMessageByRoom(msg.message);
 
-                            docs.mkdoc(makeFile, "/var/www/html/files", "content_" + msg.message);
-                            out.println(makeMessage(msg.func,"http://"+ ip +"/files/content_"+msg.message+".docx"));
+                            String tempFileName = "content_" + msg.message;
+                            doc.mkdoc(makeFile, "/var/www/html/files", tempFileName);
+                            out.println(makeMessage(msg.func,"http://"+ ip +"/files/content_"+msg.message+".doc"));
 
                             break;
                         case Constant.REQUEST_USERINFO:
@@ -415,6 +437,8 @@ public class TCPServer implements Runnable {
                                 }
                                 history.content = sb.toString();
                                 history.date = db.searchStartByRoom(myRoomNumber);
+                                history.title = db.getTitle(myRoomNumber);
+                                if(history.title == null) history.title = "NULL";
 
                                 histories.add(history);
                             }

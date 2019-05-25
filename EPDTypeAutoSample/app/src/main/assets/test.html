@@ -10,9 +10,9 @@
     <script src="d3.layout.cloud.js"></script>
 </head>
 <body>
-<div id="cloud"></div>
+<div id="cloud" style="width: 100%; height: 100%; text-align: center;"></div>
 <script type="text/javascript">
-    var weight = 10,   // change me
+    var weight = 15,   // change me
         width = 300,
         height = 200
 
@@ -20,7 +20,7 @@
     var myData = new Array();
 
     datas = window.android.requestStr();
-    document.write(datas);
+
     strings = datas.split(" ");
     for(var i=0; i<strings.length;i+=2){
         var data = new Object();
