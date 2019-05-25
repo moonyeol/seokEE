@@ -30,7 +30,9 @@ public class JoinRoom extends Activity {
                 String message = commSock.read();
                 SocketMessage msg = gson.fromJson(message,SocketMessage.class);
 
-                if(msg.message.equals("false")){
+                Title t = gson.fromJson(msg.message, Title.class);
+
+                if(t.pincode.equals("false")){
                     Toast.makeText(JoinRoom.this, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -38,8 +40,9 @@ public class JoinRoom extends Activity {
 
                     intent.putExtra("isHost", false);
                     intent.putExtra("pin", key);
+                    intent.putExtra("title", t.title);
 
-                    if(msg.message.equals("running")) intent.putExtra("running", true);
+                    if(t.pincode.equals("running")) intent.putExtra("running", true);
                     else intent.putExtra("running", false);
 
                     startActivity(intent);

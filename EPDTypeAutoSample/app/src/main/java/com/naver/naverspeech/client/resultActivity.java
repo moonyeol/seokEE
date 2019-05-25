@@ -15,12 +15,22 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import static com.naver.naverspeech.client.commSock.gson;
@@ -39,6 +49,7 @@ public class resultActivity extends AppCompatActivity {
     TextView contributionTV;
     ScrollView resultScroll;
     LinearLayout line;
+    RequestResult result;
 
     TextView[] keyword = new TextView[5];
     ArrayList<String> fiveKeyword = new ArrayList<>();
@@ -61,12 +72,6 @@ public class resultActivity extends AppCompatActivity {
         isExited = intent.getBooleanExtra("exited", false);
 
         exitBtn = findViewById(R.id.exit);
-        exitBtn.setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                finish();
-            }
-        });
 
         keyword[0] = findViewById(R.id.keyword1);
         keyword[1] = findViewById(R.id.keyword2);
@@ -74,21 +79,24 @@ public class resultActivity extends AppCompatActivity {
         keyword[3] = findViewById(R.id.keyword4);
         keyword[4] = findViewById(R.id.keyword5);
 
-        contributionTV =findViewById(R.id.contributionTV);
-        resultScroll = findViewById(R.id.resulScroll);
         line = findViewById(R.id.line);
 
+        exitBtn.setText("... 분석 중입니다 ...");
+        exitBtn.setEnabled(false);
+        exitBtn.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                finish();
+            }
+        });
 
         new Thread(new Runnable(){
             public void run(){
-                exitBtn.setText("... 분석 중입니다 ...");
-                exitBtn.setEnabled(false);
-
                 if(isExited) commSock.kick(commSock.EXIT, markedData);
 
                 commSock.kick(commSock.REQUEST_RESULT, pincode);
                 String msg = commSock.read();
-                RequestResult result = gson.fromJson(msg, RequestResult.class);
+                result = gson.fromJson(msg, RequestResult.class);
 
                 if(result == null){
                     Toast.makeText(resultActivity.this, "retrieve NULL", Toast.LENGTH_SHORT).show();
@@ -101,9 +109,9 @@ public class resultActivity extends AppCompatActivity {
                 for(Map.Entry<String, Integer> entry : result.fiveKeyWord.entrySet())
                     fiveKeyword.add(entry.getKey());
 
-                int i = 0;
+                /*int i = 0;
                 for(Map.Entry<String, Double> entry : result.contrib.entrySet())
-                    userContrib.append(i++).append(". ").append(entry.getKey()).append(" : ").append(entry.getValue()).append("\n");
+                    userContrib.append(i++).append(". ").append(entry.getKey()).append(" : ").append(entry.getValue()).append("\n");*/
 
                 makingLocations = result.markData.split(" ");
 
@@ -111,7 +119,6 @@ public class resultActivity extends AppCompatActivity {
                     contents.add(new content(talk.id, talk.msg));
                     contentSb.append(talk.id).append(" : ").append(talk.msg).append('\n');
                 }
-
 
                 runOnUiThread(new Runnable(){
                     public void run(){
@@ -122,7 +129,7 @@ public class resultActivity extends AppCompatActivity {
                             keyword[i++].setText(s);
                         }
 
-                        contributionTV.setText(userContrib.toString());
+                        //contributionTV.setText(userContrib.toString());
 
                         /* Content */
                         TextView tv = new TextView(context);
@@ -174,6 +181,8 @@ public class resultActivity extends AppCompatActivity {
                         wordCloud.addJavascriptInterface(new AndroidBridge(wordCloud,sb),"android");
                         wordCloud.reload();
 
+                        drawChart();
+
                         exitBtn.setText("나가기");
                         exitBtn.setEnabled(true);
                     }
@@ -183,6 +192,70 @@ public class resultActivity extends AppCompatActivity {
 
 
     }
+
+    private void drawChart() {
+        BarChart barChart = findViewById(R.id.barChart);
+        barChart.setDrawBarShadow(false);
+        barChart.setDrawValueAboveBar(true);
+        Description description = new Description();
+        description.setText("");
+        barChart.setDescription(description);
+        barChart.setMaxVisibleValueCount(50);
+        barChart.setPinchZoom(false);
+        barChart.setDrawGridBackground(false);
+
+        XAxis xl = barChart.getXAxis();
+        xl.setGranularity(1f);
+        xl.setCenterAxisLabels(true);
+
+        YAxis leftAxis = barChart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+        leftAxis.setSpaceTop(30f);
+        barChart.getAxisRight().setEnabled(false);
+
+        //data
+        float groupSpace = 0.04f;
+        float barSpace = 0.02f;
+        float barWidth = 0.3f;
+
+        List<BarEntry> yVals1 = new ArrayList<>();
+        List<BarEntry> yVals2 = new ArrayList<>();
+
+        int i = 1;
+        for(Map.Entry<String, Double> entry : result.contrib.entrySet()) {
+            yVals1.add(new BarEntry(i, entry.getValue().floatValue()));
+            yVals2.add(new BarEntry(i, 2f));
+        }
+
+        BarDataSet set1, set2;
+
+        if (barChart.getData() != null && barChart.getData().getDataSetCount() > 0) {
+            set1 = (BarDataSet) barChart.getData().getDataSetByIndex(0);
+            set2 = (BarDataSet) barChart.getData().getDataSetByIndex(1);
+            set1.setValues(yVals1);
+            set2.setValues(yVals2);
+            barChart.getData().notifyDataChanged();
+            barChart.notifyDataSetChanged();
+        } else {
+            set1 = new BarDataSet(yVals1, "키워드 발언 횟수");
+            set1.setColor(Color.rgb(104, 241, 175));
+            set2 = new BarDataSet(yVals2, "총 발언 횟수");
+            set2.setColor(Color.rgb(164, 228, 251));
+
+            ArrayList<IBarDataSet> dataSets = new ArrayList<>();
+            dataSets.add(set1);
+            dataSets.add(set2);
+
+            BarData data = new BarData(dataSets);
+            barChart.setData(data);
+        }
+
+        barChart.getBarData().setBarWidth(barWidth);
+        barChart.groupBars(i, groupSpace, barSpace);
+        barChart.invalidate();
+
+    }
+
     class sentenceLine{
         LinearLayout lay;
         String nick;

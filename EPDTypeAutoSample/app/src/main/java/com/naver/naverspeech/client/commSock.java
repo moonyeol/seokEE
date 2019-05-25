@@ -42,7 +42,7 @@ public class commSock {
         Log.i("my","Try SetSocket");
 
         try{
-            socket = new Socket("18.223.112.209", 9000);
+            socket = new Socket("13.209.64.113", 9000);
             netWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             netReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         }catch(IOException e){

@@ -162,6 +162,7 @@ class History {
     public String content;
     public String date;
     public String members;
+    public String title;
 
     public void setNumber(String number){
         this.number = number;
@@ -187,6 +188,12 @@ class History {
     public String getMembers(){
         return this.members;
     }
+    public void setTitle(String title){
+        this.title = title;
+    }
+    public String getTitle(){
+        return this.title;
+    }
 }
 class MemberList{
     ArrayList<String> list;
@@ -194,4 +201,8 @@ class MemberList{
 class SimpleTalk{
     public String talker;
     public String content;
+}
+class Title{
+    public String title;
+    public String pincode;
 }

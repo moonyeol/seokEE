@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
     private AudioWriterPCM writer;
     private AtomicBoolean isRunning = new AtomicBoolean(true);
     private TextView et_pin;
+    private TextView et_Title;
 
     private Context context;
     private GridLayout listView;
@@ -131,9 +132,10 @@ public class MainActivity extends Activity {
 
         context = this;
         listView = findViewById(R.id.userList);
-
         talkList = findViewById(R.id.talkList);
         btnStart = findViewById(R.id.btnstart);
+        et_pin = findViewById(R.id.pincode4);
+        et_Title = findViewById(R.id.title);
 
         handler = new RecognitionHandler(this);
         naverRecognizer = new NaverRecognizer(this, handler, CLIENT_ID);
@@ -141,8 +143,8 @@ public class MainActivity extends Activity {
         Intent intent = getIntent();
         boolean host = intent.getExtras().getBoolean("isHost");
         pin = intent.getExtras().getString("pin");
+        et_Title.setText(intent.getExtras().getString("title"));
 
-        et_pin = findViewById(R.id.pincode4);
         et_pin.setText(pin);
 
         if(host) btnStart.setVisibility(Button.VISIBLE);
@@ -348,8 +350,10 @@ public class MainActivity extends Activity {
                             else markedData.append("0");
                         }
 
-                        isRunning.compareAndSet(true,false);
                         naverRecognizer.getSpeechRecognizer().release();
+                        isRunning.compareAndSet(true,false);
+
+                        commSock.kick(commSock.EXIT, markedData.toString());
 
                         finish();
 

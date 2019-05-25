@@ -24,181 +24,161 @@
         android:textSize="18sp"
         tools:layout_editor_absoluteX="8dp" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/borer_black_bottom"
+        android:fontFamily="@font/nanumbarungothic"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:text="@string/result_wc"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+    </WebView>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/borer_black_bottom"
-            android:fontFamily="@font/nanumbarungothic"
-            android:gravity="center_vertical"
-            android:padding="5dp"
-            android:text="@string/result_wc"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-
-        <WebView
-            android:id="@+id/webView"
-            android:layout_width="match_parent"
-            android:layout_height="180dp" >
-
-        </WebView>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/borer_black_bottom"
-            android:fontFamily="@font/nanumbarungothic"
-            android:gravity="center_vertical"
-
-            android:padding="5dp"
-            android:text="@string/contribution"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="65dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/contributionTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/textview" />
-            </LinearLayout>
-        </ScrollView>
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/borer_black_bottom"
-            android:fontFamily="@font/nanumbarungothic"
-            android:gravity="center_vertical"
-
-            android:padding="5dp"
-            android:text="@string/keyword"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+        android:layout_margin="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/keyword1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/keyword2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/keyword3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/keyword4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/keyword5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/result"
-            android:layout_width="match_parent"
-
-            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/borer_black_bottom"
-            android:fontFamily="@font/nanumbarungothic"
-
-            android:gravity="center_vertical"
-            android:padding="5dp"
-            android:text="@string/result_page"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
 
 
-        <ScrollView
-            android:id="@+id/resulScroll"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_weight="2.5"
-            android:background="@drawable/borer_black_bottom"
-            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
 
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:scrollbarFadeDuration="0"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/borer_black_bottom"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical"
 
-            android:scrollbarSize="4dp"
-            android:scrollbarStyle="outsideOverlay"
-            android:scrollbars="vertical">
+                android:padding="5dp"
+                android:text="@string/contribution"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChart"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/borer_black_bottom"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center_vertical"
+
+                android:padding="5dp"
+                android:text="@string/keyword"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/keyword1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/keyword2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/keyword3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/keyword4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/keyword5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/borer_black_bottom"
+                android:fontFamily="@font/nanumbarungothic"
+
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="@string/result_page"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
 
             <LinearLayout
                 android:id="@+id/line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"></LinearLayout>
-        </ScrollView>
 
 
-        <Button
-            android:id="@+id/exit"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
-            android:background="@drawable/bt_radius_w"
-            android:fontFamily="@font/nanumbarungothicbold"
-            android:gravity="center"
-            android:text="@string/exit"
-            android:textColor="#3FACDC"
-            android:textSize="20sp" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/exit"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/bt_radius_w"
+                android:fontFamily="@font/nanumbarungothicbold"
+                android:gravity="center"
+                android:text="@string/exit"
+                android:textColor="#3FACDC"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

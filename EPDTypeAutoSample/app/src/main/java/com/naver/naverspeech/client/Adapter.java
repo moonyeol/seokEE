@@ -117,6 +117,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     final EditText et = new EditText(context);
 
                     et.setText(textView1.getText());
+                    et.setPadding(10,10,10,15);
+
                     ad.setView(et);
                     ad.setPositiveButton("저장", new DialogInterface.OnClickListener() {
                         @Override

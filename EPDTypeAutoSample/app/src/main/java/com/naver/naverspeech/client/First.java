@@ -16,11 +16,6 @@ import static com.naver.naverspeech.client.commSock.gson;
 
 public class First extends Activity {
 
-    class LoginInfo{
-        public String id;
-        public String pw;
-    }
-
     private Thread splashThread;
 
     /** Called when the activity is first created. */
@@ -29,6 +24,8 @@ public class First extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
+
 
         // The thread to wait for splash screen events
         splashThread = new Thread() {
@@ -41,7 +38,6 @@ public class First extends Activity {
                     }
                 } catch (InterruptedException ex) {}
 
-                finish();
                 // Run next activity
 
                 SharedPreferences auto_login = getSharedPreferences("auto_login", MODE_PRIVATE);
@@ -62,6 +58,7 @@ public class First extends Activity {
                             Intent intent = new Intent(First.this, enter.class);
                             intent.putExtra("is_login",true);
                             startActivity(intent);
+                            finish();
                         }
                     } catch(Exception e){
                         e.printStackTrace();
@@ -71,26 +68,11 @@ public class First extends Activity {
                     intent.setClass(First.this, loginActivity.class);
 
                     startActivity(intent);
+                    finish();
                 }
             }
         };
         splashThread.start();
-
-        int SDK_INT = android.os.Build.VERSION.SDK_INT;
-        if (SDK_INT > 8) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-                    .permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-
-            try {
-                commSock.setSocket();
-                Log.i("my", "Socket Connected.");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            Log.i("my","make Handler and Thread");
-        }
-
     }
 
 

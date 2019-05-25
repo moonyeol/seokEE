@@ -74,6 +74,7 @@ public class mypage extends AppCompatActivity {
         id_tv.setText(info.id);
 
         nickname_tv.setText(info.nickname);
+
         talkwithme.setText(info.talkWithMe);
 
         String temp = "나의 회의 평균 기여도 : " +info.contributionData.get(0)+" | 유저 평균 기여도 : "+ info.contributionData.get(1) + " | 나의 기여도 순위 : " + info.contributionData.get(2);
@@ -84,7 +85,7 @@ public class mypage extends AppCompatActivity {
             // 각 List의 값들을 data 객체에 set 해줍니다.
 
             Data data = new Data();
-            data.setTitle(h.getDate());
+            data.setTitle(h.getTitle());
             data.setMember(h.getMembers());
             data.setNumber(h.getNumber());
 
