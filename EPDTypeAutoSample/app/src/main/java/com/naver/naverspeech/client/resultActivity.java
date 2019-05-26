@@ -141,12 +141,6 @@ public class resultActivity extends AppCompatActivity {
 
                         //contributionTV.setText(userContrib.toString());
 
-                        /* Content */
-                        TextView tv = new TextView(context);
-                        tv.setText(contentSb.toString());
-
-                        line.addView(tv);
-
                         for(i =0; i< contents.size();i++) {
                             LinearLayout newline = new LinearLayout(context);
                             newline.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
