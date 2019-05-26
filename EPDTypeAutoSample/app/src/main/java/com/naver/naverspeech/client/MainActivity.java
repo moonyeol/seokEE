@@ -11,6 +11,7 @@ import android.os.Message;
 import android.support.annotation.WorkerThread;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.transition.Visibility;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -57,6 +58,7 @@ public class MainActivity extends Activity {
     private AtomicBoolean isRunning = new AtomicBoolean(true);
     private TextView et_pin;
     private TextView et_Title;
+    private ImageButton btnExit;
 
     private Context context;
     private GridLayout listView;
@@ -136,6 +138,7 @@ public class MainActivity extends Activity {
         listView = findViewById(R.id.userList);
         talkList = findViewById(R.id.talkList);
         btnStart = findViewById(R.id.btnstart);
+        btnExit = findViewById(R.id.btnExit);
         et_pin = findViewById(R.id.pincode4);
         et_Title = findViewById(R.id.title);
 
@@ -153,6 +156,7 @@ public class MainActivity extends Activity {
         if(host) btnStart.setEnabled(true);
         else btnStart.setEnabled(false);
 
+        btnExit.setVisibility(View.GONE);
 
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,12 +167,13 @@ public class MainActivity extends Activity {
                     naverRecognizer.recognize();
 
                     commSock.kick(commSock.START, "START");
-                    btnStart.setEnabled(false);
                 } else {
                     Log.d(TAG, "stop and wait Final Result");
-                    btnStart.setEnabled(false);
                     naverRecognizer.getSpeechRecognizer().stop();
                 }
+
+                btnStart.setVisibility(View.GONE);
+                btnExit.setVisibility(View.VISIBLE);
             }
         });
 

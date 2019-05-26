@@ -133,7 +133,7 @@
                 tools:visibility="visible" />
 
             <ImageButton
-                android:id="@+id/exitbt3"
+                android:id="@+id/btnExit"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
 
@@ -142,7 +142,8 @@
                 android:background="@color/white"
                 android:onClick="bt_exit"
                 android:scaleType="fitCenter"
-                android:src="@drawable/exit_b" />
+                android:src="@drawable/exit_b"
+                tools:visibility="gone" />
 
         </LinearLayout>
 

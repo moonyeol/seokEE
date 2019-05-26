@@ -316,6 +316,5 @@ public class resultActivity extends AppCompatActivity {
             this.nickname =nickname;
             this.sentence =sentence;
         }
-
     }
 }
