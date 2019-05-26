@@ -71,6 +71,7 @@ class RequestResult {
     public HashMap<String, Integer> wordFrequency;
     public HashMap<String, Integer> fiveKeyWord;
     public HashMap<String, Double> contrib;
+    public HashMap<String, Double> keywordContrib;
     public ArrayList<Talk> cont;
     public String markData;
 }

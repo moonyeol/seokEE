@@ -437,6 +437,29 @@ public class DBCon {
     	}
     	return data;
     }
+
+	public HashMap<String , Double> calculateKeywordContributionByRoom(String room){
+		HashMap<String , Double> data = new HashMap <String , Double>();
+    	String query = "SELECT count(*)/(select count(*) from dbNLP where roomPin = ?) as cnt, id FROM dbNLP where roomPin = ? group by id";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, room);
+			pstmt.setString(2, room);
+    		ResultSet rs = pstmt.executeQuery();
+    		
+    		while(rs.next()) {
+    			data.put(rs.getString("id"), rs.getDouble("cnt"));
+    		}    		
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return data;
+	}
+
+
+	//
 	// Contribution from Room : HashMap<id : contribution> (0.0 < contribution < 1.0)  
 	public HashMap<String , Double> calculateContributionByRoom(String room){
 		HashMap<String , Double> data = new HashMap <String , Double>();
@@ -563,19 +586,20 @@ public class DBCon {
         		e.printStackTrace();
         	}
     	}else {
-    	String query = "insert into stats (id,contribution) values(?,?);";
-    	PreparedStatement pstmt = null;
-    	try {
-    		pstmt = conn.prepareStatement(query);
-    		pstmt.setString(1, id);
-    		pstmt.setDouble(2, data);
+			String query = "insert into stats (id,contribution) values(?,?);";
+			PreparedStatement pstmt = null;
+			try {
+				pstmt = conn.prepareStatement(query);
+				pstmt.setString(1, id);
+				pstmt.setDouble(2, data);
 
-    		pstmt.executeUpdate();
-    	}catch(SQLException e){
-    		e.printStackTrace();
-    	}
+				pstmt.executeUpdate();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
     	}
     }
+
     public double totalUserContributionMean() {
     	double data = 1;
     	double tmp=0.0;
@@ -597,6 +621,7 @@ public class DBCon {
     	data = Math.pow(data, 1.0/(double) tmp);
     	return data;
     }
+	
     public Double contributionRank(String id) {
     	double data=1.0;
     	String query = "select (select count(*)+1 from stats where contribution>t.contribution)/(select count(*) from stats) as rank from stats as t where id =? ;";
@@ -615,7 +640,8 @@ public class DBCon {
     	}
     	return data;
     }
-        public ArrayList<Double> myPageContributionById(String id) {
+
+    public ArrayList<Double> myPageContributionById(String id) {
     	ArrayList<Double> data = new ArrayList<>();
     	double myMean = contributionById(id);
     	double totalUserMean = totalUserContributionMean();
@@ -661,19 +687,20 @@ public class DBCon {
 		return null;
     }
 
-    public void dbNLPCon(String roomPin, HashMap<String , Integer> tmpMap) {
+    public void dbNLPCon(String roomPin, HashMap<String , Integer> tmpMap, String talker) {
     	 for (Map.Entry<String, Integer> entry : tmpMap.entrySet()) {
              String text = entry.getKey();
              int freq = entry.getValue();
-             int tmp = isExistNLPWord(roomPin, text);
+             int tmp = isExistNLPWord(roomPin, text, talker);
              if (tmp!=0) {
-            	 updateNLPWord(roomPin,text, freq+tmp);
+            	updateNLPWord(roomPin,text,freq+tmp,talker);
      		}else {
-     			insertNLPWord(roomPin,text,freq);
+     			insertNLPWord(roomPin,text,freq, talker);
      		}
     	 }
     }
-    public int isExistNLPWord(String roomPin, String word) {
+
+    public int isExistNLPWord(String roomPin, String word, String talker) {
     	String query = "select count(*) as cnt from dbNLP where roomPin= ? and word = ?;";
     	
     	try {
@@ -691,14 +718,15 @@ public class DBCon {
     	}
     	return 0;
     }
-    public void insertNLPWord(String roomPin, String word, int freq) {
-    	String query = "insert into dbNLP (roomPin, word, frequency) values(?,?,?);";
+    public void insertNLPWord(String roomPin, String word, int freq, String talker) {
+    	String query = "insert into dbNLP (roomPin, word, frequency, id) values(?,?,?,?);";
     	PreparedStatement pstmt = null;
     	try {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, roomPin);
     		pstmt.setString(2, word);
     		pstmt.setInt(3, freq);
+			pstmt.setString(4, talker);
     		pstmt.executeUpdate();
     		// System.out.println("Insert success");
     	}catch(SQLException e)
@@ -706,14 +734,15 @@ public class DBCon {
     		e.printStackTrace();
     	}
     }
-    public void updateNLPWord(String roomPin, String word, int freq) {
-    	String query = "update dbNLP set frequency = ? where roomPin= ? and word = ? ;";
+    public void updateNLPWord(String roomPin, String word, int freq, String talker) {
+    	String query = "update dbNLP set frequency = ? where roomPin= ? and word = ? and id = ?;";
     	PreparedStatement pstmt = null;
     	try {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setInt(1, freq);
     		pstmt.setString(2, roomPin);
     		pstmt.setString(3, word);
+			pstmt.setString(4, talker);
     		pstmt.executeUpdate();
     		// System.out.println("Insert success");
     	}catch(SQLException e)
@@ -722,40 +751,30 @@ public class DBCon {
     	}
     }
     // all for WordCloud
-    public HashMap<String, Integer> dbNLPSearch(String roomPin){
-    	HashMap<String , Integer> data = new HashMap <String , Integer>();
+    public ArrayList<HashMap<String, Integer>> dbNLPSearch(String roomPin){
+		ArrayList<HashMap<String,Integer>> data = new ArrayList<>();
+
+    	HashMap<String , Integer> keywords = new HashMap <String , Integer>();
+		HashMap<String , Integer> fiveKeyword = new HashMap <String , Integer>();
     	String query = "select word, frequency from dbNLP where roomPin=? order by frequency desc;";    	
     	PreparedStatement pstmt = null;
+		int i = 0;
     	try {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, roomPin);
     		ResultSet rs = pstmt.executeQuery();
     		while (rs.next()){
-    			data.put(rs.getString("word"), rs.getInt("frequency"));
+    			keywords.put(rs.getString("word"), rs.getInt("frequency"));
+				if(i++ < 5)	fiveKeyword.put(rs.getString("word"), rs.getInt("frequency"));
     		}
     	}catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
-    	return data;
-    }
-    // five for Keyword
-    public HashMap<String, Integer> extractFiveKeyWordByDBNLP(String roomPin){
-    	HashMap<String , Integer> data = new HashMap <String , Integer>();
-    	String query = "select word, frequency from dbNLP where roomPin=? order by frequency desc limit 5;";    	
-    	PreparedStatement pstmt = null;
-    	try {
-    		pstmt = conn.prepareStatement(query);
-    		pstmt.setString(1, roomPin);
-    		ResultSet rs = pstmt.executeQuery();
-    		while (rs.next()){
-    			data.put(rs.getString("word"), rs.getInt("frequency"));
-    		}
-    	}catch(SQLException e)
-    	{
-    		e.printStackTrace();
-    	}
-    	return data;
-    }
 
+		data.add(keywords);
+		data.add(fiveKeyword);
+
+    	return data;
+    }
 }

@@ -179,13 +179,7 @@ public class TCPServer implements Runnable {
             }
 
             while(true) {
-                try {                   
-                    
-                    /*String readValue = null;
-                    while( readValue == null){
-                        readValue = in.readLine();
-                    }*/
-
+                try {             
                     String readValue = in.readLine();
 
                     msg = gson.fromJson(readValue, SocketMessage.class);
@@ -199,8 +193,6 @@ public class TCPServer implements Runnable {
 
                     switch (msg.func) {
                         case Constant.MSG:
-                            System.out.println("[DEFAULT MESSAGE]");
-
                             receiverList = roomList.get(number);
 
                             SimpleTalk t = new SimpleTalk();
@@ -221,7 +213,7 @@ public class TCPServer implements Runnable {
                             sb = new StringBuilder();
 
                             for(Token token : result){
-                                if(token.getPos().contains("NN") || token.getPos().equals("NP")){
+                                if(token.getPos().equals("NNG") || token.getPos().equals("NNP")){
                                     String morph = token.getMorph();
                                     sb.append(morph).append(" ");
 
@@ -230,15 +222,15 @@ public class TCPServer implements Runnable {
                                     } else data.put(morph,1);
                                 }
                             }
-                            
-                            db.dbNLPCon(number,data);
-
-                            System.out.println(sb.toString() + "[SEND SUCCESS & INSERT MESSAGE TO DB]");
-
-                            if(clientList.get(conn).getLogin())
+                                                        
+                            if(clientList.get(conn).getLogin()){
+                                db.dbNLPCon(number,data,clientList.get(conn).getId());
                                 db.insertTalk(new Talk(number, new Date().toString(), msg.message, clientList.get(conn).getId()));
-                            else
+                            }
+                            else{
+                                db.dbNLPCon(number,data,talker);
                                 db.insertTalk(new Talk(number, new Date().toString(), msg.message, talker));
+                            }
                             break;
                         case Constant.PINCODE:
                             stringData = randomSeed.get(seed++).toString();
@@ -403,7 +395,7 @@ public class TCPServer implements Runnable {
 
                             String tempFileName = "content_" + msg.message;
                             doc.mkdoc(makeFile, "/var/www/html/files", tempFileName);
-                            out.println(makeMessage(msg.func,"http://"+ ip +"/files/content_"+msg.message+".doc"));
+                            out.println(makeMessage(msg.func,"http://"+ ip +"/files/content_"+msg.message+".docx"));
 
                             break;
                         case Constant.REQUEST_USERINFO:
@@ -480,9 +472,13 @@ public class TCPServer implements Runnable {
 
                             RequestResult requestResult = new RequestResult();
 
-                            requestResult.wordFrequency = db.dbNLPSearch(msg.message);
-                            requestResult.fiveKeyWord = db.extractFiveKeyWordByDBNLP(msg.message);
+                            ArrayList<HashMap<String,Integer>> words = db.dbNLPSearch(msg.message);
+                            requestResult.wordFrequency = words.get(0);
+                            requestResult.fiveKeyWord = words.get(1);
+
+                            // 단순 talk 데이터로만 계산..
                             requestResult.contrib = db.calculateContributionByRoom(msg.message);
+                            requestResult.keywordContrib = db.calculateKeywordContributionByRoom(msg.message);
                             requestResult.cont = db.searchMessageRoom(msg.message);
 
                             if(clientList.get(conn).getLogin())
