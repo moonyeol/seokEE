@@ -518,7 +518,7 @@ public class TCPServer implements Runnable {
                             if(clientList.get(conn).getLogin())
                                 requestResult.markData = db.IdAndRoomForMarked(clientList.get(conn).getId(),msg.message);
                             else
-                                requestResult.markData = db.IdAndRoomForMarked(clientList.get(conn).getId(),msg.message);
+                                requestResult.markData = db.IdAndRoomForMarked(talker,msg.message);
                             
                             System.out.println(gson.toJson(requestResult));
                             out.println(gson.toJson(requestResult));
