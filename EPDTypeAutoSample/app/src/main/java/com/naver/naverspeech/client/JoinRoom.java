@@ -3,6 +3,7 @@ package com.naver.naverspeech.client;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,19 +12,36 @@ import android.widget.Toast;
 import static com.naver.naverspeech.client.commSock.gson;
 
 public class JoinRoom extends Activity {
-
+    EditText edittext;
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_room);
 
+        edittext = findViewById(R.id.roomNumber);
+        button = findViewById(R.id.button3);
 
-        Button button = findViewById(R.id.button3);
+        edittext.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                //Enter key Action
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    button.callOnClick();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         button.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                EditText edittext = findViewById(R.id.roomNumber);
                 String key = edittext.getText().toString();
+
+                if(key.equals("")){
+                    Toast.makeText(JoinRoom.this, "PIN번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 commSock.kick(commSock.ENTER,key);
 

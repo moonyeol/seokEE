@@ -1,5 +1,4 @@
 package com.naver.naverspeech.client;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -73,6 +72,7 @@ class RequestResult {
     public HashMap<String, Integer> wordFrequency;
     public HashMap<String, Integer> fiveKeyWord;
     public HashMap<String, Double> contrib;
+    public HashMap<String, Double> keywordContrib;
     public ArrayList<Talk> cont;
     public String markData;
 }

@@ -36,6 +36,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -245,7 +246,6 @@ public class MainActivity extends Activity {
                                         Toast.makeText(MainActivity.this, msg + " 입장", Toast.LENGTH_SHORT).show();
 
                                         Button btn = new Button(context);
-                                        btn.setBackground(ContextCompat.getDrawable(MainActivity.this,R.drawable.user_btn_status));
                                         btn.setText(msg);
                                         userList.add(new UserListButton(btn, msg));
 
@@ -276,7 +276,6 @@ public class MainActivity extends Activity {
 
         commSock.kick(commSock.REQUEST_USERLIST, "");
     }
-
     public void updateChatHighlight(){
         if(!isRunning.get()) return;
 

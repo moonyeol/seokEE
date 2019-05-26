@@ -67,7 +67,7 @@ public class resultActivity extends AppCompatActivity {
 
     String markedData;
     ArrayList<sentenceLine> slist = new ArrayList<>();
-    String[] makingLocations;
+    char[] makingLocations;
 
     ArrayList<String> userNameList = new ArrayList<>();
 
@@ -104,8 +104,6 @@ public class resultActivity extends AppCompatActivity {
 
         new Thread(new Runnable(){
             public void run(){
-                //if(isExited) commSock.kick(commSock.EXIT, markedData);
-
                 commSock.kick(commSock.REQUEST_RESULT, pincode);
                 String msg = commSock.read();
                 result = gson.fromJson(msg, RequestResult.class);
@@ -121,15 +119,15 @@ public class resultActivity extends AppCompatActivity {
                 for(Map.Entry<String, Integer> entry : result.fiveKeyWord.entrySet())
                     fiveKeyword.add(entry.getKey());
 
-                /*int i = 0;
-                for(Map.Entry<String, Double> entry : result.contrib.entrySet())
-                    userContrib.append(i++).append(". ").append(entry.getKey()).append(" : ").append(entry.getValue()).append("\n");*/
-
-                makingLocations = result.markData.split(" ");
-
                 for(Talk talk: result.cont) {
                     contents.add(new content(talk.id, talk.msg));
                     contentSb.append(talk.id).append(" : ").append(talk.msg).append('\n');
+                }
+
+                makingLocations = new char[result.markData.length()];
+
+                for(int i=0;i<makingLocations.length;i++){
+                    makingLocations[i]=(result.markData.charAt(i));
                 }
 
                 runOnUiThread(new Runnable(){
@@ -149,9 +147,10 @@ public class resultActivity extends AppCompatActivity {
 
                         line.addView(tv);
 
-
-                        /*for(i =0; i< contents.size();i++) {
-                            LinearLayout line = new LinearLayout(context);
+                        for(i =0; i< contents.size();i++) {
+                            LinearLayout newline = new LinearLayout(context);
+                            newline.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                            newline.setOrientation(LinearLayout.HORIZONTAL);
                             final TextView nick = new TextView(context);
                             nick.setText(contents.get(i).nickname);
                             nick.setClickable(true);
@@ -160,29 +159,31 @@ public class resultActivity extends AppCompatActivity {
                                 public void onClick(View view) {
                                     for(sentenceLine s : slist){
                                         if(s.nick.equals(nick.getText())&&s.chk==false){
-                                             s.lay.setBackgroundColor(Color.argb(60, 63, 172, 220));
+                                            s.lay.setBackgroundColor(Color.argb(60, 63, 172, 220));
                                             s.setTrue();
                                         }
-                                        else
+                                        else {
                                             s.lay.setBackgroundColor(Color.argb(0, 255, 255, 255));
+                                            s.setFalse();
+                                        }
                                     }
                                 }
                             });
-
+                            StringBuilder Sb = new StringBuilder();
 
 
                             TextView tt = new TextView(context);
-                            tt.setText(" : "+contents.get(i).sentence);
+                            tt.setText(Sb.append(" : ").append(contents.get(i).sentence).toString());
 
-                            if(makingLocations[i].equals("1")){
+                            if(makingLocations[i]=='1'){
                                 tt.setBackgroundColor(Color.argb(60,63,172,220));
                             }
 
-                            line.addView(nick);
-                            line.addView(tt);
-                            resultScroll.addView(line);
-                            slist.add(new sentenceLine(line, contents.get(i).nickname));
-                        }*/
+                            newline.addView(nick);
+                            newline.addView(tt);
+                            line.addView(newline);
+                            slist.add(new sentenceLine(newline, contents.get(i).nickname));
+                        }
 
                         wordCloud = findViewById(R.id.webView);
                         wordCloud.getSettings().setJavaScriptEnabled(true);
@@ -216,9 +217,12 @@ public class resultActivity extends AppCompatActivity {
         int i = 1;
         for(Map.Entry<String, Double> entry : result.contrib.entrySet()){
             userNameList.add(entry.getKey());
-
-            lineEntries.add(new Entry(i, entry.getValue().floatValue()/2));
             barEntries.add(new BarEntry(i++, entry.getValue().floatValue()));
+        }
+
+        i = 1;
+        for(Map.Entry<String, Double> entry : result.keywordContrib.entrySet()){
+            lineEntries.add(new Entry(i++, entry.getValue().floatValue()));
         }
 
         userNameList.add("");
@@ -306,6 +310,9 @@ public class resultActivity extends AppCompatActivity {
         }
         void setTrue(){
             chk = true;
+        }
+        void setFalse(){
+            chk = false;
         }
     }
     class content{

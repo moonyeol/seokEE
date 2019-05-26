@@ -18,7 +18,7 @@
         <TextView
             android:id="@+id/textView8"
             android:layout_width="fill_parent"
-            android:layout_height="75dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="@drawable/borer_black_bottom"
             android:fontFamily="@font/nanumbarungothicbold"

@@ -13,7 +13,7 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="fill_parent"
-        android:layout_height="75dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_margin="8dp"
         android:background="@drawable/borer_black_bottom"
@@ -206,10 +206,10 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/nanumbarungothic"
                 android:gravity="center"
-                android:text="남자"
+                android:text="남"
                 android:textAlignment="center"
                 android:textColor="#747474"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <RadioButton
                 android:id="@+id/genderWomen"
@@ -218,19 +218,20 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/nanumbarungothic"
                 android:gravity="center"
-                android:text="여자"
+                android:text="여"
                 android:textColor="#747474"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <RadioButton
                 android:id="@+id/genderNone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:fontFamily="@font/nanumbarungothicultraligth"
+                android:fontFamily="@font/nanumbarungothic"
                 android:gravity="center"
                 android:text="미설정"
-                android:textSize="16sp" />
+                android:textColor="#747474"
+                android:textSize="14sp" />
 
         </RadioGroup>
     </LinearLayout>

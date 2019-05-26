@@ -40,7 +40,7 @@
             android:background="@drawable/back_gray_border_top"
             android:gravity="bottom|right"
             android:orientation="horizontal"
-            android:padding="2dp"
+            android:paddingTop="5dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="86dp">
 
@@ -73,20 +73,20 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:layout_marginBottom="0dp"
+            android:layout_height="wrap_content"
             android:background="#E8E9EA"
             android:gravity="center"
+            android:paddingBottom="25dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="86dp">
 
             <ImageView
                 android:id="@+id/imageView9"
-                android:layout_width="89dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="top"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/pro_seok"
@@ -101,7 +101,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="#E8E9EA"
 
@@ -116,13 +116,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left|center_vertical"
 
-                        android:layout_margin="5dp"
                         android:fontFamily="@font/nanumbarungothic"
                         android:gravity="center_vertical|left"
                         android:padding="5dp"
                         android:text="@string/nickname_text"
                         android:textColor="#000000"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         tools:layout_editor_absoluteX="20dp"
                         tools:layout_editor_absoluteY="315dp" />
 
@@ -131,7 +130,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right|center_vertical"
-                        android:layout_margin="5dp"
 
                         android:background="#E8E9EA"
                         android:fontFamily="@font/nanumbarungothic"
@@ -139,7 +137,7 @@
                         android:padding="5dp"
                         android:text="Nickname"
                         android:textColor="#6E6F71"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         tools:layout_editor_absoluteX="90dp"
                         tools:layout_editor_absoluteY="328dp" />
 
@@ -160,14 +158,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left|center_vertical"
-                        android:layout_margin="5dp"
                         android:fontFamily="@font/nanumbarungothic"
 
                         android:gravity="center_vertical|left"
                         android:padding="5dp"
                         android:text="아이디"
                         android:textColor="#000000"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         tools:layout_editor_absoluteX="20dp"
                         tools:layout_editor_absoluteY="272dp" />
 
@@ -177,14 +174,57 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right|center_vertical"
 
-                        android:layout_margin="5dp"
                         android:background="#E8E9EA"
                         android:fontFamily="@font/nanumbarungothic"
                         android:gravity="center_vertical|left"
                         android:padding="5dp"
                         android:text="UserId"
                         android:textColor="#6E6F71"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
+                        tools:layout_editor_absoluteX="100dp"
+                        tools:layout_editor_absoluteY="272dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="86dp">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:fontFamily="@font/nanumbarungothic"
+
+                        android:gravity="center_vertical|left"
+                        android:padding="5dp"
+                        android:text="기여도"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        tools:layout_editor_absoluteX="20dp"
+                        tools:layout_editor_absoluteY="272dp" />
+
+                    <TextView
+                        android:id="@+id/contributionTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+
+                        android:background="#E8E9EA"
+                        android:fontFamily="@font/nanumbarungothic"
+                        android:gravity="center_vertical|left"
+                        android:padding="5dp"
+                        android:text="Contrib Data"
+                        android:textColor="#6E6F71"
+                        android:textSize="14sp"
                         tools:layout_editor_absoluteX="100dp"
                         tools:layout_editor_absoluteY="272dp" />
 
@@ -193,7 +233,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -232,38 +271,6 @@
                 android:gravity="center_vertical|left"
                 android:paddingBottom="5dp"
                 android:text="자주 회의한 사람_목록"
-                android:textColor="#bbbdbf"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="673dp" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center_vertical|left"
-                android:padding="2dp"
-                android:text="나의 평균 기여도"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="673dp" />
-
-            <TextView
-                android:id="@+id/contributionTV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="5dp"
-                android:background="@drawable/borer_black_bottom"
-                android:fontFamily="@font/nanumbarungothic"
-
-                android:gravity="center_vertical|left"
-                android:paddingBottom="5dp"
-                android:text="나의 평균 기여도와 백분위"
                 android:textColor="#bbbdbf"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="8dp"
