@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,320 +10,247 @@
     android:orientation="vertical">
 
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/borer_black_bottom"
+        android:fontFamily="@font/nanumbarungothicbold"
+        android:gravity="center"
+        android:text="@string/jo_1"
+        android:textAlignment="gravity"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
     <LinearLayout
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal|top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <EditText
+            android:id="@+id/id_input"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:background="@drawable/edit_border_black"
+            android:ems="7"
+            android:fontFamily="@font/nanumbarungothic"
+
+            android:hint="@string/login_id"
+            android:inputType="textPersonName"
+            android:nextFocusDown="@id/passwordInput"
+            android:padding="5dp"
+            android:textAlignment="textStart"
+            android:textSize="16sp"
+            tools:targetApi="o" />
+
+        <Button
+            android:id="@+id/okbt"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_radius_w_status"
+            android:fontFamily="@font/nanumbarungothic"
+            android:onClick="bt_ok"
+            android:text="@string/jo_2"
+            android:textAlignment="center"
+            android:textColor="#3FACDC"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="250dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_border_black"
+        android:ems="20"
+        android:fontFamily="@font/nanumbarungothic"
+        android:hint="@string/login_pw"
+        android:inputType="textPassword"
+        android:nextFocusDown="@id/nickInput"
+        android:padding="5dp"
+        android:textAlignment="textStart"
+        android:textColor="#747474"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="219dp" />
+
+    <EditText
+        android:id="@+id/nickInput"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_border_black"
+        android:ems="10"
+        android:fontFamily="@font/nanumbarungothic"
+        android:hint="@string/an_nick"
+        android:inputType="textPersonName"
+        android:padding="5dp"
+        android:textAlignment="textStart"
+        android:textColor="#747474"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="277dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
         tools:layout_editor_absoluteX="-40dp"
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/textView8"
-            android:layout_width="fill_parent"
-            android:layout_height="75dp"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:background="@drawable/borer_black_bottom"
-            android:fontFamily="@font/nanumbarungothicbold"
-            android:gravity="center"
-            android:text="@string/jo_1"
-            android:textAlignment="gravity"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="5dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="0dp">
-
-
-            <EditText
-                android:id="@+id/id_input"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:autofillHints=""
-                android:background="@drawable/edit_border_black"
-                android:ems="7"
-                android:fontFamily="@font/nanumbarungothic"
-
-                android:hint="@string/login_id"
-                android:inputType="textPersonName"
-                android:nextFocusDown="@id/passwordInput"
-                android:padding="5dp"
-                android:textSize="16sp"
-                tools:targetApi="o" />
-
-            <Button
-                android:id="@+id/okbt"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/bt_radius_w"
-                android:fontFamily="@font/nanumbarungothic"
-                android:onClick="bt_ok"
-                android:text="@string/jo_2"
-                android:textAlignment="center"
-                android:textColor="#3FACDC"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="250dp"
-                tools:layout_editor_absoluteY="157dp" />
-
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/passwordInput"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/edit_border_black"
-            android:ems="20"
+            android:id="@+id/textView10"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
             android:fontFamily="@font/nanumbarungothic"
-            android:hint="@string/login_pw"
-            android:inputType="textPersonName|textPassword"
-            android:textColor="#747474"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="219dp"
-            android:nextFocusDown="@id/nickInput"
-            />
-
-        <EditText
-            android:id="@+id/nickInput"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/edit_border_black"
-            android:ems="10"
-            android:fontFamily="@font/nanumbarungothic"
-            android:hint="@string/an_nick"
-            android:inputType="textPersonName"
-            android:textColor="#747474"
+            android:gravity="center"
+            android:paddingLeft="4dp"
+            android:text="@string/jo_6"
+            android:textAlignment="center"
+            android:textColor="#5D5D5D"
             android:textSize="16sp"
             tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="277dp"
-            />
+            tools:layout_editor_absoluteY="409dp" />
 
-        <LinearLayout
+        <DatePicker
+            android:id="@+id/dataPicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="-40dp"
-            tools:layout_editor_absoluteY="0dp">
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center_vertical|left"
-                android:padding="5dp"
-                android:text="성별"
-                android:textColor="#5D5D5D"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="343dp" />
-
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="160dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal"
-
-                tools:layout_editor_absoluteX="130dp"
-                tools:layout_editor_absoluteY="343dp">
-
-                <RadioButton
-                    android:id="@+id/genderMen"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/nanumbarungothic"
-                    android:gravity="center"
-                    android:text="남자"
-                    android:textColor="#747474"
-                    android:textSize="16sp" />
-
-                <RadioButton
-                    android:id="@+id/genderWomen"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/nanumbarungothic"
-                    android:gravity="center"
-                    android:text="여자"
-                    android:textColor="#747474"
-                    android:textSize="16sp" />
-
-            </RadioGroup>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="-40dp"
-            tools:layout_editor_absoluteY="0dp">
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center"
-                android:paddingLeft="4dp"
-                android:text="@string/jo_6"
-                android:textAlignment="center"
-                android:textColor="#5D5D5D"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="409dp" />
-
-            <Spinner
-                android:id="@+id/birthYear"
-                android:layout_width="75dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/nanumbarungothic"
-                android:textColor="#747474"
-                android:textSize="20dp"
-                tools:layout_editor_absoluteX="101dp"
-                tools:layout_editor_absoluteY="409dp" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="25dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:fontFamily="@font/nanumbarungothic"
-
-                android:gravity="center"
-                android:text="@string/jo_7"
-
-                android:textColor="#747474"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="176dp"
-                tools:layout_editor_absoluteY="409dp" />
-
-
-            <Spinner
-                android:id="@+id/birthMonth"
-                android:layout_width="40dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
-
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center"
-                android:textColor="#747474"
-                android:textSize="20dp"
-                tools:layout_editor_absoluteX="201dp"
-                tools:layout_editor_absoluteY="409dp" />
-
-            <TextView
-                android:id="@+id/talkWithMe"
-                android:layout_width="25dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center"
-                android:text="@string/jo_8"
-
-                android:textColor="#747474"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="240dp"
-                tools:layout_editor_absoluteY="409dp" />
-
-            <Spinner
-                android:id="@+id/birthDay"
-
-                android:layout_width="45dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/nanumbarungothic"
-                android:textColor="#747474"
-                android:textSize="20dp"
-                tools:layout_editor_absoluteX="265dp"
-                tools:layout_editor_absoluteY="409dp" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="30dp"
-                android:layout_height="50dp"
-
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center"
-                android:text="@string/jo_9"
-                android:textColor="#747474"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="310dp"
-                tools:layout_editor_absoluteY="409dp" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/join_joinButton"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="260dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/bt_raidus"
-            android:clickable="true"
-            android:fontFamily="@font/nanumbarungothicbold"
-            android:onClick="bt_join"
-            android:text="@string/jo_1"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="487dp" />
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-40dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/nanumbarungothic"
+            android:padding="5dp"
+            android:text="성별"
+            android:textAlignment="center"
+            android:textColor="#5D5D5D"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="343dp" />
 
 
-</android.support.constraint.ConstraintLayout>
+        <RadioGroup
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:checkedButton="@id/genderNone"
+
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="343dp">
+
+            <RadioButton
+                android:id="@+id/genderMen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center"
+                android:text="남자"
+                android:textAlignment="center"
+                android:textColor="#747474"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/genderWomen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="center"
+                android:text="여자"
+                android:textColor="#747474"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/genderNone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/nanumbarungothicultraligth"
+                android:gravity="center"
+                android:text="미설정"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/join_joinButton"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bt_radius_status"
+        android:clickable="true"
+        android:fontFamily="@font/nanumbarungothicbold"
+        android:onClick="bt_join"
+        android:text="@string/jo_1"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="487dp" />
+
+
+</LinearLayout>

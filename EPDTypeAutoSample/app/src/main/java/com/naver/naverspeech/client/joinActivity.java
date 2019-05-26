@@ -2,12 +2,17 @@ package com.naver.naverspeech.client;
 
 
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -16,16 +21,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 import static com.naver.naverspeech.client.commSock.gson;
 
 public class joinActivity extends AppCompatActivity {
 
     EditText et_id, et_pw, et_nick;
-    Spinner bYear, bMonth, bDay;
-    String sId, sPw, sBirth, sGender, sNick;
-    private RadioButton et_gender;
-
+    DatePicker datePicker;
+    RadioGroup gender;
     boolean re_chk = false;
 
     @Override
@@ -35,41 +39,35 @@ public class joinActivity extends AppCompatActivity {
 
         et_id = findViewById(R.id.id_input);
         et_pw = findViewById(R.id.passwordInput);
-        et_gender = findViewById(R.id.genderMen);
+        gender = findViewById(R.id.gender);
         et_nick = findViewById(R.id.nickInput);
-        bYear = findViewById(R.id.birthYear);
-        bMonth = findViewById(R.id.birthMonth);
-        bDay = findViewById(R.id.birthDay);
+        datePicker = findViewById(R.id.dataPicker);
 
-        // spinner initialize
-        Calendar cal = Calendar.getInstance();
+        datePicker.init(1990, 1, 30, new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker datePicker, int i, int i1, int i2) {
 
-        int currentYear = cal.get(Calendar.YEAR);
-        ArrayList<Integer> yList = new ArrayList<>();
-        ArrayList<Integer> mList = new ArrayList<>();
-        ArrayList<Integer> dList = new ArrayList<>();
-
-        for(int i = -70; i<=10; i++) yList.add(currentYear + i);
-        for(int i=1; i<=12; i++) mList.add(i);
-        for(int i=1; i<=31; i++) dList.add(i);
-
-        ArrayAdapter<Integer> yAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, yList);
-        ArrayAdapter<Integer> mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, mList);
-        ArrayAdapter<Integer> dAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, dList);
-
-        yAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        bYear.setAdapter(yAdapter);
-        bMonth.setAdapter(mAdapter);
-        bDay.setAdapter(dAdapter);
+            }
+        });
+        et_id.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { return; }
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) { re_chk = false; }
+            @Override
+            public void afterTextChanged(Editable editable) { re_chk = false; }
+        });
     }
 
     // 중복 확인 버튼
+
     public void bt_ok(View view){
-        sId = et_id.getText().toString();
-        commSock.kick(commSock.DUPLICATE, sId);
+        if(et_id.getText().toString().equals("")){
+            Toast.makeText(this, "아이디를 입력해주세요.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        commSock.kick(commSock.DUPLICATE, et_id.getText().toString());
 
         String s = commSock.read();
         SocketMessage msg = gson.fromJson(s,SocketMessage.class);
@@ -90,37 +88,47 @@ public class joinActivity extends AppCompatActivity {
     }
 
     public void bt_join(View view){
-        if(!re_chk){
-            Toast.makeText(this,"아이디 중복을 확인해주세요!", Toast.LENGTH_SHORT).show();
+        String id,pw,nick,genderStr, birth;
+
+        id = et_id.getText().toString();
+        pw = Hashing.SHA256(et_pw.getText().toString());
+        nick = et_nick.getText().toString();
+        SimpleDateFormat dateformat = new SimpleDateFormat("yy-MM-dd");
+        Calendar getDate = Calendar.getInstance();
+        getDate.set(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
+        birth = dateformat.format(getDate.getTime());
+
+        switch(gender.getCheckedRadioButtonId()){
+            case R.id.genderMen:
+                genderStr = "MALE";
+                break;
+            case R.id.genderWomen:
+                genderStr = "FEMALE";
+                break;
+            case R.id.genderNone:
+                genderStr = "NONE";
+                break;
+            default:
+                Toast.makeText(this,"성별을 선택해주세요.", Toast.LENGTH_SHORT).show();
+                return;
         }
+
+        if(pw.equals("")) Toast.makeText(this,"비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+        else if(nick.equals("")) Toast.makeText(this,"닉네임을 입력해주세요.", Toast.LENGTH_SHORT).show();
+        else if(!re_chk) Toast.makeText(this,"아이디 중복을 확인해주세요.", Toast.LENGTH_SHORT).show();
         else {
 
             Member info = new Member();
 
-            sBirth = bYear.getSelectedItem().toString();
-
-            int m = Integer.parseInt(bMonth.getSelectedItem().toString());
-            int d = Integer.parseInt(bDay.getSelectedItem().toString());
-
-            sBirth += (m<10) ? "0" + m : m + "";
-            sBirth += (d<10) ? "0" + d : d + "";
-
-            if(et_gender.isChecked()){
-                sGender = "MALE";
-            } else {
-                sGender = "FEMALE";
-            }
-
-            info.setID(et_id.getText().toString());
-            info.setPassword(Hashing.SHA256(et_pw.getText().toString()));
-            info.setBirth(sBirth);
-            info.setGender(sGender);
-            info.setNickname(et_nick.getText().toString());
+            info.setGender(genderStr);
+            info.setID(id);
+            info.setPassword(pw);
+            info.setBirth(birth);
+            info.setNickname(nick);
 
             commSock.kick(commSock.ENROLL, gson.toJson(info));
             String message = commSock.read();
             SocketMessage msg = gson.fromJson(message, SocketMessage.class);
-
 
             if (msg.message.equals("true")) {
                 Toast.makeText(this, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();

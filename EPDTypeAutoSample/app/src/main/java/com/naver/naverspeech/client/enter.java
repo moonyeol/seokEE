@@ -39,7 +39,10 @@ public class enter extends Activity {
 
         boolean is_login = intent.getBooleanExtra("is_login",false);
 
-        pageBtn.setVisibility(is_login ? View.VISIBLE : View.GONE);
+        if(!is_login) {
+            pageBtn.setEnabled(false);
+            pageBtn.setText(R.string.forUser);
+        }
         joinBtn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(enter.this, JoinRoom.class);

@@ -47,7 +47,7 @@
             android:layout_height="40dp"
             android:layout_margin="10dp"
 
-            android:background="@drawable/bt_radius_w"
+            android:background="@drawable/bt_radius_w_status"
             android:fontFamily="@font/nanumbarungothic"
             android:text="@string/make_room"
 
@@ -63,7 +63,7 @@
             android:layout_height="40dp"
             android:layout_margin="10dp"
 
-            android:background="@drawable/bt_radius_w"
+            android:background="@drawable/bt_radius_w_status"
             android:fontFamily="@font/nanumbarungothic"
             android:text="@string/enter_room"
 
@@ -79,7 +79,7 @@
             android:layout_height="40dp"
             android:layout_margin="10dp"
 
-            android:background="@drawable/bt_raidus"
+            android:background="@drawable/bt_radius_status"
             android:text="@string/my_page"
             android:textColor="#FFFFFF"
             android:textSize="20sp"

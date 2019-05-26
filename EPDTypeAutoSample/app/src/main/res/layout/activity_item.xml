@@ -7,17 +7,16 @@
     android:background="#FFFFFF"
     android:gravity="center_vertical"
 
-    android:orientation="vertical"
-    android:padding="5dp">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:layout_weight="0"
         android:background="@drawable/borer_black_bottom"
         android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:padding="5dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView1"
@@ -49,7 +48,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:animateLayoutChanges="true"
@@ -72,7 +73,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:animateLayoutChanges="true"
-            android:background="@drawable/bt_radius_w"
+            android:background="@drawable/bt_radius_w_status"
             android:fontFamily="@font/nanumbarungothic"
             android:maxHeight="40dip"
             android:minHeight="40dip"
@@ -87,7 +88,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:animateLayoutChanges="true"
-            android:background="@drawable/bt_radius_w"
+            android:background="@drawable/bt_radius_w_status"
             android:fontFamily="@font/nanumbarungothic"
             android:maxHeight="40dip"
             android:minHeight="40dip"

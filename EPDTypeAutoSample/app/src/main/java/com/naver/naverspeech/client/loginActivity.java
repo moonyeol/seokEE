@@ -111,6 +111,11 @@ public class loginActivity extends AppCompatActivity {
                 info.id = idText.getText().toString();
                 info.pw = Hashing.SHA256(passwordText.getText().toString());
 
+                if(info.id.equals("") || info.pw.equals("")){
+                    Toast.makeText(loginActivity.this, "아이디와 비밀번호를 정확히 입력해주세요.",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 commSock.kick(commSock.LOGIN, gson.toJson(info));
 
                 String msg = commSock.read();

@@ -63,7 +63,7 @@
             android:fontFamily="@font/nanumbarungothic"
             android:hint="@string/er_2"
             android:inputType="textPersonName"
-            android:padding="8dp"
+            android:padding="5dp"
             android:textSize="16sp"
             tools:targetApi="o" />
 
@@ -74,7 +74,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:background="@drawable/bt_raidus"
+            android:background="@drawable/bt_radius_status"
 
             android:fontFamily="@font/nanumbarungothicbold"
             android:text="@string/input"
