@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.WorkerThread;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -244,6 +245,7 @@ public class MainActivity extends Activity {
                                         Toast.makeText(MainActivity.this, msg + " 입장", Toast.LENGTH_SHORT).show();
 
                                         Button btn = new Button(context);
+                                        btn.setBackground(ContextCompat.getDrawable(MainActivity.this,R.drawable.user_btn_status));
                                         btn.setText(msg);
                                         userList.add(new UserListButton(btn, msg));
 
@@ -401,7 +403,7 @@ public class MainActivity extends Activity {
 
         UserListButton(Button btn, final String nickname){
             this.btn = btn;
-            btn.setOnClickListener(new Button.OnClickListener(){
+            this.btn.setOnClickListener(new Button.OnClickListener(){
                 @Override
                 public void onClick(View view) {
                     if(selectedUser != null && selectedUser.equals(nickname)){

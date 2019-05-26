@@ -143,7 +143,7 @@ public class loginActivity extends AppCompatActivity {
         joinButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(loginActivity.this, joinActivity.class);
-                finish();
+                //finish();
                 startActivity(intent);
             }
         });
@@ -151,7 +151,7 @@ public class loginActivity extends AppCompatActivity {
         anonymousbutton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(loginActivity.this, anonymous.class);
-                finish();
+                //finish();
                 startActivity(intent);
             }
         });
