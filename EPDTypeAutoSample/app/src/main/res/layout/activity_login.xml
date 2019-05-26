@@ -157,7 +157,6 @@
             android:textSize="20sp"
             tools:layout_editor_absoluteX="57dp"
             tools:layout_editor_absoluteY="498dp" />
-
         <TextView
             android:id="@+id/anonymous2"
             style="@style/Widget.AppCompat.Button.Borderless"

@@ -97,51 +97,54 @@
                 android:textSize="16sp" />
 
             <LinearLayout
+                android:id="@+id/keywordList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
                     android:id="@+id/keyword1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="TextView"
-                    android:textSize="18sp" />
+                    android:background="@drawable/bt_radius_w_status"
+                    android:text="Button"
+                    android:textColor="#747474"
+                    android:textSize="14sp" />
 
-                <TextView
+                <Button
                     android:id="@+id/keyword2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
-                    android:text="TextView"
-                    android:textSize="18sp" />
+                    android:background="@drawable/bt_radius_w_status"
+                    android:text="Button"
+                    android:textColor="#747474" />
 
-                <TextView
+                <Button
                     android:id="@+id/keyword3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
-                    android:text="TextView"
-                    android:textSize="18sp" />
+                    android:background="@drawable/bt_radius_w_status"
+                    android:text="Button"
+                    android:textColor="#747474" />
 
-                <TextView
+                <Button
                     android:id="@+id/keyword4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
-                    android:text="TextView"
-                    android:textSize="18sp" />
+                    android:background="@drawable/bt_radius_w_status"
+                    android:text="Button"
+                    android:textColor="#747474" />
 
-                <TextView
-                    android:id="@+id/keyword5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView"
-                    android:textSize="18sp" />
             </LinearLayout>
 
             <TextView
@@ -172,8 +175,8 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="10dp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/bt_radius_w_status"
                 android:fontFamily="@font/nanumbarungothicbold"
                 android:gravity="center"

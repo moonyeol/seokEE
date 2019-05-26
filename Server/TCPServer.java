@@ -367,11 +367,8 @@ public class TCPServer implements Runnable {
                         case Constant.LOGIN:
                             // request Login
                             LoginInfo loginInfo = gson.fromJson(msg.message, LoginInfo.class);
-
                             boolean loginCheck = db.memberLoginCheck(loginInfo.id, loginInfo.pw);
-
-                            System.out.println("id: " + loginInfo.id + " pwd: " + loginInfo.pw);
-
+                            
                             if(loginCheck){
                                 clientList.get(conn).setLogin(loginInfo.id);
                                 clientList.get(conn).setTalker(db.searchMyInfo(loginInfo.id).getNickname());
@@ -391,10 +388,46 @@ public class TCPServer implements Runnable {
                             break;
                         case Constant.REQUEST_FILE:
                             // REQUEST FILE
-                            ArrayList<String> makeFile = db.searchMessageByRoom(msg.message);
+                            
+                            ArrayList<Talk> makeFile = db.searchMessageByRoom(msg.message);
+                            ArrayList<HashMap<String,Integer>> fileWord = db.dbNLPSearch(msg.message);
+                            HashMap<String , Double> keyContribFile = db.calculateKeywordContributionByRoom(msg.message);
+                            HashMap<String , Double> contribFile = db.calculateContributionByRoom(msg.message);
+
+                            ArrayList<String> fileContent = new ArrayList<>();
+                            
+                            fileContent.add("회의 제목: " + db.getTitle(msg.message));
+                            fileContent.add("회의 일시: " + db.searchStartByRoom(msg.message));
+                            fileContent.add("");
+
+                            sb = new StringBuilder();
+                            sb.append("회의 주요 키워드: ");
+                            for (Map.Entry<String, Integer> entry : fileWord.get(1).entrySet()) sb.append(entry.getKey()).append(", ");
+                            
+                            fileContent.add(sb.toString());
+                            fileContent.add("");
+
+                            sb = new StringBuilder();
+                            sb.append("회의 기여도(총 발언 비율): ");
+                            for (Map.Entry<String, Double> entry : contribFile.entrySet()) sb.append(entry.getKey()).append("(").append(entry.getValue()).append(") ");
+                            fileContent.add(sb.toString());
+
+                            sb = new StringBuilder();
+                            sb.append("회의 기여도(주요 키워드 발언 비율): ");
+                            for (Map.Entry<String, Double> entry : keyContribFile.entrySet()) sb.append(entry.getKey()).append("(").append(entry.getValue()).append(") ");
+                            fileContent.add(sb.toString());
+                            fileContent.add("");
+
+                            
+                            fileContent.add("회의 내용");                            
+                            for(Talk fTalk: makeFile){
+                                sb = new StringBuilder();
+                                fileContent.add(sb.append(fTalk.getID()).append(" : ").append(fTalk.getMsg()).toString());
+                            }
+                            
 
                             String tempFileName = "content_" + msg.message;
-                            doc.mkdoc(makeFile, "/var/www/html/files", tempFileName);
+                            doc.mkdoc(fileContent, "/var/www/html/files", tempFileName);
                             out.println(makeMessage(msg.func,"http://"+ ip +"/files/content_"+msg.message+".docx"));
 
                             break;
@@ -420,12 +453,13 @@ public class TCPServer implements Runnable {
 
                                 history.members = sb.toString();
 
-                                ArrayList<String> roomContent = db.searchMessageByRoom(myRoomNumber);
+                                ArrayList<Talk> roomContent = db.searchMessageByRoom(myRoomNumber);
 
                                 sb = new StringBuilder();
-                                for(String s : roomContent){
-                                    if(s.equals("START") || s.equals("END")) continue;
-                                    sb.append(s + " ");
+                                for(Talk s : roomContent){
+                                    String roomMessage = s.getMsg();
+                                    if(roomMessage.equals("START") || roomMessage.equals("END")) continue;
+                                    sb.append(roomMessage + " ");
                                 }
                                 history.content = sb.toString();
                                 history.date = db.searchStartByRoom(myRoomNumber);

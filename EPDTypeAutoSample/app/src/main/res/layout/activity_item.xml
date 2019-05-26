@@ -79,7 +79,7 @@
             android:minHeight="40dip"
             android:text="@string/make"
             android:textColor="#3FACDC"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/detail"

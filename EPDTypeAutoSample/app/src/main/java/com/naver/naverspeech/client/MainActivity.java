@@ -152,6 +152,7 @@ public class MainActivity extends Activity {
 
         et_pin.setText(pin);
 
+        Log.d("MAIN", "host : " + host);
 
         if(host) btnStart.setEnabled(true);
         else btnStart.setEnabled(false);
@@ -360,23 +361,28 @@ public class MainActivity extends Activity {
                         // 확인시 처리 로직
                         StringBuilder markedData = new StringBuilder();
 
+                        Log.i("MAIN", "talk");
                         for(CustomTalk t : talk){
                             if(t.checkBox.isChecked()) markedData.append("1");
                             else markedData.append("0");
                         }
 
+
+                        Log.i("MAIN", "Recording Service Terminate.");
                         naverRecognizer.getSpeechRecognizer().release();
                         isRunning.compareAndSet(true,false);
 
+                        Log.i("MAIN", "Kick Exit");
                         commSock.kick(commSock.EXIT, markedData.toString());
 
-                        finish();
-
+                        Log.i("MAIN", "Make Intent & Start Result Activity.");
                         Intent intent = new Intent(MainActivity.this, resultActivity.class);
                         intent.putExtra("exited", true);
                         intent.putExtra("pincode", pin);
-                        intent.putExtra("markData", markedData.toString());
                         startActivity(intent);
+
+                        Log.i("MAIN", "finish Activity");
+                        finish();
 
                     }
                 })

@@ -13,11 +13,12 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 public class docs {
-	XWPFDocument document = new XWPFDocument();
-	XWPFParagraph tmpParagraph = document.createParagraph();
-	XWPFRun tmpRun = tmpParagraph.createRun();
+	
 
 	public void mkdoc(ArrayList<String> content,String path, String fname) throws FileNotFoundException, IOException, InvalidFormatException {
+		XWPFDocument document = new XWPFDocument();
+		XWPFParagraph tmpParagraph = document.createParagraph();
+		XWPFRun tmpRun = tmpParagraph.createRun();
 		
 		String tmp = "";
 		ListIterator<String> iterator = content.listIterator();

@@ -152,7 +152,7 @@ public class DBCon {
     	return true;
     }
     public boolean memberLoginCheck(String id, String password) {
-    	String query = "select password from member where id = ?";
+    	String query = "select password, login from member where id = ?";
     	PreparedStatement pstmt = null;
     	try {
     		pstmt = conn.prepareStatement(query);
@@ -162,9 +162,13 @@ public class DBCon {
 			if(rs.next()){
 				String x; 
 				x = rs.getString("password");
-				if (x.contentEquals(password)) {
-					System.out.println("[memberRegisterID] Assertion Success.");
-					return true;
+				int login = rs.getInt("login");
+
+				if (login == 0){
+					if (x.contentEquals(password)) {
+						System.out.println("[memberRegisterID] Assertion Success.");
+						return true;
+					}
 				}
 			}
     	}catch(SQLException e)
@@ -218,18 +222,17 @@ public class DBCon {
     	}
     	return data;
     }
-    public ArrayList<String> searchMessageByRoom(String room){
-    	ArrayList<String> data = new ArrayList<>();
-    	String query = "select msg from talk where room = ?";
+    public ArrayList<Talk> searchMessageByRoom(String room){
+    	ArrayList<Talk> data = new ArrayList<>();
+    	String query = "select id, msg, time from talk where room = ?";
     	PreparedStatement pstmt = null;
     	try {
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, room);
+
     		ResultSet rs = pstmt.executeQuery();
-    		while(rs.next())
-    		{
-    			data.add(new String(rs.getString("msg")));
-    		}
+    		while(rs.next()) data.add(new Talk(room, rs.getString("time"), rs.getString("msg"), rs.getString("id")));
+ 
     		//System.out.println("Calling success");
     	}catch(SQLException e)
     	{
@@ -362,7 +365,7 @@ public class DBCon {
     	Iterator it = sortByValue(tmpMap).iterator();
     	int i = 0;
     	while(it.hasNext()){
-    		if (i>5) {
+    		if (i>4) {
     			break;
     		}
             String temp = (String) it.next();
@@ -765,7 +768,7 @@ public class DBCon {
     		ResultSet rs = pstmt.executeQuery();
     		while (rs.next()){
     			keywords.put(rs.getString("word"), rs.getInt("frequency"));
-				if(i++ < 5)	fiveKeyword.put(rs.getString("word"), rs.getInt("frequency"));
+				if(i++ < 4)	fiveKeyword.put(rs.getString("word"), rs.getInt("frequency"));
     		}
     	}catch(SQLException e)
     	{

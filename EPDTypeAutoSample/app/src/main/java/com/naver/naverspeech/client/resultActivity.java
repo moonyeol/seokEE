@@ -3,10 +3,14 @@ package com.naver.naverspeech.client;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -50,27 +54,19 @@ public class resultActivity extends AppCompatActivity {
     private Context context;
 
     StringBuilder sb = new StringBuilder();
-    StringBuilder userContrib = new StringBuilder();
-    StringBuilder contentSb = new StringBuilder();
 
     WebView wordCloud;
     Button exitBtn;
-    TextView contributionTV;
-    ScrollView resultScroll;
     LinearLayout line;
     RequestResult result;
 
-    TextView[] keyword = new TextView[5];
-    ArrayList<String> fiveKeyword = new ArrayList<>();
-    ArrayList<content> contents = new ArrayList<>();
+    int keywordIdList[] = {R.id.keyword1, R.id.keyword2, R.id.keyword3, R.id.keyword4};
     boolean isExited;
 
-    String markedData;
-    ArrayList<sentenceLine> slist = new ArrayList<>();
+    ArrayList<SentenceLine> slist = new ArrayList<>();
     char[] makingLocations;
 
     ArrayList<String> userNameList = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,16 +76,9 @@ public class resultActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         pincode = intent.getStringExtra("pincode");
-        markedData = intent.getStringExtra("markData");
         isExited = intent.getBooleanExtra("exited", false);
 
         exitBtn = findViewById(R.id.exit);
-
-        keyword[0] = findViewById(R.id.keyword1);
-        keyword[1] = findViewById(R.id.keyword2);
-        keyword[2] = findViewById(R.id.keyword3);
-        keyword[3] = findViewById(R.id.keyword4);
-        keyword[4] = findViewById(R.id.keyword5);
 
         line = findViewById(R.id.line);
 
@@ -116,67 +105,73 @@ public class resultActivity extends AppCompatActivity {
                 for(Map.Entry<String, Integer> entry : result.wordFrequency.entrySet())
                     sb.append(entry.getKey()).append(" ").append(entry.getValue()).append(" ");
 
-                for(Map.Entry<String, Integer> entry : result.fiveKeyWord.entrySet())
-                    fiveKeyword.add(entry.getKey());
-
-                for(Talk talk: result.cont) {
-                    contents.add(new content(talk.id, talk.msg));
-                    contentSb.append(talk.id).append(" : ").append(talk.msg).append('\n');
-                }
-
                 makingLocations = new char[result.markData.length()];
-
                 for(int i=0;i<makingLocations.length;i++){
                     makingLocations[i]=(result.markData.charAt(i));
                 }
 
                 runOnUiThread(new Runnable(){
                     public void run(){
-                        int i = 0;
 
-                        for(String word : fiveKeyword){
-                            String s = (i + 1) + ". " + word;
-                            keyword[i++].setText(s);
-                        }
-
-                        //contributionTV.setText(userContrib.toString());
-
-                        for(i =0; i< contents.size();i++) {
+                        int index = 0;
+                        for(Talk t : result.cont){
                             LinearLayout newline = new LinearLayout(context);
                             newline.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                             newline.setOrientation(LinearLayout.HORIZONTAL);
-                            final TextView nick = new TextView(context);
-                            nick.setText(contents.get(i).nickname);
-                            nick.setClickable(true);
-                            nick.setOnClickListener(new View.OnClickListener() {
+
+                            final TextView nickname = new TextView(context);
+                            final TextView colon = new TextView(context);
+                            final TextView content = new TextView(context);
+
+                            Typeface type = Typeface.createFromAsset(getAssets(), "fonts/nanumbarungothicbold.ttf");
+
+                            colon.setText(" : ");
+                            content.setText(t.msg);
+                            nickname.setText(t.id);
+
+                            colon.setTypeface(type);
+                            content.setTypeface(type);
+                            nickname.setTypeface(type);
+
+                            nickname.setClickable(true);
+
+                            nickname.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    for(sentenceLine s : slist){
-                                        if(s.nick.equals(nick.getText())&&s.chk==false){
-                                            s.lay.setBackgroundColor(Color.argb(60, 63, 172, 220));
-                                            s.setTrue();
-                                        }
-                                        else {
-                                            s.lay.setBackgroundColor(Color.argb(0, 255, 255, 255));
-                                            s.setFalse();
-                                        }
+                                    for(SentenceLine line : slist) line.setFalse();
+
+                                    for(SentenceLine line : slist){
+                                        if(line.s_nickname.equals(nickname.getText())) line.setTrue();
+                                        else line.setFalse();
                                     }
                                 }
                             });
-                            StringBuilder Sb = new StringBuilder();
 
+                            //if(makingLocations[index++]=='1') newline.setBackgroundColor(Color.argb(60,63,172,220));
 
-                            TextView tt = new TextView(context);
-                            tt.setText(Sb.append(" : ").append(contents.get(i).sentence).toString());
-
-                            if(makingLocations[i]=='1'){
-                                tt.setBackgroundColor(Color.argb(60,63,172,220));
-                            }
-
-                            newline.addView(nick);
-                            newline.addView(tt);
+                            newline.addView(nickname);
+                            newline.addView(colon);
+                            newline.addView(content);
                             line.addView(newline);
-                            slist.add(new sentenceLine(newline, contents.get(i).nickname));
+
+                            slist.add(new SentenceLine(newline, nickname, content));
+                        }
+
+                        index = 0;
+                        for(Map.Entry<String, Integer> entry : result.fiveKeyWord.entrySet()){
+                            final Button keyword = findViewById(keywordIdList[index++]);
+                            keyword.setText(entry.getKey());
+
+                            keyword.setOnClickListener(new Button.OnClickListener(){
+                                public void onClick(View v){
+                                    for(SentenceLine line : slist) line.releaseMark();
+
+                                    for(SentenceLine line : slist){
+                                        if(line.s_content.contains(keyword.getText())) line.setMark();
+                                        else line.releaseMark();
+                                    }
+                                }
+                            });
                         }
 
                         wordCloud = findViewById(R.id.webView);
@@ -197,6 +192,10 @@ public class resultActivity extends AppCompatActivity {
             }
         }).start();
 
+
+    }
+
+    public void highLightChat(){
 
     }
 
@@ -221,7 +220,7 @@ public class resultActivity extends AppCompatActivity {
 
         userNameList.add("");
         lineEntries.add(new Entry(i, 0));
-        barEntries.add(new BarEntry(i++, 0));
+        barEntries.add(new BarEntry(i, 0));
 
         LineData lineData = new LineData();
         LineDataSet set = new LineDataSet(lineEntries, "키워드 발언 비율");
@@ -240,7 +239,7 @@ public class resultActivity extends AppCompatActivity {
 
         BarDataSet set1 = new BarDataSet(barEntries, "모든 발언 비율");
         set1.setColor(Color.rgb(60, 170, 220));
-        set1.setValueTextColor(Color.rgb(80, 80, 80));
+        set1.setValueTextColor(Color.rgb(30, 120, 170));
         set1.setValueTextSize(10f);
         set1.setAxisDependency(YAxis.AxisDependency.LEFT);
 
@@ -290,31 +289,47 @@ public class resultActivity extends AppCompatActivity {
         data.setData(lineData);
         data.setData(barData);
 
+        chart.getDescription().setText("");
         chart.setData(data);
         chart.invalidate();
     }
 
-    class sentenceLine{
+
+    class SentenceLine{
         LinearLayout lay;
-        String nick;
+        TextView nickname;
+        TextView content;
+
+        String s_nickname;
+        String s_content;
+
         boolean chk = false;
-        sentenceLine(LinearLayout lay, String nick){
+        boolean highlight = false;
+
+        SentenceLine(LinearLayout lay, TextView nick, TextView content){
             this.lay =lay;
-            this.nick = nick;
+            this.nickname = nick;
+            this.content = content;
+
+            this.s_nickname = nick.getText().toString();
+            this.s_content = content.getText().toString();
         }
         void setTrue(){
             chk = true;
+            nickname.setBackgroundColor(Color.argb(60, 63, 172, 220));
         }
         void setFalse(){
             chk = false;
+            nickname.setBackgroundColor(Color.argb(0, 255, 255, 255));
         }
-    }
-    class content{
-        String nickname;
-        String sentence;
-        content(String nickname, String sentence){
-            this.nickname =nickname;
-            this.sentence =sentence;
+
+        void setMark(){
+            highlight = true;
+            content.setBackgroundColor(Color.argb(60, 63, 172, 220));
+        }
+        void releaseMark(){
+            highlight = false;
+            content.setBackgroundColor(Color.argb(0, 255, 255, 255));
         }
     }
 }

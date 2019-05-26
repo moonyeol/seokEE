@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -117,7 +118,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     final EditText et = new EditText(context);
 
                     et.setText(textView1.getText());
-                    et.setPadding(10,10,10,15);
+                    et.setPadding(10,10,10,20);
 
                     ad.setView(et);
                     ad.setPositiveButton("저장", new DialogInterface.OnClickListener() {
@@ -165,7 +166,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                 public void onClick(View v) {
                     Intent intent = new Intent(context, resultActivity.class);
                     intent.putExtra("pincode", ItemViewHolder.this.data.getNumber());
-                    intent.putExtra("markData", "");
                     context.startActivity(intent);
                 }
             });
@@ -186,7 +186,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             request.setAllowedNetworkTypes(
                     DownloadManager.Request.NETWORK_WIFI
                             | DownloadManager.Request.NETWORK_MOBILE)
-            .setDestinationInExternalPublicDir(direct+"/",fname+".doc")
+            .setDestinationInExternalPublicDir(direct+"/",fname+".docx")
             .setNotificationVisibility( DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
 
@@ -230,7 +230,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
          */
         private void changeVisibility(final boolean isExpanded) {
             // height 값을 dp로 지정해서 넣고싶으면 아래 소스를 이용
-            int dpValue = 150;
+            int dpValue = 100;
             float d = context.getResources().getDisplayMetrics().density;
             int height = (int) (dpValue * d);
 
@@ -246,9 +246,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     // imageView의 높이 변경
                     textView3.getLayoutParams().height = value;
                     textView3.requestLayout();
-                    export.getLayoutParams().height = value;
+                    export.getLayoutParams().height = 80;
                     export.requestLayout();
-                    detail.getLayoutParams().height = value;
+                    detail.getLayoutParams().height = 80;
                     detail.requestLayout();
 
 
@@ -256,8 +256,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     textView3.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
                     export.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
                     detail.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
-
-
                 }
             });
             // Animation start

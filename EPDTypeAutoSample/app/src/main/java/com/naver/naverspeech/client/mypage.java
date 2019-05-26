@@ -8,6 +8,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Button;
 import android.view.View;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ import static com.naver.naverspeech.client.commSock.gson;
 public class mypage extends AppCompatActivity {
     private Adapter adapter;
     RequestUserInfo info;
+    public int scrollPosition = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,12 +79,16 @@ public class mypage extends AppCompatActivity {
         talkwithme.setText(info.talkWithMe);
 
 
-        String temp = "평균 " +info.contributionData.get(0)+"%( 상위 "+ info.contributionData.get(2) + "% )";
+        String num = String.format("%.2f" , (100-info.contributionData.get(2)));
+
+        String temp = "평균 " +info.contributionData.get(0)+"%( 상위 "+ num + "% )";
         contribution.setText(temp);
 
 
         for (History h : info.histories){
             // 각 List의 값들을 data 객체에 set 해줍니다.
+
+            if(h.getContent().equals("")) continue;
 
             Data data = new Data();
             data.setTitle(h.getTitle());

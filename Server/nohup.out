@@ -3,408 +3,566 @@ Connecting...
 DB Conncted.
 Server: Success DB Connect
 Server: Socket Connecting...
-Sat May 25 09:51:31 UTC 2019 Server: Accept 118.216.115.231 8514
-[FROM Client] TIME:Sat May 25 09:51:45 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+Sun May 26 04:49:29 UTC 2019 Server: Accept 118.216.115.231 6252
+Sun May 26 04:49:30 UTC 2019 Server: Accept 118.216.115.231 6253
+[FROM Client] TIME:Sun May 26 04:49:30 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
 [memberRegisterID] Assertion Success.
 id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.025s
-[FROM Client] TIME:Sat May 25 09:51:49 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"m1xb0","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 서버가 너무 느리다 서버가 너무 느리다 소고 소고 소고 로봇이 아니야 아니 ","date":"Sat May 25 09:28:28 UTC 2019","members":"c1234 test1234 "},{"number":"w9l23","content":"가사 운영체제 소프트 순하고 향기로운 섬유향수 자료구조 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 ","date":"Sat May 25 09:22:50 UTC 2019","members":"c1234 "}],"talkWithMe":"test1234 ","contributionData":[60.4,67.9,50.0]}
-Elapsed Time: 0.021s
-[FROM Client] TIME:Sat May 25 09:51:53 UTC 2019 TALKER: nicks MESSAGE: m1xb0 FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : m1xb0
-{"wordFrequency":{"전략":2},"fiveKeyWord":{"전략":2},"contrib":{"test1234":0.5385,"c1234":0.4615},"cont":[{"room":"m1xb0","time":"Sat May 25 09:28:40 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:29 UTC 2019","msg":"소고 소고 소고","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"로봇이 아니야","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"아니","id":"test1234"}],"markData":"0000000000"}
-Elapsed Time: 0.013s
-[FROM Client] TIME:Sat May 25 09:52:00 UTC 2019 TALKER: nicks MESSAGE: w9l23 FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : w9l23
-{"wordFrequency":{"체제":1,"향기":1,"구조":1,"자료":1,"운영":1,"전략":2},"fiveKeyWord":{"구조":1,"체제":1,"자료":1,"운영":1,"전략":2},"contrib":{"c1234":1.0},"cont":[{"room":"w9l23","time":"Sat May 25 09:22:57 UTC 2019","msg":"가사","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:00 UTC 2019","msg":"운영체제","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:05 UTC 2019","msg":"소프트","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:12 UTC 2019","msg":"순하고 향기로운 섬유향수","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:17 UTC 2019","msg":"자료구조","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:29 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"w9l23","time":"Sat May 25 09:23:41 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"}],"markData":"0000000"}
-Elapsed Time: 0.008s
-[FROM Client] TIME:Sat May 25 09:52:22 UTC 2019 TALKER: nicks MESSAGE: 회의 제목을 뭘로 해야 되나? FUNC: 1 NUMBER: 0
-Elapsed Time: 0.002s
-[FROM Client] TIME:Sat May 25 09:52:22 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: xcadw
-Elapsed Time: 0.001s
-[FROM Client] TIME:Sat May 25 09:52:34 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 5 NUMBER: xcadw
-[REQUEST EXIT] 
-[REQUEST EXIT] RECEIVER LIST: 
-[REQUEST EXIT] APPLY MY INFO
-[REQUEST EXIT] ROOM EMPTY!!
-Elapsed Time: 0.003s
-[FROM Client] TIME:Sat May 25 09:52:35 UTC 2019 TALKER: nicks MESSAGE: xcadw FUNC: 12 NUMBER: 
-[REQUEST_RESULT] : xcadw
-{"wordFrequency":{},"fiveKeyWord":{},"contrib":{"c1234":1.0},"cont":[],"markData":""}
-Elapsed Time: 0.002s
-Sat May 25 09:57:46 UTC 2019 Server: Accept 175.116.179.198 58579
-java.net.SocketException: Connection reset
-	at java.net.SocketInputStream.read(SocketInputStream.java:210)
-	at java.net.SocketInputStream.read(SocketInputStream.java:141)
-	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
-	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
-	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
-	at java.io.InputStreamReader.read(InputStreamReader.java:184)
-	at java.io.BufferedReader.fill(BufferedReader.java:161)
-	at java.io.BufferedReader.readLine(BufferedReader.java:324)
-	at java.io.BufferedReader.readLine(BufferedReader.java:389)
-	at TCPServer$ServerHandler.run(TCPServer.java:177)
-Socket Close
-Sat May 25 10:14:57 UTC 2019 Server: Accept 118.216.115.231 8757
-Sat May 25 10:14:58 UTC 2019 Server: Accept 118.216.115.231 8763
-[FROM Client] TIME:Sat May 25 10:15:08 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+Elapsed Time: 0.035s
+[FROM Client] TIME:Sun May 26 04:49:30 UTC 2019 TALKER: nicks MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
 [memberRegisterID] Assertion Success.
 id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.003s
-[FROM Client] TIME:Sat May 25 10:15:10 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"m1xb0","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 서버가 너무 느리다 서버가 너무 느리다 소고 소고 소고 로봇이 아니야 아니 ","date":"Sat May 25 09:28:28 UTC 2019","members":"c1234 test1234 "},{"number":"w9l23","content":"가사 운영체제 소프트 순하고 향기로운 섬유향수 자료구조 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 ","date":"Sat May 25 09:22:50 UTC 2019","members":"c1234 "},{"number":"xcadw","content":"","date":"Sat May 25 09:52:34 UTC 2019","members":"c1234 "}],"talkWithMe":"test1234 ","contributionData":[64.5,77.3,50.0]}
-Elapsed Time: 0.014s
-[FROM Client] TIME:Sat May 25 10:15:27 UTC 2019 TALKER: nicks MESSAGE: 19-05-25 회의입니다. FUNC: 1 NUMBER: 0
-Elapsed Time: 0.014s
-[FROM Client] TIME:Sat May 25 10:15:28 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: 25928
 Elapsed Time: 0.0s
-[FROM Client] TIME:Sat May 25 10:15:31 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 5 NUMBER: 25928
-[REQUEST EXIT] 
-[REQUEST EXIT] RECEIVER LIST: 
-[REQUEST EXIT] APPLY MY INFO
-[REQUEST EXIT] ROOM EMPTY!!
-Elapsed Time: 0.009s
-[FROM Client] TIME:Sat May 25 10:15:42 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"25928","content":"","date":"Sat May 25 10:15:31 UTC 2019","members":"c1234 "},{"number":"m1xb0","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 서버가 너무 느리다 서버가 너무 느리다 소고 소고 소고 로봇이 아니야 아니 ","date":"Sat May 25 09:28:28 UTC 2019","members":"c1234 test1234 "},{"number":"w9l23","content":"가사 운영체제 소프트 순하고 향기로운 섬유향수 자료구조 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 ","date":"Sat May 25 09:22:50 UTC 2019","members":"c1234 "},{"number":"xcadw","content":"","date":"Sat May 25 09:52:34 UTC 2019","members":"c1234 "}],"talkWithMe":"test1234 ","contributionData":[66.6,82.39999999999999,50.0]}
-Elapsed Time: 0.021s
-Sat May 25 10:15:45 UTC 2019 Server: Accept 118.216.115.231 8794
-Sat May 25 10:15:50 UTC 2019 Server: Accept 118.216.115.231 8814
-Sat May 25 10:15:50 UTC 2019 Server: Accept 118.216.115.231 8819
-[FROM Client] TIME:Sat May 25 10:15:56 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.01s
-[FROM Client] TIME:Sat May 25 10:15:57 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"25928","content":"","date":"Sat May 25 10:15:31 UTC 2019","members":"c1234 "},{"number":"m1xb0","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 서버가 너무 느리다 서버가 너무 느리다 소고 소고 소고 로봇이 아니야 아니 ","date":"Sat May 25 09:28:28 UTC 2019","members":"c1234 test1234 "},{"number":"w9l23","content":"가사 운영체제 소프트 순하고 향기로운 섬유향수 자료구조 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 ","date":"Sat May 25 09:22:50 UTC 2019","members":"c1234 "},{"number":"xcadw","content":"","date":"Sat May 25 09:52:34 UTC 2019","members":"c1234 "}],"talkWithMe":"test1234 ","contributionData":[66.6,82.39999999999999,50.0]}
-Elapsed Time: 0.999s
-[FROM Client] TIME:Sat May 25 10:16:07 UTC 2019 TALKER: nicks MESSAGE: m1xb0 FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : m1xb0
-{"wordFrequency":{"전략":2},"fiveKeyWord":{"전략":2},"contrib":{"test1234":0.5385,"c1234":0.4615},"cont":[{"room":"m1xb0","time":"Sat May 25 09:28:40 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:29 UTC 2019","msg":"소고 소고 소고","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"로봇이 아니야","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"아니","id":"test1234"}],"markData":"0000000000"}
-Elapsed Time: 0.013s
-[FROM Client] TIME:Sat May 25 10:16:11 UTC 2019 TALKER: nicks MESSAGE: m1xb0 FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : m1xb0
-{"wordFrequency":{"전략":2},"fiveKeyWord":{"전략":2},"contrib":{"test1234":0.5385,"c1234":0.4615},"cont":[{"room":"m1xb0","time":"Sat May 25 09:28:40 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:28:52 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:04 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:17 UTC 2019","msg":"서버가 너무 느리다","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:29 UTC 2019","msg":"소고 소고 소고","id":"test1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"로봇이 아니야","id":"c1234"},{"room":"m1xb0","time":"Sat May 25 09:29:41 UTC 2019","msg":"아니","id":"test1234"}],"markData":"0000000000"}
-Elapsed Time: 0.003s
-Server: DB Connecting..
-Connecting...
-DB Conncted.
-Server: Success DB Connect
-Server: Socket Connecting...
-Sat May 25 13:35:17 UTC 2019 Server: Accept 118.216.115.231 14144
-Sat May 25 13:35:17 UTC 2019 Server: Accept 118.216.115.231 14151
-[FROM Client] TIME:Sat May 25 13:35:23 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.025s
-[FROM Client] TIME:Sat May 25 13:35:26 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 0.027s
-[FROM Client] TIME:Sat May 25 13:35:29 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.027s
-Sat May 25 13:37:17 UTC 2019 Server: Accept 118.216.115.231 14228
-Sat May 25 13:37:17 UTC 2019 Server: Accept 118.216.115.231 14235
-[FROM Client] TIME:Sat May 25 13:37:26 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.039s
-[FROM Client] TIME:Sat May 25 13:37:37 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 0.41s
-[FROM Client] TIME:Sat May 25 13:37:46 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.247s
-Sat May 25 13:41:05 UTC 2019 Server: Accept 118.216.115.231 14306
-Sat May 25 13:41:05 UTC 2019 Server: Accept 118.216.115.231 14313
-[FROM Client] TIME:Sat May 25 13:41:06 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.046s
-[FROM Client] TIME:Sat May 25 13:41:15 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 0.529s
-[FROM Client] TIME:Sat May 25 13:41:24 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.079s
-[FROM Client] TIME:Sat May 25 13:41:52 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.369s
-[FROM Client] TIME:Sat May 25 13:43:15 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.041s
-Sat May 25 13:45:52 UTC 2019 Server: Accept 118.216.115.231 14435
-Sat May 25 13:45:52 UTC 2019 Server: Accept 118.216.115.231 14443
-Sat May 25 13:45:52 UTC 2019 Server: Accept 118.216.115.231 14461
-[FROM Client] TIME:Sat May 25 13:46:01 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.001s
-[FROM Client] TIME:Sat May 25 13:46:11 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 0.696s
-[FROM Client] TIME:Sat May 25 13:46:20 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.082s
-Sat May 25 14:00:12 UTC 2019 Server: Accept 118.216.115.231 14578
-Sat May 25 14:00:40 UTC 2019 Server: Accept 118.216.115.231 14619
-Sat May 25 14:00:40 UTC 2019 Server: Accept 118.216.115.231 14626
-Sat May 25 14:00:40 UTC 2019 Server: Accept 118.216.115.231 14630
-[FROM Client] TIME:Sat May 25 14:00:41 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.001s
-[FROM Client] TIME:Sat May 25 14:00:42 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 8.496s
-[FROM Client] TIME:Sat May 25 14:00:59 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.533s
-Sat May 25 14:01:18 UTC 2019 Server: Accept 118.216.115.231 14649
-Sat May 25 14:03:46 UTC 2019 Server: Accept 118.216.115.231 14964
-Sat May 25 14:04:05 UTC 2019 Server: Accept 118.216.115.231 1042
-[FROM Client] TIME:Sat May 25 14:04:13 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.163s
-[FROM Client] TIME:Sat May 25 14:04:22 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 0.816s
-[FROM Client] TIME:Sat May 25 14:04:32 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 9.512s
-[FROM Client] TIME:Sat May 25 14:04:50 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.783s
-Sat May 25 14:07:47 UTC 2019 Server: Accept 118.216.115.231 1123
-Sat May 25 14:07:48 UTC 2019 Server: Accept 118.216.115.231 1129
-[FROM Client] TIME:Sat May 25 14:07:57 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.001s
-[FROM Client] TIME:Sat May 25 14:08:06 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 0.82s
-[FROM Client] TIME:Sat May 25 14:08:15 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.123s
-[FROM Client] TIME:Sat May 25 14:09:02 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 9.532s
-[FROM Client] TIME:Sat May 25 14:09:20 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 9 NUMBER: 0
-Sat May 25 14:10:17 UTC 2019 Server: Accept 118.216.115.231 1198
-Sat May 25 14:10:17 UTC 2019 Server: Accept 118.216.115.231 1204
-[FROM Client] TIME:Sat May 25 14:10:17 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.001s
-[FROM Client] TIME:Sat May 25 14:10:27 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 1.02s
-[FROM Client] TIME:Sat May 25 14:10:36 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.079s
-Elapsed Time: 654.918s
-Sat May 25 14:24:07 UTC 2019 Server: Accept 118.216.115.231 1317
-Sat May 25 14:24:07 UTC 2019 Server: Accept 118.216.115.231 1322
-[FROM Client] TIME:Sat May 25 14:24:16 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.903s
-[FROM Client] TIME:Sat May 25 14:24:25 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 18.798s
-[FROM Client] TIME:Sat May 25 14:24:53 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.407s
-Sat May 25 14:26:44 UTC 2019 Server: Accept 118.216.115.231 1399
-Sat May 25 14:26:45 UTC 2019 Server: Accept 118.216.115.231 1404
-[FROM Client] TIME:Sat May 25 14:26:54 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.001s
-[FROM Client] TIME:Sat May 25 14:27:03 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 0.287s
-[FROM Client] TIME:Sat May 25 14:27:13 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.081s
-Sat May 25 14:30:27 UTC 2019 Server: Accept 118.216.115.231 1492
-Sat May 25 14:30:28 UTC 2019 Server: Accept 118.216.115.231 1496
-[FROM Client] TIME:Sat May 25 14:30:37 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 9.249s
-[FROM Client] TIME:Sat May 25 14:30:55 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 9.824s
-[FROM Client] TIME:Sat May 25 14:31:33 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 9.772s
-Sat May 25 14:35:24 UTC 2019 Server: Accept 118.216.115.231 1601
-Sat May 25 14:35:24 UTC 2019 Server: Accept 118.216.115.231 1605
-[FROM Client] TIME:Sat May 25 14:35:33 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.123s
-[FROM Client] TIME:Sat May 25 14:35:42 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"}],"talkWithMe":"chan ","contributionData":[58.6,72.5,50.0]}
-Elapsed Time: 10.316s
-[FROM Client] TIME:Sat May 25 14:36:11 UTC 2019 TALKER: nicks MESSAGE: 23fdw FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 23fdw
-{"wordFrequency":{"해":2,"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"fiveKeyWord":{"전략":2,"코스":2,"강도":2,"트레이닝":2,"토익":2},"contrib":{"chan":0.4737,"c1234":0.5263},"cont":[{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:15 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:19 UTC 2019","msg":"스피킹","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:24 UTC 2019","msg":"가나다 라바","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:30 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:35 UTC 2019","msg":"알고리즘 트레이닝","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:35:40 UTC 2019","msg":"강도가 잘되나","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:00 UTC 2019","msg":"코스만","id":"c1234"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"chan"},{"room":"23fdw","time":"Sat May 25 12:36:07 UTC 2019","msg":"나갑니다","id":"c1234"}],"markData":"0000000000000000"}
-Elapsed Time: 0.291s
-Server: DB Connecting..
-Connecting...
-DB Conncted.
-Server: Success DB Connect
-Server: Socket Connecting...
-Sat May 25 17:48:36 UTC 2019 Server: Accept 118.216.115.231 57394
-[FROM Client] TIME:Sat May 25 17:48:37 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
-[memberRegisterID] Assertion Success.
-id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
-Elapsed Time: 0.034s
-[FROM Client] TIME:Sat May 25 17:48:39 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"092gk","content":"","date":"Sat May 25 15:10:38 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"135ua","content":"가나다 라마바사 미국은 잘되지 가나다 라마바사 키보드 하나라도 나와야 된다 키보드 티월드 키워드 키워드 ","date":"Sat May 25 16:16:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"2k799","content":"","date":"Sat May 25 17:18:14 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"43bhp","content":"","date":"Sat May 25 16:14:28 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"66dze","content":"녹음 시작합니다 인지 확인할 수 있나요 강조 북마크 다 잘됩니다 순하고 향기로운 섬유향수 알고리즘 문제 해결 전략 알고리즘 트레이닝 인공지능 현대적 접근방식 소프트웨어 공학은 너무 어렵다 데이터베이스 시스템은 점수가 잘 안나왔다 대명사 고유명사 일반명사 의존명사 모란 네이버 클로바 ","date":"Sat May 25 17:19:44 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"8h5v2","content":"시작되나 시작 바이크 안개등 마이크가 안 됐던 거야 된다 됀다 블루 스택 10승 자료구조 마이크가 어디 있나 알고리즘 문제 해결 전략 c로 쓴 자료 구조론 소프트웨어 공학 가나다 라마바사 순하고 향기로운 섬유향수 김민정 서버에서 프로 산 후에 클라이언트에서도 크로스를 호출해 주어 정상적인 상태가 됩니다 unix network programming 2장에 보면 11개 tcp 상태 전이 그림이 나와 있습니다 참고하시면 될 것 같습니다 ","date":"Sat May 25 15:15:50 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"},{"number":"n0340","content":"","date":"Sat May 25 17:04:16 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"p5282","content":"","date":"Sat May 25 16:10:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"pw2mk","content":"","date":"Sat May 25 15:13:19 UTC 2019","members":"c1234 ","title":"19_05_261234"},{"number":"q8z18","content":"도검 시작 합니다 토스트 만들기 나빼고 아구찜 등기부 등본 드럽게 못 알아들어 일기보다 라든요 코도모 드래곤 코도모 드래곤 목소리가 커도 못 알아들어 ","date":"Sat May 25 15:24:29 UTC 2019","members":"c1234 ","title":"19_05_26"}],"talkWithMe":"chan ","contributionData":[67.0,94.8,50.0]}
-Elapsed Time: 0.051s
-[FROM Client] TIME:Sat May 25 17:49:05 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"092gk","content":"","date":"Sat May 25 15:10:38 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"135ua","content":"가나다 라마바사 미국은 잘되지 가나다 라마바사 키보드 하나라도 나와야 된다 키보드 티월드 키워드 키워드 ","date":"Sat May 25 16:16:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"2k799","content":"","date":"Sat May 25 17:18:14 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"43bhp","content":"","date":"Sat May 25 16:14:28 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"66dze","content":"녹음 시작합니다 인지 확인할 수 있나요 강조 북마크 다 잘됩니다 순하고 향기로운 섬유향수 알고리즘 문제 해결 전략 알고리즘 트레이닝 인공지능 현대적 접근방식 소프트웨어 공학은 너무 어렵다 데이터베이스 시스템은 점수가 잘 안나왔다 대명사 고유명사 일반명사 의존명사 모란 네이버 클로바 ","date":"Sat May 25 17:19:44 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"8h5v2","content":"시작되나 시작 바이크 안개등 마이크가 안 됐던 거야 된다 됀다 블루 스택 10승 자료구조 마이크가 어디 있나 알고리즘 문제 해결 전략 c로 쓴 자료 구조론 소프트웨어 공학 가나다 라마바사 순하고 향기로운 섬유향수 김민정 서버에서 프로 산 후에 클라이언트에서도 크로스를 호출해 주어 정상적인 상태가 됩니다 unix network programming 2장에 보면 11개 tcp 상태 전이 그림이 나와 있습니다 참고하시면 될 것 같습니다 ","date":"Sat May 25 15:15:50 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"},{"number":"n0340","content":"","date":"Sat May 25 17:04:16 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"p5282","content":"","date":"Sat May 25 16:10:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"pw2mk","content":"","date":"Sat May 25 15:13:19 UTC 2019","members":"c1234 ","title":"19_05_261234"},{"number":"q8z18","content":"도검 시작 합니다 토스트 만들기 나빼고 아구찜 등기부 등본 드럽게 못 알아들어 일기보다 라든요 코도모 드래곤 코도모 드래곤 목소리가 커도 못 알아들어 ","date":"Sat May 25 15:24:29 UTC 2019","members":"c1234 ","title":"19_05_26"}],"talkWithMe":"chan ","contributionData":[67.0,94.8,50.0]}
-Elapsed Time: 0.029s
-[FROM Client] TIME:Sat May 25 17:49:12 UTC 2019 TALKER: nicks MESSAGE: 66dze FUNC: 12 NUMBER: 0
-[REQUEST_RESULT] : 66dze
-{"wordFrequency":{"북":1,"방식":1,"의존":1,"일반":1,"네이버":1,"향수":1,"알고리즘":2,"모란":1,"명사":3,"인지":1,"점수":1,"접근":1,"바":1,"고유":1,"수":1,"확인":1,"데이터베이스 시스템":1,"녹음":1,"현대":1,"전략":1,"문제 해결":1,"인공지능":1,"트레이닝":1,"섬유":1,"시작":1,"소프트웨어 공학":1,"강조":1,"대명사":1,"클로":1,"향기":1,"마크":1},"fiveKeyWord":{"명사":3,"의존":1,"인공지능":1,"강조":1,"알고리즘":2},"contrib":{"c1234":1.0},"cont":[{"room":"66dze","time":"Sat May 25 17:19:47 UTC 2019","msg":"녹음 시작합니다","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:19:52 UTC 2019","msg":"인지 확인할 수 있나요","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:19:58 UTC 2019","msg":"강조 북마크 다 잘됩니다","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:09 UTC 2019","msg":"순하고 향기로운 섬유향수","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:15 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:21 UTC 2019","msg":"알고리즘 트레이닝","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:26 UTC 2019","msg":"인공지능 현대적 접근방식","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:32 UTC 2019","msg":"소프트웨어 공학은 너무 어렵다","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:38 UTC 2019","msg":"데이터베이스 시스템은 점수가 잘 안나왔다","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:46 UTC 2019","msg":"대명사 고유명사","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:52 UTC 2019","msg":"일반명사 의존명사","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:20:58 UTC 2019","msg":"모란","id":"c1234"},{"room":"66dze","time":"Sat May 25 17:21:02 UTC 2019","msg":"네이버 클로바","id":"c1234"}],"markData":"0000000000000"}
-Elapsed Time: 0.012s
-[FROM Client] TIME:Sat May 25 17:49:43 UTC 2019 TALKER: nicks MESSAGE: 많이 말한 거 FUNC: 1 NUMBER: 0
+[FROM Client] TIME:Sun May 26 04:49:33 UTC 2019 TALKER: nicks MESSAGE: 19_05_26 FUNC: 1 NUMBER: 0
 Elapsed Time: 0.002s
-[FROM Client] TIME:Sat May 25 17:49:43 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: g4coi
-Elapsed Time: 0.002s
-[FROM Client] TIME:Sat May 25 17:49:45 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: g4coi
-[REQUEST START] INSERT START MESSAGE TO DB
-[REQUEST START] RECEIVER LIST : Elapsed Time: 0.001s
-[FROM Client] TIME:Sat May 25 17:49:49 UTC 2019 TALKER: nicks MESSAGE: 주가 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 주가 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.016s
-[FROM Client] TIME:Sat May 25 17:49:53 UTC 2019 TALKER: nicks MESSAGE: 녹음 중입니까 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 녹음 중 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.01s
-[FROM Client] TIME:Sat May 25 17:49:58 UTC 2019 TALKER: nicks MESSAGE: 과연 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.002s
-[FROM Client] TIME:Sat May 25 17:50:14 UTC 2019 TALKER: nicks MESSAGE: 갤럭시 s9 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 갤럭시 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.004s
-[FROM Client] TIME:Sat May 25 17:50:22 UTC 2019 TALKER: nicks MESSAGE: 스마트폰은 좋은 것 같다 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 스마트폰 것 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.007s
-[FROM Client] TIME:Sat May 25 17:50:27 UTC 2019 TALKER: nicks MESSAGE: 생각보다 클로바는 잘 못 알아듣는다 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 생각 클로 바 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.01s
-[FROM Client] TIME:Sat May 25 17:50:32 UTC 2019 TALKER: nicks MESSAGE: 구글 api는 비탈리 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 구글 비탈리 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.006s
-[FROM Client] TIME:Sat May 25 17:50:41 UTC 2019 TALKER: nicks MESSAGE: 구글 api가 노숙을 했다 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 구글 노숙 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.011s
-[FROM Client] TIME:Sat May 25 17:50:47 UTC 2019 TALKER: nicks MESSAGE: 구글 api도 한번 써볼 걸 그랬다 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 구글 번 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.006s
-[FROM Client] TIME:Sat May 25 17:50:54 UTC 2019 TALKER: nicks MESSAGE: 아니 말한거는 뭐라고 말할까 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 말 것 뭐 말 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.011s
-[FROM Client] TIME:Sat May 25 17:51:02 UTC 2019 TALKER: nicks MESSAGE: 코팅 다크 리 잘되고 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 코팅 다크 리 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.007s
-[FROM Client] TIME:Sat May 25 17:51:07 UTC 2019 TALKER: nicks MESSAGE: 버튼도 캐릭터 잘 되고 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 버튼 캐릭터 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.009s
-[FROM Client] TIME:Sat May 25 17:51:13 UTC 2019 TALKER: nicks MESSAGE: 무영도 괜찮은 곳 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 영도 곳 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.004s
-[FROM Client] TIME:Sat May 25 17:51:20 UTC 2019 TALKER: nicks MESSAGE: 이제 잘 시간입니다 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 시간 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.005s
-[FROM Client] TIME:Sat May 25 17:51:24 UTC 2019 TALKER: nicks MESSAGE: 파일 만든 것 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 파일 것 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.005s
-[FROM Client] TIME:Sat May 25 17:51:31 UTC 2019 TALKER: nicks MESSAGE: 팔봉면 구도 스타트로 105 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 팔봉면 구도 스타트 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.01s
-[FROM Client] TIME:Sat May 25 17:51:38 UTC 2019 TALKER: nicks MESSAGE: 파일 뽑는거에서 스타트랑 인데 제외하고 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 파일 거 스타트 제외 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.011s
-[FROM Client] TIME:Sat May 25 17:51:44 UTC 2019 TALKER: nicks MESSAGE: 나머지 꽃들로 시간 출력 해 사면 될 것 같다 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 나머지 꽃 시간 출력 사면 것 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.012s
-[FROM Client] TIME:Sat May 25 17:51:51 UTC 2019 TALKER: nicks MESSAGE: 마크 데이터 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 마크 데이터 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003s
-[FROM Client] TIME:Sat May 25 17:51:59 UTC 2019 TALKER: nicks MESSAGE: 짝수는 모르겠습니다 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 짝수 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.004s
-[FROM Client] TIME:Sat May 25 17:52:10 UTC 2019 TALKER: nicks MESSAGE: 얼마나 나올지 궁금하다 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.003s
-[FROM Client] TIME:Sat May 25 17:52:15 UTC 2019 TALKER: nicks MESSAGE: 중간에 들어오는 거 확인 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 중간 거 확인 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.01s
-[FROM Client] TIME:Sat May 25 17:52:20 UTC 2019 TALKER: nicks MESSAGE: 중간에 들어온 거 확인해서 생각해보니까 FUNC: 0 NUMBER: g4coi
-[DEFAULT MESSAGE]
-[RECEIVER LIST] : 중간 거 확인 생각 [SEND SUCCESS & INSERT MESSAGE TO DB]
-Elapsed Time: 0.01s
-[FROM Client] TIME:Sat May 25 17:52:23 UTC 2019 TALKER: nicks MESSAGE: 01010101010101010101000 FUNC: 5 NUMBER: g4coi
-[REQUEST EXIT] 01010101010101010101000
-[REQUEST EXIT] RECEIVER LIST: 
-[REQUEST EXIT] APPLY MY INFO
-[REQUEST EXIT] ROOM EMPTY!!
-Elapsed Time: 0.002s
-[FROM Client] TIME:Sat May 25 17:52:24 UTC 2019 TALKER: nicks MESSAGE: g4coi FUNC: 12 NUMBER: 
-[REQUEST_RESULT] : g4coi
-{"wordFrequency":{"구글":2,"짝수":1,"것":2,"꽃":1,"제외":1,"번":1,"중간":2,"비탈리":1,"구도":1,"나머지":1,"말":2,"출력":1,"사면":1,"뭐":1,"중":1,"스마트폰":1,"바":1,"데이터":1,"확인":2,"생각":2,"주가":1,"다크":1,"녹음":1,"스타트":2,"코팅":1,"파일":2,"리":1,"캐릭터":1,"갤럭시":1,"버튼":1,"시간":2,"거":2,"팔봉면":1,"클로":1,"곳":1,"마크":1,"노숙":1,"영도":1},"fiveKeyWord":{"시간":2,"말":2,"스타트":2,"확인":2,"중간":2},"contrib":{"c1234":1.0},"cont":[{"room":"g4coi","time":"Sat May 25 17:49:49 UTC 2019","msg":"주가","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:49:53 UTC 2019","msg":"녹음 중입니까","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:49:58 UTC 2019","msg":"과연","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:14 UTC 2019","msg":"갤럭시 s9","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:22 UTC 2019","msg":"스마트폰은 좋은 것 같다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:27 UTC 2019","msg":"생각보다 클로바는 잘 못 알아듣는다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:32 UTC 2019","msg":"구글 api는 비탈리","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:41 UTC 2019","msg":"구글 api가 노숙을 했다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:47 UTC 2019","msg":"구글 api도 한번 써볼 걸 그랬다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:54 UTC 2019","msg":"아니 말한거는 뭐라고 말할까","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:02 UTC 2019","msg":"코팅 다크 리 잘되고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:07 UTC 2019","msg":"버튼도 캐릭터 잘 되고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:13 UTC 2019","msg":"무영도 괜찮은 곳","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:20 UTC 2019","msg":"이제 잘 시간입니다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:24 UTC 2019","msg":"파일 만든 것","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:31 UTC 2019","msg":"팔봉면 구도 스타트로 105","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:38 UTC 2019","msg":"파일 뽑는거에서 스타트랑 인데 제외하고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:44 UTC 2019","msg":"나머지 꽃들로 시간 출력 해 사면 될 것 같다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:51 UTC 2019","msg":"마크 데이터","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:59 UTC 2019","msg":"짝수는 모르겠습니다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:10 UTC 2019","msg":"얼마나 나올지 궁금하다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:15 UTC 2019","msg":"중간에 들어오는 거 확인","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:20 UTC 2019","msg":"중간에 들어온 거 확인해서 생각해보니까","id":"c1234"}],"markData":"01010101010101010101000"}
-Elapsed Time: 0.005s
-[FROM Client] TIME:Sat May 25 17:53:12 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 
-{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"092gk","content":"","date":"Sat May 25 15:10:38 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"135ua","content":"가나다 라마바사 미국은 잘되지 가나다 라마바사 키보드 하나라도 나와야 된다 키보드 티월드 키워드 키워드 ","date":"Sat May 25 16:16:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"2k799","content":"","date":"Sat May 25 17:18:14 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"43bhp","content":"","date":"Sat May 25 16:14:28 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"66dze","content":"녹음 시작합니다 인지 확인할 수 있나요 강조 북마크 다 잘됩니다 순하고 향기로운 섬유향수 알고리즘 문제 해결 전략 알고리즘 트레이닝 인공지능 현대적 접근방식 소프트웨어 공학은 너무 어렵다 데이터베이스 시스템은 점수가 잘 안나왔다 대명사 고유명사 일반명사 의존명사 모란 네이버 클로바 ","date":"Sat May 25 17:19:44 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"8h5v2","content":"시작되나 시작 바이크 안개등 마이크가 안 됐던 거야 된다 됀다 블루 스택 10승 자료구조 마이크가 어디 있나 알고리즘 문제 해결 전략 c로 쓴 자료 구조론 소프트웨어 공학 가나다 라마바사 순하고 향기로운 섬유향수 김민정 서버에서 프로 산 후에 클라이언트에서도 크로스를 호출해 주어 정상적인 상태가 됩니다 unix network programming 2장에 보면 11개 tcp 상태 전이 그림이 나와 있습니다 참고하시면 될 것 같습니다 ","date":"Sat May 25 15:15:50 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"g4coi","content":"주가 녹음 중입니까 과연 갤럭시 s9 스마트폰은 좋은 것 같다 생각보다 클로바는 잘 못 알아듣는다 구글 api는 비탈리 구글 api가 노숙을 했다 구글 api도 한번 써볼 걸 그랬다 아니 말한거는 뭐라고 말할까 코팅 다크 리 잘되고 버튼도 캐릭터 잘 되고 무영도 괜찮은 곳 이제 잘 시간입니다 파일 만든 것 팔봉면 구도 스타트로 105 파일 뽑는거에서 스타트랑 인데 제외하고 나머지 꽃들로 시간 출력 해 사면 될 것 같다 마크 데이터 짝수는 모르겠습니다 얼마나 나올지 궁금하다 중간에 들어오는 거 확인 중간에 들어온 거 확인해서 생각해보니까 ","date":"Sat May 25 17:49:45 UTC 2019","members":"c1234 ","title":"많이 말한 거"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"},{"number":"n0340","content":"","date":"Sat May 25 17:04:16 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"p5282","content":"","date":"Sat May 25 16:10:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"pw2mk","content":"","date":"Sat May 25 15:13:19 UTC 2019","members":"c1234 ","title":"19_05_261234"},{"number":"q8z18","content":"도검 시작 합니다 토스트 만들기 나빼고 아구찜 등기부 등본 드럽게 못 알아들어 일기보다 라든요 코도모 드래곤 코도모 드래곤 목소리가 커도 못 알아들어 ","date":"Sat May 25 15:24:29 UTC 2019","members":"c1234 ","title":"19_05_26"}],"talkWithMe":"chan ","contributionData":[67.2,95.19999999999999,50.0]}
-Elapsed Time: 0.023s
-[FROM Client] TIME:Sat May 25 17:53:34 UTC 2019 TALKER: nicks MESSAGE: g4coi FUNC: 9 NUMBER: 
-Elapsed Time: 0.22s
-[FROM Client] TIME:Sat May 25 17:53:39 UTC 2019 TALKER: nicks MESSAGE: g4coi FUNC: 12 NUMBER: 
-[REQUEST_RESULT] : g4coi
-{"wordFrequency":{"구글":2,"짝수":1,"것":2,"꽃":1,"제외":1,"번":1,"중간":2,"비탈리":1,"구도":1,"나머지":1,"말":2,"출력":1,"사면":1,"뭐":1,"중":1,"스마트폰":1,"바":1,"데이터":1,"확인":2,"생각":2,"주가":1,"다크":1,"녹음":1,"스타트":2,"코팅":1,"파일":2,"리":1,"캐릭터":1,"갤럭시":1,"버튼":1,"시간":2,"거":2,"팔봉면":1,"클로":1,"곳":1,"마크":1,"노숙":1,"영도":1},"fiveKeyWord":{"시간":2,"말":2,"스타트":2,"확인":2,"중간":2},"contrib":{"c1234":1.0},"cont":[{"room":"g4coi","time":"Sat May 25 17:49:49 UTC 2019","msg":"주가","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:49:53 UTC 2019","msg":"녹음 중입니까","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:49:58 UTC 2019","msg":"과연","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:14 UTC 2019","msg":"갤럭시 s9","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:22 UTC 2019","msg":"스마트폰은 좋은 것 같다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:27 UTC 2019","msg":"생각보다 클로바는 잘 못 알아듣는다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:32 UTC 2019","msg":"구글 api는 비탈리","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:41 UTC 2019","msg":"구글 api가 노숙을 했다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:47 UTC 2019","msg":"구글 api도 한번 써볼 걸 그랬다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:50:54 UTC 2019","msg":"아니 말한거는 뭐라고 말할까","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:02 UTC 2019","msg":"코팅 다크 리 잘되고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:07 UTC 2019","msg":"버튼도 캐릭터 잘 되고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:13 UTC 2019","msg":"무영도 괜찮은 곳","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:20 UTC 2019","msg":"이제 잘 시간입니다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:24 UTC 2019","msg":"파일 만든 것","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:31 UTC 2019","msg":"팔봉면 구도 스타트로 105","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:38 UTC 2019","msg":"파일 뽑는거에서 스타트랑 인데 제외하고","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:44 UTC 2019","msg":"나머지 꽃들로 시간 출력 해 사면 될 것 같다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:51 UTC 2019","msg":"마크 데이터","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:51:59 UTC 2019","msg":"짝수는 모르겠습니다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:10 UTC 2019","msg":"얼마나 나올지 궁금하다","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:15 UTC 2019","msg":"중간에 들어오는 거 확인","id":"c1234"},{"room":"g4coi","time":"Sat May 25 17:52:20 UTC 2019","msg":"중간에 들어온 거 확인해서 생각해보니까","id":"c1234"}],"markData":"01010101010101010101000"}
-Elapsed Time: 0.01s
 java.lang.NullPointerException
 	at TCPServer$ServerHandler.run(TCPServer.java:196)
+Socket Close
+[FROM Client] TIME:Sun May 26 04:49:33 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: 3kdzj
+Elapsed Time: 0.004s
+[FROM Client] TIME:Sun May 26 04:49:35 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: 3kdzj
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 04:49:45 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 5 NUMBER: 3kdzj
+[REQUEST EXIT] 
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+[REQUEST EXIT] ROOM EMPTY!!
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 04:49:46 UTC 2019 TALKER: nicks MESSAGE: 3kdzj FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 3kdzj
+{"wordFrequency":{},"fiveKeyWord":{},"contrib":{"c1234":1.0},"cont":[],"markData":""}
+Elapsed Time: 0.013s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:196)
+Socket Close
+Sun May 26 04:50:58 UTC 2019 Server: Accept 118.216.115.231 6318
+Sun May 26 04:50:59 UTC 2019 Server: Accept 118.216.115.231 6319
+[FROM Client] TIME:Sun May 26 04:50:59 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 04:51:00 UTC 2019 TALKER: nicks MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.001s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:196)
+Socket Close
+[FROM Client] TIME:Sun May 26 04:51:01 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"092gk","content":"","date":"Sat May 25 15:10:38 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"135ua","content":"가나다 라마바사 미국은 잘되지 가나다 라마바사 키보드 하나라도 나와야 된다 키보드 티월드 키워드 키워드 ","date":"Sat May 25 16:16:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"23fdw","content":"해커스토익 해커스토익 스피킹 스피킹 가나다 라바 가나다 라바 알고리즘 문제 해결 전략 알고리즘 문제 해결 전략 알고리즘 트레이닝 알고리즘 트레이닝 강도가 잘되나 강도가 잘되나 코스만 코스만 나갑니다 나갑니다 ","date":"Sat May 25 12:35:00 UTC 2019","members":"c1234 chan ","title":"19-05-25 머로 할까"},{"number":"2k799","content":"","date":"Sat May 25 17:18:14 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"3kdzj","content":"","date":"Sun May 26 04:49:35 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"43bhp","content":"","date":"Sat May 25 16:14:28 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"63yi1","content":"","date":"Sun May 26 04:36:46 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"66dze","content":"녹음 시작합니다 인지 확인할 수 있나요 강조 북마크 다 잘됩니다 순하고 향기로운 섬유향수 알고리즘 문제 해결 전략 알고리즘 트레이닝 인공지능 현대적 접근방식 소프트웨어 공학은 너무 어렵다 데이터베이스 시스템은 점수가 잘 안나왔다 대명사 고유명사 일반명사 의존명사 모란 네이버 클로바 ","date":"Sat May 25 17:19:44 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"73ouj","content":"중개사 중개사 시작 시작 녹음 시작 시작 게스트 게스트 ","date":"Sun May 26 03:52:19 UTC 2019","members":"c1234 GUEST_guest ","title":" 녹음 중 게스트 입장"},{"number":"84466","content":"가나다 라마바사 가나다 라마바사 ","date":"Sun May 26 03:54:18 UTC 2019","members":"c1234 GUEST_asdf ","title":"19_05_26"},{"number":"8h5v2","content":"시작되나 시작 바이크 안개등 마이크가 안 됐던 거야 된다 됀다 블루 스택 10승 자료구조 마이크가 어디 있나 알고리즘 문제 해결 전략 c로 쓴 자료 구조론 소프트웨어 공학 가나다 라마바사 순하고 향기로운 섬유향수 김민정 서버에서 프로 산 후에 클라이언트에서도 크로스를 호출해 주어 정상적인 상태가 됩니다 unix network programming 2장에 보면 11개 tcp 상태 전이 그림이 나와 있습니다 참고하시면 될 것 같습니다 ","date":"Sat May 25 15:15:50 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"g4coi","content":"주가 녹음 중입니까 과연 갤럭시 s9 스마트폰은 좋은 것 같다 생각보다 클로바는 잘 못 알아듣는다 구글 api는 비탈리 구글 api가 노숙을 했다 구글 api도 한번 써볼 걸 그랬다 아니 말한거는 뭐라고 말할까 코팅 다크 리 잘되고 버튼도 캐릭터 잘 되고 무영도 괜찮은 곳 이제 잘 시간입니다 파일 만든 것 팔봉면 구도 스타트로 105 파일 뽑는거에서 스타트랑 인데 제외하고 나머지 꽃들로 시간 출력 해 사면 될 것 같다 마크 데이터 짝수는 모르겠습니다 얼마나 나올지 궁금하다 중간에 들어오는 거 확인 중간에 들어온 거 확인해서 생각해보니까 ","date":"Sat May 25 17:49:45 UTC 2019","members":"c1234 ","title":"많이 말한 거"},{"number":"hj3h6","content":"가나다 라마바사 현재시간 현지시간 이상하게 나온다 키보드 키몰 키워드 키보드 키보드 가나다 라마바사 짝수만 선택했다 ","date":"Sat May 25 12:22:22 UTC 2019","members":"c1234 ","title":"19-05-25 회의제목을 멀로하지"},{"number":"n0340","content":"","date":"Sat May 25 17:04:16 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"n17bo","content":"","date":"Sun May 26 03:11:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"p5282","content":"","date":"Sat May 25 16:10:18 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"pw2mk","content":"","date":"Sat May 25 15:13:19 UTC 2019","members":"c1234 ","title":"19_05_261234"},{"number":"q8z18","content":"도검 시작 합니다 토스트 만들기 나빼고 아구찜 등기부 등본 드럽게 못 알아들어 일기보다 라든요 코도모 드래곤 코도모 드래곤 목소리가 커도 못 알아들어 ","date":"Sat May 25 15:24:29 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"qwvmd","content":"가나다 라마바사 알고리즘 트레이닝 ","date":"Sun May 26 03:45:41 UTC 2019","members":"c1234 GUEST_guest ","title":"2명 테스트"},{"number":"rpymw","content":"","date":"Sun May 26 04:01:06 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"u3zi3","content":"가나다라 마법사 가사 마이크 마이크 테스트 마이크 테스트 라이크 바이크 바이크 바이크 바이크 알아봐 가나다라 가라 가나다 라마바사 알고리즘 트레이닝 마이크 테스트 마이크 테스트 시작하라 방사 중간에 들어서 누구나 가능하다 주가네 근데 스타트 스타트 ","date":"Sun May 26 03:48:09 UTC 2019","members":"c123 c1234 ","title":"2명 테스트"}],"talkWithMe":"c123 GUEST_asdf GUEST_guest chan ","contributionData":[68.9,89.7,60.0]}
+Elapsed Time: 0.058s
+[FROM Client] TIME:Sun May 26 04:51:05 UTC 2019 TALKER: nicks MESSAGE: 19_05_26ftyf FUNC: 1 NUMBER: 0
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:51:05 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: wcb4j
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:51:07 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: wcb4j
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:51:12 UTC 2019 TALKER: nicks MESSAGE: 알아봐 FUNC: 0 NUMBER: wcb4j
+[RECEIVER LIST] : Elapsed Time: 0.015s
+[FROM Client] TIME:Sun May 26 04:51:16 UTC 2019 TALKER: nicks MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: wcb4j
+[RECEIVER LIST] : Elapsed Time: 0.013s
+[FROM Client] TIME:Sun May 26 04:51:19 UTC 2019 TALKER: nicks MESSAGE: 했습니다 FUNC: 0 NUMBER: wcb4j
+[RECEIVER LIST] : Elapsed Time: 0.007s
+[FROM Client] TIME:Sun May 26 04:51:20 UTC 2019 TALKER: nicks MESSAGE: END FUNC: 13 NUMBER: wcb4j
+[RECEIVER LIST] : [RECEIVER LIST] : Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 04:51:20 UTC 2019 TALKER: nicks MESSAGE: 000 FUNC: 5 NUMBER: wcb4j
+[REQUEST EXIT] 000
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+[REQUEST EXIT] ROOM EMPTY!!
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 04:51:20 UTC 2019 TALKER: nicks MESSAGE: 000 FUNC: 5 NUMBER: 
+[REQUEST EXIT] 000
+[REQUEST EXIT] RECEIVER LIST: java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:342)
+Socket Close
+Sun May 26 04:53:33 UTC 2019 Server: Accept 118.216.115.231 6391
+Sun May 26 04:53:33 UTC 2019 Server: Accept 118.216.115.231 6401
+Sun May 26 04:53:33 UTC 2019 Server: Accept 118.216.115.231 6402
+[FROM Client] TIME:Sun May 26 04:53:34 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:53:34 UTC 2019 TALKER: nicks MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:53:34 UTC 2019 TALKER: nicks MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 04:53:37 UTC 2019 TALKER: nicks MESSAGE: 19_05_26iojoi FUNC: 1 NUMBER: 0
+Elapsed Time: 0.001s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:196)
+Socket Close
+[FROM Client] TIME:Sun May 26 04:53:37 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: 30rb3
+Elapsed Time: 0.0s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:196)
+Socket Close
+[FROM Client] TIME:Sun May 26 04:53:39 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: 30rb3
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:53:43 UTC 2019 TALKER: nicks MESSAGE: 주가 FUNC: 0 NUMBER: 30rb3
+[RECEIVER LIST] : Elapsed Time: 0.004s
+[FROM Client] TIME:Sun May 26 04:53:46 UTC 2019 TALKER: nicks MESSAGE: 녹음 녹음 좀 FUNC: 0 NUMBER: 30rb3
+[RECEIVER LIST] : Elapsed Time: 0.003s
+[FROM Client] TIME:Sun May 26 04:53:47 UTC 2019 TALKER: nicks MESSAGE: END FUNC: 13 NUMBER: 30rb3
+[RECEIVER LIST] : [RECEIVER LIST] : Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:53:47 UTC 2019 TALKER: nicks MESSAGE: 30rb3 FUNC: 12 NUMBER: 30rb3
+[REQUEST_RESULT] : 30rb3
+{"wordFrequency":{"녹음":2,"주가":1},"fiveKeyWord":{"녹음":2,"주가":1},"contrib":{"c1234":1.0},"cont":[{"room":"30rb3","time":"Sun May 26 04:53:43 UTC 2019","msg":"주가","id":"c1234"},{"room":"30rb3","time":"Sun May 26 04:53:46 UTC 2019","msg":"녹음 녹음 좀","id":"c1234"}],"markData":""}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 04:53:48 UTC 2019 TALKER: nicks MESSAGE: 30rb3 FUNC: 12 NUMBER: 30rb3
+[REQUEST_RESULT] : 30rb3
+{"wordFrequency":{"녹음":2,"주가":1},"fiveKeyWord":{"녹음":2,"주가":1},"contrib":{"c1234":1.0},"cont":[{"room":"30rb3","time":"Sun May 26 04:53:43 UTC 2019","msg":"주가","id":"c1234"},{"room":"30rb3","time":"Sun May 26 04:53:46 UTC 2019","msg":"녹음 녹음 좀","id":"c1234"}],"markData":""}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 04:53:55 UTC 2019 TALKER: nicks MESSAGE: 19_05_26iojoij FUNC: 1 NUMBER: 30rb3
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:53:55 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: tkk42
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 04:53:57 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: tkk42
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:54:08 UTC 2019 TALKER: nicks MESSAGE: END FUNC: 13 NUMBER: tkk42
+[RECEIVER LIST] : [RECEIVER LIST] : Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:54:08 UTC 2019 TALKER: nicks MESSAGE: tkk42 FUNC: 12 NUMBER: tkk42
+[REQUEST_RESULT] : tkk42
+{"wordFrequency":{},"fiveKeyWord":{},"contrib":{"c1234":1.0},"cont":[],"markData":""}
+Elapsed Time: 0.003s
+[FROM Client] TIME:Sun May 26 04:54:08 UTC 2019 TALKER: nicks MESSAGE: tkk42 FUNC: 12 NUMBER: tkk42
+[REQUEST_RESULT] : tkk42
+{"wordFrequency":{},"fiveKeyWord":{},"contrib":{"c1234":1.0},"cont":[],"markData":""}
+Elapsed Time: 0.003s
+[FROM Client] TIME:Sun May 26 04:54:13 UTC 2019 TALKER: nicks MESSAGE: 19_05_26jkhuio FUNC: 1 NUMBER: tkk42
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:54:13 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: dua60
+Elapsed Time: 0.0s
+Sun May 26 04:54:16 UTC 2019 Server: Accept 223.38.24.116 52340
+[FROM Client] TIME:Sun May 26 04:54:16 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: dua60
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:54:20 UTC 2019 TALKER:  MESSAGE:  FUNC: 4 NUMBER: 0
+[SET TALKER] nickname: 
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 04:54:20 UTC 2019 TALKER: nicks MESSAGE: 주가 FUNC: 0 NUMBER: dua60
+[RECEIVER LIST] : Elapsed Time: 0.005s
+[FROM Client] TIME:Sun May 26 04:54:24 UTC 2019 TALKER: nicks MESSAGE: 녹음 녹음 녹음 FUNC: 0 NUMBER: dua60
+[RECEIVER LIST] : Elapsed Time: 0.003s
+[FROM Client] TIME:Sun May 26 04:54:26 UTC 2019 TALKER: nicks MESSAGE: 00 FUNC: 5 NUMBER: dua60
+[REQUEST EXIT] 00
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+[REQUEST EXIT] ROOM EMPTY!!
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 04:54:26 UTC 2019 TALKER: nicks MESSAGE: dua60 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : dua60
+{"wordFrequency":{"녹음":3,"주가":1},"fiveKeyWord":{"녹음":3,"주가":1},"contrib":{"c1234":1.0},"cont":[{"room":"dua60","time":"Sun May 26 04:54:20 UTC 2019","msg":"주가","id":"c1234"},{"room":"dua60","time":"Sun May 26 04:54:24 UTC 2019","msg":"녹음 녹음 녹음","id":"c1234"}],"markData":"00"}
+Elapsed Time: 0.002s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:196)
+Socket Close
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:196)
+Socket Close
+Sun May 26 04:54:41 UTC 2019 Server: Accept 223.38.24.116 52342
+Sun May 26 04:54:48 UTC 2019 Server: Accept 118.216.115.231 6474
+Sun May 26 04:54:48 UTC 2019 Server: Accept 118.216.115.231 6478
+[FROM Client] TIME:Sun May 26 04:54:49 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:54:49 UTC 2019 TALKER: nicks MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+id: c1234 pwd: 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 04:54:52 UTC 2019 TALKER: nicks MESSAGE: jhuhiuhui19_05_26 FUNC: 1 NUMBER: 0
+Elapsed Time: 0.001s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:196)
+Socket Close
+[FROM Client] TIME:Sun May 26 04:54:52 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: u8n3w
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:54:54 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: u8n3w
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 04:54:57 UTC 2019 TALKER: nicks MESSAGE: 노동 중독 음주 FUNC: 0 NUMBER: u8n3w
+[RECEIVER LIST] : Elapsed Time: 0.013s
+[FROM Client] TIME:Sun May 26 04:54:59 UTC 2019 TALKER: nicks MESSAGE: u8n3w FUNC: 12 NUMBER: u8n3w
+[REQUEST_RESULT] : u8n3w
+{"wordFrequency":{"노동":1,"음주":1,"중독":1},"fiveKeyWord":{"노동":1,"음주":1,"중독":1},"contrib":{"c1234":1.0},"cont":[{"room":"u8n3w","time":"Sun May 26 04:54:57 UTC 2019","msg":"노동 중독 음주","id":"c1234"}],"markData":""}
+Elapsed Time: 0.002s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:196)
+Socket Close
+Server: DB Connecting..
+Connecting...
+DB Conncted.
+Server: Success DB Connect
+Server: Socket Connecting...
+Sun May 26 14:44:55 UTC 2019 Server: Accept 118.216.115.231 3349
+Sun May 26 14:44:56 UTC 2019 Server: Accept 118.216.115.231 3353
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+Sun May 26 14:45:18 UTC 2019 Server: Accept 118.216.115.231 3404
+[FROM Client] TIME:Sun May 26 14:45:30 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+Elapsed Time: 0.025s
+[FROM Client] TIME:Sun May 26 14:46:20 UTC 2019 TALKER: nicks MESSAGE: 19_05_26 FUNC: 1 NUMBER: 0
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:46:20 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: o2554
+Elapsed Time: 0.012s
+Sun May 26 14:48:14 UTC 2019 Server: Accept 118.216.115.231 3676
+Sun May 26 14:48:16 UTC 2019 Server: Accept 118.216.115.231 3681
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+[FROM Client] TIME:Sun May 26 14:48:23 UTC 2019 TALKER:  MESSAGE: oijoij FUNC: 4 NUMBER: 0
+[SET TALKER] nickname: oijoij
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 14:48:27 UTC 2019 TALKER: GUEST_oijoij MESSAGE: 19-05-26 FUNC: 1 NUMBER: 0
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:48:27 UTC 2019 TALKER: GUEST_oijoij MESSAGE:  FUNC: 11 NUMBER: 3uq90
+Elapsed Time: 0.0s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+Sun May 26 14:48:51 UTC 2019 Server: Accept 118.216.115.231 3718
+Sun May 26 14:48:51 UTC 2019 Server: Accept 118.216.115.231 3720
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+[FROM Client] TIME:Sun May 26 14:48:57 UTC 2019 TALKER:  MESSAGE: iojioj FUNC: 4 NUMBER: 0
+[SET TALKER] nickname: iojioj
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 14:49:06 UTC 2019 TALKER: GUEST_iojioj MESSAGE: 19_05_26 FUNC: 1 NUMBER: 0
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:49:07 UTC 2019 TALKER: GUEST_iojioj MESSAGE:  FUNC: 11 NUMBER: 6220u
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 14:49:15 UTC 2019 TALKER: nicks MESSAGE: 6220u FUNC: 2 NUMBER: o2554
+[requestEnter] EXIST RESPONSE TRUE
+[requestEnter] response not running!!
+Elapsed Time: 0.002s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+Sun May 26 14:49:31 UTC 2019 Server: Accept 118.216.115.231 3768
+Sun May 26 14:49:31 UTC 2019 Server: Accept 118.216.115.231 3769
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+Sun May 26 14:49:36 UTC 2019 Server: Accept 118.216.115.231 3789
+Sun May 26 14:49:36 UTC 2019 Server: Accept 118.216.115.231 3790
+[FROM Client] TIME:Sun May 26 14:49:50 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+Elapsed Time: 0.002s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+[FROM Client] TIME:Sun May 26 14:49:53 UTC 2019 TALKER:  MESSAGE: {"id":"c123","pw":"a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:50:04 UTC 2019 TALKER: nicks MESSAGE: 19_05_26 FUNC: 1 NUMBER: 0
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:50:04 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: b97ko
+Elapsed Time: 0.0s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+[FROM Client] TIME:Sun May 26 14:50:10 UTC 2019 TALKER: 123 MESSAGE: b97ko FUNC: 2 NUMBER: 0
+[requestEnter] EXIST RESPONSE TRUE
+[requestEnter] response not running!!
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:50:10 UTC 2019 TALKER: 123 MESSAGE:  FUNC: 11 NUMBER: b97ko
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 14:50:13 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: b97ko
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : 123 Elapsed Time: 0.005s
+[FROM Client] TIME:Sun May 26 14:50:13 UTC 2019 TALKER: 123 MESSAGE: START FUNC: 3 NUMBER: b97ko
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : nicks Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:50:17 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 5 NUMBER: b97ko
+[REQUEST EXIT] 
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:50:18 UTC 2019 TALKER: nicks MESSAGE: b97ko FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : b97ko
+{"wordFrequency":{},"fiveKeyWord":{},"contrib":{"c123":0.5,"c1234":0.5},"keywordContrib":{},"cont":[],"markData":""}
+Elapsed Time: 0.01s
+[FROM Client] TIME:Sun May 26 14:50:22 UTC 2019 TALKER: 123 MESSAGE:  FUNC: 5 NUMBER: b97ko
+[REQUEST EXIT] 
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+[REQUEST EXIT] ROOM EMPTY!!
+Elapsed Time: 0.003s
+[FROM Client] TIME:Sun May 26 14:50:23 UTC 2019 TALKER: 123 MESSAGE: b97ko FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : b97ko
+{"wordFrequency":{},"fiveKeyWord":{},"contrib":{"c123":0.6667,"c1234":0.3333},"keywordContrib":{},"cont":[],"markData":""}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:51:10 UTC 2019 TALKER: 123 MESSAGE: 19_05_26 FUNC: 1 NUMBER: 
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:51:10 UTC 2019 TALKER: 123 MESSAGE:  FUNC: 11 NUMBER: l46u4
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 14:51:16 UTC 2019 TALKER: nicks MESSAGE: l46u4 FUNC: 2 NUMBER: 
+[requestEnter] EXIST RESPONSE TRUE
+[requestEnter] response not running!!
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:51:16 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: l46u4
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 14:51:48 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: l46u4
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : 123 Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:51:49 UTC 2019 TALKER: 123 MESSAGE: START FUNC: 3 NUMBER: l46u4
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : nicks Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:51:54 UTC 2019 TALKER: nicks MESSAGE: 가나다 FUNC: 0 NUMBER: l46u4
+[RECEIVER LIST] : Elapsed Time: 0.018s
+[FROM Client] TIME:Sun May 26 14:51:54 UTC 2019 TALKER: 123 MESSAGE: 가나다 FUNC: 0 NUMBER: l46u4
+[RECEIVER LIST] : Elapsed Time: 0.004s
+[FROM Client] TIME:Sun May 26 14:51:57 UTC 2019 TALKER: nicks MESSAGE: 00 FUNC: 5 NUMBER: l46u4
+[REQUEST EXIT] 00
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:51:57 UTC 2019 TALKER: nicks MESSAGE: l46u4 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : l46u4
+{"wordFrequency":{"가나":1},"fiveKeyWord":{"가나":1},"contrib":{"c123":0.5,"c1234":0.5},"keywordContrib":{"c1234":1.0},"cont":[{"room":"l46u4","time":"Sun May 26 14:51:54 UTC 2019","msg":"가나다","id":"c1234"},{"room":"l46u4","time":"Sun May 26 14:51:54 UTC 2019","msg":"가나다","id":"c123"}],"markData":"00"}
+Elapsed Time: 0.005s
+[FROM Client] TIME:Sun May 26 14:52:00 UTC 2019 TALKER: 123 MESSAGE: 00 FUNC: 5 NUMBER: l46u4
+[REQUEST EXIT] 00
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+[REQUEST EXIT] ROOM EMPTY!!
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:52:00 UTC 2019 TALKER: 123 MESSAGE: l46u4 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : l46u4
+{"wordFrequency":{"가나":1},"fiveKeyWord":{"가나":1},"contrib":{"c123":0.6,"c1234":0.4},"keywordContrib":{"c1234":1.0},"cont":[{"room":"l46u4","time":"Sun May 26 14:51:54 UTC 2019","msg":"가나다","id":"c1234"},{"room":"l46u4","time":"Sun May 26 14:51:54 UTC 2019","msg":"가나다","id":"c123"}],"markData":"00"}
+Elapsed Time: 0.005s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+Sun May 26 14:55:57 UTC 2019 Server: Accept 118.216.115.231 3934
+Sun May 26 14:55:58 UTC 2019 Server: Accept 118.216.115.231 3936
+Sun May 26 14:55:59 UTC 2019 Server: Accept 118.216.115.231 3951
+Sun May 26 14:55:59 UTC 2019 Server: Accept 118.216.115.231 3959
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+[FROM Client] TIME:Sun May 26 14:56:09 UTC 2019 TALKER:  MESSAGE: jiojoi FUNC: 4 NUMBER: 0
+[SET TALKER] nickname: jiojoi
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 14:56:15 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:56:22 UTC 2019 TALKER: nicks MESSAGE: 19_05_26 FUNC: 1 NUMBER: 0
+Elapsed Time: 0.001s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+[FROM Client] TIME:Sun May 26 14:56:22 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: 246cu
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 14:56:26 UTC 2019 TALKER: GUEST_jiojoi MESSAGE: 246cu FUNC: 2 NUMBER: 0
+[requestEnter] EXIST RESPONSE TRUE
+[requestEnter] response not running!!
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:56:26 UTC 2019 TALKER: GUEST_jiojoi MESSAGE:  FUNC: 11 NUMBER: 246cu
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 14:56:29 UTC 2019 TALKER: GUEST_jiojoi MESSAGE: START FUNC: 3 NUMBER: 246cu
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : nicks Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:56:29 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: 246cu
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : GUEST_jiojoi Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:56:47 UTC 2019 TALKER: nicks MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: 246cu
+[RECEIVER LIST] : [FROM Client] TIME:Sun May 26 14:56:47 UTC 2019 TALKER: GUEST_jiojoi MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: 246cu
+[RECEIVER LIST] : Elapsed Time: 0.02s
+Elapsed Time: 0.009s
+[FROM Client] TIME:Sun May 26 14:56:52 UTC 2019 TALKER: nicks MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: 246cu
+[RECEIVER LIST] : Elapsed Time: 0.005s
+[FROM Client] TIME:Sun May 26 14:56:52 UTC 2019 TALKER: GUEST_jiojoi MESSAGE: 가나다 라마바사 FUNC: 0 NUMBER: 246cu
+[RECEIVER LIST] : Elapsed Time: 0.004s
+[FROM Client] TIME:Sun May 26 14:56:55 UTC 2019 TALKER: nicks MESSAGE: 0000 FUNC: 5 NUMBER: 246cu
+[REQUEST EXIT] 0000
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:56:56 UTC 2019 TALKER: nicks MESSAGE: 246cu FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 246cu
+{"wordFrequency":{"라마":2,"가나":2,"바사":2},"fiveKeyWord":{"라마":2,"가나":2,"바사":2},"contrib":{"GUEST_jiojoi":0.5,"c1234":0.5},"keywordContrib":{"c1234":1.0},"cont":[{"room":"246cu","time":"Sun May 26 14:56:47 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"246cu","time":"Sun May 26 14:56:47 UTC 2019","msg":"가나다 라마바사","id":"GUEST_jiojoi"},{"room":"246cu","time":"Sun May 26 14:56:52 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"246cu","time":"Sun May 26 14:56:52 UTC 2019","msg":"가나다 라마바사","id":"GUEST_jiojoi"}],"markData":"0000"}
+Elapsed Time: 0.007s
+[FROM Client] TIME:Sun May 26 14:56:59 UTC 2019 TALKER: GUEST_jiojoi MESSAGE: 0000 FUNC: 5 NUMBER: 246cu
+[REQUEST EXIT] 0000
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+[REQUEST EXIT] ROOM EMPTY!!
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 14:56:59 UTC 2019 TALKER: GUEST_jiojoi MESSAGE: 246cu FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 246cu
+{"wordFrequency":{"라마":2,"가나":2,"바사":2},"fiveKeyWord":{"라마":2,"가나":2,"바사":2},"contrib":{"GUEST_jiojoi":0.5714,"c1234":0.4286},"keywordContrib":{"c1234":1.0},"cont":[{"room":"246cu","time":"Sun May 26 14:56:47 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"246cu","time":"Sun May 26 14:56:47 UTC 2019","msg":"가나다 라마바사","id":"GUEST_jiojoi"},{"room":"246cu","time":"Sun May 26 14:56:52 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"246cu","time":"Sun May 26 14:56:52 UTC 2019","msg":"가나다 라마바사","id":"GUEST_jiojoi"}],"markData":""}
+Elapsed Time: 0.002s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+[FROM Client] TIME:Sun May 26 14:57:26 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"0c270","content":"","date":"Sun May 26 07:42:51 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"0ej71","content":"녹음합니다 녹음 녹음 녹음 가나다 라마바사 가나다 라바 ","date":"Sun May 26 06:43:47 UTC 2019","members":"c123 c1234 ","title":"19_05_26 회의"},{"number":"109w2","content":"","date":"Sun May 26 07:47:03 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"10e7m","content":"하이라이트 확인 해커스 토익 스피킹 알고리즘 문제 해결 전략 인공지능 현대적 접근방식 소프트웨어 공학 데이터베이스 시스템 데이터 통신과 네트워킹 왜케 잘 듣지 알고리즘이랑 토킹 책했음 ","date":"Sun May 26 12:57:54 UTC 2019","members":"c1234 ","title":"하이라이트 체크"},{"number":"17839","content":"","date":"Sun May 26 13:01:50 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"1v9k3","content":"이젠 내가 돌아서려 해 이젠 내가 돌아서려 해 다신 그사람과 어디 앞에서 보이점 다시 사람 곡이야 이제 너에겐 어떤 바램도 작은 기대조차 할 수 없는 이제 너에겐 어떤 바램도 작은 기대조차 할 수 없는 나잖아 하지만 시간이 많이 지난후에도 하지만 시간이 많지 난 하루에도 나의 성격 유형 두개의 계보도 있다면 나의 바다에 경기대를 보도했다 언제나 언제는 신대동 공사 너에게도 너무 후 납품이 없다면 다시 내게 돌아와 다시 내게 돌아와 너를 떠나 보내고 후회하고 있는 내게 너를 떠나 보낸 이야기 함께할 수 없습니다 내겐 너무도 커다란 아픔인 걸 아니 함께 할 수 없음이 나에겐 너무도 커다란 아픔인 걸 아니 후기 사랑하기 위해 내가 택한 사람은 언젠가 내게 돌아와줘 너잖아 언젠가 내게 돌아와줘 힘든 시간 힘든 시간 다 지나고 오랜 간절함을 되찾은 마지막 사랑인 걸 다시 내게 돌아와 다시 내게 돌아와 너를 떠나 보내고 후회하고 있는 내게 수 없습니다 함께 할 수 없음이 나에겐 너무도 커다란 아픔인 걸 아니 앤 ","date":"Sun May 26 13:28:06 UTC 2019","members":"c1234 chanwool ","title":"엠씨더맥스 one love"},{"number":"23za1","content":"","date":"Sun May 26 07:55:24 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"246cu","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 가나다 라마바사 ","date":"Sun May 26 14:56:29 UTC 2019","members":"c1234 GUEST_jiojoi ","title":"19_05_26"},{"number":"2l2a3","content":"","date":"Sun May 26 13:06:59 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"3ab9m","content":"녹음 ","date":"Sun May 26 13:06:30 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"4i22e","content":"시간 복잡도 분석 병합정렬과 퀵정렬 시간 복잡도는 비슷한 방법으로 분석할 수 있습니다 최기호 주전에 하는 후회하느냐가 다를 뿐 본질적으로 비슷한 형태의 알고리즘이기 때문입니다 병합 정렬은 각 단계마다 반으로 나눈 부부 문제를 제기 호출을 이용해 결한뒤 일의 결과를 합쳐 전체 문제답을 게 삽니다 동료들은 두 부문 수요를 합치는데는 두 수열의 길이만큼 반복문을 수행해야 하기때문에 영업종료 레슨 시간은 입영업과정에 의해 지배됩니다 그런데 아래 단계로 늘어 갈수록 부모 문제 수는 2배로 들고 각 부분 문제 크기는 반으로 줄어들기때문에 한단계 대해서는 병원에 필요한 총 시간은 항상 일정합니다 병합 정렬이 처리하는 부분 문제의 그 길을 단계별로 본 것인데 각 단계를 나타내는 각 하루 줄이는 원숭이 손은 항상 일정하다는것을 쉽게 알 수 있다 따라서 단기에 수애에 내고 파면병합정렬에 필요한 전체 시간을 얻을 수 있습니다 문제의 크기는 항상 거의 절반으로 나눠지기때문에 필요한 단계 수는 미국에 로그인이 됩니다 따라서 병합정렬 시간 복잡도가 퀵 정렬의 경우 대부분의 시간을 차지하는 곳은 주어진 문제를 2개 부분 문제로 나는 파티션 과정입니다 파티션에는 주어진 수열의 길이에 비례하는 시간이 걸리므로 사실 병합정렬의 새벽 업 과정과 다를것이 없지요 병합정렬과 달리 특정열의 시간 복잡도를 분석하기 까다로운것은 결과적으로 분열된 두 부분 문제가 비슷한 크기로 나눠진다는 보장을 할 수 없기 때문입니다 기준으로 택한 건 수가 최소 원소나 최대 원소인 경우 문제가 하나식만 줄어들수도 있으니까요 이런 최악의 경우 퀵정렬 시간 복잡도는 매우 느리게 되고 다행이 평균적으로 부분 문제가 절반에 가깝게 나눠 줄때 퀵정렬 시간 복잡도는 병합정렬과 같은 그래서 대부분의 극적률 90은 가능한 한 절반에 가까운 분야를 얻기 위해 좋은 기준은 다양한 방법들을 사용합니다 퀵 정렬 ","date":"Sun May 26 13:31:02 UTC 2019","members":"c1234 ","title":"알고리즘 책 읽기"},{"number":"6974k","content":"가나다 라마바사 알아보자 바다 가사 가나다라 가나다라 ","date":"Sun May 26 13:16:12 UTC 2019","members":"c1234 ","title":"길게 할 회의 이름"},{"number":"75ok9","content":"참여정부 검색했을 때 참여자 목록을 선택하면 어떻게 되나요 선택했습니다 ","date":"Sun May 26 10:07:08 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"8memt","content":"녹음 시작 해커스토익 자료구조 알고리즘 문제 해결 전략 알고리즘 트레이닝 ","date":"Sun May 26 07:53:12 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"au35w","content":"가나다 라마바사 테스트 테스트 테스트 과연 결과 장자연 ","date":"Sun May 26 06:32:45 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"b7e01","content":"가나다 라마바사 가나다 라마바사 더키오 바람기억 누가 누가 더 높은지 확인하겠습니다 가나다 가나다 손오공 3 순하고 향기로운 섬유향수 순하고 향기로운 섬유향수 향기로운 해커스토익 해커스 ","date":"Sun May 26 06:40:40 UTC 2019","members":"c1234 GUEST_jtdgyv ","title":"19_05_26 회의입니다."},{"number":"b97ko","content":"","date":"Sun May 26 14:50:13 UTC 2019","members":"c123 c1234 ","title":"19_05_26"},{"number":"ef86i","content":"해커스토익 해커스토익 ","date":"Sun May 26 07:48:10 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"l46u4","content":"가나다 가나다 ","date":"Sun May 26 14:51:48 UTC 2019","members":"c123 c1234 ","title":"19_05_26"},{"number":"ll48z","content":"가나다 라마바사 ","date":"Sun May 26 07:47:55 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"n2902","content":"","date":"Sun May 26 13:05:47 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"no6u9","content":"가나다 라마바사 ","date":"Sun May 26 10:06:56 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"o3r05","content":"왜 이리도 이 세상엔 이별이 많은지 외사랑은 힘든 거지 난 궁금했었죠 난 이제 또 다시 붙고 있죠 어떻게 견디는지 이 많은 슬픔 끝나긴 하는지 이가 순두부는 물도 다카라는 게 있죠 더 안습 부서져 버려 우리는 알고있죠 보내는 일이 사랑이라는 걸 사랑해 사랑해 말해줄 시간이 아직도 많을 줄 알았죠 언젠가 누군가 그대를 가져갈 큰 사랑 벌써부터 부러워 지네요 행복하지 마요 행복하려면 사랑한 날 잊어야 하잖아 가시가 박힌 듯 숨쉴 때마다 사는게 사는것이 아니죠 사랑하지 마요 내가 아니면 누구와도 그대를 그곳에 두고온 거 그것만 기억하면 찾을 수 있죠 잠시 멈춰 있는 사람인거죠 사랑해 사랑해 나에게 말해준 그대의 목소리 이젠 들을 수 없겠죠 조금만 잠시만 머물다 올 거 그대 곁에 있는 그 사람도 아나요 행복하지 마요 행복하려면 사랑한 날 잊어야 하잖아 가시가 박힌 듯 숨쉴 때마다 눈물이 나와 ","date":"Sun May 26 13:21:41 UTC 2019","members":"c1234 ","title":"엠씨더맥스 행복하지 말아요"},{"number":"p9135","content":"녹음 시작 이번엔 음악하는 걸 확인할 겁니다 특수 분장은 클릭 짝수 번째 문장만 클릭 클릭 클릭 클릭 한번도 ","date":"Sun May 26 07:17:56 UTC 2019","members":"c1234 ","title":"19_05_26 내 회의"},{"number":"xa31a","content":"이걸로 녹음을 하면 키워드를 뽑아 가고 녹음이 문자로 바뀌거든 이런식으로 나오는데 여기서 지금 말을 하잖아 단어를 모르는 거 아님 ","date":"Sun May 26 10:59:40 UTC 2019","members":"c1234 ","title":"19_05_26"}],"talkWithMe":"c123 GUEST_jtdgyv GUEST_jiojoi chanwool ","contributionData":[72.5,79.60000000000001,50.0]}
+Elapsed Time: 0.059s
+[FROM Client] TIME:Sun May 26 14:57:28 UTC 2019 TALKER: nicks MESSAGE: 0ej71 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 0ej71
+{"wordFrequency":{"녹음":4,"라마":1,"가나":1,"라바":1,"바사":1},"fiveKeyWord":{"녹음":4,"라마":1,"가나":1,"라바":1},"contrib":{"c123":0.7143,"c1234":0.2857},"keywordContrib":{"c123":0.8,"c1234":0.2},"cont":[{"room":"0ej71","time":"Sun May 26 06:43:51 UTC 2019","msg":"녹음합니다","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:54 UTC 2019","msg":"녹음 녹음 녹음","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:58 UTC 2019","msg":"가나다 라마바사","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:58 UTC 2019","msg":"가나다 라바","id":"c1234"}],"markData":"0000"}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:57:31 UTC 2019 TALKER: nicks MESSAGE: 1v9k3 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 1v9k3
+{"wordFrequency":{"성격":1,"공사":1,"마지막":1,"바램":1,"후":1,"기대":1,"바다":1,"보도":1,"아픔":2,"신대동":1,"하루":1,"후회":1,"경기대":1,"후에":1,"보이":1,"앞":1,"곡":1,"앤":1,"계보":1,"납품":1,"유형":1,"이야기":1,"시간":2,"이제":1,"너에게":1,"후기":1,"사람과":1,"사람":2,"사랑":2},"fiveKeyWord":{"시간":2,"사람":2,"아픔":2,"사랑":2},"contrib":{"c1234":0.5143,"chanwool":0.4857},"keywordContrib":{"c1234":0.4828,"chanwool":0.5172},"cont":[{"room":"1v9k3","time":"Sun May 26 13:28:13 UTC 2019","msg":"이젠 내가 돌아서려 해","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:28:13 UTC 2019","msg":"이젠 내가 돌아서려 해","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:28:19 UTC 2019","msg":"다신 그사람과 어디 앞에서 보이점","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:28:19 UTC 2019","msg":"다시 사람 곡이야","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:28:26 UTC 2019","msg":"이제 너에겐 어떤 바램도 작은 기대조차 할 수 없는","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:28:26 UTC 2019","msg":"이제 너에겐 어떤 바램도 작은 기대조차 할 수 없는 나잖아","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:28:33 UTC 2019","msg":"하지만 시간이 많이 지난후에도","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:28:33 UTC 2019","msg":"하지만 시간이 많지 난 하루에도","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:28:38 UTC 2019","msg":"나의 성격 유형 두개의 계보도 있다면","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:28:39 UTC 2019","msg":"나의 바다에 경기대를 보도했다","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:28:42 UTC 2019","msg":"언제나","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:28:43 UTC 2019","msg":"언제는 신대동 공사","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:28:53 UTC 2019","msg":"너에게도 너무","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:28:58 UTC 2019","msg":"후 납품이 없다면","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:29:02 UTC 2019","msg":"다시 내게 돌아와","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:29:02 UTC 2019","msg":"다시 내게 돌아와","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:29:07 UTC 2019","msg":"너를 떠나 보내고 후회하고 있는 내게","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:29:08 UTC 2019","msg":"너를 떠나 보낸 이야기","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:29:14 UTC 2019","msg":"함께할 수 없습니다 내겐 너무도 커다란 아픔인 걸 아니","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:29:14 UTC 2019","msg":"함께 할 수 없음이 나에겐 너무도 커다란 아픔인 걸 아니","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:29:23 UTC 2019","msg":"후기","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:29:23 UTC 2019","msg":"사랑하기 위해 내가 택한 사람은","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:29:35 UTC 2019","msg":"언젠가 내게 돌아와줘 너잖아","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:29:35 UTC 2019","msg":"언젠가 내게 돌아와줘","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:29:43 UTC 2019","msg":"힘든 시간","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:29:45 UTC 2019","msg":"힘든 시간 다 지나고 오랜 간절함을 되찾은","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:29:51 UTC 2019","msg":"마지막 사랑인 걸","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:29:55 UTC 2019","msg":"다시 내게 돌아와","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:29:57 UTC 2019","msg":"다시 내게 돌아와 너를 떠나 보내고 후회하고 있는 내게","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:30:03 UTC 2019","msg":"수 없습니다","id":"c1234"},{"room":"1v9k3","time":"Sun May 26 13:30:04 UTC 2019","msg":"함께 할 수 없음이 나에겐 너무도 커다란 아픔인 걸 아니","id":"chanwool"},{"room":"1v9k3","time":"Sun May 26 13:30:17 UTC 2019","msg":"앤","id":"c1234"}],"markData":"00000000000000000000000000000000"}
+Elapsed Time: 0.004s
+[FROM Client] TIME:Sun May 26 14:57:42 UTC 2019 TALKER: nicks MESSAGE: 0ej71 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 0ej71
+{"wordFrequency":{"녹음":4,"라마":1,"가나":1,"라바":1,"바사":1},"fiveKeyWord":{"녹음":4,"라마":1,"가나":1,"라바":1},"contrib":{"c123":0.7143,"c1234":0.2857},"keywordContrib":{"c123":0.8,"c1234":0.2},"cont":[{"room":"0ej71","time":"Sun May 26 06:43:51 UTC 2019","msg":"녹음합니다","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:54 UTC 2019","msg":"녹음 녹음 녹음","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:58 UTC 2019","msg":"가나다 라마바사","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:58 UTC 2019","msg":"가나다 라바","id":"c1234"}],"markData":"0000"}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:57:48 UTC 2019 TALKER: nicks MESSAGE: 246cu FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 246cu
+{"wordFrequency":{"라마":2,"가나":2,"바사":2},"fiveKeyWord":{"라마":2,"가나":2,"바사":2},"contrib":{"GUEST_jiojoi":0.5714,"c1234":0.4286},"keywordContrib":{"c1234":1.0},"cont":[{"room":"246cu","time":"Sun May 26 14:56:47 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"246cu","time":"Sun May 26 14:56:47 UTC 2019","msg":"가나다 라마바사","id":"GUEST_jiojoi"},{"room":"246cu","time":"Sun May 26 14:56:52 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"246cu","time":"Sun May 26 14:56:52 UTC 2019","msg":"가나다 라마바사","id":"GUEST_jiojoi"}],"markData":"0000"}
+Elapsed Time: 0.003s
+[FROM Client] TIME:Sun May 26 14:57:51 UTC 2019 TALKER: nicks MESSAGE: 3ab9m FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 3ab9m
+{"wordFrequency":{"녹음":1},"fiveKeyWord":{"녹음":1},"contrib":{"c1234":1.0},"keywordContrib":{"c1234":1.0},"cont":[{"room":"3ab9m","time":"Sun May 26 13:06:50 UTC 2019","msg":"녹음","id":"c1234"}],"markData":"0"}
+Elapsed Time: 0.004s
+[FROM Client] TIME:Sun May 26 14:57:54 UTC 2019 TALKER: nicks MESSAGE: 75ok9 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 75ok9
+{"wordFrequency":{"목록":1,"정부":1,"선택":2,"참여자":1,"검색":1,"때":1,"참여":1},"fiveKeyWord":{"목록":1,"선택":2,"검색":1,"때":1},"contrib":{"c1234":1.0},"keywordContrib":{"c1234":1.0},"cont":[{"room":"75ok9","time":"Sun May 26 10:07:12 UTC 2019","msg":"참여정부 검색했을 때","id":"c1234"},{"room":"75ok9","time":"Sun May 26 10:07:18 UTC 2019","msg":"참여자 목록을 선택하면 어떻게 되나요","id":"c1234"},{"room":"75ok9","time":"Sun May 26 10:07:22 UTC 2019","msg":"선택했습니다","id":"c1234"}],"markData":"000"}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:57:58 UTC 2019 TALKER: nicks MESSAGE: b7e01 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : b7e01
+{"wordFrequency":{"향수":2,"섬유":2,"가나":3,"손오공":1,"토익":1,"바사":1,"바람":1,"기억":1,"향기":2,"해":1,"더":1,"커스":1,"확인":1,"키오":1,"라마":1,"누구":2},"fiveKeyWord":{"향기":2,"향수":2,"가나":3,"누구":2},"contrib":{"GUEST_jtdgyv":0.6,"c1234":0.4},"keywordContrib":{"GUEST_jtdgyv":0.875,"c1234":0.125},"cont":[{"room":"b7e01","time":"Sun May 26 06:40:44 UTC 2019","msg":"가나다 라마바사","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:40:44 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"b7e01","time":"Sun May 26 06:40:50 UTC 2019","msg":"더키오","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:40:50 UTC 2019","msg":"바람기억","id":"c1234"},{"room":"b7e01","time":"Sun May 26 06:40:55 UTC 2019","msg":"누가 누가 더 높은지 확인하겠습니다","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:01 UTC 2019","msg":"가나다 가나다","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:04 UTC 2019","msg":"손오공 3","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:08 UTC 2019","msg":"순하고 향기로운 섬유향수","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:12 UTC 2019","msg":"순하고 향기로운 섬유향수","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:12 UTC 2019","msg":"향기로운","id":"c1234"},{"room":"b7e01","time":"Sun May 26 06:41:16 UTC 2019","msg":"해커스토익","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:17 UTC 2019","msg":"해커스","id":"c1234"}],"markData":"000000000000"}
+Elapsed Time: 0.004s
+[FROM Client] TIME:Sun May 26 14:58:03 UTC 2019 TALKER: nicks MESSAGE: 0ej71 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 0ej71
+{"wordFrequency":{"녹음":4,"라마":1,"가나":1,"라바":1,"바사":1},"fiveKeyWord":{"녹음":4,"라마":1,"가나":1,"라바":1},"contrib":{"c123":0.7143,"c1234":0.2857},"keywordContrib":{"c123":0.8,"c1234":0.2},"cont":[{"room":"0ej71","time":"Sun May 26 06:43:51 UTC 2019","msg":"녹음합니다","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:54 UTC 2019","msg":"녹음 녹음 녹음","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:58 UTC 2019","msg":"가나다 라마바사","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:58 UTC 2019","msg":"가나다 라바","id":"c1234"}],"markData":"0000"}
+Elapsed Time: 0.006s
+[FROM Client] TIME:Sun May 26 14:58:15 UTC 2019 TALKER: nicks MESSAGE: xa31a FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : xa31a
+{"wordFrequency":{"말":1,"키워드":1,"녹음":2,"이 문자":1,"단어":1},"fiveKeyWord":{"말":1,"녹음":2,"이 문자":1,"단어":1},"contrib":{"c1234":1.0},"keywordContrib":{"c1234":1.0},"cont":[{"room":"xa31a","time":"Sun May 26 10:59:44 UTC 2019","msg":"이걸로 녹음을 하면","id":"c1234"},{"room":"xa31a","time":"Sun May 26 10:59:53 UTC 2019","msg":"키워드를 뽑아 가고 녹음이 문자로 바뀌거든","id":"c1234"},{"room":"xa31a","time":"Sun May 26 11:00:01 UTC 2019","msg":"이런식으로 나오는데 여기서 지금 말을 하잖아","id":"c1234"},{"room":"xa31a","time":"Sun May 26 11:00:07 UTC 2019","msg":"단어를 모르는 거 아님","id":"c1234"}],"markData":"0000"}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:58:18 UTC 2019 TALKER: nicks MESSAGE: p9135 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : p9135
+{"wordFrequency":{"클릭":4,"겁":1,"음악":1,"짝수":1,"특수":1,"녹음":1,"번":2,"문장만":1,"니다":1,"이번":1,"시작":1,"분장":1,"확인":1},"fiveKeyWord":{"클릭":4,"겁":1,"특수":1,"번":2},"contrib":{"c1234":1.0},"keywordContrib":{"c1234":1.0},"cont":[{"room":"p9135","time":"Sun May 26 07:18:00 UTC 2019","msg":"녹음 시작","id":"c1234"},{"room":"p9135","time":"Sun May 26 07:18:06 UTC 2019","msg":"이번엔 음악하는 걸 확인할 겁니다","id":"c1234"},{"room":"p9135","time":"Sun May 26 07:18:12 UTC 2019","msg":"특수 분장은 클릭","id":"c1234"},{"room":"p9135","time":"Sun May 26 07:18:17 UTC 2019","msg":"짝수 번째 문장만 클릭","id":"c1234"},{"room":"p9135","time":"Sun May 26 07:18:21 UTC 2019","msg":"클릭 클릭 클릭","id":"c1234"},{"room":"p9135","time":"Sun May 26 07:18:25 UTC 2019","msg":"한번도","id":"c1234"}],"markData":"010101"}
+Elapsed Time: 0.004s
+[FROM Client] TIME:Sun May 26 14:58:21 UTC 2019 TALKER: nicks MESSAGE: no6u9 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : no6u9
+{"wordFrequency":{"라마":1,"가나":1,"바사":1},"fiveKeyWord":{"라마":1,"가나":1,"바사":1},"contrib":{"c1234":1.0},"keywordContrib":{"c1234":1.0},"cont":[{"room":"no6u9","time":"Sun May 26 10:07:00 UTC 2019","msg":"가나다 라마바사","id":"c1234"}],"markData":"0"}
+Elapsed Time: 0.009s
+[FROM Client] TIME:Sun May 26 14:58:24 UTC 2019 TALKER: nicks MESSAGE: ll48z FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : ll48z
+{"wordFrequency":{"라마":1,"가나":1,"바사":1},"fiveKeyWord":{"라마":1,"가나":1,"바사":1},"contrib":{"c1234":1.0},"keywordContrib":{"c1234":1.0},"cont":[{"room":"ll48z","time":"Sun May 26 07:47:58 UTC 2019","msg":"가나다 라마바사","id":"c1234"}],"markData":"0"}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:58:30 UTC 2019 TALKER: nicks MESSAGE: l46u4 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : l46u4
+{"wordFrequency":{"가나":1},"fiveKeyWord":{"가나":1},"contrib":{"c123":0.6,"c1234":0.4},"keywordContrib":{"c1234":1.0},"cont":[{"room":"l46u4","time":"Sun May 26 14:51:54 UTC 2019","msg":"가나다","id":"c1234"},{"room":"l46u4","time":"Sun May 26 14:51:54 UTC 2019","msg":"가나다","id":"c123"}],"markData":"00"}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:58:40 UTC 2019 TALKER: nicks MESSAGE: ef86i FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : ef86i
+{"wordFrequency":{"해":2,"커스":2,"토익":2},"fiveKeyWord":{"해":2,"커스":2,"토익":2},"contrib":{"c1234":1.0},"keywordContrib":{"c1234":1.0},"cont":[{"room":"ef86i","time":"Sun May 26 07:48:31 UTC 2019","msg":"해커스토익","id":"c1234"},{"room":"ef86i","time":"Sun May 26 07:48:39 UTC 2019","msg":"해커스토익","id":"c1234"}],"markData":"00"}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 14:58:42 UTC 2019 TALKER: nicks MESSAGE: b7e01 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : b7e01
+{"wordFrequency":{"향수":2,"섬유":2,"가나":3,"손오공":1,"토익":1,"바사":1,"바람":1,"기억":1,"향기":2,"해":1,"더":1,"커스":1,"확인":1,"키오":1,"라마":1,"누구":2},"fiveKeyWord":{"향기":2,"향수":2,"가나":3,"누구":2},"contrib":{"GUEST_jtdgyv":0.6,"c1234":0.4},"keywordContrib":{"GUEST_jtdgyv":0.875,"c1234":0.125},"cont":[{"room":"b7e01","time":"Sun May 26 06:40:44 UTC 2019","msg":"가나다 라마바사","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:40:44 UTC 2019","msg":"가나다 라마바사","id":"c1234"},{"room":"b7e01","time":"Sun May 26 06:40:50 UTC 2019","msg":"더키오","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:40:50 UTC 2019","msg":"바람기억","id":"c1234"},{"room":"b7e01","time":"Sun May 26 06:40:55 UTC 2019","msg":"누가 누가 더 높은지 확인하겠습니다","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:01 UTC 2019","msg":"가나다 가나다","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:04 UTC 2019","msg":"손오공 3","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:08 UTC 2019","msg":"순하고 향기로운 섬유향수","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:12 UTC 2019","msg":"순하고 향기로운 섬유향수","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:12 UTC 2019","msg":"향기로운","id":"c1234"},{"room":"b7e01","time":"Sun May 26 06:41:16 UTC 2019","msg":"해커스토익","id":"GUEST_jtdgyv"},{"room":"b7e01","time":"Sun May 26 06:41:17 UTC 2019","msg":"해커스","id":"c1234"}],"markData":"000000000000"}
+Elapsed Time: 0.003s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+Sun May 26 15:05:08 UTC 2019 Server: Accept 118.216.115.231 4212
+Sun May 26 15:05:08 UTC 2019 Server: Accept 118.216.115.231 4218
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+[FROM Client] TIME:Sun May 26 15:05:14 UTC 2019 TALKER:  MESSAGE: iojioj FUNC: 4 NUMBER: 0
+[SET TALKER] nickname: iojioj
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 15:05:16 UTC 2019 TALKER: GUEST_iojioj MESSAGE: 19_05_27 FUNC: 1 NUMBER: 0
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 15:05:16 UTC 2019 TALKER: GUEST_iojioj MESSAGE:  FUNC: 11 NUMBER: 05562
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 15:05:18 UTC 2019 TALKER: GUEST_iojioj MESSAGE: START FUNC: 3 NUMBER: 05562
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 15:05:21 UTC 2019 TALKER: GUEST_iojioj MESSAGE: 가나 상사 FUNC: 0 NUMBER: 05562
+[RECEIVER LIST] : Elapsed Time: 0.006s
+[FROM Client] TIME:Sun May 26 15:05:25 UTC 2019 TALKER: GUEST_iojioj MESSAGE: 시로 쓴 자료 구조론 FUNC: 0 NUMBER: 05562
+[RECEIVER LIST] : Elapsed Time: 0.006s
+[FROM Client] TIME:Sun May 26 15:05:29 UTC 2019 TALKER: GUEST_iojioj MESSAGE: 알고리즘 문제 해결 전략 FUNC: 0 NUMBER: 05562
+[RECEIVER LIST] : Elapsed Time: 0.007s
+[FROM Client] TIME:Sun May 26 15:05:30 UTC 2019 TALKER: GUEST_iojioj MESSAGE: 000 FUNC: 5 NUMBER: 05562
+[REQUEST EXIT] 000
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+[REQUEST EXIT] ROOM EMPTY!!
+Elapsed Time: 0.005s
+[FROM Client] TIME:Sun May 26 15:05:30 UTC 2019 TALKER: GUEST_iojioj MESSAGE: 05562 FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : 05562
+{"wordFrequency":{"자료 구조":1,"상사":1,"시로":1,"전략":1,"문제 해결":1,"가나":1,"알고리즘":1},"fiveKeyWord":{"상사":1,"시로":1,"문제 해결":1,"가나":1},"contrib":{"GUEST_iojioj":1.0},"keywordContrib":{"GUEST_iojioj":1.0},"cont":[{"room":"05562","time":"Sun May 26 15:05:21 UTC 2019","msg":"가나 상사","id":"GUEST_iojioj"},{"room":"05562","time":"Sun May 26 15:05:25 UTC 2019","msg":"시로 쓴 자료 구조론","id":"GUEST_iojioj"},{"room":"05562","time":"Sun May 26 15:05:29 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"GUEST_iojioj"}],"markData":""}
+Elapsed Time: 0.003s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+Sun May 26 15:06:01 UTC 2019 Server: Accept 118.216.115.231 4260
+Sun May 26 15:06:01 UTC 2019 Server: Accept 118.216.115.231 4262
+Sun May 26 15:06:01 UTC 2019 Server: Accept 118.216.115.231 4263
+[FROM Client] TIME:Sun May 26 15:06:05 UTC 2019 TALKER:  MESSAGE: {"id":"c1234","pw":"03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"} FUNC: 7 NUMBER: 0
+[memberRegisterID] Assertion Success.
+Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 15:06:12 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 0
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
+Socket Close
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"0c270","content":"","date":"Sun May 26 07:42:51 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"0ej71","content":"녹음합니다 녹음 녹음 녹음 가나다 라마바사 가나다 라바 ","date":"Sun May 26 06:43:47 UTC 2019","members":"c123 c1234 ","title":"19_05_26 회의"},{"number":"109w2","content":"","date":"Sun May 26 07:47:03 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"10e7m","content":"하이라이트 확인 해커스 토익 스피킹 알고리즘 문제 해결 전략 인공지능 현대적 접근방식 소프트웨어 공학 데이터베이스 시스템 데이터 통신과 네트워킹 왜케 잘 듣지 알고리즘이랑 토킹 책했음 ","date":"Sun May 26 12:57:54 UTC 2019","members":"c1234 ","title":"하이라이트 체크"},{"number":"17839","content":"","date":"Sun May 26 13:01:50 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"1v9k3","content":"이젠 내가 돌아서려 해 이젠 내가 돌아서려 해 다신 그사람과 어디 앞에서 보이점 다시 사람 곡이야 이제 너에겐 어떤 바램도 작은 기대조차 할 수 없는 이제 너에겐 어떤 바램도 작은 기대조차 할 수 없는 나잖아 하지만 시간이 많이 지난후에도 하지만 시간이 많지 난 하루에도 나의 성격 유형 두개의 계보도 있다면 나의 바다에 경기대를 보도했다 언제나 언제는 신대동 공사 너에게도 너무 후 납품이 없다면 다시 내게 돌아와 다시 내게 돌아와 너를 떠나 보내고 후회하고 있는 내게 너를 떠나 보낸 이야기 함께할 수 없습니다 내겐 너무도 커다란 아픔인 걸 아니 함께 할 수 없음이 나에겐 너무도 커다란 아픔인 걸 아니 후기 사랑하기 위해 내가 택한 사람은 언젠가 내게 돌아와줘 너잖아 언젠가 내게 돌아와줘 힘든 시간 힘든 시간 다 지나고 오랜 간절함을 되찾은 마지막 사랑인 걸 다시 내게 돌아와 다시 내게 돌아와 너를 떠나 보내고 후회하고 있는 내게 수 없습니다 함께 할 수 없음이 나에겐 너무도 커다란 아픔인 걸 아니 앤 ","date":"Sun May 26 13:28:06 UTC 2019","members":"c1234 chanwool ","title":"엠씨더맥스 one love"},{"number":"23za1","content":"","date":"Sun May 26 07:55:24 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"246cu","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 가나다 라마바사 ","date":"Sun May 26 14:56:29 UTC 2019","members":"c1234 GUEST_jiojoi ","title":"19_05_26"},{"number":"2l2a3","content":"","date":"Sun May 26 13:06:59 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"3ab9m","content":"녹음 ","date":"Sun May 26 13:06:30 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"4i22e","content":"시간 복잡도 분석 병합정렬과 퀵정렬 시간 복잡도는 비슷한 방법으로 분석할 수 있습니다 최기호 주전에 하는 후회하느냐가 다를 뿐 본질적으로 비슷한 형태의 알고리즘이기 때문입니다 병합 정렬은 각 단계마다 반으로 나눈 부부 문제를 제기 호출을 이용해 결한뒤 일의 결과를 합쳐 전체 문제답을 게 삽니다 동료들은 두 부문 수요를 합치는데는 두 수열의 길이만큼 반복문을 수행해야 하기때문에 영업종료 레슨 시간은 입영업과정에 의해 지배됩니다 그런데 아래 단계로 늘어 갈수록 부모 문제 수는 2배로 들고 각 부분 문제 크기는 반으로 줄어들기때문에 한단계 대해서는 병원에 필요한 총 시간은 항상 일정합니다 병합 정렬이 처리하는 부분 문제의 그 길을 단계별로 본 것인데 각 단계를 나타내는 각 하루 줄이는 원숭이 손은 항상 일정하다는것을 쉽게 알 수 있다 따라서 단기에 수애에 내고 파면병합정렬에 필요한 전체 시간을 얻을 수 있습니다 문제의 크기는 항상 거의 절반으로 나눠지기때문에 필요한 단계 수는 미국에 로그인이 됩니다 따라서 병합정렬 시간 복잡도가 퀵 정렬의 경우 대부분의 시간을 차지하는 곳은 주어진 문제를 2개 부분 문제로 나는 파티션 과정입니다 파티션에는 주어진 수열의 길이에 비례하는 시간이 걸리므로 사실 병합정렬의 새벽 업 과정과 다를것이 없지요 병합정렬과 달리 특정열의 시간 복잡도를 분석하기 까다로운것은 결과적으로 분열된 두 부분 문제가 비슷한 크기로 나눠진다는 보장을 할 수 없기 때문입니다 기준으로 택한 건 수가 최소 원소나 최대 원소인 경우 문제가 하나식만 줄어들수도 있으니까요 이런 최악의 경우 퀵정렬 시간 복잡도는 매우 느리게 되고 다행이 평균적으로 부분 문제가 절반에 가깝게 나눠 줄때 퀵정렬 시간 복잡도는 병합정렬과 같은 그래서 대부분의 극적률 90은 가능한 한 절반에 가까운 분야를 얻기 위해 좋은 기준은 다양한 방법들을 사용합니다 퀵 정렬 ","date":"Sun May 26 13:31:02 UTC 2019","members":"c1234 ","title":"알고리즘 책 읽기"},{"number":"6974k","content":"가나다 라마바사 알아보자 바다 가사 가나다라 가나다라 ","date":"Sun May 26 13:16:12 UTC 2019","members":"c1234 ","title":"길게 할 회의 이름"},{"number":"75ok9","content":"참여정부 검색했을 때 참여자 목록을 선택하면 어떻게 되나요 선택했습니다 ","date":"Sun May 26 10:07:08 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"8memt","content":"녹음 시작 해커스토익 자료구조 알고리즘 문제 해결 전략 알고리즘 트레이닝 ","date":"Sun May 26 07:53:12 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"au35w","content":"가나다 라마바사 테스트 테스트 테스트 과연 결과 장자연 ","date":"Sun May 26 06:32:45 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"b7e01","content":"가나다 라마바사 가나다 라마바사 더키오 바람기억 누가 누가 더 높은지 확인하겠습니다 가나다 가나다 손오공 3 순하고 향기로운 섬유향수 순하고 향기로운 섬유향수 향기로운 해커스토익 해커스 ","date":"Sun May 26 06:40:40 UTC 2019","members":"c1234 GUEST_jtdgyv ","title":"19_05_26 회의입니다."},{"number":"b97ko","content":"","date":"Sun May 26 14:50:13 UTC 2019","members":"c123 c1234 ","title":"19_05_26"},{"number":"ef86i","content":"해커스토익 해커스토익 ","date":"Sun May 26 07:48:10 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"l46u4","content":"가나다 가나다 ","date":"Sun May 26 14:51:48 UTC 2019","members":"c123 c1234 ","title":"19_05_26"},{"number":"ll48z","content":"가나다 라마바사 ","date":"Sun May 26 07:47:55 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"n2902","content":"","date":"Sun May 26 13:05:47 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"no6u9","content":"가나다 라마바사 ","date":"Sun May 26 10:06:56 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"o3r05","content":"왜 이리도 이 세상엔 이별이 많은지 외사랑은 힘든 거지 난 궁금했었죠 난 이제 또 다시 붙고 있죠 어떻게 견디는지 이 많은 슬픔 끝나긴 하는지 이가 순두부는 물도 다카라는 게 있죠 더 안습 부서져 버려 우리는 알고있죠 보내는 일이 사랑이라는 걸 사랑해 사랑해 말해줄 시간이 아직도 많을 줄 알았죠 언젠가 누군가 그대를 가져갈 큰 사랑 벌써부터 부러워 지네요 행복하지 마요 행복하려면 사랑한 날 잊어야 하잖아 가시가 박힌 듯 숨쉴 때마다 사는게 사는것이 아니죠 사랑하지 마요 내가 아니면 누구와도 그대를 그곳에 두고온 거 그것만 기억하면 찾을 수 있죠 잠시 멈춰 있는 사람인거죠 사랑해 사랑해 나에게 말해준 그대의 목소리 이젠 들을 수 없겠죠 조금만 잠시만 머물다 올 거 그대 곁에 있는 그 사람도 아나요 행복하지 마요 행복하려면 사랑한 날 잊어야 하잖아 가시가 박힌 듯 숨쉴 때마다 눈물이 나와 ","date":"Sun May 26 13:21:41 UTC 2019","members":"c1234 ","title":"엠씨더맥스 행복하지 말아요"},{"number":"p9135","content":"녹음 시작 이번엔 음악하는 걸 확인할 겁니다 특수 분장은 클릭 짝수 번째 문장만 클릭 클릭 클릭 클릭 한번도 ","date":"Sun May 26 07:17:56 UTC 2019","members":"c1234 ","title":"19_05_26 내 회의"},{"number":"xa31a","content":"이걸로 녹음을 하면 키워드를 뽑아 가고 녹음이 문자로 바뀌거든 이런식으로 나오는데 여기서 지금 말을 하잖아 단어를 모르는 거 아님 ","date":"Sun May 26 10:59:40 UTC 2019","members":"c1234 ","title":"19_05_26"}],"talkWithMe":"c123 GUEST_jtdgyv GUEST_jiojoi chanwool ","contributionData":[72.5,79.60000000000001,50.0]}
+Elapsed Time: 0.058s
+[FROM Client] TIME:Sun May 26 15:06:13 UTC 2019 TALKER: nicks MESSAGE: 0ej71 FUNC: 12 NUMBER: 0
+[REQUEST_RESULT] : 0ej71
+{"wordFrequency":{"녹음":4,"라마":1,"가나":1,"라바":1,"바사":1},"fiveKeyWord":{"녹음":4,"라마":1,"가나":1,"라바":1},"contrib":{"c123":0.7143,"c1234":0.2857},"keywordContrib":{"c123":0.8,"c1234":0.2},"cont":[{"room":"0ej71","time":"Sun May 26 06:43:51 UTC 2019","msg":"녹음합니다","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:54 UTC 2019","msg":"녹음 녹음 녹음","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:58 UTC 2019","msg":"가나다 라마바사","id":"c123"},{"room":"0ej71","time":"Sun May 26 06:43:58 UTC 2019","msg":"가나다 라바","id":"c1234"}],"markData":"0000"}
+Elapsed Time: 0.003s
+[FROM Client] TIME:Sun May 26 15:06:18 UTC 2019 TALKER: nicks MESSAGE: 19_05_27 FUNC: 1 NUMBER: 0
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 15:06:18 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 11 NUMBER: tqp0c
+Elapsed Time: 0.0s
+[FROM Client] TIME:Sun May 26 15:06:19 UTC 2019 TALKER: nicks MESSAGE: START FUNC: 3 NUMBER: tqp0c
+[REQUEST START] INSERT START MESSAGE TO DB
+[REQUEST START] RECEIVER LIST : Elapsed Time: 0.001s
+[FROM Client] TIME:Sun May 26 15:06:25 UTC 2019 TALKER: nicks MESSAGE: 알고리즘 문제 해결 전략 FUNC: 0 NUMBER: tqp0c
+[RECEIVER LIST] : Elapsed Time: 0.012s
+[FROM Client] TIME:Sun May 26 15:06:47 UTC 2019 TALKER: nicks MESSAGE: 시간 제한 FUNC: 0 NUMBER: tqp0c
+[RECEIVER LIST] : Elapsed Time: 0.005s
+[FROM Client] TIME:Sun May 26 15:06:50 UTC 2019 TALKER: nicks MESSAGE: 그림 FUNC: 0 NUMBER: tqp0c
+[RECEIVER LIST] : Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 15:06:52 UTC 2019 TALKER: nicks MESSAGE: 000 FUNC: 5 NUMBER: tqp0c
+[REQUEST EXIT] 000
+[REQUEST EXIT] RECEIVER LIST: 
+[REQUEST EXIT] APPLY MY INFO
+[REQUEST EXIT] ROOM EMPTY!!
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 15:06:52 UTC 2019 TALKER: nicks MESSAGE: tqp0c FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : tqp0c
+{"wordFrequency":{"시간":1,"그림":1,"전략":1,"제한":1,"문제 해결":1,"알고리즘":1},"fiveKeyWord":{"시간":1,"그림":1,"문제 해결":1,"알고리즘":1},"contrib":{"c1234":1.0},"keywordContrib":{"c1234":1.0},"cont":[{"room":"tqp0c","time":"Sun May 26 15:06:25 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"tqp0c","time":"Sun May 26 15:06:47 UTC 2019","msg":"시간 제한","id":"c1234"},{"room":"tqp0c","time":"Sun May 26 15:06:50 UTC 2019","msg":"그림","id":"c1234"}],"markData":"000"}
+Elapsed Time: 0.002s
+[FROM Client] TIME:Sun May 26 15:06:57 UTC 2019 TALKER: nicks MESSAGE:  FUNC: 10 NUMBER: 
+{"func":0,"id":"c1234","nickname":"nicks","histories":[{"number":"0c270","content":"","date":"Sun May 26 07:42:51 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"0ej71","content":"녹음합니다 녹음 녹음 녹음 가나다 라마바사 가나다 라바 ","date":"Sun May 26 06:43:47 UTC 2019","members":"c123 c1234 ","title":"19_05_26 회의"},{"number":"109w2","content":"","date":"Sun May 26 07:47:03 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"10e7m","content":"하이라이트 확인 해커스 토익 스피킹 알고리즘 문제 해결 전략 인공지능 현대적 접근방식 소프트웨어 공학 데이터베이스 시스템 데이터 통신과 네트워킹 왜케 잘 듣지 알고리즘이랑 토킹 책했음 ","date":"Sun May 26 12:57:54 UTC 2019","members":"c1234 ","title":"하이라이트 체크"},{"number":"17839","content":"","date":"Sun May 26 13:01:50 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"1v9k3","content":"이젠 내가 돌아서려 해 이젠 내가 돌아서려 해 다신 그사람과 어디 앞에서 보이점 다시 사람 곡이야 이제 너에겐 어떤 바램도 작은 기대조차 할 수 없는 이제 너에겐 어떤 바램도 작은 기대조차 할 수 없는 나잖아 하지만 시간이 많이 지난후에도 하지만 시간이 많지 난 하루에도 나의 성격 유형 두개의 계보도 있다면 나의 바다에 경기대를 보도했다 언제나 언제는 신대동 공사 너에게도 너무 후 납품이 없다면 다시 내게 돌아와 다시 내게 돌아와 너를 떠나 보내고 후회하고 있는 내게 너를 떠나 보낸 이야기 함께할 수 없습니다 내겐 너무도 커다란 아픔인 걸 아니 함께 할 수 없음이 나에겐 너무도 커다란 아픔인 걸 아니 후기 사랑하기 위해 내가 택한 사람은 언젠가 내게 돌아와줘 너잖아 언젠가 내게 돌아와줘 힘든 시간 힘든 시간 다 지나고 오랜 간절함을 되찾은 마지막 사랑인 걸 다시 내게 돌아와 다시 내게 돌아와 너를 떠나 보내고 후회하고 있는 내게 수 없습니다 함께 할 수 없음이 나에겐 너무도 커다란 아픔인 걸 아니 앤 ","date":"Sun May 26 13:28:06 UTC 2019","members":"c1234 chanwool ","title":"엠씨더맥스 one love"},{"number":"23za1","content":"","date":"Sun May 26 07:55:24 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"246cu","content":"가나다 라마바사 가나다 라마바사 가나다 라마바사 가나다 라마바사 ","date":"Sun May 26 14:56:29 UTC 2019","members":"c1234 GUEST_jiojoi ","title":"19_05_26"},{"number":"2l2a3","content":"","date":"Sun May 26 13:06:59 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"3ab9m","content":"녹음 ","date":"Sun May 26 13:06:30 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"4i22e","content":"시간 복잡도 분석 병합정렬과 퀵정렬 시간 복잡도는 비슷한 방법으로 분석할 수 있습니다 최기호 주전에 하는 후회하느냐가 다를 뿐 본질적으로 비슷한 형태의 알고리즘이기 때문입니다 병합 정렬은 각 단계마다 반으로 나눈 부부 문제를 제기 호출을 이용해 결한뒤 일의 결과를 합쳐 전체 문제답을 게 삽니다 동료들은 두 부문 수요를 합치는데는 두 수열의 길이만큼 반복문을 수행해야 하기때문에 영업종료 레슨 시간은 입영업과정에 의해 지배됩니다 그런데 아래 단계로 늘어 갈수록 부모 문제 수는 2배로 들고 각 부분 문제 크기는 반으로 줄어들기때문에 한단계 대해서는 병원에 필요한 총 시간은 항상 일정합니다 병합 정렬이 처리하는 부분 문제의 그 길을 단계별로 본 것인데 각 단계를 나타내는 각 하루 줄이는 원숭이 손은 항상 일정하다는것을 쉽게 알 수 있다 따라서 단기에 수애에 내고 파면병합정렬에 필요한 전체 시간을 얻을 수 있습니다 문제의 크기는 항상 거의 절반으로 나눠지기때문에 필요한 단계 수는 미국에 로그인이 됩니다 따라서 병합정렬 시간 복잡도가 퀵 정렬의 경우 대부분의 시간을 차지하는 곳은 주어진 문제를 2개 부분 문제로 나는 파티션 과정입니다 파티션에는 주어진 수열의 길이에 비례하는 시간이 걸리므로 사실 병합정렬의 새벽 업 과정과 다를것이 없지요 병합정렬과 달리 특정열의 시간 복잡도를 분석하기 까다로운것은 결과적으로 분열된 두 부분 문제가 비슷한 크기로 나눠진다는 보장을 할 수 없기 때문입니다 기준으로 택한 건 수가 최소 원소나 최대 원소인 경우 문제가 하나식만 줄어들수도 있으니까요 이런 최악의 경우 퀵정렬 시간 복잡도는 매우 느리게 되고 다행이 평균적으로 부분 문제가 절반에 가깝게 나눠 줄때 퀵정렬 시간 복잡도는 병합정렬과 같은 그래서 대부분의 극적률 90은 가능한 한 절반에 가까운 분야를 얻기 위해 좋은 기준은 다양한 방법들을 사용합니다 퀵 정렬 ","date":"Sun May 26 13:31:02 UTC 2019","members":"c1234 ","title":"알고리즘 책 읽기"},{"number":"6974k","content":"가나다 라마바사 알아보자 바다 가사 가나다라 가나다라 ","date":"Sun May 26 13:16:12 UTC 2019","members":"c1234 ","title":"길게 할 회의 이름"},{"number":"75ok9","content":"참여정부 검색했을 때 참여자 목록을 선택하면 어떻게 되나요 선택했습니다 ","date":"Sun May 26 10:07:08 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"8memt","content":"녹음 시작 해커스토익 자료구조 알고리즘 문제 해결 전략 알고리즘 트레이닝 ","date":"Sun May 26 07:53:12 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"au35w","content":"가나다 라마바사 테스트 테스트 테스트 과연 결과 장자연 ","date":"Sun May 26 06:32:45 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"b7e01","content":"가나다 라마바사 가나다 라마바사 더키오 바람기억 누가 누가 더 높은지 확인하겠습니다 가나다 가나다 손오공 3 순하고 향기로운 섬유향수 순하고 향기로운 섬유향수 향기로운 해커스토익 해커스 ","date":"Sun May 26 06:40:40 UTC 2019","members":"c1234 GUEST_jtdgyv ","title":"19_05_26 회의입니다."},{"number":"b97ko","content":"","date":"Sun May 26 14:50:13 UTC 2019","members":"c123 c1234 ","title":"19_05_26"},{"number":"ef86i","content":"해커스토익 해커스토익 ","date":"Sun May 26 07:48:10 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"l46u4","content":"가나다 가나다 ","date":"Sun May 26 14:51:48 UTC 2019","members":"c123 c1234 ","title":"19_05_26"},{"number":"ll48z","content":"가나다 라마바사 ","date":"Sun May 26 07:47:55 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"n2902","content":"","date":"Sun May 26 13:05:47 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"no6u9","content":"가나다 라마바사 ","date":"Sun May 26 10:06:56 UTC 2019","members":"c1234 ","title":"19_05_26"},{"number":"o3r05","content":"왜 이리도 이 세상엔 이별이 많은지 외사랑은 힘든 거지 난 궁금했었죠 난 이제 또 다시 붙고 있죠 어떻게 견디는지 이 많은 슬픔 끝나긴 하는지 이가 순두부는 물도 다카라는 게 있죠 더 안습 부서져 버려 우리는 알고있죠 보내는 일이 사랑이라는 걸 사랑해 사랑해 말해줄 시간이 아직도 많을 줄 알았죠 언젠가 누군가 그대를 가져갈 큰 사랑 벌써부터 부러워 지네요 행복하지 마요 행복하려면 사랑한 날 잊어야 하잖아 가시가 박힌 듯 숨쉴 때마다 사는게 사는것이 아니죠 사랑하지 마요 내가 아니면 누구와도 그대를 그곳에 두고온 거 그것만 기억하면 찾을 수 있죠 잠시 멈춰 있는 사람인거죠 사랑해 사랑해 나에게 말해준 그대의 목소리 이젠 들을 수 없겠죠 조금만 잠시만 머물다 올 거 그대 곁에 있는 그 사람도 아나요 행복하지 마요 행복하려면 사랑한 날 잊어야 하잖아 가시가 박힌 듯 숨쉴 때마다 눈물이 나와 ","date":"Sun May 26 13:21:41 UTC 2019","members":"c1234 ","title":"엠씨더맥스 행복하지 말아요"},{"number":"p9135","content":"녹음 시작 이번엔 음악하는 걸 확인할 겁니다 특수 분장은 클릭 짝수 번째 문장만 클릭 클릭 클릭 클릭 한번도 ","date":"Sun May 26 07:17:56 UTC 2019","members":"c1234 ","title":"19_05_26 내 회의"},{"number":"tqp0c","content":"알고리즘 문제 해결 전략 시간 제한 그림 ","date":"Sun May 26 15:06:19 UTC 2019","members":"c1234 ","title":"19_05_27"},{"number":"xa31a","content":"이걸로 녹음을 하면 키워드를 뽑아 가고 녹음이 문자로 바뀌거든 이런식으로 나오는데 여기서 지금 말을 하잖아 단어를 모르는 거 아님 ","date":"Sun May 26 10:59:40 UTC 2019","members":"c1234 ","title":"19_05_26"}],"talkWithMe":"c123 GUEST_jtdgyv GUEST_jiojoi chanwool ","contributionData":[72.7,80.30000000000001,50.0]}
+Elapsed Time: 0.029s
+[FROM Client] TIME:Sun May 26 15:07:04 UTC 2019 TALKER: nicks MESSAGE: tqp0c FUNC: 12 NUMBER: 
+[REQUEST_RESULT] : tqp0c
+{"wordFrequency":{"시간":1,"그림":1,"전략":1,"제한":1,"문제 해결":1,"알고리즘":1},"fiveKeyWord":{"시간":1,"그림":1,"문제 해결":1,"알고리즘":1},"contrib":{"c1234":1.0},"keywordContrib":{"c1234":1.0},"cont":[{"room":"tqp0c","time":"Sun May 26 15:06:25 UTC 2019","msg":"알고리즘 문제 해결 전략","id":"c1234"},{"room":"tqp0c","time":"Sun May 26 15:06:47 UTC 2019","msg":"시간 제한","id":"c1234"},{"room":"tqp0c","time":"Sun May 26 15:06:50 UTC 2019","msg":"그림","id":"c1234"}],"markData":"000"}
+Elapsed Time: 0.002s
+java.lang.NullPointerException
+	at TCPServer$ServerHandler.run(TCPServer.java:190)
 Socket Close

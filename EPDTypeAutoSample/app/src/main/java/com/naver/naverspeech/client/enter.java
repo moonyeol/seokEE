@@ -9,6 +9,7 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -61,8 +62,9 @@ public class enter extends Activity {
                 Calendar cal = Calendar.getInstance();
                 SimpleDateFormat sdf = new SimpleDateFormat("yy_MM_dd");
 
+                et.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
                 et.setText(sdf.format(cal.getTime()));
-                et.setPadding(10,10,10,15);
+                et.setPadding(10,10,10,20);
                 et.setEms(20);
 
                 ad.setView(et);

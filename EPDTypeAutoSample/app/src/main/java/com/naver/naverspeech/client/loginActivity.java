@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -19,9 +20,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import org.json.JSONObject;
-
 import static com.naver.naverspeech.client.commSock.gson;
 
 public class loginActivity extends AppCompatActivity {
@@ -30,17 +28,13 @@ public class loginActivity extends AppCompatActivity {
     Button loginButton, joinButton, anonymousbutton;
     CheckBox reid;
     int permissionResult, permissionWrite;
-
     public static Activity _login;
-
-    class LoginInfo{
-        public String id;
-        public String pw;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
         _login = loginActivity.this;
 
 
@@ -83,7 +77,7 @@ public class loginActivity extends AppCompatActivity {
             }
         }
 
-        setContentView(R.layout.activity_login);
+
         idText = findViewById(R.id.nickInput);
         passwordText = findViewById(R.id.passwordInput);
 
@@ -156,6 +150,4 @@ public class loginActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }
