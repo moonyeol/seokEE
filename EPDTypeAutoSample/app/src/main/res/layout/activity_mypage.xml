@@ -10,7 +10,23 @@
     tools:layout_editor_absoluteY="81dp"
     >
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:background="@drawable/border_back_clean_bottom"
+        android:fontFamily="@font/nanumbarungothicbold"
+        android:gravity="center"
+        android:text="@string/my_tb"
+        android:textAlignment="gravity"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="8dp" />
+
     <ScrollView
+        style="@style/scroll_custom"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -27,21 +43,6 @@
                 tools:layout_editor_absoluteY="10dp">
 
 
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:background="#FFFFFF"
-                    android:fontFamily="@font/nanumbarungothicbold"
-                    android:gravity="center"
-                    android:text="@string/my_tb"
-                    android:textAlignment="gravity"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    tools:layout_editor_absoluteX="8dp" />
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -54,8 +55,8 @@
 
                     <ImageView
                         android:id="@+id/imageView7"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:layout_margin="2dp"
                         app:srcCompat="@drawable/logout_icon"
@@ -73,7 +74,7 @@
                         android:fontFamily="@font/nanumbarungothic"
                         android:text="로그아웃"
                         android:textColor="#6E6F71"
-                        android:textSize="15sp"
+                        android:textSize="13sp"
                         tools:layout_editor_absoluteX="338dp"
                         tools:layout_editor_absoluteY="122dp" />
 
@@ -82,7 +83,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#E8E9EA"
+                    android:background="@drawable/back_gray_border_bottom"
                     android:gravity="center"
                     android:paddingBottom="20dp"
                     tools:layout_editor_absoluteX="0dp"
@@ -117,6 +118,7 @@
 
 
                     <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="top"
@@ -158,6 +160,9 @@
                                 android:fontFamily="@font/nanumbarungothic"
                                 android:gravity="center_vertical|left"
                                 android:padding="5dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="5dp"
+
                                 android:text="Nickname"
                                 android:textColor="#6E6F71"
                                 android:textSize="14sp"
@@ -170,7 +175,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-
                             android:gravity="center_horizontal"
                             android:orientation="horizontal"
                             android:paddingBottom="5dp"
@@ -196,6 +200,9 @@
                                 android:id="@+id/id_tv"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="5dp"
+
                                 android:layout_gravity="right|center_vertical"
                                 android:background="@drawable/borer_black_bottom"
                                 android:fontFamily="@font/nanumbarungothic"
@@ -242,6 +249,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right|center_vertical"
                                 android:background="@drawable/borer_black_bottom"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="5dp"
 
                                 android:fontFamily="@font/nanumbarungothic"
                                 android:gravity="center_vertical|left"
@@ -264,9 +273,11 @@
                         android:fontFamily="@font/nanumbarungothic"
                         android:gravity="center_vertical|left"
                         android:padding="5dp"
+                        android:layout_marginTop="10dp"
+
                         android:text="자주 회의한 사람"
                         android:textColor="#000000"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         tools:layout_editor_absoluteX="8dp"
                         tools:layout_editor_absoluteY="673dp" />
 
@@ -275,14 +286,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-
                         android:background="@drawable/borer_black_bottom"
                         android:fontFamily="@font/nanumbarungothic"
                         android:gravity="center_vertical|left"
-                        android:paddingBottom="5dp"
+                        android:padding="5dp"
                         android:text="자주 회의한 사람_목록"
                         android:textColor="#bbbdbf"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         tools:layout_editor_absoluteX="8dp"
                         tools:layout_editor_absoluteY="673dp" />
 
@@ -294,8 +304,10 @@
                         android:gravity="center_vertical|left"
                         android:padding="5dp"
                         android:text="과거기록"
+                        android:layout_marginTop="10dp"
+
                         android:textColor="#000000"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         tools:layout_editor_absoluteX="50dp"
                         tools:layout_editor_absoluteY="375dp" />
 

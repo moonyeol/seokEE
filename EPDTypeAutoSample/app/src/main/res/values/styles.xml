@@ -12,6 +12,7 @@
 
 
     <style name="scroll_custom">
+        <item name="android:scrollbarSize">3dp</item>
         <item name="android:scrollbarThumbVertical">@color/scrollbarThumbVertical</item>
         <item name="android:scrollbarTrackVertical">@color/scrollbarTrackVertical</item>
     </style>

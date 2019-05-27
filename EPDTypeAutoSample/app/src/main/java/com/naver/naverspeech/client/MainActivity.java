@@ -5,14 +5,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.WorkerThread;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.transition.Visibility;
 import android.util.Log;
 import android.view.View;
@@ -354,11 +352,10 @@ public class MainActivity extends Activity {
 
     public void bt_exit(View view) {
         // 확인창을 띄우고 yes면 나가기, _데이터 저장은 필요없,,! no면 안나가기
-        CustomDialog cdd = new CustomDialog(MainActivity.this);
-        cdd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                 cdd.setTitle("회의 종료");
-                cdd.setMessage("정말 나가시겠습니까?");
-                cdd.setIcon(android.R.drawable.ic_menu_save);
+        new android.support.v7.app.AlertDialog.Builder(this)
+                .setTitle("회의 종료")
+                .setMessage("정말 나가시겠습니까?")
+                .setIcon(android.R.drawable.ic_menu_save)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         // 확인시 처리 로직
@@ -397,8 +394,6 @@ public class MainActivity extends Activity {
                 })
                 .show();
     }
-
-
 
     class CustomTalk {
         public CheckBox checkBox;

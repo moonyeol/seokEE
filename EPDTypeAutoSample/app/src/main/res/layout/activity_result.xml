@@ -61,6 +61,7 @@
                 android:fontFamily="@font/nanumbarungothic"
                 android:gravity="center_vertical"
                 android:padding="5dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/result_wc"
                 android:textColor="#000000"
                 android:textSize="14sp" />
@@ -128,6 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_weight="1"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/bt_radius_w_status"
                     android:fontFamily="@font/nanumbarungothic"
                     android:text="Button"
@@ -139,6 +141,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+
                     android:fontFamily="@font/nanumbarungothic"
                     android:layout_weight="1"
                     android:background="@drawable/bt_radius_w_status"
@@ -152,6 +156,8 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
                     android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+
                     android:fontFamily="@font/nanumbarungothic"
                     android:background="@drawable/bt_radius_w_status"
                     android:textSize="12sp"
@@ -164,6 +170,8 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
                     android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+
                     android:fontFamily="@font/nanumbarungothic"
                     android:background="@drawable/bt_radius_w_status"
                     android:text="Button"
@@ -204,6 +212,7 @@
                 android:layout_gravity="center|center_horizontal"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/bt_radius"
                 android:fontFamily="@font/nanumbarungothicbold"
