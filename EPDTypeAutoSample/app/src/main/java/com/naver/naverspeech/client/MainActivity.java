@@ -70,11 +70,15 @@ public class MainActivity extends Activity {
     private String msg;
     private int func;
 
+    private CustomDialog customDialog;
+
 
     StringBuilder sb;
 
     String pin;
     ArrayList<UserListButton> userList = new ArrayList<>();
+    private View.OnClickListener positiveListener;
+    private View.OnClickListener negativeListener;
 
     // 음성 인식 메시지를 처리합니다.
     private void handleMessage(Message msg) {
@@ -133,6 +137,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        customDialog = new CustomDialog(this,positiveListener,negativeListener);
+
+
 
         context = this;
         listView = findViewById(R.id.userList);
@@ -352,13 +360,14 @@ public class MainActivity extends Activity {
 
     public void bt_exit(View view) {
         // 확인창을 띄우고 yes면 나가기, _데이터 저장은 필요없,,! no면 안나가기
-        new android.support.v7.app.AlertDialog.Builder(this)
-                .setTitle("회의 종료")
-                .setMessage("정말 나가시겠습니까?")
-                .setIcon(android.R.drawable.ic_menu_save)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        // 확인시 처리 로직
+        customDialog.show();
+
+                customDialog.setTitle("회의 종료");
+               // customDialog.setIcon(android.R.drawable.ic_menu_save)
+            //    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    View.OnClickListener positiveListener = new View.OnClickListener() {
+                        public void onClick(View v) {
+                            // 확인시 처리 로직
                         StringBuilder markedData = new StringBuilder();
 
                         Log.i("MAIN", "talk");
@@ -384,15 +393,19 @@ public class MainActivity extends Activity {
                         Log.i("MAIN", "finish Activity");
                         finish();
 
-                    }
-                })
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }                };
+
+
+                //.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                 //   public void onClick(DialogInterface dialog, int whichButton) {
+                 View.OnClickListener negativeListener = new View.OnClickListener() {
+                    public void onClick(View v) {
                         // 취소시 처리 로직
                         Toast.makeText(MainActivity.this, "취소하였습니다.", Toast.LENGTH_SHORT).show();
                     }
-                })
-                .show();
+                };
+
+                customDialog.show();
     }
 
     class CustomTalk {
