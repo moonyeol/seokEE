@@ -13,7 +13,7 @@
 <div id="test"> </div>
 <div id="cloud" style="width: 100%; height: 100%; text-align: center;"></div>
 <script type="text/javascript">
-    var weight = 20,   // change me
+    var weight = 0,   // change me
         width = 300,
         height = 180;
 
@@ -21,19 +21,37 @@
     var myData = new Array();
 
     datas = window.android.requestStr();
-    document.write(datas);
+
 
     var jsonData = JSON.parse(datas);
 
     for (var i = 0; i < jsonData.data.length; i++) {
         var word = jsonData.data[i];
 
+
+        weight += word.freq;
+        <!--var data = new Object();-->
+        <!--data.text = word.keyword;-->
+        <!--data.size = word.freq;-->
+        <!--myData.push(data);-->
+    }
+
+    for (var i = 0; i < jsonData.data.length; i++) {
+        var word = jsonData.data[i];
         var data = new Object();
         data.text = word.keyword;
-        data.size = word.freq * weight;
+        data.size = (word.freq/weight)*100;
         myData.push(data);
     }
 
+    /*
+    for(var i =0; j< myData.length; i++){
+        var data = new Object();
+        data.text = myData[i].text;
+        data.size = (myData[i].size/weight)*100;
+        myData.slice(i,1,data);
+    }
+*/
     /*strings = datas.split(" ");
     document.write(strings);
 
@@ -43,6 +61,7 @@
         data.size = parseInt(strings[i+1]) * weight;
         myData.push(data);
     }*/
+
     showcloud(myData);
 
         function showcloud(data) {
