@@ -16,16 +16,16 @@ import java.util.LinkedList;
 public class AndroidBridge {
     private final Handler handler = new Handler();
     private WebView mWebView;
-    private StringBuilder keywords;
+    private String keywords;
 
-    public AndroidBridge(WebView mWebView, StringBuilder keywords) {
+    public AndroidBridge(WebView mWebView, String keywords) {
         this.mWebView = mWebView;
         this.keywords = keywords;
     }
 
     @JavascriptInterface
     public String requestStr() {
-        return keywords.toString();
+        return keywords;
     }
 
 

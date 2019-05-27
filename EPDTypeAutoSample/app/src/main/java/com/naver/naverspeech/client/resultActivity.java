@@ -6,23 +6,16 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.CombinedChart;
 import com.github.mikephil.charting.components.AxisBase;
-import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -34,20 +27,14 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 import static com.naver.naverspeech.client.commSock.gson;
-import static com.naver.naverspeech.client.commSock.socket;
 
 public class resultActivity extends AppCompatActivity {
     private String pincode;
@@ -69,7 +56,7 @@ public class resultActivity extends AppCompatActivity {
     ArrayList<String> userNameList = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         context = this;
@@ -102,8 +89,22 @@ public class resultActivity extends AppCompatActivity {
                     return;
                 }
 
-                for(Map.Entry<String, Integer> entry : result.wordFrequency.entrySet())
-                    sb.append(entry.getKey()).append(" ").append(entry.getValue()).append(" ");
+                final JSONObject shell = new JSONObject();
+                final JSONArray jsonArray = new JSONArray();
+
+                for(Map.Entry<String, Integer> entry : result.wordFrequency.entrySet()) {
+                    JSONObject jsonObject = new JSONObject();
+                    try {
+                        jsonObject.put("keyword", entry.getKey());
+                        jsonObject.put("freq", entry.getValue());
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }
+                    jsonArray.put(jsonObject);
+                }
+
+                try { shell.put("data", jsonArray); } catch(Exception e){ e.printStackTrace(); }
+
 
                 makingLocations = new char[result.markData.length()];
                 for(int i=0;i<makingLocations.length;i++){
@@ -180,7 +181,7 @@ public class resultActivity extends AppCompatActivity {
                         wordCloud.setWebChromeClient(new WebChromeClient());
                         String userAgent = wordCloud.getSettings().getUserAgentString();
                         wordCloud.getSettings().setUserAgentString(userAgent+"ahndroid");
-                        wordCloud.addJavascriptInterface(new AndroidBridge(wordCloud,sb),"android");
+                        wordCloud.addJavascriptInterface(new AndroidBridge(wordCloud,shell.toString()),"android");
                         wordCloud.reload();
 
                         drawChart();
@@ -207,15 +208,27 @@ public class resultActivity extends AppCompatActivity {
         lineEntries.add(new Entry(0, 0));
         barEntries.add(new BarEntry(0, 0));
 
-        int i = 1;
+        HashMap<String, ContributionData> chartData = new HashMap<>();
+
         for(Map.Entry<String, Double> entry : result.contrib.entrySet()){
-            userNameList.add(entry.getKey());
-            barEntries.add(new BarEntry(i++, entry.getValue().floatValue()));
+            ContributionData data = new ContributionData();
+            data.talk = entry.getValue();
+
+            chartData.put(entry.getKey(), data);
         }
 
-        i = 1;
         for(Map.Entry<String, Double> entry : result.keywordContrib.entrySet()){
-            lineEntries.add(new Entry(i++, entry.getValue().floatValue()));
+            ContributionData data = chartData.get(entry.getKey());
+            if(data == null) data = new ContributionData();
+            data.keyword = entry.getValue();
+        }
+
+        int i = 1;
+        for(Map.Entry<String, ContributionData> entry : chartData.entrySet()){
+            ContributionData data = entry.getValue();
+            userNameList.add(entry.getKey());
+            lineEntries.add(new Entry(i, data.keyword.floatValue()));
+            barEntries.add(new BarEntry(i++,data.talk.floatValue()));
         }
 
         userNameList.add("");
@@ -267,7 +280,7 @@ public class resultActivity extends AppCompatActivity {
         YAxis leftAxis = chart.getAxisLeft();
         leftAxis.setDrawGridLines(false);
         leftAxis.setAxisMinimum(0f);
-        leftAxis.setAxisMaximum(1f);
+        leftAxis.setAxisMaximum(1.2f);
 
         YAxis rightAxis = chart.getAxisRight();
         rightAxis.setDrawGridLines(false);
@@ -332,4 +345,18 @@ public class resultActivity extends AppCompatActivity {
             content.setBackgroundColor(Color.argb(0, 255, 255, 255));
         }
     }
+    class ContributionData{
+        Double keyword;
+        Double talk;
+
+        ContributionData(){
+            keyword = 0.0;
+            talk = 0.0;
+        }
+        ContributionData(Double keyword, Double talk){
+            this.keyword = keyword;
+            this.talk = talk;
+        }
+    }
+
 }

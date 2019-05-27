@@ -704,13 +704,14 @@ public class DBCon {
     }
 
     public int isExistNLPWord(String roomPin, String word, String talker) {
-    	String query = "select count(*) as cnt from dbNLP where roomPin= ? and word = ?;";
+    	String query = "select count(*) as cnt from dbNLP where roomPin= ? and word = ? and id = ?;";
     	
     	try {
     		PreparedStatement pstmt = null;
     		pstmt = conn.prepareStatement(query);
     		pstmt.setString(1, roomPin);
     		pstmt.setString(2, word);
+			pstmt.setString(3, talker);
     		ResultSet rs = pstmt.executeQuery();
     		if (rs.next()) {
     			return rs.getInt("cnt");
@@ -759,7 +760,7 @@ public class DBCon {
 
     	HashMap<String , Integer> keywords = new HashMap <String , Integer>();
 		HashMap<String , Integer> fiveKeyword = new HashMap <String , Integer>();
-    	String query = "select word, frequency from dbNLP where roomPin=? order by frequency desc;";    	
+    	String query = "select word, frequency from dbNLP where roomPin=? group by word order by frequency desc;";    	
     	PreparedStatement pstmt = null;
 		int i = 0;
     	try {
