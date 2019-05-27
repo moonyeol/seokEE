@@ -5,33 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".resultActivity"
-    android:background="@color/white"
+    android:background="#ffffff"
 
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
         android:background="@drawable/borer_black_bottom"
         android:fontFamily="@font/nanumbarungothicbold"
         android:gravity="center"
         android:text="@string/result_tb"
         android:textAlignment="gravity"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="8dp" />
 
     <ScrollView
+
+        android:layout_weight="8"
+        android:id="@+id/scrollView2"
+        style="@style/scroll_custom"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_height="wrap_content"
+        android:background="@drawable/borer_black_bottom"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarFadeDuration="0"
+
+        android:scrollbarSize="4dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical">
 
         <LinearLayout
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical"
             tools:layout_editor_absoluteX="0dp"
@@ -51,7 +63,7 @@
                 android:padding="5dp"
                 android:text="@string/result_wc"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <WebView
                 android:id="@+id/webView"
@@ -65,8 +77,9 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/borer_black_bottom"
                 android:fontFamily="@font/nanumbarungothic"
                 android:gravity="center_vertical"
@@ -74,9 +87,11 @@
                 android:padding="5dp"
                 android:text="@string/contribution"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <com.github.mikephil.charting.charts.CombinedChart
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:id="@+id/chart1"
                 android:layout_width="match_parent"
                 android:layout_height="220dp" />
@@ -85,8 +100,9 @@
                 android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/borer_black_bottom"
                 android:fontFamily="@font/nanumbarungothic"
                 android:gravity="center_vertical"
@@ -94,9 +110,11 @@
                 android:padding="5dp"
                 android:text="@string/keyword"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:id="@+id/keywordList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,18 +129,21 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:background="@drawable/bt_radius_w_status"
+                    android:fontFamily="@font/nanumbarungothic"
                     android:text="Button"
                     android:textColor="#747474"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/keyword2"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
+                    android:fontFamily="@font/nanumbarungothic"
                     android:layout_weight="1"
                     android:background="@drawable/bt_radius_w_status"
                     android:text="Button"
+                    android:textSize="12sp"
                     android:textColor="#747474" />
 
                 <Button
@@ -131,7 +152,9 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/nanumbarungothic"
                     android:background="@drawable/bt_radius_w_status"
+                    android:textSize="12sp"
                     android:text="Button"
                     android:textColor="#747474" />
 
@@ -141,8 +164,10 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/nanumbarungothic"
                     android:background="@drawable/bt_radius_w_status"
                     android:text="Button"
+                    android:textSize="12sp"
                     android:textColor="#747474" />
 
             </LinearLayout>
@@ -150,9 +175,10 @@
             <TextView
                 android:id="@+id/result"
                 android:layout_width="match_parent"
-
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/borer_black_bottom"
                 android:fontFamily="@font/nanumbarungothic"
 
@@ -160,7 +186,7 @@
                 android:padding="5dp"
                 android:text="@string/result_page"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
 
             <LinearLayout
@@ -176,13 +202,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center|center_horizontal"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/bt_radius_w_status"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/bt_radius"
                 android:fontFamily="@font/nanumbarungothicbold"
                 android:gravity="center"
                 android:text="@string/exit"
-                android:textColor="#3FACDC"
-                android:textSize="20sp" />
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>
 

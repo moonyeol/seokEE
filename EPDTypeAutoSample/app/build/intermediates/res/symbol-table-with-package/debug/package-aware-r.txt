@@ -438,6 +438,8 @@ color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color ripple_material_dark
 color ripple_material_light
+color scrollbarThumbVertical
+color scrollbarTrackVertical
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
@@ -657,11 +659,13 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable back_gray_border_bottom
 drawable back_gray_border_top
+drawable border_back_clean_bottom
 drawable border_blue
 drawable border_gray_top
 drawable border_t_b_b
 drawable borer_black_bottom
 drawable bt_radius
+drawable bt_radius_c_w
 drawable bt_radius_clicked
 drawable bt_radius_disabled
 drawable bt_radius_status
@@ -852,11 +856,13 @@ id message
 id middle
 id multiply
 id mypage
+id nbutton
 id never
 id nickInput
 id nickname_text
 id nickname_text2
 id nickname_tv
+id nicname_tv_pro
 id none
 id normal
 id notification_background
@@ -868,6 +874,7 @@ id parent
 id parentPanel
 id partialResult
 id passwordInput
+id pbutton
 id percent
 id pincode4
 id progress_circular
@@ -886,6 +893,7 @@ id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scrollView2
 id search_badge
 id search_bar
 id search_button
@@ -926,6 +934,7 @@ id textView10
 id textView11
 id textView16
 id textView2
+id textView3
 id textView4
 id textView8
 id textView9
@@ -986,6 +995,8 @@ layout activity_login
 layout activity_main
 layout activity_mypage
 layout activity_result
+layout custom_dialog
+layout custom_dialog_allow_1
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1036,6 +1047,10 @@ string app_name
 string button
 string content
 string contribution
+string custom_allow_1_body_1
+string custom_allow_1_head
+string custom_exit_body
+string custom_exit_head
 string detail
 string en_tb
 string enter
@@ -1440,6 +1455,7 @@ style Widget_AppCompat_Toolbar_Button_Navigation
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Support_CoordinatorLayout
+style scroll_custom
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

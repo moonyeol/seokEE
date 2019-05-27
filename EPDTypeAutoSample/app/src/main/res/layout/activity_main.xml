@@ -6,10 +6,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
+
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -30,7 +27,7 @@
             android:text="TITLE"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/pincode4"
@@ -39,16 +36,18 @@
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/nanumbarungothicbold"
             android:text="@string/pincode"
+            android:textSize="12sp"
             android:textAlignment="center" />
 
         <ScrollView
+
             android:id="@+id/resulScroll"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="2.5"
             android:background="@drawable/border_t_b_b"
             android:scrollbarAlwaysDrawHorizontalTrack="false"
-
+            style="@style/scroll_custom"
             android:scrollbarAlwaysDrawVerticalTrack="true"
             android:scrollbarFadeDuration="0"
 
@@ -58,6 +57,8 @@
 
             <LinearLayout
                 android:id="@+id/talkList"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"></LinearLayout>
@@ -68,10 +69,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="@string/main_part"
             android:fontFamily="@font/nanumbarungothic"
-            android:textSize="16sp"
-            android:textColor="#000000"/>
+            android:text="@string/main_part"
+            android:textColor="#000000"
+            android:textSize="14sp" />
 
 
         <ScrollView
@@ -99,14 +100,14 @@
                     android:layout_column="1"
                     android:layout_gravity="left"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:drawableLeft="@drawable/s_part_yellow"
                     android:drawablePadding="5dp"
                     android:fontFamily="@font/nanumbarungothic"
                     android:gravity="right|center_vertical"
                     android:text="가나다라마바사아자"
-                    android:textSize="16sp"
                     android:textColor="#000000"
-                    android:layout_weight="1"/>
+                    android:textSize="14sp" />
 
 
 
