@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
 
+    android:paddingBottom="16dp"
     android:orientation="vertical"
     tools:context=".anonymous"
     tools:layout_editor_absoluteY="81dp">
@@ -13,16 +14,15 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_gravity="top"
-        android:layout_margin="5dp"
         android:background="@drawable/borer_black_bottom"
         android:fontFamily="@font/nanumbarungothicbold"
         android:gravity="center"
         android:text="@string/an_tb"
         android:textAlignment="gravity"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,30 +36,34 @@
             android:layout_width="120dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="25dp"
             android:contentDescription="@string/StringValue"
             android:src="@drawable/nic_simbol" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="260dp"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="9dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="80dp"
             android:fontFamily="@font/nanumbarungothic"
             android:padding="8dp"
             android:text="@string/an_snick"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/nickInput"
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="80dp"
             android:autofillHints=""
             android:background="@drawable/edit_border_black"
             android:ems="10"
@@ -67,24 +71,25 @@
             android:hint="@string/an_nick"
             android:inputType="textPersonName"
             android:padding="5dp"
-            android:textAlignment="textStart"
             android:textColor="#bbbdbf"
-            android:textSize="16sp"
+            android:textSize="14sp"
             tools:targetApi="o" />
 
         <Button
             android:id="@+id/button3"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:background="@drawable/bt_radius_status"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
 
+            android:layout_marginRight="80dp"
+            android:background="@drawable/bt_radius_status"
             android:fontFamily="@font/nanumbarungothicbold"
             android:text="@string/input"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 

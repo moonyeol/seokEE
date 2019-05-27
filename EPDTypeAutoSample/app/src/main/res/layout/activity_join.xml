@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
 
+    android:paddingBottom="16dp"
     android:baselineAligned="false"
     android:orientation="vertical">
 
@@ -13,36 +14,50 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_gravity="center"
-        android:layout_margin="8dp"
         android:background="@drawable/borer_black_bottom"
         android:fontFamily="@font/nanumbarungothicbold"
         android:gravity="center"
         android:text="@string/jo_1"
         android:textAlignment="gravity"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="0dp">
 
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/nanumbarungothic"
+            android:padding="5dp"
+            android:text="아이디"
+            android:textAlignment="textStart"
+            android:textColor="#5D5D5D"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="343dp" />
 
         <EditText
             android:id="@+id/id_input"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:autofillHints=""
             android:background="@drawable/edit_border_black"
@@ -54,7 +69,7 @@
             android:nextFocusDown="@id/passwordInput"
             android:padding="5dp"
             android:textAlignment="textStart"
-            android:textSize="16sp"
+            android:textSize="14sp"
             tools:targetApi="o" />
 
         <Button
@@ -63,8 +78,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
-
-            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:background="@drawable/bt_radius_w_status"
             android:fontFamily="@font/nanumbarungothic"
@@ -72,101 +86,117 @@
             android:text="@string/jo_2"
             android:textAlignment="center"
             android:textColor="#3FACDC"
-            android:textSize="16sp"
+            android:textSize="12sp"
             tools:layout_editor_absoluteX="250dp"
             tools:layout_editor_absoluteY="157dp" />
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/passwordInput"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/edit_border_black"
-        android:ems="20"
-        android:fontFamily="@font/nanumbarungothic"
-        android:hint="@string/login_pw"
-        android:inputType="textPassword"
-        android:nextFocusDown="@id/nickInput"
-        android:padding="5dp"
-        android:textAlignment="textStart"
-        android:textColor="#747474"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="219dp" />
-
-    <EditText
-        android:id="@+id/nickInput"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="30dp"
-
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/edit_border_black"
-        android:ems="10"
-        android:fontFamily="@font/nanumbarungothic"
-        android:hint="@string/an_nick"
-        android:inputType="textPersonName"
-        android:padding="5dp"
-        android:textAlignment="textStart"
-        android:textColor="#747474"
-        android:textSize="16sp"
+        android:gravity="center"
+        android:orientation="horizontal"
         tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="277dp" />
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/nanumbarungothic"
+            android:padding="5dp"
+
+            android:text="비밀번호"
+            android:textAlignment="textStart"
+            android:textColor="#5D5D5D"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="343dp" />
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/edit_border_black"
+
+            android:ems="20"
+            android:fontFamily="@font/nanumbarungothic"
+            android:gravity="center_vertical"
+            android:hint="@string/login_pw"
+            android:inputType="textPassword"
+            android:nextFocusDown="@id/nickInput"
+            android:padding="5dp"
+            android:textAlignment="textStart"
+            android:textColor="#747474"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="219dp" />
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="10dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="-40dp"
+        tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/textView3"
             android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:fontFamily="@font/nanumbarungothic"
-            android:gravity="center"
-            android:paddingLeft="4dp"
-            android:text="@string/jo_6"
-            android:textAlignment="center"
-            android:textColor="#5D5D5D"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="409dp" />
-
-        <DatePicker
-            android:id="@+id/dataPicker"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/nanumbarungothic"
+            android:padding="5dp"
+            android:text="닉네임"
+            android:textAlignment="textStart"
+            android:textColor="#5D5D5D"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="343dp" />
 
+        <EditText
+            android:id="@+id/nickInput"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
 
+            android:background="@drawable/edit_border_black"
+            android:ems="10"
+            android:fontFamily="@font/nanumbarungothic"
+            android:hint="@string/an_nick"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:textAlignment="textStart"
+            android:textColor="#747474"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="277dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="-40dp"
@@ -181,9 +211,9 @@
             android:fontFamily="@font/nanumbarungothic"
             android:padding="5dp"
             android:text="성별"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="#5D5D5D"
-            android:textSize="16sp"
+            android:textSize="14sp"
             tools:layout_editor_absoluteX="40dp"
             tools:layout_editor_absoluteY="343dp" />
 
@@ -236,13 +266,54 @@
         </RadioGroup>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-40dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/nanumbarungothic"
+            android:gravity="center"
+            android:paddingLeft="4dp"
+            android:text="@string/jo_6"
+            android:textAlignment="textStart"
+            android:textColor="#5D5D5D"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="409dp" />
+
+        <DatePicker
+            android:id="@+id/dataPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/join_joinButton"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="260dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+
         android:background="@drawable/bt_radius_status"
         android:clickable="true"
         android:fontFamily="@font/nanumbarungothicbold"

@@ -10,4 +10,10 @@
 
     </style>
 
+
+    <style name="scroll_custom">
+        <item name="android:scrollbarThumbVertical">@color/scrollbarThumbVertical</item>
+        <item name="android:scrollbarTrackVertical">@color/scrollbarTrackVertical</item>
+    </style>
+
 </resources>

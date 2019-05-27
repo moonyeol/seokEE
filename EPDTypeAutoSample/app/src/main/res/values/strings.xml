@@ -35,18 +35,18 @@
     <string name="word_cloud">word_cloud</string>
     <string name="result">result</string>
     <string name="detail">세부사항</string>
-    <string name="login_id">\t아이디</string>
-    <string name="login_pw">\t비밀번호</string>
+    <string name="login_id">아이디</string>
+    <string name="login_pw">비밀번호</string>
     <string name="login_reid">로그인 상태 유지</string>
     <string name="login_join">회원가입</string>
     <string name="login_copy">Copyright ⓒ seokEE. All rights reserved.</string>
     <string name="StringValue">이미지가 열리지 않습니다.</string>
     <string name="an_tb">닉네임 입력</string>
-    <string name="an_nick">\t닉네임</string>
+    <string name="an_nick">닉네임</string>
     <string name="an_snick">사용할 닉네임을 입력해 주세요.</string>
     <string name="er_1">회원방의 참여 코드를 입력해 주세요.</string>
     <string name="er_tb">참여 코드 입력</string>
-    <string name="er_2">\t참여코드</string>
+    <string name="er_2">참여코드</string>
     <string name="jo_1">회원가입</string>
     <string name="jo_2">중복확인</string>
     <string name="jo_3">성별</string>
@@ -66,4 +66,9 @@
     <string name="contribution">기여도</string>
     <string name="textview">TextView</string>
     <string name="forUser">MY PAGE(회원 전용)</string>
+    <string name="custom_allow_1_head">권한이 필요합니다.</string>
+    <string name="custom_allow_1_body_1">이 기능을 사용하기 위해서는 권한이 필요합니다.\n계속하시겠습니까?</string>
+    <string name="custom_exit_head">회의종료</string>
+    <string name="custom_exit_body">정말 나가시겠습니까?</string>
+
 </resources>

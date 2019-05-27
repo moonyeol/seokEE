@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:paddingBottom="16dp"
     android:background="@color/white"
     tools:context=".enter">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -18,7 +21,7 @@
         <TextView
             android:id="@+id/textView8"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             android:background="@drawable/borer_black_bottom"
             android:fontFamily="@font/nanumbarungothicbold"
@@ -26,7 +29,7 @@
             android:text="@string/en_tb"
             android:textAlignment="gravity"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="8dp" />
 
 
@@ -34,7 +37,7 @@
             android:id="@+id/imageView6"
             android:layout_width="120dp"
             android:layout_height="100dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="35dp"
             android:src="@drawable/door"
             tools:layout_editor_absoluteX="143dp"
@@ -43,46 +46,49 @@
         <Button
             android:id="@+id/make_room"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_margin="10dp"
-
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="80dp"
             android:background="@drawable/bt_radius_w_status"
             android:fontFamily="@font/nanumbarungothic"
             android:text="@string/make_room"
 
             android:textColor="#3FACDC"
-            android:textSize="20sp"
+            android:textSize="18sp"
             tools:layout_editor_absoluteX="77dp"
             tools:layout_editor_absoluteY="296dp" />
 
         <Button
             android:id="@+id/enter_room"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_margin="10dp"
-
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="80dp"
             android:background="@drawable/bt_radius_w_status"
             android:fontFamily="@font/nanumbarungothic"
             android:text="@string/enter_room"
 
             android:textColor="#3FACDC"
-            android:textSize="20sp"
+            android:textSize="18sp"
             tools:layout_editor_absoluteX="77dp"
             tools:layout_editor_absoluteY="372dp" />
 
         <Button
             android:id="@+id/mypage"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_margin="10dp"
-
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="80dp"
             android:background="@drawable/bt_radius_status"
             android:text="@string/my_page"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="18sp"
             tools:layout_editor_absoluteX="77dp"
             tools:layout_editor_absoluteY="448dp" />
 
