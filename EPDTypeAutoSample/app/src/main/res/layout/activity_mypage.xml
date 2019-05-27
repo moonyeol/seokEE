@@ -10,298 +10,311 @@
     tools:layout_editor_absoluteY="81dp"
     >
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="10dp">
-
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="#FFFFFF"
-            android:fontFamily="@font/nanumbarungothicbold"
-            android:gravity="center"
-            android:text="@string/my_tb"
-            android:textAlignment="gravity"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="8dp" />
-
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/back_gray_border_top"
-            android:gravity="bottom|right"
-            android:orientation="horizontal"
-            android:paddingTop="5dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="86dp">
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="2dp"
-                app:srcCompat="@drawable/logout_icon"
-                tools:layout_editor_absoluteX="320dp"
-                tools:layout_editor_absoluteY="118dp" />
-
-            <Button
-                android:id="@+id/logout"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="65dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="2dp"
-                android:background="#E8E9EA"
-                android:fontFamily="@font/nanumbarungothic"
-                android:text="로그아웃"
-                android:textColor="#6E6F71"
-                android:textSize="15sp"
-                tools:layout_editor_absoluteX="338dp"
-                tools:layout_editor_absoluteY="122dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#E8E9EA"
-            android:gravity="center"
-            android:paddingBottom="25dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="86dp">
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/pro_seok"
-                tools:layout_editor_absoluteY="122dp" />
-
+            android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:background="#E8E9EA"
-
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="86dp">
-
-                    <TextView
-                        android:id="@+id/nickname_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center_vertical"
-
-                        android:fontFamily="@font/nanumbarungothic"
-                        android:gravity="center_vertical|left"
-                        android:padding="5dp"
-                        android:text="@string/nickname_text"
-                        android:textColor="#000000"
-                        android:textSize="14sp"
-                        tools:layout_editor_absoluteX="20dp"
-                        tools:layout_editor_absoluteY="315dp" />
-
-                    <TextView
-                        android:id="@+id/nickname_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right|center_vertical"
-
-                        android:background="#E8E9EA"
-                        android:fontFamily="@font/nanumbarungothic"
-                        android:gravity="center_vertical|left"
-                        android:padding="5dp"
-                        android:text="Nickname"
-                        android:textColor="#6E6F71"
-                        android:textSize="14sp"
-                        tools:layout_editor_absoluteX="90dp"
-                        tools:layout_editor_absoluteY="328dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="86dp">
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center_vertical"
-                        android:fontFamily="@font/nanumbarungothic"
-
-                        android:gravity="center_vertical|left"
-                        android:padding="5dp"
-                        android:text="아이디"
-                        android:textColor="#000000"
-                        android:textSize="14sp"
-                        tools:layout_editor_absoluteX="20dp"
-                        tools:layout_editor_absoluteY="272dp" />
-
-                    <TextView
-                        android:id="@+id/id_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right|center_vertical"
-
-                        android:background="#E8E9EA"
-                        android:fontFamily="@font/nanumbarungothic"
-                        android:gravity="center_vertical|left"
-                        android:padding="5dp"
-                        android:text="UserId"
-                        android:textColor="#6E6F71"
-                        android:textSize="14sp"
-                        tools:layout_editor_absoluteX="100dp"
-                        tools:layout_editor_absoluteY="272dp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="86dp">
-
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center_vertical"
-                        android:fontFamily="@font/nanumbarungothic"
-
-                        android:gravity="center_vertical|left"
-                        android:padding="5dp"
-                        android:text="기여도"
-                        android:textColor="#000000"
-                        android:textSize="14sp"
-                        tools:layout_editor_absoluteX="20dp"
-                        tools:layout_editor_absoluteY="272dp" />
-
-                    <TextView
-                        android:id="@+id/contributionTV"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right|center_vertical"
-
-                        android:background="#E8E9EA"
-                        android:fontFamily="@font/nanumbarungothic"
-                        android:gravity="center_vertical|left"
-                        android:padding="5dp"
-                        android:text="Contrib Data"
-                        android:textColor="#6E6F71"
-                        android:textSize="14sp"
-                        tools:layout_editor_absoluteX="100dp"
-                        tools:layout_editor_absoluteY="272dp" />
-
-
-                </LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="86dp">
-
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center_vertical|left"
-                android:padding="2dp"
-                android:text="자주 회의한 사람"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="673dp" />
-
-            <TextView
-                android:id="@+id/talkWithMe"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-
-                android:layout_margin="5dp"
-                android:background="@drawable/borer_black_bottom"
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center_vertical|left"
-                android:paddingBottom="5dp"
-                android:text="자주 회의한 사람_목록"
-                android:textColor="#bbbdbf"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="673dp" />
-
-            <TextView
-                android:id="@+id/nickname_text2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/nanumbarungothic"
-                android:gravity="center_vertical|left"
-                android:padding="2dp"
-                android:text="과거기록"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="50dp"
-                tools:layout_editor_absoluteY="375dp" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="10dp">
 
-                android:background="#FFFFFF"
-                tools:layout_editor_absoluteX="21dp"
-                tools:layout_editor_absoluteY="424dp" />
 
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/nanumbarungothicbold"
+                    android:gravity="center"
+                    android:text="@string/my_tb"
+                    android:textAlignment="gravity"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    tools:layout_editor_absoluteX="8dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back_gray_border_top"
+                    android:gravity="bottom|right"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="86dp">
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="2dp"
+                        app:srcCompat="@drawable/logout_icon"
+                        tools:layout_editor_absoluteX="320dp"
+                        tools:layout_editor_absoluteY="118dp" />
+
+                    <Button
+                        android:id="@+id/logout"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="65dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="2dp"
+                        android:background="#E8E9EA"
+                        android:fontFamily="@font/nanumbarungothic"
+                        android:text="로그아웃"
+                        android:textColor="#6E6F71"
+                        android:textSize="15sp"
+                        tools:layout_editor_absoluteX="338dp"
+                        tools:layout_editor_absoluteY="122dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#E8E9EA"
+                    android:gravity="center"
+                    android:paddingBottom="20dp"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="86dp">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/pro_seok"
+                        tools:layout_editor_absoluteY="122dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="86dp"
+                    tools:layout_marginTop="5dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:background="#E8E9EA"
+
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="86dp">
+
+                            <TextView
+                                android:id="@+id/nickname_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center_vertical"
+                                android:background="#FFFFFF"
+                                android:fontFamily="@font/nanumbarungothic"
+                                android:gravity="center_vertical|left"
+                                android:padding="5dp"
+                                android:text="@string/nickname_text"
+                                android:textColor="#000000"
+                                android:textSize="14sp"
+                                tools:layout_editor_absoluteX="20dp"
+                                tools:layout_editor_absoluteY="315dp" />
+
+                            <TextView
+                                android:id="@+id/nickname_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center_vertical"
+                                android:background="@drawable/borer_black_bottom"
+                                android:fontFamily="@font/nanumbarungothic"
+                                android:gravity="center_vertical|left"
+                                android:padding="5dp"
+                                android:text="Nickname"
+                                android:textColor="#6E6F71"
+                                android:textSize="14sp"
+                                tools:layout_editor_absoluteX="90dp"
+                                tools:layout_editor_absoluteY="328dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="86dp">
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center_vertical"
+                                android:fontFamily="@font/nanumbarungothic"
+
+                                android:gravity="center_vertical|left"
+                                android:padding="5dp"
+                                android:text="아이디"
+                                android:textColor="#000000"
+                                android:textSize="14sp"
+                                tools:layout_editor_absoluteX="20dp"
+                                tools:layout_editor_absoluteY="272dp" />
+
+                            <TextView
+                                android:id="@+id/id_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center_vertical"
+                                android:background="@drawable/borer_black_bottom"
+                                android:fontFamily="@font/nanumbarungothic"
+                                android:gravity="center_vertical|left"
+                                android:padding="5dp"
+                                android:text="UserId"
+                                android:textColor="#6E6F71"
+                                android:textSize="14sp"
+                                tools:layout_editor_absoluteX="100dp"
+                                tools:layout_editor_absoluteY="272dp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="86dp">
+
+                            <TextView
+                                android:id="@+id/textView11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center_vertical"
+                                android:fontFamily="@font/nanumbarungothic"
+
+                                android:gravity="center_vertical|left"
+                                android:padding="5dp"
+                                android:text="기여도"
+                                android:textColor="#000000"
+                                android:textSize="14sp"
+                                tools:layout_editor_absoluteX="20dp"
+                                tools:layout_editor_absoluteY="272dp" />
+
+                            <TextView
+                                android:id="@+id/contributionTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center_vertical"
+                                android:background="@drawable/borer_black_bottom"
+
+                                android:fontFamily="@font/nanumbarungothic"
+                                android:gravity="center_vertical|left"
+                                android:padding="5dp"
+                                android:text="Contrib Data"
+                                android:textColor="#6E6F71"
+                                android:textSize="14sp"
+                                tools:layout_editor_absoluteX="100dp"
+                                tools:layout_editor_absoluteY="272dp" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/nanumbarungothic"
+                        android:gravity="center_vertical|left"
+                        android:padding="2dp"
+                        android:text="자주 회의한 사람"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="673dp" />
+
+                    <TextView
+                        android:id="@+id/talkWithMe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+
+                        android:layout_margin="5dp"
+                        android:background="@drawable/borer_black_bottom"
+                        android:fontFamily="@font/nanumbarungothic"
+                        android:gravity="center_vertical|left"
+                        android:paddingBottom="5dp"
+                        android:text="자주 회의한 사람_목록"
+                        android:textColor="#bbbdbf"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="673dp" />
+
+                    <TextView
+                        android:id="@+id/nickname_text2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/nanumbarungothic"
+                        android:gravity="center_vertical|left"
+                        android:padding="2dp"
+                        android:text="과거기록"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        tools:layout_editor_absoluteX="50dp"
+                        tools:layout_editor_absoluteY="375dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:layout_gravity="center_horizontal"
+
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:background="#FFFFFF"
+                        tools:layout_editor_absoluteX="21dp"
+                        tools:layout_editor_absoluteY="424dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
