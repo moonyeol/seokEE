@@ -73,15 +73,15 @@ public class mypage extends AppCompatActivity {
         TextView talkwithme = findViewById(R.id.talkWithMe);
         TextView contribution = findViewById(R.id.contributionTV);
 
-        id_tv.setText("<u>"+info.id+"</u>");
+        id_tv.setText(info.id);
 
-        nickname_tv.setText("<u>"+info.nickname+"</u>");
+        nickname_tv.setText(info.nickname);
         talkwithme.setText(info.talkWithMe);
 
 
         String num = String.format("%.2f" , (100-info.contributionData.get(2)));
 
-        String temp = "<u>평균 " +info.contributionData.get(0)+"%( 상위 "+ num + "% )</u>";
+        String temp = "평균 " +info.contributionData.get(0)+"%( 상위 "+ num + "% )";
         contribution.setText(temp);
 
 
