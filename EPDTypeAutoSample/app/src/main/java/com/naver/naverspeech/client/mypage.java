@@ -2,15 +2,26 @@ package com.naver.naverspeech.client;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
+
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import static com.naver.naverspeech.client.commSock.REQUEST_USERINFO;
@@ -18,93 +29,62 @@ import static com.naver.naverspeech.client.commSock.gson;
 
 
 public class mypage extends AppCompatActivity {
-    private Adapter adapter;
-    RequestUserInfo info;
-    public int scrollPosition = 0;
+
+    private FragmentManager fragmentManager;
+
+    private MyInfoPage infoPage;
+    private MyLogPage logPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mypage);
-
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        adapter = new Adapter();
-        recyclerView.setAdapter(adapter);
-
-        new Thread(new Runnable(){
-            public void run(){
-                commSock.kick(REQUEST_USERINFO, "");
-                String message = commSock.read();
-
-                info = gson.fromJson(message, RequestUserInfo.class);
-                runOnUiThread(new Runnable(){
-                    public void run(){
-                        setData(info);
-                    }
-                });
-            }
-        }).start();
-
-        Button logoutBtn = findViewById(R.id.logout);
-
-        logoutBtn.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                SharedPreferences.Editor editor = getSharedPreferences("auto_login", MODE_PRIVATE).edit();
-                editor.putString("id","");
-                editor.putString("pwd", "");
-                editor.apply();
-
-                enter._enter.finish();
-                Intent intent = new Intent(mypage.this, loginActivity.class);
-                finish();
-                startActivity(intent);
-            }
-        });
-
+        // fragment가 뿌려지는 레이아웃: activity_mypage_sample
+        setContentView(R.layout.activity_mypage_sample);
+        fragmentManager = getSupportFragmentManager();
+        setNav();
     }
 
-    private void setData(RequestUserInfo info){
-        TextView nickname_tv = findViewById(R.id.nickname_tv);
-        TextView id_tv = findViewById(R.id.id_tv);
-        TextView talkwithme = findViewById(R.id.talkWithMe);
-        TextView contribution = findViewById(R.id.contributionTV);
+    private void setNav(){
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
 
-        id_tv.setText(info.id);
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        infoPage = new MyInfoPage();
+        logPage = new MyLogPage();
 
-        nickname_tv.setText(info.nickname);
-        talkwithme.setText(info.talkWithMe);
-
-
-        String num = String.format("%.2f" , (100-info.contributionData.get(2)));
-
-        String temp = "평균 " +info.contributionData.get(0)+"%( 상위 "+ num + "% )";
-        contribution.setText(temp);
+        // fragment 2개를 추가한 뒤에 show, hide로 보여지고 안 보여지고를 바꿉니다.
+        transaction.add(R.id.frame_layout, infoPage);
+        transaction.add(R.id.frame_layout, logPage);
+        transaction.show(infoPage);
+        transaction.hide(logPage);
+        transaction.commit();
 
 
-        for (History h : info.histories){
-            // 각 List의 값들을 data 객체에 set 해줍니다.
+        // 하단 바 버튼 클릭 리스너
+        // 하단 바 모양은 menu폴더 menu_bottom.xml에 있습니다.
+        // 이 하단 바는 activity_mypage_sample.xml에 추가되어 있습니다.
 
-            if(h.getContent().equals("")) continue;
-
-            Data data = new Data();
-            data.setTitle(h.getTitle());
-            data.setMember(h.getMembers());
-            data.setNumber(h.getNumber());
-
-            String content = h.getContent();
-            if(content.length()>100)
-                data.setContent(content.substring(0,100));
-            else   data.setContent(content);
-
-            // 각 값이 들어간 data를 adapter에 추가합니다.
-            adapter.addItem(data);
-        }
-
-        // adapter의 값이 변경되었다는 것을 알려줍니다.
-        adapter.notifyDataSetChanged();
+        // 이 버튼을 클릭함으로 인해서 MyInfoPage, MyLogPage를 왔다갔다 할 수 있게 됩니다.
+        // 현재 MyInfoPage와 MyLogPage는 표시하는 것이 똑같은데 이는 각 클래스에 들어가시면 바꿀 수 있습니다.
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                switch (item.getItemId()) {
+                    case R.id.navigation_menu1: {
+                        transaction.show(infoPage);
+                        transaction.hide(logPage);
+                        transaction.commit();
+                        break;
+                    }
+                    case R.id.navigation_menu2: {
+                        transaction.show(logPage);
+                        transaction.hide(infoPage);
+                        transaction.commit();
+                        break;
+                    }
+                }
+                return true;
+            }
+        });
     }
 }
