@@ -38,7 +38,7 @@ public class mypage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // fragment가 뿌려지는 레이아웃: activity_mypage_sample
+        // fragment가 뿌려지는 레이아웃: activity_mypage_sample.xml
         setContentView(R.layout.activity_mypage_sample);
         fragmentManager = getSupportFragmentManager();
         setNav();
