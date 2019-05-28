@@ -8,15 +8,29 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class CustomDialog extends Dialog {
 
-    public Button mPositiveButton;
-    public Button mNegativeButton;
+    private TextView title;
+    private TextView content;
+    private Button mPositiveButton;
+    private Button mNegativeButton;
+    private EditText editText;
 
-    public View.OnClickListener mPositiveListener;
-    public View.OnClickListener mNegativeListener;
-    public EditText et;
+    private String titleString;
+    private String contentString;
+    private String positiveString;
+    private String negativeString;
+    private String editTextString = "";
+
+    private View.OnClickListener mPositiveListener;
+    private View.OnClickListener mNegativeListener;
+    private View.OnKeyListener onKeyListener;
+
+    private int type;
+    public static int DIALOG = 1;
+    public static int EDITTEXT = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,27 +42,71 @@ public class CustomDialog extends Dialog {
         layoutParams.dimAmount = 0.8f;
         getWindow().setAttributes(layoutParams);
 
-        setContentView(R.layout.custom_dialog);
+        if(type == DIALOG) setContentView(R.layout.custom_dialog);
+        else if(type == EDITTEXT) setContentView(R.layout.custom_dialog_edittext);
 
-
-        //셋팅
-        mPositiveButton=(Button)findViewById(R.id.nbutton); // 나가기 취소
-        mNegativeButton=(Button)findViewById(R.id.pbutton);  // 나가기
+        mPositiveButton = findViewById(R.id.pbutton);
+        mNegativeButton = findViewById(R.id.nbutton);
+        title = findViewById(R.id.custom_exit_head);
+        content = findViewById(R.id.custom_exit_body);
 
         //클릭 리스너 셋팅 (클릭버튼이 동작하도록 만들어줌.)
-        mPositiveButton.setOnClickListener(mPositiveListener);
-        mNegativeButton.setOnClickListener(mNegativeListener);
-    }
-    public void setEdit(EditText et){
-        this.et = et;
+        this.mPositiveButton.setOnClickListener(this.mPositiveListener);
+        this.mNegativeButton.setOnClickListener(this.mNegativeListener);
+
+        if(type == EDITTEXT) {
+            this.editText = findViewById(R.id.dialogEditText);
+            this.editText.setOnKeyListener(this.onKeyListener);
+            this.editText.setText(this.editTextString);
+            this.editText.setSelection(this.editTextString.length());
+        }
+
+        this.title.setText(titleString);
+        this.content.setText(contentString);
+        this.mPositiveButton.setText(positiveString);
+        this.mNegativeButton.setText(negativeString);
     }
 
 
     //생성자 생성
-    public CustomDialog(@NonNull Context context, View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
+    public CustomDialog(@NonNull Context context, int type) {
         super(context);
-        this.mPositiveListener = positiveListener;
-        this.mNegativeListener = negativeListener;
+        this.type = type;
+    }
+
+    public Button getPositiveButton(){
+        return this.mPositiveButton;
+    }
+    public void setPositiveListener(View.OnClickListener listener){
+        this.mPositiveListener = listener;
+    }
+    public void setNegativeListener(View.OnClickListener listener){
+        this.mNegativeListener = listener;
+    }
+
+    public void setOnKeyListener(View.OnKeyListener listener){
+        this.onKeyListener = listener;
+    }
+
+    public void setTitleText(String title){
+        this.titleString = title;
+    }
+    public void setContentText(String content){
+        this.contentString = content;
+    }
+
+    public void setPositiveText(String text){
+        this.positiveString = text;
+    }
+    public void setNegativeText(String text){
+        this.negativeString = text;
+    }
+
+    public String getText(){
+        return this.editText.getText().toString();
+    }
+
+    public void setText(String text){
+        this.editTextString = text;
     }
 }
-

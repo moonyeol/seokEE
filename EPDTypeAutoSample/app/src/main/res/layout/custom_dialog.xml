@@ -27,14 +27,15 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/custom_exit_head"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/nanumbarungothicbold"
-                    android:gravity="center"
 
+                    android:gravity="center"
                     android:text="@string/custom_exit_head"
                     android:textColor="#000000"
                     android:textSize="20sp" />
@@ -49,15 +50,16 @@
 
 
                 <TextView
+                    android:id="@+id/custom_exit_body"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="2"
                     android:layout_margin="15dp"
+                    android:layout_weight="2"
                     android:fontFamily="@font/nanumbarungothic"
                     android:gravity="center"
-                    android:text="@string/custom_exit_body"
 
+                    android:text="@string/custom_exit_body"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 

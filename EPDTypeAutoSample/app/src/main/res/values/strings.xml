@@ -68,7 +68,7 @@
     <string name="forUser">MY PAGE(회원 전용)</string>
     <string name="custom_allow_1_head">권한이 필요합니다.</string>
     <string name="custom_allow_1_body_1">이 기능을 사용하기 위해서는 권한이 필요합니다.\n계속하시겠습니까?</string>
-    <string name="custom_exit_head">회의종료</string>
-    <string name="custom_exit_body">정말 나가시겠습니까?</string>
+    <string name="custom_exit_head">custom_title</string>
+    <string name="custom_exit_body">custom_content</string>
 
 </resources>

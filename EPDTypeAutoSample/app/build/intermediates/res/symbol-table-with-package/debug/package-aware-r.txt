@@ -787,10 +787,13 @@ id contentPanel
 id contributionTV
 id custom
 id customPanel
+id custom_exit_body
+id custom_exit_head
 id dataPicker
 id decor_content_parent
 id default_activity_button
 id detail
+id dialogEditText
 id dimensions
 id direct
 id disableHome
@@ -996,6 +999,7 @@ layout activity_mypage
 layout activity_result
 layout custom_dialog
 layout custom_dialog_allow_1
+layout custom_dialog_edittext
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

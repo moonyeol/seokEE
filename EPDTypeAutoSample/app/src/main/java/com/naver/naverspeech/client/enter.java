@@ -2,6 +2,7 @@ package com.naver.naverspeech.client;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.icu.text.SimpleDateFormat;
@@ -26,12 +27,14 @@ import static com.naver.naverspeech.client.commSock.gson;
 public class enter extends Activity {
 
     public static Activity _enter;
+    public Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
         _enter = enter.this;
+        context = this;
 
         Intent intent = getIntent();
 
@@ -48,80 +51,16 @@ public class enter extends Activity {
 
 
         joinBtn.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v) {
+            public void onClick(View v){
+                final CustomDialog dialog = new CustomDialog(context, CustomDialog.EDITTEXT);
+                dialog.setTitleText("참여 코드 입력");
+                dialog.setContentText("회의방의 참여코드를 입력하세요");
+                dialog.setPositiveText("입장");
+                dialog.setNegativeText("취소");
 
-//                final CustomDialog CD = new CustomDialog(_enter,
-//                        new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        Intent intent = new Intent(enter.this, MainActivity.class);
-//
-//                        String key = et.getText().toString();
-//
-//                        if(key.equals("")){
-//                            Toast.makeText(_enter, "PIN번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        }
-//
-//                        commSock.kick(commSock.ENTER,key);
-//
-//                        String message = commSock.read();
-//                        SocketMessage msg = gson.fromJson(message,SocketMessage.class);
-//
-//                        Title t = gson.fromJson(msg.message, Title.class);
-//
-//                        if(t.pincode.equals("false")){
-//                            Toast.makeText(_enter, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
-//                        }
-//                        else {
-//                            Intent intent2 = new Intent(_enter, MainActivity.class);
-//
-//                            intent2.putExtra("isHost", false);
-//                            intent2.putExtra("pin", key);
-//                            intent2.putExtra("title", t.title);
-//
-//                            if(t.pincode.equals("running")) intent2.putExtra("running", true);
-//                            else intent2.putExtra("running", false);
-//
-//                            startActivity(intent2);
-//
-//                            finish();
-//                        }
-//                    }
-//                }
-//                        ,
-//                        new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View v) {
-//                            }            }
-//                            );
-
-
-
-
-                final EditText et = new EditText(_enter);
-
-                final AlertDialog.Builder ad = new AlertDialog.Builder(_enter);
-                ad.setTitle("참여 코드 입력");
-                ad.setMessage("회의방의 참여 코드를 입력하세요.");
-
-
-
-                et.setInputType(InputType.TYPE_CLASS_TEXT);
-                et.setText("참여코드");
-                et.setPadding(10,10,10,20);
-                et.setEms(20);
-
-
-
-
-
-                ad.setPositiveButton("입장", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent = new Intent(enter.this, MainActivity.class);
-
-                        String key = et.getText().toString();
+                dialog.setPositiveListener(new View.OnClickListener(){
+                    public void onClick(View v){
+                        String key = dialog.getText();
 
                         if(key.equals("")){
                             Toast.makeText(_enter, "PIN번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
@@ -139,76 +78,62 @@ public class enter extends Activity {
                             Toast.makeText(_enter, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            Intent intent2 = new Intent(_enter, MainActivity.class);
+                            Intent intent = new Intent(_enter, MainActivity.class);
 
-                            intent2.putExtra("isHost", false);
-                            intent2.putExtra("pin", key);
-                            intent2.putExtra("title", t.title);
+                            intent.putExtra("isHost", false);
+                            intent.putExtra("pin", key);
+                            intent.putExtra("title", t.title);
 
-                            if(t.pincode.equals("running")) intent2.putExtra("running", true);
-                            else intent2.putExtra("running", false);
+                            if(t.pincode.equals("running")) intent.putExtra("running", true);
+                            else intent.putExtra("running", false);
 
-                            startActivity(intent2);
+                            dialog.dismiss();
 
+                            startActivity(intent);
                             finish();
                         }
-
-                        dialogInterface.dismiss();
                     }
                 });
-                ad.setNegativeButton("취소", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
+                dialog.setNegativeListener(new View.OnClickListener(){
+                    public void onClick(View v){
+                        dialog.dismiss();
                     }
                 });
-
-                ad.setView(et);
-
-                final AlertDialog alert = ad.create();
-                et.setOnKeyListener(new View.OnKeyListener() {
+                dialog.setOnKeyListener(new View.OnKeyListener(){
                     @Override
                     public boolean onKey(View v, int keyCode, KeyEvent event) {
                         //Enter key Action
                         if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                            alert.getButton(AlertDialog.BUTTON_POSITIVE).callOnClick();
+                            dialog.getPositiveButton().callOnClick();
                             return true;
                         }
                         return false;
                     }
                 });
 
-                alert.show();
+                dialog.show();
 
             }
         });
 
         makeBtn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) { //make_room
-                final AlertDialog.Builder ad = new AlertDialog.Builder(_enter);
-                ad.setTitle("회의 제목");
-                ad.setMessage("회의 제목을 정해주세요.");
-
-                final EditText et = new EditText(_enter);
+                final CustomDialog dialog = new CustomDialog(context, CustomDialog.EDITTEXT);
+                dialog.setTitleText("회의방 제목 입력");
+                dialog.setContentText("회의방의 제목을 입력해주세요.");
+                dialog.setPositiveText("만들기");
+                dialog.setNegativeText("취소");
 
                 Calendar cal = Calendar.getInstance();
                 SimpleDateFormat sdf = new SimpleDateFormat("yy_MM_dd");
+                dialog.setText(sdf.format(cal.getTime()));
 
-                et.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
-                et.setText(sdf.format(cal.getTime()));
-                et.setPadding(10,10,10,20);
-                et.setEms(20);
-
-                ad.setView(et);
-
-                ad.setPositiveButton("설정", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                dialog.setPositiveListener(new View.OnClickListener(){
+                    public void onClick(View v){
                         Intent intent = new Intent(enter.this, MainActivity.class);
 
                         try {
-
-                            commSock.kick(commSock.PINCODE, et.getText().toString());
+                            commSock.kick(commSock.PINCODE, dialog.getText());
                             String msg = commSock.read();
                             SocketMessage key = gson.fromJson(msg, SocketMessage.class);
 
@@ -224,19 +149,27 @@ public class enter extends Activity {
                         }catch(Exception e){
                             e.printStackTrace();
                         }
-                        dialogInterface.dismiss();
+                        dialog.dismiss();
                     }
                 });
-                ad.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                dialog.setNegativeListener(new View.OnClickListener(){
+                    public void onClick(View v){
+                        dialog.dismiss();
+                    }
+                });
+                dialog.setOnKeyListener(new View.OnKeyListener(){
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
+                    public boolean onKey(View v, int keyCode, KeyEvent event) {
+                        //Enter key Action
+                        if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                            dialog.getPositiveButton().callOnClick();
+                            return true;
+                        }
+                        return false;
                     }
                 });
-                AlertDialog alert = ad.create();
-                alert.show();
 
-
+                dialog.show();
             }
         });
         pageBtn.setOnClickListener(new Button.OnClickListener(){

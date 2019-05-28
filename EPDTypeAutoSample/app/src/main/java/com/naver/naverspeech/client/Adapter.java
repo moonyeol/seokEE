@@ -112,18 +112,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
 
             export.setOnClickListener(new Button.OnClickListener() {
                 public void onClick(View v) {
-                    final AlertDialog.Builder ad = new AlertDialog.Builder(context);
-                    ad.setTitle("회의록 파일 저장");
-                    ad.setMessage("파일 이름을 지정해주세요");
-                    final EditText et = new EditText(context);
+                    final CustomDialog dialog = new CustomDialog(context, CustomDialog.EDITTEXT);
+                    dialog.setTitleText("회의록 파일 저장");
+                    dialog.setContentText("파일 이름을 지정해주세요");
+                    dialog.setPositiveText("저장");
+                    dialog.setNegativeText("취소");
 
-                    et.setText(textView1.getText());
-                    et.setPadding(10,10,10,20);
-
-                    ad.setView(et);
-                    ad.setPositiveButton("저장", new DialogInterface.OnClickListener() {
+                    dialog.setText(textView1.getText().toString());
+                    dialog.setPositiveListener(new View.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
+                        public void onClick(View view) {
                             try {
                                 commSock.kick(REQUEST_FILE, ItemViewHolder.this.data.getNumber());
 
@@ -134,7 +132,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
 
                                 String Save_folder = "/seokEE";
                                 String Save_Path = "";
-                                String File_Name = et.getText().toString();
+                                String File_Name = dialog.getText();
                                 String ext = Environment.getExternalStorageState();
                                 if (ext.equals(Environment.MEDIA_MOUNTED)) {
                                     Save_Path = Environment.getExternalStorageDirectory()+ Save_folder;
@@ -148,17 +146,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                             }catch(Exception e){
                                 e.printStackTrace();
                             }
-                            dialogInterface.dismiss();
+                            dialog.dismiss();
                         }
                     });
-                    ad.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    dialog.setNegativeListener(new View.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
+                        public void onClick(View view) {
+                            dialog.dismiss();
                         }
                     });
-                    AlertDialog alert = ad.create();
-                    alert.show();
+                    dialog.show();
                 }
             });
 

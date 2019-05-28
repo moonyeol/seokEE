@@ -70,15 +70,9 @@ public class MainActivity extends Activity {
     private String msg;
     private int func;
 
-    private CustomDialog customDialog;
-
-
     StringBuilder sb;
-
     String pin;
     ArrayList<UserListButton> userList = new ArrayList<>();
-    private View.OnClickListener positiveListener;
-    private View.OnClickListener negativeListener;
 
     // 음성 인식 메시지를 처리합니다.
     private void handleMessage(Message msg) {
@@ -137,10 +131,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
-        customDialog = new CustomDialog(this,positiveListener,negativeListener);
-
-
 
         context = this;
         listView = findViewById(R.id.userList);
@@ -359,53 +349,49 @@ public class MainActivity extends Activity {
     }
 
     public void bt_exit(View view) {
-        // 확인창을 띄우고 yes면 나가기, _데이터 저장은 필요없,,! no면 안나가기
-        customDialog.show();
+        final CustomDialog dialog = new CustomDialog(context, CustomDialog.DIALOG);
+        dialog.setTitleText("회의 종료");
+        dialog.setContentText("회의를 종료하시겠습니까?");
+        dialog.setPositiveText("나가기");
+        dialog.setNegativeText("취소");
 
-                customDialog.setTitle("회의 종료");
-               // customDialog.setIcon(android.R.drawable.ic_menu_save)
-            //    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    View.OnClickListener positiveListener = new View.OnClickListener() {
-                        public void onClick(View v) {
-                            // 확인시 처리 로직
-                        StringBuilder markedData = new StringBuilder();
+        dialog.setPositiveListener(new View.OnClickListener(){
+            public void onClick(View v){
+                StringBuilder markedData = new StringBuilder();
 
-                        Log.i("MAIN", "talk");
-                        for(CustomTalk t : talk){
-                            if(t.checkBox.isChecked()) markedData.append("1");
-                            else markedData.append("0");
-                        }
-
-
-                        Log.i("MAIN", "Recording Service Terminate.");
-                        naverRecognizer.getSpeechRecognizer().release();
-                        isRunning.compareAndSet(true,false);
-
-                        Log.i("MAIN", "Kick Exit");
-                        commSock.kick(commSock.EXIT, markedData.toString());
-
-                        Log.i("MAIN", "Make Intent & Start Result Activity.");
-                        Intent intent = new Intent(MainActivity.this, resultActivity.class);
-                        intent.putExtra("exited", true);
-                        intent.putExtra("pincode", pin);
-                        startActivity(intent);
-
-                        Log.i("MAIN", "finish Activity");
-                        finish();
-
-                    }                };
+                Log.i("MAIN", "talk");
+                for(CustomTalk t : talk){
+                    if(t.checkBox.isChecked()) markedData.append("1");
+                    else markedData.append("0");
+                }
 
 
-                //.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                 //   public void onClick(DialogInterface dialog, int whichButton) {
-                 View.OnClickListener negativeListener = new View.OnClickListener() {
-                    public void onClick(View v) {
-                        // 취소시 처리 로직
-                        Toast.makeText(MainActivity.this, "취소하였습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                };
+                Log.i("MAIN", "Recording Service Terminate.");
+                naverRecognizer.getSpeechRecognizer().release();
+                isRunning.compareAndSet(true,false);
 
-                customDialog.show();
+                Log.i("MAIN", "Kick Exit");
+                commSock.kick(commSock.EXIT, markedData.toString());
+
+                Log.i("MAIN", "Make Intent & Start Result Activity.");
+                Intent intent = new Intent(MainActivity.this, resultActivity.class);
+                intent.putExtra("exited", true);
+                intent.putExtra("pincode", pin);
+                startActivity(intent);
+
+                Log.i("MAIN", "finish Activity");
+                dialog.dismiss();
+                finish();
+
+            }
+        });
+        dialog.setNegativeListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Toast.makeText(MainActivity.this, "취소하였습니다.", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 
     class CustomTalk {

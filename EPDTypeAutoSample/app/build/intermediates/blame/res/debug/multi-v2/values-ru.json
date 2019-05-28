@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ru\\values-ru.xml",
+            "outputFile": "C:\\Users\\admin\\Documents\\GitHub\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ru\\values-ru.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-2\\files-2.1\\4616a4e5d6a17dbe6e2854c13a957838\\res\\values-ru\\values-ru.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,220,322,434,520,625,745,824,902,982,1088,1196,1294,1403,1509,1617,1792,1892",
-                        "endColumns": "114,101,111,85,104,119,78,77,79,105,107,97,108,105,107,174,99,80",
-                        "endOffsets": "215,317,429,515,620,740,819,897,977,1083,1191,1289,1398,1504,1612,1787,1887,1968"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ansduf94\\.gradle\\caches\\transforms-2\\files-2.1\\c089cf8cc1bbb9cd3daf2d3cec86ff86\\res\\values-ru\\values-ru.xml",
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\6dd4d60169a217d23387cbddb490d4c0\\res\\values-ru\\values-ru.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "1973",
                         "endColumns": "100",
                         "endOffsets": "2069"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\15a4d72cb8b86c1c5b3a8eb1c8be171c\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,220,322,434,520,625,745,824,902,982,1088,1196,1294,1403,1509,1617,1792,1892",
+                        "endColumns": "114,101,111,85,104,119,78,77,79,105,107,97,108,105,107,174,99,80",
+                        "endOffsets": "215,317,429,515,620,740,819,897,977,1083,1191,1289,1398,1504,1612,1787,1887,1968"
                     }
                 }
             ]
