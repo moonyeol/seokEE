@@ -40,7 +40,8 @@
         var word = jsonData.data[i];
         var data = new Object();
         data.text = word.keyword;
-        data.size = (word.freq/weight)*150;
+        <!--data.size = parseInt(Math.log(weight*word.freg));-->
+        data.size = (word.freq/weight)*300;
         myData.push(data);
     }
 

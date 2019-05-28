@@ -7,15 +7,16 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class CustomDialog extends Dialog {
 
-    private Button mPositiveButton;
-    private Button mNegativeButton;
+    public Button mPositiveButton;
+    public Button mNegativeButton;
 
-    private View.OnClickListener mPositiveListener;
-    private View.OnClickListener mNegativeListener;
-
+    public View.OnClickListener mPositiveListener;
+    public View.OnClickListener mNegativeListener;
+    public EditText et;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,10 @@ public class CustomDialog extends Dialog {
         mPositiveButton.setOnClickListener(mPositiveListener);
         mNegativeButton.setOnClickListener(mNegativeListener);
     }
+    public void setEdit(EditText et){
+        this.et = et;
+    }
+
 
     //생성자 생성
     public CustomDialog(@NonNull Context context, View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
