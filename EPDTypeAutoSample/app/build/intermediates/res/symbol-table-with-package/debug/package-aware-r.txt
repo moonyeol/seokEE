@@ -907,7 +907,6 @@ id barrier
 id beginning
 id blocking
 id bottom
-id bottom_navigation_view
 id btnExit
 id btnstart
 id button
@@ -966,7 +965,6 @@ id fill_vertical
 id finalResult
 id fixed
 id forever
-id frame_layout
 id gender
 id genderMen
 id genderNone
@@ -1021,8 +1019,6 @@ id mini
 id multiply
 id mypage
 id navigation_header_container
-id navigation_menu1
-id navigation_menu2
 id nbutton
 id never
 id nickInput
@@ -1189,10 +1185,8 @@ layout activity_join_room
 layout activity_login
 layout activity_main
 layout activity_mypage
-layout activity_mypage_sample
 layout activity_result
 layout custom_dialog
-layout custom_dialog_allow_1
 layout custom_dialog_edittext
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1227,7 +1221,6 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
-menu menu_bottom
 string ID_text
 string StringValue
 string abc_action_bar_home_description

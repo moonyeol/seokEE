@@ -1,180 +1,180 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
-MERGED from [com.android.support:design:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\6357450a9cc9ca0d169e831aa7431026\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\15a4d72cb8b86c1c5b3a8eb1c8be171c\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\afd6d2458419522be0916d83893eb410\AndroidManifest.xml:2:1-11:12
-MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\b7098620d00b7cb87199ce789f090e58\AndroidManifest.xml:2:1-17:12
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\f9c1706e58c56632f7f7e1d737dce840\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\d343586ae921851233047e9a32dcc0b3\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\45b727269aaa11aa04503c9f34ae1f73\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\c44accf6fd2dd4587be46c12dabaea40\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\8563083f26983ad81fa97242067d177d\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\9b13a21357f7b9a94acb14b3820f2e7d\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\0698e76b85331178210924b132e1640a\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\efaed02323d8f92223f08f812f8c230b\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\f6f3e0466b369ac4816673334de185e0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\c9539190b471e07f7f9eb80a2229090e\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\6dd4d60169a217d23387cbddb490d4c0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\d0e7ed372fc5a94a89660d45397cbb2f\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\57a742f84840373638a3cdbe5822be92\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\4a75ceeea4826ca8a574b9981366e6b5\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\5d1142683ef9c4b057f4ce9d8b610e80\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\500790e4ff5ec59eac13936744479708\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\0c374d0cabe9c04a36657ac7330ca7fb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\a5911739d95e1c2f00d1e8fcfc238371\AndroidManifest.xml:2:1-11:12
+MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\079c4611c1637c21641083ef1e08a6b6\AndroidManifest.xml:2:1-17:12
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\998824f59ba1526f51f850f41385bebd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\11d3b0a85c3eaf29a2e2d98e3256dc16\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\f24724729e2d4cdbe0c1a9f8ee6e159a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\0e7305ca4121fd5478a23c2769ff3c9b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\53302a497a402d063f8a49aa69707230\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\8577eb5c70ec042116a040ffe8be011c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\0e0c8f5bb5688f27b19b88701aab85a5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\bdd27dde0e5d57abc076164a86c380da\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\ee23ba2d235b9e3d2835201995677add\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\c6b99bd1766bbe8af826eb934f753b60\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\e850f2cc295f6dfc37b13fbb25812967\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\2b00a06b786ae9f3abcd17d0e40da330\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\3c2a3abb00e8f2675856d2261d6b726f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\6e355f9e71837713f71724f7e11e37aa\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\964615d56db527812b6006f8e49aee53\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
 	package
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:3:5-43
-		INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:3:5-43
+		INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
-		INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+		INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
-		INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:1-35:12
+		INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:5:5-67
-MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\b7098620d00b7cb87199ce789f090e58\AndroidManifest.xml:12:5-67
-MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\b7098620d00b7cb87199ce789f090e58\AndroidManifest.xml:12:5-67
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\079c4611c1637c21641083ef1e08a6b6\AndroidManifest.xml:12:5-67
+MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\079c4611c1637c21641083ef1e08a6b6\AndroidManifest.xml:12:5-67
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:6:5-71
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:6:5-71
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:6:22-68
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:6:22-68
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:7:5-81
-MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\b7098620d00b7cb87199ce789f090e58\AndroidManifest.xml:11:5-81
-MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\b7098620d00b7cb87199ce789f090e58\AndroidManifest.xml:11:5-81
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:7:5-81
+MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\079c4611c1637c21641083ef1e08a6b6\AndroidManifest.xml:11:5-81
+MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\079c4611c1637c21641083ef1e08a6b6\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:7:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:8:5-80
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:8:5-80
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:8:22-77
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:8:22-77
 application
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:10:5-33:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\afd6d2458419522be0916d83893eb410\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\afd6d2458419522be0916d83893eb410\AndroidManifest.xml:9:5-20
-MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\b7098620d00b7cb87199ce789f090e58\AndroidManifest.xml:14:5-15:19
-MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\b7098620d00b7cb87199ce789f090e58\AndroidManifest.xml:14:5-15:19
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:10:5-33:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\a5911739d95e1c2f00d1e8fcfc238371\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\a5911739d95e1c2f00d1e8fcfc238371\AndroidManifest.xml:9:5-20
+MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\079c4611c1637c21641083ef1e08a6b6\AndroidManifest.xml:14:5-15:19
+MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\079c4611c1637c21641083ef1e08a6b6\AndroidManifest.xml:14:5-15:19
 	android:supportsRtl
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:13:9-41
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:13:9-41
 	android:icon
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:12:9-43
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:15:9-40
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:15:9-40
 activity#com.naver.naverspeech.client.item
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:16:9-42
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:16:9-42
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:16:19-39
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:16:19-39
 activity#com.naver.naverspeech.client.resultActivity
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:17:9-18:20
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:17:9-18:20
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:17:19-49
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:17:19-49
 activity#com.naver.naverspeech.client.mypage
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:19:9-44
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:19:9-44
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:19:19-41
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:19:19-41
 activity#com.naver.naverspeech.client.loginActivity
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:20:9-51
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:20:9-51
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:20:19-48
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:20:19-48
 activity#com.naver.naverspeech.client.joinActivity
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:21:9-50
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:21:9-50
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:21:19-47
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:21:19-47
 activity#com.naver.naverspeech.client.anonymous
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:22:9-47
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:22:9-47
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:22:19-44
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:22:19-44
 activity#com.naver.naverspeech.client.JoinRoom
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:23:9-46
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:23:9-46
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:23:19-43
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:23:19-43
 activity#com.naver.naverspeech.client.enter
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:24:9-43
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:24:9-43
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:24:19-40
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:24:19-40
 activity#com.naver.naverspeech.client.First
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:25:9-31:20
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:25:9-31:20
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:25:19-40
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:25:19-40
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:26:13-30:29
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:27:17-69
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:27:25-66
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:29:17-77
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:29:27-74
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:29:27-74
 activity#com.naver.naverspeech.client.MainActivity
-ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:32:9-50
+ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:32:9-50
 	android:name
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:32:19-47
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml:32:19-47
 uses-sdk
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\6357450a9cc9ca0d169e831aa7431026\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\6357450a9cc9ca0d169e831aa7431026\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\15a4d72cb8b86c1c5b3a8eb1c8be171c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\15a4d72cb8b86c1c5b3a8eb1c8be171c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\afd6d2458419522be0916d83893eb410\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\afd6d2458419522be0916d83893eb410\AndroidManifest.xml:5:5-7:41
-MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\b7098620d00b7cb87199ce789f090e58\AndroidManifest.xml:7:5-9:41
-MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\b7098620d00b7cb87199ce789f090e58\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\f9c1706e58c56632f7f7e1d737dce840\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\f9c1706e58c56632f7f7e1d737dce840\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\d343586ae921851233047e9a32dcc0b3\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\d343586ae921851233047e9a32dcc0b3\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\45b727269aaa11aa04503c9f34ae1f73\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\45b727269aaa11aa04503c9f34ae1f73\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\c44accf6fd2dd4587be46c12dabaea40\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\c44accf6fd2dd4587be46c12dabaea40\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\8563083f26983ad81fa97242067d177d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\8563083f26983ad81fa97242067d177d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\9b13a21357f7b9a94acb14b3820f2e7d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\9b13a21357f7b9a94acb14b3820f2e7d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\0698e76b85331178210924b132e1640a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\0698e76b85331178210924b132e1640a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\efaed02323d8f92223f08f812f8c230b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\efaed02323d8f92223f08f812f8c230b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\f6f3e0466b369ac4816673334de185e0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\f6f3e0466b369ac4816673334de185e0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\c9539190b471e07f7f9eb80a2229090e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\c9539190b471e07f7f9eb80a2229090e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\6dd4d60169a217d23387cbddb490d4c0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\6dd4d60169a217d23387cbddb490d4c0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\d0e7ed372fc5a94a89660d45397cbb2f\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\d0e7ed372fc5a94a89660d45397cbb2f\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\57a742f84840373638a3cdbe5822be92\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\57a742f84840373638a3cdbe5822be92\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\4a75ceeea4826ca8a574b9981366e6b5\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\4a75ceeea4826ca8a574b9981366e6b5\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\5d1142683ef9c4b057f4ce9d8b610e80\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\5d1142683ef9c4b057f4ce9d8b610e80\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\500790e4ff5ec59eac13936744479708\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\500790e4ff5ec59eac13936744479708\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\0c374d0cabe9c04a36657ac7330ca7fb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\0c374d0cabe9c04a36657ac7330ca7fb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\a5911739d95e1c2f00d1e8fcfc238371\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\a5911739d95e1c2f00d1e8fcfc238371\AndroidManifest.xml:5:5-7:41
+MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\079c4611c1637c21641083ef1e08a6b6\AndroidManifest.xml:7:5-9:41
+MERGED from [com.naver.speech.clientapi:naverspeech-ncp-sdk-android:1.1.3] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\079c4611c1637c21641083ef1e08a6b6\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\998824f59ba1526f51f850f41385bebd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\998824f59ba1526f51f850f41385bebd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\11d3b0a85c3eaf29a2e2d98e3256dc16\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\11d3b0a85c3eaf29a2e2d98e3256dc16\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\f24724729e2d4cdbe0c1a9f8ee6e159a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\f24724729e2d4cdbe0c1a9f8ee6e159a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\0e7305ca4121fd5478a23c2769ff3c9b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\0e7305ca4121fd5478a23c2769ff3c9b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\53302a497a402d063f8a49aa69707230\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\53302a497a402d063f8a49aa69707230\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\8577eb5c70ec042116a040ffe8be011c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\8577eb5c70ec042116a040ffe8be011c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\0e0c8f5bb5688f27b19b88701aab85a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\0e0c8f5bb5688f27b19b88701aab85a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\bdd27dde0e5d57abc076164a86c380da\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\bdd27dde0e5d57abc076164a86c380da\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\ee23ba2d235b9e3d2835201995677add\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\ee23ba2d235b9e3d2835201995677add\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\c6b99bd1766bbe8af826eb934f753b60\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\c6b99bd1766bbe8af826eb934f753b60\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\e850f2cc295f6dfc37b13fbb25812967\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\e850f2cc295f6dfc37b13fbb25812967\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\2b00a06b786ae9f3abcd17d0e40da330\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\2b00a06b786ae9f3abcd17d0e40da330\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\3c2a3abb00e8f2675856d2261d6b726f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\3c2a3abb00e8f2675856d2261d6b726f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\6e355f9e71837713f71724f7e11e37aa\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\6e355f9e71837713f71724f7e11e37aa\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\964615d56db527812b6006f8e49aee53\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\chanwool\.gradle\caches\transforms-2\files-2.1\964615d56db527812b6006f8e49aee53\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\admin\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\chanwool\Documents\GitHub\seokEE\EPDTypeAutoSample\app\src\main\AndroidManifest.xml
