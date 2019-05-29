@@ -909,7 +909,6 @@ id blocking
 id bottom
 id btnExit
 id btnstart
-id button
 id button3
 id buttonPanel
 id cancel_action

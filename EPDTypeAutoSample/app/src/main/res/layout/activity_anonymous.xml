@@ -73,6 +73,7 @@
             android:padding="5dp"
             android:textColor="#bbbdbf"
             android:textSize="14sp"
+            android:maxLength="5"
             tools:targetApi="o" />
 
         <Button

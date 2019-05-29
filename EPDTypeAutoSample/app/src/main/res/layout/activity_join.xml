@@ -187,6 +187,7 @@
             android:textColor="#747474"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="40dp"
+            android:maxLength="5"
             tools:layout_editor_absoluteY="277dp" />
     </LinearLayout>
 
