@@ -10,6 +10,7 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,9 +44,10 @@ public class resultActivity extends AppCompatActivity {
     StringBuilder sb = new StringBuilder();
 
     WebView wordCloud;
-    Button exitBtn;
+    ImageButton exitBtn;
     LinearLayout line;
     RequestResult result;
+    TextView Rname;
 
     int keywordIdList[] = {R.id.keyword1, R.id.keyword2, R.id.keyword3, R.id.keyword4};
     boolean isExited;
@@ -60,6 +62,7 @@ public class resultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         context = this;
+        Rname = findViewById(R.id.textView17);
 
         Intent intent = getIntent();
         pincode = intent.getStringExtra("pincode");
@@ -69,7 +72,7 @@ public class resultActivity extends AppCompatActivity {
 
         line = findViewById(R.id.line);
 
-        exitBtn.setText("... 분석 중입니다 ...");
+//        exitBtn.setText("... 분석 중입니다 ...");
         exitBtn.setEnabled(false);
         exitBtn.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -186,7 +189,7 @@ public class resultActivity extends AppCompatActivity {
 
                         drawChart();
 
-                        exitBtn.setText("나가기");
+//                        exitBtn.setText("나가기");
                         exitBtn.setEnabled(true);
                     }
                 });

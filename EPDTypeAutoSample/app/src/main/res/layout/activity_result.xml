@@ -10,18 +10,28 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textView9"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="40dp"
         android:layout_gravity="center"
-        android:background="@drawable/borer_black_bottom"
         android:fontFamily="@font/nanumbarungothicbold"
         android:gravity="center"
+        android:paddingTop="15dp"
         android:text="@string/result_tb"
         android:textAlignment="gravity"
         android:textColor="#000000"
         android:textSize="16sp"
         tools:layout_editor_absoluteX="8dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/borer_black_bottom"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:text="TextView"
+        android:textSize="11dp" />
 
     <ScrollView
 
@@ -56,12 +66,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/borer_black_bottom"
                 android:fontFamily="@font/nanumbarungothic"
                 android:gravity="center_vertical"
                 android:padding="5dp"
-                android:layout_marginTop="5dp"
                 android:text="@string/result_wc"
                 android:textColor="#000000"
                 android:textSize="14sp" />
@@ -82,7 +91,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/borer_black_bottom"
+                android:background="@drawable/border_back_clean_top"
                 android:fontFamily="@font/nanumbarungothic"
                 android:gravity="center_vertical"
 
@@ -92,11 +101,11 @@
                 android:textSize="14sp" />
 
             <com.github.mikephil.charting.charts.CombinedChart
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:id="@+id/chart1"
                 android:layout_width="match_parent"
-                android:layout_height="220dp" />
+                android:layout_height="220dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
 
             <TextView
                 android:id="@+id/textView16"
@@ -105,7 +114,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/borer_black_bottom"
+                android:background="@drawable/border_back_clean_top"
                 android:fontFamily="@font/nanumbarungothic"
                 android:gravity="center_vertical"
 
@@ -129,12 +138,12 @@
                     android:id="@+id/keyword1"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/bt_radius_w_status"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialog"
                     android:fontFamily="@font/nanumbarungothic"
                     android:text="Button"
-                    android:textColor="#747474"
+                    android:textColor="#ffffff"
                     android:textSize="12sp" />
 
                 <Button
@@ -144,40 +153,40 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
 
-                    android:fontFamily="@font/nanumbarungothic"
                     android:layout_weight="1"
-                    android:background="@drawable/bt_radius_w_status"
+                    android:background="@drawable/dialog"
+                    android:fontFamily="@font/nanumbarungothic"
                     android:text="Button"
-                    android:textSize="12sp"
-                    android:textColor="#747474" />
+                    android:textColor="#747474"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/keyword3"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="5dp"
+                    android:layout_weight="1"
 
+                    android:background="@drawable/dialog"
                     android:fontFamily="@font/nanumbarungothic"
-                    android:background="@drawable/bt_radius_w_status"
-                    android:textSize="12sp"
                     android:text="Button"
-                    android:textColor="#747474" />
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/keyword4"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="5dp"
+                    android:layout_weight="1"
 
+                    android:background="@drawable/dialog"
                     android:fontFamily="@font/nanumbarungothic"
-                    android:background="@drawable/bt_radius_w_status"
                     android:text="Button"
-                    android:textSize="12sp"
-                    android:textColor="#747474" />
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -188,7 +197,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/borer_black_bottom"
+                android:background="@drawable/border_back_clean_top"
                 android:fontFamily="@font/nanumbarungothic"
 
                 android:gravity="center_vertical"
@@ -202,25 +211,9 @@
                 android:id="@+id/line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#CFCFCF"
                 android:orientation="vertical"></LinearLayout>
 
-
-            <Button
-                android:id="@+id/exit"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center|center_horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/bt_radius_status"
-                android:fontFamily="@font/nanumbarungothicbold"
-                android:gravity="center"
-                android:text="@string/exit"
-                android:textColor="#ffffff"
-                android:textSize="18sp" />
 
         </LinearLayout>
     </ScrollView>
@@ -228,13 +221,24 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/border_back_clean_top"
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/export2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:layout_weight="1"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/bt_down"
+            tools:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/exit"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/exit_b" />
     </LinearLayout>

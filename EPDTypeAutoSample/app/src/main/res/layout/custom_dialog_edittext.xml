@@ -6,12 +6,13 @@
 
 
     <LinearLayout
-        android:layout_margin="25dp"
-        android:background="@drawable/bt_radius_c_w"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:background="@drawable/dialog"
         android:gravity="center_horizontal"
         android:orientation="vertical">
+
         <LinearLayout
 
             android:layout_width="match_parent"
@@ -37,7 +38,7 @@
 
                     android:gravity="center"
                     android:text="@string/custom_exit_head"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="20sp" />
 
                 <TextView
@@ -51,7 +52,7 @@
                     android:gravity="center"
 
                     android:text="@string/custom_exit_body"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -67,8 +68,9 @@
                     android:id="@+id/dialogEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="20dp"
                     android:layout_weight="2"
+                    android:background="#ffffff"
                     android:ems="20"
                     android:inputType="textPersonName"
                     android:paddingStart="10dp"
@@ -87,6 +89,7 @@
 
             <Button
                 android:id="@+id/nbutton"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -94,15 +97,16 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="50"
-                android:background="@drawable/bt_radius_w"
 
+                android:background="@drawable/bt_none_border"
                 android:fontFamily="@font/nanumbarungothic"
                 android:text="취소"
-                android:textColor="#3FACDC"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
 
             <Button
                 android:id="@+id/pbutton"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -110,10 +114,10 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="50"
-                android:background="@drawable/bt_radius_w"
+                android:background="#3FACDC"
                 android:fontFamily="@font/nanumbarungothic"
                 android:text="나가기"
-                android:textColor="#3FACDC"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>

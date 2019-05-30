@@ -12,7 +12,7 @@
 
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textView9"
         android:layout_width="fill_parent"
         android:layout_height="70dp"
         android:layout_gravity="center"
@@ -187,6 +187,7 @@
             android:textColor="#747474"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="40dp"
+            android:maxLength="5"
             tools:layout_editor_absoluteY="277dp" />
     </LinearLayout>
 

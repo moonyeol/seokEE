@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +15,7 @@ import android.support.v4.content.ContextCompat;
 import android.transition.Visibility;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridLayout;
@@ -191,9 +193,17 @@ public class MainActivity extends Activity {
                             MemberList mList = gson.fromJson(sMsg.message, MemberList.class);
 
                             for(String s : mList.list){
-                                Button btn = new Button(context);
-                                btn.setText(s);
-                                userList.add(new UserListButton(btn, s));
+                                UserListButton btn = new UserListButton(context);
+                                btn.setBackground(getResources().getDrawable(R.drawable.user_btn, null));
+                                btn.setNickname(s);
+                                btn.setDrawable(R.drawable.s_part_yellow);
+                                btn.setHighlightListener();
+
+                                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                                params.setMargins(5,5,5,5);
+                                btn.setLayoutParams(params);
+
+                                userList.add(btn);
                             }
                         }
 
@@ -234,11 +244,12 @@ public class MainActivity extends Activity {
 
 
                                         for (int i = 0; i < userList.size(); i++) {
-                                            if (userList.get(i).getNickname().equals(msg)) {
-                                                if (selectedUser != null && selectedUser.equals(userList.get(i).getNickname())) {
+                                            if (userList.get(i).nickname.equals(msg)) {
+                                                if (selectedUser != null && selectedUser.equals(userList.get(i).nickname)) {
                                                     selectedUser = null;
                                                     updateChatHighlight();
                                                 }
+                                                listView.removeView(userList.get(i));
                                                 userList.remove(i);
                                                 break;
                                             }
@@ -249,9 +260,18 @@ public class MainActivity extends Activity {
                                     case commSock.ENTER:
                                         Toast.makeText(MainActivity.this, msg + " 입장", Toast.LENGTH_SHORT).show();
 
-                                        Button btn = new Button(context);
-                                        btn.setText(msg);
-                                        userList.add(new UserListButton(btn, msg));
+                                        UserListButton btn = new UserListButton(context);
+                                        btn.setBackground(getResources().getDrawable(R.drawable.user_btn, null));
+                                        btn.setNickname(msg);
+                                        btn.setDrawable(R.drawable.s_part_yellow);
+                                        btn.setHighlightListener();
+
+                                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                                        params.setMargins(5,5,5,5);
+
+                                        btn.setLayoutParams(params);
+
+                                        userList.add(btn);
 
                                         updateUserList();
                                         break;
@@ -298,10 +318,9 @@ public class MainActivity extends Activity {
             public void run(){
                 runOnUiThread(new Runnable(){
                     public void run(){
-                        listView.removeAllViews();
-
                         for(UserListButton u : userList){
-                            listView.addView(u.getButton());
+                            if(u.getParent() != null) ((ViewGroup)u.getParent()).removeView(u);
+                            listView.addView(u);
                         }
                     }
                 });
@@ -405,14 +424,41 @@ public class MainActivity extends Activity {
             this.cont = cont;
         }
     }
-    class UserListButton {
+    class UserListButton extends android.support.v7.widget.AppCompatButton{
         String nickname;
-        Button btn;
         boolean selected;
 
-        UserListButton(Button btn, final String nickname){
-            this.btn = btn;
-            this.btn.setOnClickListener(new Button.OnClickListener(){
+        UserListButton(Context context){
+            super(context);
+        }
+
+        void setNickname(String nickname){
+            this.nickname = nickname;
+            setText(nickname);
+        }
+
+        void setDrawable(int iconId){
+            Drawable icon = ContextCompat.getDrawable(
+                    getContext(),
+                    iconId
+            );
+            icon.setBounds(
+                    0, // left
+                    0, // top
+                    icon.getIntrinsicWidth(), // right
+                    icon.getIntrinsicHeight() // bottom
+            );
+
+            this.setCompoundDrawables(
+                    icon, // Drawable left
+                    null, // Drawable top
+                    null, // Drawable right
+                    null // Drawable bottom
+            );
+        }
+
+        void setHighlightListener(){
+            this.setOnClickListener(new Button.OnClickListener(){
                 @Override
                 public void onClick(View view) {
                     if(selectedUser != null && selectedUser.equals(nickname)){
@@ -431,15 +477,6 @@ public class MainActivity extends Activity {
                     }
                 }
             });
-            this.nickname = nickname;
-            this.selected = false;
-        }
-        Button getButton(){
-            return this.btn;
-        }
-
-        String getNickname(){
-            return this.nickname;
         }
     }
 }

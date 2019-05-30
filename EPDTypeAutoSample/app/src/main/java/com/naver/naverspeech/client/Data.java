@@ -6,6 +6,7 @@ public class Data {
     private String content;
     private String member;
     private String number;
+    private String date;
 
 
     public String getTitle() {
@@ -15,6 +16,8 @@ public class Data {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public void setDate(String date){this.date = date;}
 
     public void setMember(String member) {
         this.member = member;
@@ -30,6 +33,10 @@ public class Data {
 
     public String getMember() {
         return member;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public String getNumber() {

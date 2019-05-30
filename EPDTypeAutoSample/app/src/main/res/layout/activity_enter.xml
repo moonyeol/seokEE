@@ -19,7 +19,7 @@
 
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textView9"
             android:layout_width="fill_parent"
             android:layout_height="70dp"
             android:layout_gravity="center"

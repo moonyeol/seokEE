@@ -94,7 +94,6 @@ public class enter extends Activity {
                             dialog.dismiss();
 
                             startActivity(intent);
-                            finish();
                         }
                     }
                 });
