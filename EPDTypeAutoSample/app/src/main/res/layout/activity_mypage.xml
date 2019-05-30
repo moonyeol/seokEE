@@ -328,7 +328,6 @@
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
-                                    android:paddingRight="5dp"
 
                                     android:text="나의 기여도"
 
@@ -340,7 +339,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginLeft="10dp"
                                     android:layout_marginRight="20dp"
 
                                     android:layout_weight="2"
@@ -371,7 +370,6 @@
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
-                                    android:paddingRight="5dp"
                                     android:text="유저 기여도"
 
                                     android:textColor="#3FACDC"
@@ -382,7 +380,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginLeft="10dp"
                                     android:layout_marginRight="20dp"
 
                                     android:layout_weight="2"
@@ -413,7 +411,6 @@
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
-                                    android:paddingRight="5dp"
                                     android:text="기여도 순위"
 
                                     android:textColor="#3FACDC"
@@ -424,7 +421,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginLeft="10dp"
                                     android:layout_marginRight="20dp"
 
                                     android:layout_weight="2"
