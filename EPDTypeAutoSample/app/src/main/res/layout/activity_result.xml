@@ -165,22 +165,22 @@
                 android:textSize="14sp" />
 
             <LinearLayout
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:id="@+id/keywordList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="5dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/keyword1"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
                     android:background="@drawable/dialog"
                     android:fontFamily="@font/nanumbarungothic"
                     android:text="Button"
@@ -189,12 +189,11 @@
 
                 <Button
                     android:id="@+id/keyword2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
 
-                    android:layout_weight="1"
                     android:background="@drawable/dialog"
                     android:fontFamily="@font/nanumbarungothic"
                     android:text="Button"
@@ -203,11 +202,10 @@
 
                 <Button
                     android:id="@+id/keyword3"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
 
                     android:background="@drawable/dialog"
                     android:fontFamily="@font/nanumbarungothic"
@@ -217,11 +215,10 @@
 
                 <Button
                     android:id="@+id/keyword4"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
 
                     android:background="@drawable/dialog"
                     android:fontFamily="@font/nanumbarungothic"

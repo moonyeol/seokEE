@@ -35,7 +35,10 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,7 +57,9 @@ public class resultActivity extends AppCompatActivity {
     LinearLayout line;
     RequestResult result;
     TextView Rname;
+    TextView dateView;
     ImageButton export;
+
     int keywordIdList[] = {R.id.keyword1, R.id.keyword2, R.id.keyword3, R.id.keyword4};
     boolean isExited;
 
@@ -73,10 +78,9 @@ public class resultActivity extends AppCompatActivity {
         Intent intent = getIntent();
         pincode = intent.getStringExtra("pincode");
         isExited = intent.getBooleanExtra("exited", false);
-
         exitBtn = findViewById(R.id.exit);
-
         line = findViewById(R.id.line);
+        dateView = findViewById(R.id.textView02);
 
 //        exitBtn.setText("... 분석 중입니다 ...");
         exitBtn.setEnabled(false);
@@ -138,7 +142,20 @@ public class resultActivity extends AppCompatActivity {
                             colon.setText(" : ");
                             content.setText(t.msg);
                             nickname.setText(t.id);
-                            Rname.setText(result.roomName +" - " + result.date);
+                            Rname.setText(result.roomName);
+
+                            Date start = new Date(result.date);
+                            Date end = new Date(result.end);
+
+                            SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd");
+
+                            int totHour = end.getHours() - start.getHours();
+                            int totMin= end.getMinutes() - start.getMinutes();
+
+                            String str = sdf.format(start) + " ~ " + sdf.format(end) + " (" +totHour+ "시간 " + totMin + "분)";
+
+                            dateView.setText(str);
+
                             colon.setTypeface(type);
                             content.setTypeface(type);
                             nickname.setTypeface(type);
@@ -148,16 +165,14 @@ public class resultActivity extends AppCompatActivity {
                             nickname.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    for(SentenceLine line : slist) line.setFalse();
-
                                     for(SentenceLine line : slist){
-                                        if(line.s_nickname.equals(nickname.getText())) line.setTrue();
+                                        if(line.s_nickname.equals(nickname.getText()) && !line.chk) line.setTrue();
                                         else line.setFalse();
                                     }
                                 }
                             });
 
-                            //if(makingLocations[index++]=='1') newline.setBackgroundColor(Color.argb(60,63,172,220));
+                            if(makingLocations[index++]=='1') newline.setBackgroundColor(Color.argb(60,63,172,220));
 
                             newline.addView(nickname);
                             newline.addView(colon);
@@ -174,14 +189,17 @@ public class resultActivity extends AppCompatActivity {
 
                             keyword.setOnClickListener(new Button.OnClickListener(){
                                 public void onClick(View v){
-                                    for(SentenceLine line : slist) line.releaseMark();
-
                                     for(SentenceLine line : slist){
-                                        if(line.s_content.contains(keyword.getText())) line.setMark();
+                                        if(line.s_content.contains(keyword.getText()) && !line.highlight) line.setMark();
                                         else line.releaseMark();
                                     }
                                 }
                             });
+                        }
+
+                        for(int i=index; i<4; i++){
+                            Button keyword = findViewById(keywordIdList[i]);
+                            keyword.setVisibility(View.GONE);
                         }
 
                         wordCloud = findViewById(R.id.webView);

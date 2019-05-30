@@ -77,6 +77,7 @@ class RequestResult {
     public String markData;
     public String roomName;
     public String date;
+    public String end;
 }
 class RequestUserInfo {
     public int func;
