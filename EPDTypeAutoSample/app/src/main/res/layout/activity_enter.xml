@@ -52,7 +52,7 @@
             android:gravity="center"
             android:text="@string/make_room"
 
-            android:textSize="25sp" />
+            android:textSize="13sp" />
 
         <ImageButton
             android:id="@+id/enter_room"
@@ -72,7 +72,7 @@
             android:fontFamily="@font/nanumbarungothic"
             android:gravity="center"
             android:text="@string/enter_room"
-            android:textSize="25sp" />
+            android:textSize="13sp" />
 
         <ImageButton
             android:id="@+id/mypage"
@@ -93,7 +93,7 @@
             android:gravity="center"
 
             android:text="@string/my_page"
-            android:textSize="25sp" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 

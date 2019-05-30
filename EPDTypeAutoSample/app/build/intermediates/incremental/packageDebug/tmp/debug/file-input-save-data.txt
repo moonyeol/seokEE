@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu May 30 23:38:04 KST 2019
+#Thu May 30 23:43:23 KST 2019
 4.path=lib/armeabi/libNaverspeechJNI-1.1.15.so
 8.set=NATIVE_RESOURCE
 6.path=lib/armeabi-v7a/libNaverspeechJNI-1.1.15.so
