@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-#Fri May 31 01:51:38 KST 2019
+#Fri May 31 02:03:57 KST 2019
 base.0=C\:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
-=======
-#Fri May 31 01:16:58 KST 2019
-base.0=C\:\\Users\\admin\\Documents\\GitHub\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
->>>>>>> e44e815752420b4d3ca65edf822feb147feccb11
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex

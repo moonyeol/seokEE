@@ -60,7 +60,7 @@ public class enter extends Activity {
             public void onClick(View v){
                 final CustomDialog dialog = new CustomDialog(context, CustomDialog.EDITTEXT);
                 dialog.setTitleText("참여 코드 입력");
-                dialog.setContentText("회의방의 참여코드를 입력하세요");
+                dialog.setContentText("회의 참여코드를 입력하세요");
                 dialog.setPositiveText("입장");
                 dialog.setNegativeText("취소");
 
@@ -69,7 +69,7 @@ public class enter extends Activity {
                         String key = dialog.getText();
 
                         if(key.equals("")){
-                            Toast.makeText(_enter, "PIN번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(_enter, "회의 참여코드를 입력해주세요.", Toast.LENGTH_SHORT).show();
                             return;
                         }
 
@@ -81,7 +81,7 @@ public class enter extends Activity {
                         Title t = gson.fromJson(msg.message, Title.class);
 
                         if(t.pincode.equals("false")){
-                            Toast.makeText(_enter, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(_enter, "존재하지 않는 회의입니다.", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Intent intent = new Intent(_enter, MainActivity.class);
@@ -127,7 +127,7 @@ public class enter extends Activity {
             public void onClick(View v){
                 final CustomDialog dialog = new CustomDialog(context, CustomDialog.EDITTEXT);
                 dialog.setTitleText("참여 코드 입력");
-                dialog.setContentText("회의방의 참여코드를 입력하세요");
+                dialog.setContentText("회의 참여코드를 입력하세요");
                 dialog.setPositiveText("입장");
                 dialog.setNegativeText("취소");
 
@@ -136,7 +136,7 @@ public class enter extends Activity {
                         String key = dialog.getText();
 
                         if(key.equals("")){
-                            Toast.makeText(_enter, "PIN번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(_enter, "회의 참여코드를 입력해주세요.", Toast.LENGTH_SHORT).show();
                             return;
                         }
 
@@ -148,7 +148,7 @@ public class enter extends Activity {
                         Title t = gson.fromJson(msg.message, Title.class);
 
                         if(t.pincode.equals("false")){
-                            Toast.makeText(_enter, "존재하지 않는 PIN번호입니다.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(_enter, "존재하지 않는 회의입니다.", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Intent intent = new Intent(_enter, MainActivity.class);
@@ -191,21 +191,25 @@ public class enter extends Activity {
         makeBtn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) { //make_room
                 final CustomDialog dialog = new CustomDialog(context, CustomDialog.EDITTEXT);
-                dialog.setTitleText("회의방 제목 입력");
-                dialog.setContentText("회의방의 제목을 입력해주세요.");
+                dialog.setTitleText("회의 제목 입력");
+                dialog.setContentText("회의 제목을 입력해주세요.");
                 dialog.setPositiveText("만들기");
                 dialog.setNegativeText("취소");
 
                 Calendar cal = Calendar.getInstance();
-                SimpleDateFormat sdf = new SimpleDateFormat("yy_MM_dd");
-                dialog.setText(sdf.format(cal.getTime()));
+//                SimpleDateFormat sdf = new SimpleDateFormat("yy_MM_dd");
+//                dialog.setText(sdf.format(cal.getTime()));
 
                 dialog.setPositiveListener(new View.OnClickListener(){
                     public void onClick(View v){
                         Intent intent = new Intent(enter.this, MainActivity.class);
-
+                        String i_key = dialog.getText();
+                        if(i_key.equals("")){
+                            Toast.makeText(_enter, "회의 제목을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
                         try {
-                            commSock.kick(commSock.PINCODE, dialog.getText());
+                            commSock.kick(commSock.PINCODE, i_key);
                             String msg = commSock.read();
                             SocketMessage key = gson.fromJson(msg, SocketMessage.class);
 
@@ -249,8 +253,8 @@ public class enter extends Activity {
             @Override
             public void onClick(View v) {
                 final CustomDialog dialog = new CustomDialog(context, CustomDialog.EDITTEXT);
-                dialog.setTitleText("회의방 제목 입력");
-                dialog.setContentText("회의방의 제목을 입력해주세요.");
+                dialog.setTitleText("회의 제목 입력");
+                dialog.setContentText("회의 제목을 입력해주세요.");
                 dialog.setPositiveText("만들기");
                 dialog.setNegativeText("취소");
 

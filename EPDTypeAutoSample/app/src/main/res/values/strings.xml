@@ -5,9 +5,9 @@
     <string name="str_start">Start</string>
     <string name="str_stop">Stop</string>
     <string name="loading">Loading...</string>
-    <string name="enter_room">방 들어가기</string>
-    <string name="make_room">방 만들기</string>
-    <string name="input_pincode">회의방의 입장코드를 입력하세요.</string>
+    <string name="enter_room">회의 들어가기</string>
+    <string name="make_room">회의 만들기</string>
+    <string name="input_pincode">회의 입장코드를 입력하세요.</string>
     <string name="pincode">입장 코드</string>
     <string name="enter">입장</string>
     <string name="input_nickname">닉네임을 입력하세요.</string>
@@ -44,7 +44,7 @@
     <string name="an_tb">닉네임 입력</string>
     <string name="an_nick">닉네임</string>
     <string name="an_snick">사용할 닉네임을 입력해 주세요.</string>
-    <string name="er_1">회원방의 참여 코드를 입력해 주세요.</string>
+    <string name="er_1">회의 참여 코드를 입력해 주세요.</string>
     <string name="er_tb">참여 코드 입력</string>
     <string name="er_2">참여코드</string>
     <string name="jo_1">회원가입</string>
