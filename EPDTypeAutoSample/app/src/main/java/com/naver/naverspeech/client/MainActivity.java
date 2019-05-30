@@ -350,6 +350,16 @@ public class MainActivity extends Activity {
 
     protected void onDestroy(){
         super.onDestroy();
+
+        StringBuilder markedData = new StringBuilder();
+        for(CustomTalk t : talk){
+            if(t.checkBox.isChecked()) markedData.append("1");
+            else markedData.append("0");
+        }
+        naverRecognizer.getSpeechRecognizer().release();
+        isRunning.compareAndSet(true,false);
+
+        commSock.kick(commSock.EXIT, markedData.toString());
     }
 
     // SpeechRecognizer 쓰레드의 메시지를 처리하는 핸들러를 정의합니다.
