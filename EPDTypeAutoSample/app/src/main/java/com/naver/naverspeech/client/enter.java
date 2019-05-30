@@ -17,6 +17,8 @@ import android.view.View;
 import android.widget.Button;
 import android.app.Activity;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -38,15 +40,17 @@ public class enter extends Activity {
 
         Intent intent = getIntent();
 
-        Button joinBtn = findViewById(R.id.enter_room);
-        Button makeBtn = findViewById(R.id.make_room);
-        Button pageBtn = findViewById(R.id.mypage);
+        ImageButton joinBtn = findViewById(R.id.enter_room);
+        ImageButton makeBtn = findViewById(R.id.make_room);
+        ImageButton pageBtn = findViewById(R.id.mypage);
+        TextView tvmp = findViewById(R.id.tv_mypage);
 
         boolean is_login = intent.getBooleanExtra("is_login",false);
 
         if(!is_login) {
             pageBtn.setEnabled(false);
-            pageBtn.setText(R.string.forUser);
+            tvmp.setEnabled(false);
+            tvmp.setText(R.string.forUser);
         }
 
 

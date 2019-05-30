@@ -13,23 +13,32 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".item" />
-        <activity android:name=".resultActivity" >
+        <activity android:name=".item"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".resultActivity"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".mypage" />
-        <activity android:name=".loginActivity" />
-        <activity android:name=".joinActivity" />
-        <activity android:name=".anonymous" />
-        <activity android:name=".JoinRoom" />
-        <activity android:name=".enter" />
-        <activity android:name=".First">
+        <activity android:name=".mypage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".loginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".joinActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".anonymous"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".JoinRoom"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".enter"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".First"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"  android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

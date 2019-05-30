@@ -33,64 +33,56 @@
             tools:layout_editor_absoluteX="8dp" />
 
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="35dp"
-            android:src="@drawable/door"
-            tools:layout_editor_absoluteX="143dp"
-            tools:layout_editor_absoluteY="148dp" />
-
-        <Button
+        <ImageButton
             android:id="@+id/make_room"
-            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="80dp"
-            android:background="@drawable/bt_radius_w_status"
-            android:fontFamily="@font/nanumbarungothic"
-            android:text="@string/make_room"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/white"
+            android:contentDescription="TODO"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mkroom" />
 
-            android:textColor="#3FACDC"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="77dp"
-            tools:layout_editor_absoluteY="296dp" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/make_room" />
 
-        <Button
+        <ImageButton
             android:id="@+id/enter_room"
-            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="80dp"
-            android:background="@drawable/bt_radius_w_status"
-            android:fontFamily="@font/nanumbarungothic"
-            android:text="@string/enter_room"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/white"
+            android:contentDescription="TODO"
+            android:scaleType="fitCenter"
+            android:src="@drawable/joinroom" />
 
-            android:textColor="#3FACDC"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="77dp"
-            tools:layout_editor_absoluteY="372dp" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/enter_room" />
 
-        <Button
+        <ImageButton
             android:id="@+id/mypage"
-            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="80dp"
-            android:background="@drawable/bt_radius_status"
-            android:text="@string/my_page"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="77dp"
-            tools:layout_editor_absoluteY="448dp" />
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/white"
+            android:contentDescription="TODO"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_mypage" />
+
+        <TextView
+            android:id="@+id/tv_mypage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/my_page" />
 
     </LinearLayout>
 
