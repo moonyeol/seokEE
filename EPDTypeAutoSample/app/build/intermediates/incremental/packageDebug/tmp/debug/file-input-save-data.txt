@@ -1,8 +1,15 @@
 #Internal package file, do not edit.
+<<<<<<< HEAD
 #Fri May 31 01:51:39 KST 2019
 4.path=fonts/nanumbarungothicbold.ttf
 8.set=NATIVE_RESOURCE
 6.path=lib/mips64/libNaverspeechJNI-1.1.15.so
+=======
+#Fri May 31 01:16:59 KST 2019
+4.path=lib/arm64-v8a/libNaverspeechJNI-1.1.15.so
+8.set=ASSET
+6.path=classes.dex
+>>>>>>> e44e815752420b4d3ca65edf822feb147feccb11
 0.baseType=DIRECTORY
 10.path=lib/mips/libNaverspeechJNI-1.1.15.so
 5.baseType=DIRECTORY

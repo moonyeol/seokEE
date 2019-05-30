@@ -72,6 +72,8 @@ public class MainActivity extends Activity {
     private String msg;
     private int func;
 
+    private AtomicBoolean isExited = new AtomicBoolean(false);
+
     StringBuilder sb;
     String pin;
     ArrayList<UserListButton> userList = new ArrayList<>();
@@ -351,6 +353,10 @@ public class MainActivity extends Activity {
     protected void onDestroy(){
         super.onDestroy();
 
+        if(!isExited.get()) onExit();
+    }
+
+    public void onExit(){
         StringBuilder markedData = new StringBuilder();
         for(CustomTalk t : talk){
             if(t.checkBox.isChecked()) markedData.append("1");
@@ -360,6 +366,8 @@ public class MainActivity extends Activity {
         isRunning.compareAndSet(true,false);
 
         commSock.kick(commSock.EXIT, markedData.toString());
+
+        isExited.compareAndSet(false, true);
     }
 
     // SpeechRecognizer 쓰레드의 메시지를 처리하는 핸들러를 정의합니다.
@@ -386,32 +394,18 @@ public class MainActivity extends Activity {
 
         dialog.setPositiveListener(new View.OnClickListener(){
             public void onClick(View v){
-                StringBuilder markedData = new StringBuilder();
 
-                Log.i("MAIN", "talk");
-                for(CustomTalk t : talk){
-                    if(t.checkBox.isChecked()) markedData.append("1");
-                    else markedData.append("0");
-                }
-
-
-                Log.i("MAIN", "Recording Service Terminate.");
-                naverRecognizer.getSpeechRecognizer().release();
-                isRunning.compareAndSet(true,false);
-
-                Log.i("MAIN", "Kick Exit");
-                commSock.kick(commSock.EXIT, markedData.toString());
+                onExit();
 
                 Log.i("MAIN", "Make Intent & Start Result Activity.");
                 Intent intent = new Intent(MainActivity.this, resultActivity.class);
                 intent.putExtra("exited", true);
                 intent.putExtra("pincode", pin);
                 startActivity(intent);
+                finish();
 
                 Log.i("MAIN", "finish Activity");
                 dialog.dismiss();
-                finish();
-
             }
         });
         dialog.setNegativeListener(new View.OnClickListener(){
