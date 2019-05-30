@@ -242,11 +242,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     // imageView의 높이 변경
                     textView4.getLayoutParams().height = value;
                     textView4.requestLayout();
-                    textView3.getLayoutParams().height = value;
+                    textView3.getLayoutParams().height = 200;
                     textView3.requestLayout();
-                    export.getLayoutParams().height = 60;
+                    export.getLayoutParams().height = 120;
                     export.requestLayout();
-                    detail.getLayoutParams().height = 60;
+                    detail.getLayoutParams().height = 120;
                     detail.requestLayout();
 
                     imageView.setImageResource(R.drawable.datil_unactive);
