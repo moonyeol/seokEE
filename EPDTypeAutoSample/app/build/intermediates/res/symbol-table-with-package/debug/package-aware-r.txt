@@ -817,6 +817,7 @@ drawable bt_radius_w_status
 drawable bt_raidus
 drawable btn_mypage
 drawable cb_check_on_off
+drawable cursor_color
 drawable datil
 drawable datil_unactive
 drawable del_file_b
@@ -1128,9 +1129,11 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
+id textView0
+id textView01
+id textView02
+id textView07
 id textView1
-id textView10
-id textView11
 id textView12
 id textView13
 id textView14
@@ -1144,7 +1147,6 @@ id textView5
 id textView6
 id textView7
 id textView8
-id textView9
 id text_input_password_toggle
 id textinput_counter
 id textinput_error

@@ -1,7 +1,7 @@
-#Thu May 30 16:57:52 KST 2019
-base.0=C\:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
+#Thu May 30 23:38:02 KST 2019
+base.0=G\:\\4-1\\capstone\\0530\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\ansduf94\\git\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
+base.1=G\:\\4-1\\capstone\\0530\\seokEE\\EPDTypeAutoSample\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out

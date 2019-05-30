@@ -1,5 +1,7 @@
 package com.naver.naverspeech.client;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -11,6 +13,7 @@ import android.widget.TextView;
 
 import static com.naver.naverspeech.client.commSock.REQUEST_USERINFO;
 import static com.naver.naverspeech.client.commSock.gson;
+import static com.naver.naverspeech.client.enter._enter;
 
 
 public class mypage extends AppCompatActivity {
@@ -50,7 +53,15 @@ public class mypage extends AppCompatActivity {
 
         logoutBtn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                //
+                SharedPreferences.Editor auto_login = getSharedPreferences("auto_login", MODE_PRIVATE).edit();
+                auto_login.putString("id", "");
+                auto_login.putString("pwd", "");
+                auto_login.apply();
+
+                Intent intent = new Intent(mypage.this, loginActivity.class);
+                startActivity(intent);
+                _enter.finish();
+                finish();
             }
         });
     }

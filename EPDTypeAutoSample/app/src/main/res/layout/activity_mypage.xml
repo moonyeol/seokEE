@@ -11,9 +11,9 @@
     >
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textView0"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
         android:background="@drawable/borer_black_bottom"
         android:fontFamily="@font/nanumbarungothicbold"
@@ -71,6 +71,7 @@
                         android:layout_margin="2dp"
                         android:background="#FFFFFF"
                         android:fontFamily="@font/nanumbarungothic"
+                        android:gravity="left|center_vertical"
                         android:text="로그아웃"
                         android:textColor="#6E6F71"
                         android:textSize="13sp"
@@ -104,12 +105,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right|center_vertical"
-                        android:fontFamily="@font/nanumbarungothic"
+                        android:fontFamily="@font/nanumbarungothicbold"
                         android:gravity="center"
                         android:padding="3dp"
-
                         android:text="Nickname"
-                        android:textColor="#6E6F71"
+                        android:textColor="#000000"
                         android:textSize="11sp"
                         tools:layout_editor_absoluteX="90dp"
                         tools:layout_editor_absoluteY="328dp" />
@@ -145,6 +145,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="2dp"
 
                         android:gravity="center_horizontal"
                         android:orientation="horizontal"
@@ -177,6 +178,7 @@
                                 tools:layout_editor_absoluteY="673dp" />
 
                             <LinearLayout
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
@@ -187,6 +189,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
+                                    android:fontFamily="@font/nanumbarungothic"
                                     android:text="1"
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
@@ -197,11 +200,12 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
 
-                                    android:layout_marginRight="5dp"
+                                    android:layout_marginRight="50dp"
                                     android:layout_weight="2"
                                     android:background="@drawable/borer_black_bottom"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
+                                    android:paddingBottom="1dp"
                                     android:text="talkWithMe"
                                     android:textColor="#6E6F71"
                                     android:textSize="14sp"
@@ -211,16 +215,20 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
+
                                 android:layout_height="match_parent"
+                                android:layout_marginBottom="2dp"
                                 android:orientation="horizontal">
 
                                 <TextView
                                     android:id="@+id/textView13"
                                     android:layout_width="5dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:text="2"
+
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
 
@@ -230,11 +238,12 @@
                                     android:layout_height="match_parent"
                                     android:layout_gravity="center"
 
-                                    android:layout_marginRight="5dp"
+                                    android:layout_marginRight="50dp"
                                     android:layout_weight="2"
                                     android:background="@drawable/borer_black_bottom"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
+                                    android:paddingBottom="1dp"
                                     android:text="talkWithMe"
                                     android:textColor="#6E6F71"
                                     android:textSize="14sp"
@@ -243,6 +252,8 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:layout_marginBottom="2dp"
+
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
@@ -250,10 +261,12 @@
                                 <TextView
                                     android:id="@+id/textView14"
                                     android:layout_width="5dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:text="3"
+
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
 
@@ -263,11 +276,12 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
 
-                                    android:layout_marginRight="5dp"
+                                    android:layout_marginRight="50dp"
                                     android:layout_weight="2"
                                     android:background="@drawable/borer_black_bottom"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
+                                    android:paddingBottom="1dp"
                                     android:text="talkWithMe"
                                     android:textColor="#6E6F71"
                                     android:textSize="14sp"
@@ -278,6 +292,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -286,7 +301,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/textView11"
+                                android:id="@+id/textView07"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -295,25 +310,31 @@
                                 android:gravity="center"
                                 android:padding="5dp"
                                 android:text="나의 기여도"
+
                                 android:textColor="#000000"
                                 android:textSize="14sp"
                                 tools:layout_editor_absoluteX="20dp"
                                 tools:layout_editor_absoluteY="272dp" />
 
                             <LinearLayout
+                                android:layout_marginBottom="2dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/textView7"
+                                    android:id="@+id/textView"
                                     android:layout_width="17dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
                                     android:layout_weight="1"
+                                    android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
                                     android:paddingRight="5dp"
+
                                     android:text="나의 기여도"
+
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
 
@@ -322,12 +343,15 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="20dp"
 
                                     android:layout_weight="2"
                                     android:background="@drawable/borer_black_bottom"
                                     android:fontFamily="@font/nanumbarungothic"
-                                    android:gravity="center"
+                                    android:gravity="right"
                                     android:text="Contrib Data"
+
                                     android:textColor="#6E6F71"
                                     android:textSize="14sp"
                                     tools:layout_editor_absoluteX="100dp"
@@ -335,6 +359,8 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:layout_marginBottom="2dp"
+
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
@@ -343,11 +369,14 @@
                                     android:id="@+id/textView8"
                                     android:layout_width="17dp"
                                     android:layout_height="match_parent"
+                                    android:layout_marginLeft="5dp"
                                     android:layout_weight="1"
+                                    android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
                                     android:paddingRight="5dp"
                                     android:text="유저 기여도"
+
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
 
@@ -356,12 +385,15 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="20dp"
 
                                     android:layout_weight="2"
                                     android:background="@drawable/borer_black_bottom"
                                     android:fontFamily="@font/nanumbarungothic"
-                                    android:gravity="center"
+                                    android:gravity="right"
                                     android:text="Contrib Data"
+
                                     android:textColor="#6E6F71"
                                     android:textSize="14sp"
                                     tools:layout_editor_absoluteX="100dp"
@@ -369,19 +401,24 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:layout_marginBottom="2dp"
+
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/textView10"
+                                    android:id="@+id/textView7"
                                     android:layout_width="17dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
                                     android:layout_weight="1"
+                                    android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
                                     android:paddingRight="5dp"
                                     android:text="기여도 순위"
+
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
 
@@ -390,11 +427,13 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="20dp"
 
                                     android:layout_weight="2"
                                     android:background="@drawable/borer_black_bottom"
                                     android:fontFamily="@font/nanumbarungothic"
-                                    android:gravity="center"
+                                    android:gravity="right"
                                     android:text="Contrib Data"
                                     android:textColor="#6E6F71"
                                     android:textSize="14sp"

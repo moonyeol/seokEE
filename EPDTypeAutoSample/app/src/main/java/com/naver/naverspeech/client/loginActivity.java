@@ -30,10 +30,13 @@ public class loginActivity extends AppCompatActivity {
     int permissionResult, permissionWrite;
     public static Activity _login;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        if(commSock.socket.isClosed()) commSock.setSocket();
 
         _login = loginActivity.this;
 

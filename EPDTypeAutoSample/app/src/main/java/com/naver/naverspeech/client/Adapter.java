@@ -240,8 +240,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     // value는 height 값
                     int value = (int) animation.getAnimatedValue();
                     // imageView의 높이 변경
-                    textView4.getLayoutParams().height = value;
-                    textView4.requestLayout();
                     textView3.getLayoutParams().height = 200;
                     textView3.requestLayout();
                     export.getLayoutParams().height = 120;
