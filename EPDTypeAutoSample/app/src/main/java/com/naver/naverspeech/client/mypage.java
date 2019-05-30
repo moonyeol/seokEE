@@ -68,7 +68,9 @@ public class mypage extends AppCompatActivity {
         String[] twm = info.talkWithMe.split(" ");
         nickname_tv.setText(info.nickname);
         talkwithme1.setText(twm[0]);
-        talkwithme2.setText(twm[1]);
+        if(twm.length >= 2)
+            talkwithme2.setText(twm[1]);
+        if(twm.length >= 3)
         talkwithme3.setText(twm[2]);
 
 

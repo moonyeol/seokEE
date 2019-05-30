@@ -76,7 +76,7 @@
         android:id="@+id/history_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal|top"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
@@ -101,17 +101,17 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            app:srcCompat="@drawable/bt_down"
-            tools:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/bt_down" />
 
         <ImageButton
             android:id="@+id/detail"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_weight="1"
             android:background="#ffffff"
-            app:srcCompat="@drawable/bt_detail"
-            tools:layout_weight="1"
-            tools:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/bt_detail" />
     </LinearLayout>
 
 </LinearLayout>

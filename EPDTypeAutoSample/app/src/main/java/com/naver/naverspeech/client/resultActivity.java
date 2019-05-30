@@ -1,9 +1,12 @@
 package com.naver.naverspeech.client;
 
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,11 +34,14 @@ import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.naver.naverspeech.client.commSock.REQUEST_FILE;
 import static com.naver.naverspeech.client.commSock.gson;
+import static com.naver.naverspeech.client.commSock.read;
 
 public class resultActivity extends AppCompatActivity {
     private String pincode;
@@ -48,7 +54,7 @@ public class resultActivity extends AppCompatActivity {
     LinearLayout line;
     RequestResult result;
     TextView Rname;
-
+    ImageButton export;
     int keywordIdList[] = {R.id.keyword1, R.id.keyword2, R.id.keyword3, R.id.keyword4};
     boolean isExited;
 
@@ -63,7 +69,7 @@ public class resultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         context = this;
         Rname = findViewById(R.id.textView17);
-
+        export = findViewById(R.id.export2);
         Intent intent = getIntent();
         pincode = intent.getStringExtra("pincode");
         isExited = intent.getBooleanExtra("exited", false);
@@ -132,7 +138,7 @@ public class resultActivity extends AppCompatActivity {
                             colon.setText(" : ");
                             content.setText(t.msg);
                             nickname.setText(t.id);
-
+                            Rname.setText(result.roomName +" - " + result.date);
                             colon.setTypeface(type);
                             content.setTypeface(type);
                             nickname.setTypeface(type);
@@ -191,6 +197,54 @@ public class resultActivity extends AppCompatActivity {
 
 //                        exitBtn.setText("나가기");
                         exitBtn.setEnabled(true);
+                        export.setOnClickListener(new Button.OnClickListener() {
+                            public void onClick(View v) {
+                                final CustomDialog dialog = new CustomDialog(context, CustomDialog.EDITTEXT);
+                                dialog.setTitleText("회의록 파일 저장");
+                                dialog.setContentText("파일 이름을 지정해주세요");
+                                dialog.setPositiveText("저장");
+                                dialog.setNegativeText("취소");
+
+                                dialog.setText(result.roomName);
+                                dialog.setPositiveListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        try {
+                                            commSock.kick(REQUEST_FILE, pincode);
+
+                                            String value = read();
+                                            SocketMessage receive = gson.fromJson(value, SocketMessage.class);
+
+                                            String fileURL = receive.message;
+
+                                            String Save_folder = "/seokEE";
+                                            String Save_Path = "";
+                                            String File_Name = dialog.getText();
+                                            String ext = Environment.getExternalStorageState();
+                                            if (ext.equals(Environment.MEDIA_MOUNTED)) {
+                                                Save_Path = Environment.getExternalStorageDirectory()+ Save_folder;
+                                            }
+                                            File dir = new File(Save_Path);
+                                            if (!dir.exists()) {
+                                                dir.mkdirs();
+                                            }
+                                            downloadFile(fileURL,Save_Path,File_Name);
+
+                                        }catch(Exception e){
+                                            e.printStackTrace();
+                                        }
+                                        dialog.dismiss();
+                                    }
+                                });
+                                dialog.setNegativeListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                                dialog.show();
+                            }
+                        });
                     }
                 });
             }
@@ -202,7 +256,31 @@ public class resultActivity extends AppCompatActivity {
     public void highLightChat(){
 
     }
+    public void downloadFile(String furl,String fpath,String fname) {
+        File direct = new File(fpath);
 
+        if (!direct.exists()) {
+            direct.mkdirs();
+        }
+        Uri uri = Uri.parse(furl);
+        DownloadManager mgr = (DownloadManager) context.getSystemService(context.DOWNLOAD_SERVICE);
+
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+
+        request.setAllowedNetworkTypes(
+                DownloadManager.Request.NETWORK_WIFI
+                        | DownloadManager.Request.NETWORK_MOBILE)
+                .setDestinationInExternalPublicDir(direct+"/",fname+".docx")
+                .setNotificationVisibility( DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+
+
+        mgr.enqueue(request);
+
+        // Open Download Manager to view File progress
+
+//            context.startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
+
+    }
     public void drawChart(){
         ArrayList<Entry> lineEntries = new ArrayList<>();
         ArrayList<BarEntry> barEntries = new ArrayList<>();

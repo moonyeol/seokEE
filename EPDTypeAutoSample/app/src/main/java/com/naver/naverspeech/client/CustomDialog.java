@@ -2,6 +2,7 @@ package com.naver.naverspeech.client;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -65,6 +66,7 @@ public class CustomDialog extends Dialog {
         this.content.setText(contentString);
         this.mPositiveButton.setText(positiveString);
         this.mNegativeButton.setText(negativeString);
+        this.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
     }
 
 

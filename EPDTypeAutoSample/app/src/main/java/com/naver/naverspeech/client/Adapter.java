@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
@@ -73,8 +74,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
         private TextView textView4;
         private ImageView imageView;
 
-        private Button export;
-        private Button detail;
+        private ImageButton export;
+        private ImageButton detail;
         private Layout item;
         public Data data;
         private int position;
@@ -86,7 +87,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             textView1 = itemView.findViewById(R.id.textView1);
             textView2 = itemView.findViewById(R.id.textView2);
             textView3 = itemView.findViewById(R.id.history_content);
-            textView4 = itemView.findViewById(R.id.textView14);
+            textView4 = itemView.findViewById(R.id.textView15);
             export = itemView.findViewById(R.id.export);
             detail = itemView.findViewById(R.id.detail);
             imageView = itemView.findViewById(R.id.imageView2);
@@ -243,9 +244,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     textView4.requestLayout();
                     textView3.getLayoutParams().height = value;
                     textView3.requestLayout();
-                    export.getLayoutParams().height = 80;
+                    export.getLayoutParams().height = 60;
                     export.requestLayout();
-                    detail.getLayoutParams().height = 80;
+                    detail.getLayoutParams().height = 60;
                     detail.requestLayout();
 
                     imageView.setImageResource(R.drawable.datil_unactive);

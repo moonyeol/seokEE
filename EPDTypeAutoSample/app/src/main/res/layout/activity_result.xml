@@ -75,14 +75,22 @@
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
-            <WebView
-                android:id="@+id/webView"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:background="@drawable/back_gray_border">
+                android:background="@drawable/white_border"
+                android:orientation="vertical">
 
-            </WebView>
+                <WebView
+                    android:id="@+id/webView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/back_gray_border">
+
+                </WebView>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textView"
@@ -157,7 +165,7 @@
                     android:background="@drawable/dialog"
                     android:fontFamily="@font/nanumbarungothic"
                     android:text="Button"
-                    android:textColor="#747474"
+                    android:textColor="#ffffff"
                     android:textSize="12sp" />
 
                 <Button
@@ -211,7 +219,7 @@
                 android:id="@+id/line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#CFCFCF"
+                android:background="#e7e6e6"
                 android:orientation="vertical"></LinearLayout>
 
 
@@ -226,12 +234,12 @@
 
         <ImageButton
             android:id="@+id/export2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            app:srcCompat="@drawable/bt_down"
-            tools:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/bt_down" />
 
         <ImageButton
             android:id="@+id/exit"
@@ -240,7 +248,7 @@
             android:layout_weight="1"
             android:background="#ffffff"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/exit_b" />
+            app:srcCompat="@drawable/bt_out" />
     </LinearLayout>
 
 </LinearLayout>
