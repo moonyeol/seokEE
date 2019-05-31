@@ -14,10 +14,15 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import android.os.Environment;
 
 import java.io.File;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import android.app.DownloadManager;
 import android.net.Uri;
@@ -101,7 +106,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             textView1.setText(this.data.getTitle());
             textView3.setText(this.data.getContent());
             textView4.setText(this.data.getMember());
-            textView2.setText(this.data.getDate());
+            SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd", Locale.KOREA);
+            textView2.setText(sdf.format(new Date(this.data.getDate())));
             changeVisibility(selectedItems.get(position));
 
             itemView.setOnClickListener(this);

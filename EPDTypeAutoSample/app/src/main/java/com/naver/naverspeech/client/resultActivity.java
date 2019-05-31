@@ -40,6 +40,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import static com.naver.naverspeech.client.commSock.REQUEST_FILE;
@@ -147,12 +148,15 @@ public class resultActivity extends AppCompatActivity {
                             Date start = new Date(result.date);
                             Date end = new Date(result.end);
 
-                            SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd");
+                            SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd", Locale.KOREA);
 
                             int totHour = end.getHours() - start.getHours();
                             int totMin= end.getMinutes() - start.getMinutes();
 
-                            String str = sdf.format(start) + " ~ " + sdf.format(end) + " (" +totHour+ "시간 " + totMin + "분)";
+                            String startTime = String.format(Locale.KOREA, "%2d : %2d", start.getHours(), start.getMinutes());
+                            String endTime = String.format(Locale.KOREA, "%2d : %2d", end.getHours(), end.getMinutes());
+
+                            String str = sdf.format(start) + " / " +  startTime + " ~ " + endTime + " (" +totHour+ "시간 " + totMin + "분)";
 
                             dateView.setText(str);
 
