@@ -86,8 +86,8 @@ public class mypage extends AppCompatActivity {
         if(twm.length >= 3)
         talkwithme3.setText(twm[2]);
 
-        String s = String.format(Locale.KOREA,"%.2f" , info.contributionData.get(0)) + "%";
-        String s2 = String.format(Locale.KOREA,"%.2f" , info.contributionData.get(1)) + "%";
+        String s = String.format(Locale.KOREA,"%.2f" , info.contributionData.get(1)) + "%";
+        String s2 = String.format(Locale.KOREA,"%.2f" , info.contributionData.get(0)) + "%";
         String s3 = String.format(Locale.KOREA,"%.2f" , (100-info.contributionData.get(2))) + "%";
 
         contribution1.setText(s);
