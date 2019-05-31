@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri May 31 15:13:17 KST 2019
+#Fri May 31 15:26:57 KST 2019
 4.path=fonts/nanumbarungothicbold.ttf
 8.set=NATIVE_RESOURCE
 6.path=lib/mips64/libNaverspeechJNI-1.1.15.so
