@@ -249,7 +249,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#e7e6e6"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"></LinearLayout>
 
 
         </LinearLayout>
@@ -263,7 +265,7 @@
         <ImageButton
             android:id="@+id/export2"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
@@ -274,7 +276,7 @@
         <ImageButton
             android:id="@+id/exit"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"

@@ -208,7 +208,7 @@ public class resultActivity extends AppCompatActivity {
                                 }
                             });
 
-                            if(index < result.markData.length() && makingLocations[index++]=='1') newline.setBackgroundColor(Color.argb(60,63,172,220));
+                            if(index < result.markData.length() && makingLocations[index++]=='1') newline.setBackgroundColor(Color.argb(90,251 ,184 ,144));
 
                             newline.addView(nickname);
                             newline.addView(colon);
@@ -464,7 +464,7 @@ public class resultActivity extends AppCompatActivity {
         }
         void setTrue(){
             chk = true;
-            nickname.setBackgroundColor(Color.argb(60, 63, 172, 220));
+            nickname.setBackgroundColor(Color.argb(100, 243 , 236 , 141));
         }
         void setFalse(){
             chk = false;
@@ -473,7 +473,7 @@ public class resultActivity extends AppCompatActivity {
 
         void setMark(){
             highlight = true;
-            content.setBackgroundColor(Color.argb(60, 63, 172, 220));
+            content.setBackgroundColor(Color.argb(100, 220 , 231 , 147));
         }
         void releaseMark(){
             highlight = false;

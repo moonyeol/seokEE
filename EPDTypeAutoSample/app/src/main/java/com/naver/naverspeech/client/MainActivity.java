@@ -307,7 +307,7 @@ public class MainActivity extends Activity {
 
         for(CustomTalk chk : talk) {
             if(selectedUser != null && chk.talker.equals(selectedUser)) {
-                chk.checkBox.setBackgroundColor(Color.argb(60,63,172,220));
+                chk.checkBox.setBackgroundColor(Color.argb(100,243 ,236 ,141));
             } else {
                 chk.checkBox.setBackgroundColor(Color.argb(0, 255, 255, 255));
             }
@@ -473,7 +473,7 @@ public class MainActivity extends Activity {
                             String s = c.talker;
 
                             if (s.equals(nickname))
-                                c.checkBox.setBackgroundColor(Color.argb(60, 63, 172, 220));
+                                c.checkBox.setBackgroundColor(Color.argb(100, 243 , 236 , 141));
                             else c.checkBox.setBackgroundColor(Color.argb(0, 255, 255, 255));
                         }
                         selectedUser = nickname;

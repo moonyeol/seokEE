@@ -817,6 +817,7 @@ drawable bt_radius_w_status
 drawable bt_raidus
 drawable btn_mypage
 drawable cb_check_on_off
+drawable chk_sen
 drawable cursor_color
 drawable datil
 drawable datil_unactive
