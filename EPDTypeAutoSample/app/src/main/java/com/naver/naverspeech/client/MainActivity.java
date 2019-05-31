@@ -198,7 +198,7 @@ public class MainActivity extends Activity {
                                 UserListButton btn = new UserListButton(context);
                                 btn.setBackground(getResources().getDrawable(R.drawable.user_btn, null));
                                 btn.setNickname(s);
-                                btn.setDrawable(R.drawable.s_part_yellow);
+//                                btn.setDrawable(R.drawable.s_part_yellow);
                                 btn.setHighlightListener();
 
                                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -265,7 +265,7 @@ public class MainActivity extends Activity {
                                         UserListButton btn = new UserListButton(context);
                                         btn.setBackground(getResources().getDrawable(R.drawable.user_btn, null));
                                         btn.setNickname(msg);
-                                        btn.setDrawable(R.drawable.s_part_yellow);
+//                                        btn.setDrawable(R.drawable.s_part_yellow);
                                         btn.setHighlightListener();
 
                                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);

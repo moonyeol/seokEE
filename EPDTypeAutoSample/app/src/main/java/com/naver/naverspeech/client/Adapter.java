@@ -247,7 +247,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     detail.getLayoutParams().height = 120;
                     detail.requestLayout();
 
-                    imageView.setImageResource(R.drawable.datil_unactive);
+                    imageView.setImageResource(isExpanded?R.drawable.datil_unactive : R.drawable.datil);
                     // textView3가 실제로 사라지게하는 부분
                     textView3.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
                     textView4.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
