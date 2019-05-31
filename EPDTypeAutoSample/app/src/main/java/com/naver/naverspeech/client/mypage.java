@@ -102,7 +102,29 @@ public class mypage extends AppCompatActivity {
 
             Data data = new Data();
             data.setTitle(h.getTitle());
-            data.setDate(h.getDate());
+
+            String[] start = h.getDate().split(" ");
+            // 5 1 2 0
+            StringBuilder sb = new StringBuilder();
+
+            int i;
+
+            if(start[1].equals("Jan")) i = 1;
+            else if(start[1].equals("Feb")) i = 2;
+            else if(start[1].equals("Mar")) i = 3;
+            else if(start[1].equals("Apr")) i = 4;
+            else if(start[1].equals("May")) i = 5;
+            else if(start[1].equals("Jun")) i = 6;
+            else if(start[1].equals("Jul")) i = 7;
+            else if(start[1].equals("Aug")) i = 8;
+            else if(start[1].equals("Sep")) i = 9;
+            else if(start[1].equals("Oct")) i =10;
+            else if(start[1].equals("Nov")) i = 11;
+            else i = 12;
+
+            sb.append(start[5]).append(".").append(i).append(".").append(start[2]).append(" (").append(start[0]).append(")");
+
+            data.setDate(sb.toString());
             data.setMember("With - "+h.getMembers());
             data.setNumber(h.getNumber());
 
