@@ -149,20 +149,48 @@ public class resultActivity extends AppCompatActivity {
                             nickname.setText(t.id);
                             Rname.setText(result.roomName);
 
-                            //Date start = new Date(result.date);
-                            //Date end = new Date(result.end);
+                            String[] start = result.date.split(" ");
+                            String[] end = result.end.split(" ");
 
-                            //SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd", Locale.KOREA);
+                            String[] startTime = start[3].split(":");
+                            String[] endTime = end[3].split(":");
 
-                            //int totHour = end.getHours() - start.getHours();
-                            //int totMin= end.getMinutes() - start.getMinutes();
+                            int startHour = Integer.parseInt(startTime[0]);
+                            int startMin = Integer.parseInt(startTime[1]);
+                            int endHour = Integer.parseInt(endTime[0]);
+                            int endMin = Integer.parseInt(endTime[1]);
 
-                           // String startTime = String.format(Locale.KOREA, "%2d : %2d", start.getHours(), start.getMinutes());
-                            //String endTime = String.format(Locale.KOREA, "%2d : %2d", end.getHours(), end.getMinutes());
+                            // 0 : 요일 Fri
+                            // 1 : 월 May
+                            // 2 : 일 31
+                            // 3 : 시간 20:04:04
+                            // 5 : 년 2019
 
-                            //String str = sdf.format(start) + " / " +  startTime + " ~ " + endTime + " (" +totHour+ "시간 " + totMin + "분)";
+                            int totHour = endHour- startHour;
+                            int totMin= endMin - startMin;
 
-                            dateView.setText(result.date + " " + result.end);
+                            int i;
+
+                            if(start[1].equals("Jan")) i = 1;
+                            else if(start[1].equals("Feb")) i = 2;
+                            else if(start[1].equals("Mar")) i = 3;
+                            else if(start[1].equals("Apr")) i = 4;
+                            else if(start[1].equals("May")) i = 5;
+                            else if(start[1].equals("Jun")) i = 6;
+                            else if(start[1].equals("Jul")) i = 7;
+                            else if(start[1].equals("Aug")) i = 8;
+                            else if(start[1].equals("Sep")) i = 9;
+                            else if(start[1].equals("Oct")) i =10;
+                            else if(start[1].equals("Nov")) i = 11;
+                            else i = 12;
+
+
+
+                            String startString  = String.format(Locale.KOREA, "%02d : %02d", startHour, startMin);
+                            String endString = String.format(Locale.KOREA, "%02d : %02d", endHour, endMin);
+                            String str = start[5] + "." + i + "." + start[2] + " / " +  startString + " ~ " + endString + " (" +totHour+ "시간 " + totMin + "분)";
+
+                            dateView.setText(str);
 
                             colon.setTypeface(type);
                             content.setTypeface(type);
