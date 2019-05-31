@@ -187,9 +187,10 @@
                                     android:id="@+id/textView12"
                                     android:layout_width="5dp"
                                     android:layout_height="match_parent"
+                                    android:layout_marginLeft="20dp"
                                     android:layout_weight="1"
-                                    android:gravity="center"
                                     android:fontFamily="@font/nanumbarungothic"
+                                    android:gravity="center"
                                     android:text="1"
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
@@ -197,7 +198,7 @@
                                 <TextView
                                     android:id="@+id/talkWithMe1"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
 
                                     android:layout_marginRight="50dp"
@@ -223,11 +224,12 @@
                                     android:id="@+id/textView13"
                                     android:layout_width="5dp"
                                     android:layout_height="match_parent"
+                                    android:layout_marginLeft="20dp"
                                     android:layout_weight="1"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
-                                    android:text="2"
 
+                                    android:text="2"
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
 
@@ -260,18 +262,19 @@
                                     android:id="@+id/textView14"
                                     android:layout_width="5dp"
                                     android:layout_height="match_parent"
+                                    android:layout_marginLeft="20dp"
                                     android:layout_weight="1"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
-                                    android:text="3"
 
+                                    android:text="3"
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
 
                                 <TextView
                                     android:id="@+id/talkWithMe3"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
 
                                     android:layout_marginRight="50dp"
@@ -324,19 +327,20 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="10dp"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
+
                                     android:paddingLeft="5dp"
 
                                     android:text="나의 기여도"
-
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
 
                                 <TextView
                                     android:id="@+id/contributionTV1"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="20dp"
@@ -345,6 +349,7 @@
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="right"
 
+                                    android:paddingBottom="1dp"
                                     android:textColor="#6E6F71"
                                     android:textSize="14sp"
                                     tools:layout_editor_absoluteX="100dp"
@@ -363,18 +368,19 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="10dp"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
-                                    android:text="유저 기여도"
 
+                                    android:text="유저 기여도"
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
 
                                 <TextView
                                     android:id="@+id/contributionTV2"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="20dp"
@@ -383,6 +389,7 @@
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="right"
 
+                                    android:paddingBottom="1dp"
                                     android:textColor="#6E6F71"
                                     android:textSize="14sp"
                                     tools:layout_editor_absoluteX="100dp"
@@ -401,18 +408,19 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="10dp"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
-                                    android:text="기여도 순위"
 
+                                    android:text="기여도 순위"
                                     android:textColor="#3FACDC"
                                     android:textSize="12sp" />
 
                                 <TextView
                                     android:id="@+id/contributionTV3"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="20dp"
@@ -420,6 +428,7 @@
                                     android:background="@drawable/borer_black_bottom"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="right"
+                                    android:paddingBottom="1dp"
                                     android:textColor="#6E6F71"
                                     android:textSize="14sp"
                                     tools:layout_editor_absoluteX="100dp"
