@@ -176,7 +176,7 @@ public class resultActivity extends AppCompatActivity {
                                 }
                             });
 
-                            if(makingLocations[index++]=='1') newline.setBackgroundColor(Color.argb(60,63,172,220));
+                            if(index < result.markData.length() && makingLocations[index++]=='1') newline.setBackgroundColor(Color.argb(60,63,172,220));
 
                             newline.addView(nickname);
                             newline.addView(colon);
