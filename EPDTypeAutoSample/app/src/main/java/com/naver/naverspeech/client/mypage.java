@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 import static com.naver.naverspeech.client.commSock.REQUEST_USERINFO;
 import static com.naver.naverspeech.client.commSock.gson;
 import static com.naver.naverspeech.client.enter._enter;
@@ -84,9 +86,13 @@ public class mypage extends AppCompatActivity {
         if(twm.length >= 3)
         talkwithme3.setText(twm[2]);
 
-        contribution1.setText(String.format("%.2f" , info.contributionData.get(0)) + "%");
-        contribution2.setText(String.format("%.2f" , info.contributionData.get(1)) + "%");
-        contribution3.setText(String.format("%.2f" , (100-info.contributionData.get(2))) + "%");
+        String s = String.format(Locale.KOREA,"%.2f" , info.contributionData.get(0)) + "%";
+        String s2 = String.format(Locale.KOREA,"%.2f" , info.contributionData.get(1)) + "%";
+        String s3 = String.format(Locale.KOREA,"%.2f" , (100-info.contributionData.get(2))) + "%";
+
+        contribution1.setText(s);
+        contribution2.setText(s2);
+        contribution3.setText(s3);
 
 
         for (History h : info.histories){
