@@ -426,7 +426,12 @@ public class TCPServer implements Runnable {
                             fileContent.add("회의 내용");                            
                             for(Talk fTalk: makeFile){
                                 sb = new StringBuilder();
-                                fileContent.add(sb.append(fTalk.getID()).append(" : ").append(fTalk.getMsg()).toString());
+                                if(fTalk.getMsg().equals("START"))
+                                    fileContent.add(sb.append(fTalk.getID()).append(" : <").append(fTalk.getID()).append("> 입장.").toString());
+                                else if(fTalk.getMsg().equals("END")) 
+                                    fileContent.add(sb.append(fTalk.getID()).append(" : <").append(fTalk.getID()).append("> 퇴장.").toString());
+                                else 
+                                    fileContent.add(sb.append(fTalk.getID()).append(" : ").append(fTalk.getMsg()).toString());
                             }
                             
 

@@ -11,15 +11,16 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
 
 public class docs {
-	
-
 	public void mkdoc(ArrayList<String> content,String path, String fname) throws FileNotFoundException, IOException, InvalidFormatException {
 		XWPFDocument document = new XWPFDocument();
 		XWPFParagraph tmpParagraph = document.createParagraph();
-		XWPFRun tmpRun = tmpParagraph.createRun();
+		tmpParagraph.setAlignment(ParagraphAlignment.LEFT);
 		
+		XWPFRun tmpRun = tmpParagraph.createRun();		
+
 		String tmp = "";
 		ListIterator<String> iterator = content.listIterator();
 		tmpRun.setFontSize(12);

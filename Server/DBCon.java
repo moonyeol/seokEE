@@ -621,25 +621,28 @@ public class DBCon {
     }
 
     public double totalUserContributionMean() {
-    	double data = 1;
-    	double tmp=0.0;
-    	String query = "select contribution from stats;";
-    	PreparedStatement pstmt = null;
-    	try {
-    		pstmt = conn.prepareStatement(query);
-    		ResultSet rs = pstmt.executeQuery();
-    		
-    		while (rs.next()){
-    			data *= rs.getDouble(1);
-    			tmp+=1.0;
-    		}
-    		
-    	}catch(SQLException e)
-    	{
-    		e.printStackTrace();
-    	}
-    	data = Math.pow(data, 1.0/(double) tmp);
-    	return data;
+       double data = 1;
+       double tmp=0.0;
+       String query = "select contribution from stats;";
+       PreparedStatement pstmt = null;
+       try {
+          pstmt = conn.prepareStatement(query);
+          ResultSet rs = pstmt.executeQuery();
+          
+          while (rs.next()){
+             if (rs.getDouble(1)==0) {
+                continue;
+             }
+             data *= rs.getDouble(1);
+             tmp+=1.0;
+          }
+          
+       }catch(SQLException e)
+       {
+          e.printStackTrace();
+       }
+       data = Math.pow(data, 1.0/(double) tmp);
+       return data;
     }
 	
     public Double contributionRank(String id) {
