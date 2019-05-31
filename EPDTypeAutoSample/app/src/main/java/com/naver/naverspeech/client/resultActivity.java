@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -98,6 +99,9 @@ public class resultActivity extends AppCompatActivity {
                 String msg = commSock.read();
                 result = gson.fromJson(msg, RequestResult.class);
 
+                Log.d("RESULT", result.toString());
+
+
                 if(result == null){
                     Toast.makeText(resultActivity.this, "retrieve NULL", Toast.LENGTH_SHORT).show();
                     return;
@@ -145,20 +149,20 @@ public class resultActivity extends AppCompatActivity {
                             nickname.setText(t.id);
                             Rname.setText(result.roomName);
 
-                            Date start = new Date(result.date);
-                            Date end = new Date(result.end);
+                            //Date start = new Date(result.date);
+                            //Date end = new Date(result.end);
 
-                            SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd", Locale.KOREA);
+                            //SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd", Locale.KOREA);
 
-                            int totHour = end.getHours() - start.getHours();
-                            int totMin= end.getMinutes() - start.getMinutes();
+                            //int totHour = end.getHours() - start.getHours();
+                            //int totMin= end.getMinutes() - start.getMinutes();
 
-                            String startTime = String.format(Locale.KOREA, "%2d : %2d", start.getHours(), start.getMinutes());
-                            String endTime = String.format(Locale.KOREA, "%2d : %2d", end.getHours(), end.getMinutes());
+                           // String startTime = String.format(Locale.KOREA, "%2d : %2d", start.getHours(), start.getMinutes());
+                            //String endTime = String.format(Locale.KOREA, "%2d : %2d", end.getHours(), end.getMinutes());
 
-                            String str = sdf.format(start) + " / " +  startTime + " ~ " + endTime + " (" +totHour+ "시간 " + totMin + "분)";
+                            //String str = sdf.format(start) + " / " +  startTime + " ~ " + endTime + " (" +totHour+ "시간 " + totMin + "분)";
 
-                            dateView.setText(str);
+                            dateView.setText(result.date + " " + result.end);
 
                             colon.setTypeface(type);
                             content.setTypeface(type);

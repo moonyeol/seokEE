@@ -106,8 +106,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             textView1.setText(this.data.getTitle());
             textView3.setText(this.data.getContent());
             textView4.setText(this.data.getMember());
-            SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd", Locale.KOREA);
-            textView2.setText(sdf.format(new Date(this.data.getDate())));
+            //SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd", Locale.KOREA);
+            //textView2.setText(sdf.format(new Date(this.data.getDate())));
+            textView2.setText(this.data.getDate());
+
             changeVisibility(selectedItems.get(position));
 
             itemView.setOnClickListener(this);
