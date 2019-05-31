@@ -84,13 +84,9 @@ public class mypage extends AppCompatActivity {
         if(twm.length >= 3)
         talkwithme3.setText(twm[2]);
 
-
-        String num = String.format("%.2f" , (100-info.contributionData.get(2)));
-
-        String temp = "평균 " +info.contributionData.get(0)+"%( 상위 "+ num + "% )";
-        contribution1.setText(info.contributionData.get(0).toString());
-        contribution2.setText(info.contributionData.get(1).toString());
-        contribution3.setText(num);
+        contribution1.setText(String.format("%.2f" , info.contributionData.get(0)) + "%");
+        contribution2.setText(String.format("%.2f" , info.contributionData.get(1)) + "%");
+        contribution3.setText(String.format("%.2f" , (100-info.contributionData.get(2))) + "%");
 
 
         for (History h : info.histories){

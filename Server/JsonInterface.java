@@ -74,6 +74,9 @@ class RequestResult {
     public HashMap<String, Double> keywordContrib;
     public ArrayList<Talk> cont;
     public String markData;
+    public String roomName;
+    public String date;
+    public String end;
 }
 class RequestUserInfo {
     public int func;
@@ -82,7 +85,6 @@ class RequestUserInfo {
     public ArrayList<History> histories;
     public String talkWithMe;
     public ArrayList<Double> contributionData;
-
 }
 class RequestUserList {
     public int func;

@@ -301,6 +301,23 @@ public class DBCon {
     	}
     	return data;
     }
+	public String searchEndByRoom(String room) {
+    	String data = "";
+    	String query = "select time from talk where room = ? order by time desc;";
+    	PreparedStatement pstmt = null;
+    	try {
+    		pstmt = conn.prepareStatement(query);
+    		pstmt.setString(1, room);
+    		ResultSet rs = pstmt.executeQuery();
+    		if(rs.next()){
+    			data = rs.getString("time");
+			}
+    	}catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    	return data;
+    }
 
 	public boolean insertMarkData(String id, String number, String marked) {
     	String query = "insert into mark (id,number,marked) values(?,?,?);";

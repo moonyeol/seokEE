@@ -39,16 +39,20 @@ public class TCPServer implements Runnable {
 
     @Override
     public void run() {
+        HashMap<String, Boolean> randomNumber = new HashMap<>();
         Random r = new Random();
-        for(int i=0; i<100; i++){
+
+        for(int i=0; i<10000; i++){
             StringBuffer s = new StringBuffer();
             for(int j=0; j<5; j++) {
                 if (r.nextInt(2) == 0) s.append((char) ((int) (r.nextInt(26)) + 97));
                 else s.append(r.nextInt(10));
             }
-            randomSeed.add(s.toString());
+            randomNumber.put(s.toString(), true);
         }
 
+        for(Map.Entry<String, Boolean> entry : randomNumber.entrySet()) randomSeed.add(entry.getKey());
+        System.out.println("PIN Length: " + randomSeed.size());
 
         try {
             System.out.println("Server: DB Connecting..");
@@ -313,7 +317,7 @@ public class TCPServer implements Runnable {
                         case Constant.SET_NICK:
                             // set Talker
                             System.out.println("[SET TALKER] nickname: " + msg.message);
-                            clientList.get(conn).setTalker("GUEST_" + msg.message);
+                            clientList.get(conn).setTalker("G_" + msg.message);
                             clientList.get(conn).setAnonymous();
                             break;
                         case Constant.EXIT:
@@ -509,6 +513,9 @@ public class TCPServer implements Runnable {
                             ArrayList<HashMap<String,Integer>> words = db.dbNLPSearch(msg.message);
                             requestResult.wordFrequency = words.get(0);
                             requestResult.fiveKeyWord = words.get(1);
+                            requestResult.roomName = db.getTitle(msg.message);
+                            requestResult.date = db.searchStartByRoom(msg.message);
+                            requestResult.end = db.searchEndByRoom(msg.message);
 
                             // 단순 talk 데이터로만 계산..
                             requestResult.contrib = db.calculateContributionByRoom(msg.message);
