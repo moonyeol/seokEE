@@ -97,7 +97,7 @@ public class mypage extends AppCompatActivity {
             Data data = new Data();
             data.setTitle(h.getTitle());
             data.setDate(h.getDate());
-            data.setMember(h.getMembers());
+            data.setMember("With - "+h.getMembers());
             data.setNumber(h.getNumber());
 
             String content = h.getContent();
