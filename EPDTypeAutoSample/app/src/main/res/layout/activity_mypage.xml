@@ -324,7 +324,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
@@ -336,13 +335,12 @@
 
                                 <TextView
                                     android:id="@+id/contributionTV1"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="20dp"
 
-                                    android:layout_weight="2"
                                     android:background="@drawable/borer_black_bottom"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="right"
@@ -365,7 +363,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
@@ -376,13 +373,12 @@
 
                                 <TextView
                                     android:id="@+id/contributionTV2"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="20dp"
 
-                                    android:layout_weight="2"
                                     android:background="@drawable/borer_black_bottom"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="right"
@@ -405,7 +401,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginLeft="5dp"
-                                    android:layout_weight="1"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="center"
                                     android:paddingLeft="5dp"
@@ -416,13 +411,12 @@
 
                                 <TextView
                                     android:id="@+id/contributionTV3"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="20dp"
 
-                                    android:layout_weight="2"
                                     android:background="@drawable/borer_black_bottom"
                                     android:fontFamily="@font/nanumbarungothic"
                                     android:gravity="right"
