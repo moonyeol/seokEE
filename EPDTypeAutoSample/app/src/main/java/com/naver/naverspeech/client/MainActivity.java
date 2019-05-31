@@ -228,7 +228,7 @@ public class MainActivity extends Activity {
                                         c.setPadding(8,8,8,8);
 
                                         if(selectedUser != null)
-                                            if(t.talker.equals(selectedUser)) c.setBackgroundColor(Color.argb(60,63,172,220));
+                                            if(t.talker.equals(selectedUser)) c.setBackgroundColor(Color.argb(100,243 ,236 ,141));
 
                                         CustomTalk customTalk = new CustomTalk(c, t.talker, t.content);
 
