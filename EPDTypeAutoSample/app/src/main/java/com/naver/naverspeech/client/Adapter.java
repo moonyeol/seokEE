@@ -23,6 +23,7 @@ import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.regex.Pattern;
 
 import android.app.DownloadManager;
 import android.net.Uri;
@@ -41,6 +42,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
     private SparseBooleanArray selectedItems = new SparseBooleanArray();
     // 직전에 클릭됐던 Item의 position
     private int prePosition = -1;
+    final String IllegalExp = "[:\\\\/%*?:|\"<>]";
 
     @NonNull
     @Override
@@ -106,8 +108,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             textView1.setText(this.data.getTitle());
             textView3.setText(this.data.getContent());
             textView4.setText(this.data.getMember());
-            //SimpleDateFormat sdf = new SimpleDateFormat("yy.MM.dd", Locale.KOREA);
-            //textView2.setText(sdf.format(new Date(this.data.getDate())));
             textView2.setText(this.data.getDate());
 
             changeVisibility(selectedItems.get(position));
@@ -124,8 +124,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     dialog.setContentText("파일 이름을 지정해주세요");
                     dialog.setPositiveText("저장");
                     dialog.setNegativeText("취소");
-
-                    dialog.setText(textView1.getText().toString());
+                    dialog.setText(makeValidFileName(textView1.getText().toString(),"_"));
                     dialog.setPositiveListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -139,18 +138,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
 
                                 String Save_folder = "/seokEE";
                                 String Save_Path = "";
-                                String File_Name = dialog.getText();
+                                String File_Name = makeValidFileName(dialog.getText(),"_");
+
+
                                 String ext = Environment.getExternalStorageState();
                                 if (ext.equals(Environment.MEDIA_MOUNTED)) {
-                                    Save_Path = Environment.getExternalStorageDirectory()+ Save_folder;
+                                    Save_Path = Environment.getExternalStorageDirectory() + Save_folder;
                                 }
                                 File dir = new File(Save_Path);
                                 if (!dir.exists()) {
                                     dir.mkdirs();
                                 }
-                                downloadFile(fileURL,Save_Path,File_Name);
+                                downloadFile(fileURL, Save_Path, File_Name);
 
-                            }catch(Exception e){
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
                             dialog.dismiss();
@@ -176,7 +177,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
         }
 
 
-        public void downloadFile(String furl,String fpath,String fname) {
+        public void downloadFile(String furl, String fpath, String fname) {
             File direct = new File(fpath);
 
             if (!direct.exists()) {
@@ -190,8 +191,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             request.setAllowedNetworkTypes(
                     DownloadManager.Request.NETWORK_WIFI
                             | DownloadManager.Request.NETWORK_MOBILE)
-            .setDestinationInExternalPublicDir(direct+"/",fname+".docx")
-            .setNotificationVisibility( DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                    .setDestinationInExternalPublicDir(direct + "/", fname + ".docx")
+                    .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
 
             mgr.enqueue(request);
@@ -203,11 +204,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
         }
 
 
-
         @Override
         public void onClick(View v) {
 
-            if (v.getId() == R.id.linearItem||v.getId() == R.id.textView1||v.getId() == R.id.textView2||v.getId() == R.id.imageView2) {
+            if (v.getId() == R.id.linearItem || v.getId() == R.id.textView1 || v.getId() == R.id.textView2 || v.getId() == R.id.imageView2) {
                 if (selectedItems.get(position)) {
                     // 펼쳐진 Item을 클릭 시
                     selectedItems.delete(position);
@@ -255,7 +255,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                     detail.getLayoutParams().height = 120;
                     detail.requestLayout();
 
-                    imageView.setImageResource(isExpanded?R.drawable.datil_unactive : R.drawable.datil);
+                    imageView.setImageResource(isExpanded ? R.drawable.datil_unactive : R.drawable.datil);
                     // textView3가 실제로 사라지게하는 부분
                     textView3.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
                     textView4.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
@@ -267,81 +267,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             va.start();
         }
     }
-//
-//    public class DownloadThread implements Runnable {
-//
-//        // 다운로드 받을 주소와 저장할 파일명을 위한 변수
-//        String mAddr;
-//        String mFile;
-//
-//        //생성자
-//        public DownloadThread(String mAddr, String mFile) {
-//            this.mAddr = mAddr;
-//            this.mFile = mFile;
-//
-//        }
-//
-//        public void run() {
-//            // 다운로드 받을 주소를 만들기 위한 변수
-//            URL fUrl;
-//            // 데이터를 바이트다윈로 읽을 때 읽을 위치를 저장할 변수
-//            int read;
-//            try {
-//                // 다운로드 받을 URL 생성
-//                fUrl = new URL(mAddr);
-//                // 연결 객체 생성
-//                HttpURLConnection conn = (HttpURLConnection) fUrl.openConnection();
-////                conn.setRequestMethod("GET");
-////                conn.setDoInput(true);
-////                conn.connect();
-//                // 연결된 파일의 크기 가져오기
-//                int len = conn.getContentLength();
-//                // 데이터를 저장할 배열생성
-//                byte raster[] = new byte[len];
-//                // 웹에서  읽어올 스트림 생성  - 일반 파일을 읽는 경우
-//                InputStream is = conn.getInputStream();
-//                // 파일에 기록할 스트림 생성
-//                File file = new File(mFile);
-//                FileOutputStream fos = new FileOutputStream(file);
-//
-//                while (true) {
-//                    // is 에서  읽어서 raster에 젖ㅇ하고 읽은 마지막위치를 read에 ㅈ장
-//                    read = is.read(raster);
-//
-//                    // 읽은데이터가 없다면
-//                    if (read <= 0) {
-//                        break;
-//                    }
-//                    // raster 배열에서 0부턴 read 만큼 읽어서 fos에 기록
-//                    fos.write(raster, 0, read);
-//                }
-//                is.close();
-//                fos.close();
-//                conn.disconnect();
-//
-//
-//            } catch (Exception e) {
-//                System.out.println(e.getMessage());
-//            }
-//
-//
-//        }
-//
-//
-//
-//    }
-//    private void showDownloadFile() {
-//        Intent intent = new Intent();
-//        intent.setAction(android.content.Intent.ACTION_VIEW);
-//        File file = new File(Save_Path + "/" + File_Name);
-//
-//        // 파일 확장자 별로 mime type 지정해 준다.
-//        if (File_extend.equals("txt")) {
-//            intent.setDataAndType(Uri.fromFile(file), "text/*");
-//        } else if (File_extend.equals("doc") || File_extend.equals("docx")) {
-//            intent.setDataAndType(Uri.fromFile(file), "application/msword");
-//        }
-//        context.startActivity(intent);
-//    }
+    public String makeValidFileName(String fileName, String replaceStr) {
+        if(fileName == null || fileName.trim().length() == 0 || replaceStr == null)
+            return String.valueOf(System.currentTimeMillis());
+
+        return fileName.replaceAll(IllegalExp, replaceStr);
+    }
 }
 

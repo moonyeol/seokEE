@@ -70,6 +70,8 @@ public class resultActivity extends AppCompatActivity {
 
     ArrayList<String> userNameList = new ArrayList<>();
 
+    final String IllegalExp = "[:\\\\/%*?:|\"<>]";
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -259,7 +261,7 @@ public class resultActivity extends AppCompatActivity {
                                 dialog.setPositiveText("저장");
                                 dialog.setNegativeText("취소");
 
-                                dialog.setText(result.roomName);
+                                dialog.setText(makeValidFileName(result.roomName,"_"));
                                 dialog.setPositiveListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
@@ -273,7 +275,7 @@ public class resultActivity extends AppCompatActivity {
 
                                             String Save_folder = "/seokEE";
                                             String Save_Path = "";
-                                            String File_Name = dialog.getText();
+                                            String File_Name = makeValidFileName(dialog.getText(),"_");
                                             String ext = Environment.getExternalStorageState();
                                             if (ext.equals(Environment.MEDIA_MOUNTED)) {
                                                 Save_Path = Environment.getExternalStorageDirectory()+ Save_folder;
@@ -335,6 +337,14 @@ public class resultActivity extends AppCompatActivity {
 //            context.startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
 
     }
+
+    public String makeValidFileName(String fileName, String replaceStr) {
+        if(fileName == null || fileName.trim().length() == 0 || replaceStr == null)
+            return String.valueOf(System.currentTimeMillis());
+
+        return fileName.replaceAll(IllegalExp, replaceStr);
+    }
+
     public void drawChart(){
         ArrayList<Entry> lineEntries = new ArrayList<>();
         ArrayList<BarEntry> barEntries = new ArrayList<>();
